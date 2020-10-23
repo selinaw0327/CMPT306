@@ -1,0 +1,30 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+ [System.Serializable]
+public class PlayerData 
+{
+    public int Level;
+    public int Health;
+    public int Hunger;
+    public int Energy;
+    public int Damage;
+
+    public float[] position;
+
+    
+
+    public PlayerData(PlayerStats player){
+        Level = player.currentLevel;
+        Hunger = player.currentHunger;
+        Health = player.currentHealth;
+        Energy = player.currentEnergy;
+        Damage = player.damage;
+        
+        position = new float[2];
+        position[0] = player.transform.position.x;
+        position[1] = player.transform.position.y;
+
+    }
+}
