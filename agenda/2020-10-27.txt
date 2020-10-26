@@ -1,4 +1,5 @@
-1. what is the current status of our github
+1. What is the current status of our github
 2. What we should cut from our development
-3. what everyone's going to be working on next, ending ideas and actual goal for the player. 
+3. What everyone's going to be working on next, ending ideas and actual goal for the player. 
 4. We need to have a proof of concept by next week so we need to prioritize some of the main mechanics of our game
+5. How big map want it to be?
