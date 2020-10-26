@@ -23,6 +23,12 @@ public class PlayerStats : MonoBehaviour
     public int currentLevel;
     public int damage;
     
+    public float energyDecreaseRate;
+    private float energyNextTimeToDecrease = 0.0f;
+
+    public float hungerDecreaseRate;
+    private float hungerNextTimeToDecrease = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +47,17 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Timed system to decrease energy
+        if(Time.time >= energyNextTimeToDecrease) {
+            energyNextTimeToDecrease = Time.time + 1.0f / energyDecreaseRate;
+            TakeEnergy(1);
+        }
+        // Timed system to decrease hunger
+        if(Time.time >= hungerNextTimeToDecrease) {
+            hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
+            TakeHunger(1);
+        }
+
         // Simple test to take damage
         if(Input.GetKeyDown(KeyCode.Space) && currentHealth > 0) {
             TakeDamage(10);
@@ -49,9 +66,11 @@ public class PlayerStats : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.H) && currentHealth < maxHealth) {
             Heal(10);
         }
+        // Test to take away energy
         if(Input.GetKeyDown(KeyCode.Y) && currentEnergy > 0) {
             TakeEnergy(10);
         }
+        // Test to take away hunger
         if(Input.GetKeyDown(KeyCode.R) && currentHunger > 0) {
             TakeHunger(10);
         }

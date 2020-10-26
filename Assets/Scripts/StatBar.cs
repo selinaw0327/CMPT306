@@ -49,7 +49,6 @@ public class StatBar : MonoBehaviour
         // Determine the segmentSize
         float containerWidth = segmentPanel.GetComponent<RectTransform>().rect.width;
         float segmentSize = (containerWidth - ((wholeSegments - 1) * segmentSpacing)) / wholeSegments;
-        Debug.Log(segmentSize);
 
         // Set cellSize to segmentSize
         segmentPanel.GetComponent<GridLayoutGroup>().cellSize = new Vector2(segmentSize, 10);

@@ -3925,6 +3925,20 @@ MonoBehaviour:
   segmentPrefab: {fileID: 7894260800924252472, guid: 754b802694afd0d45b603bcdba0c2b5b, type: 3}
   statPerSegment: 25
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &894774661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894774659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bb312afc6d3144783558404abe47c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decreaseRate: 0
+  nextTimeToDecrease: 0
 --- !u!1001 &910971508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4321,7 +4335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4038860008021535929, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: m_SortingLayerID
-      value: -819922409
+      value: -1250475257
       objectReference: {fileID: 0}
     - target: {fileID: 5038430353596472602, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: m_Sprite
@@ -4741,6 +4755,8 @@ MonoBehaviour:
   currentHunger: 0
   currentLevel: 0
   damage: 0
+  energyDecreaseRate: 1
+  hungerDecreaseRate: 1
 --- !u!114 &1106918505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4783,6 +4799,20 @@ MonoBehaviour:
   segmentPrefab: {fileID: 7894260800924252472, guid: dada09d43810ab24aa75decac675d238, type: 3}
   statPerSegment: 25
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &1177268247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177268245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bb312afc6d3144783558404abe47c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decreaseRate: 0
+  nextTimeToDecrease: 0
 --- !u!1 &1177490808 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
@@ -5586,6 +5616,14 @@ PrefabInstance:
     - target: {fileID: 3342851448954780094, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342851448954780094, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -819922409
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342851448954780094, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8150880239744661853, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
       propertyPath: m_LocalPosition.x
