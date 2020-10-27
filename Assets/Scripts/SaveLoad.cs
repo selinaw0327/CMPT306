@@ -6,6 +6,30 @@ using System.Collections.Generic;
 
 public static class SaveLoad 
 {
+	public static void SaveItemsOnFloor(ItemsOnFloorList itemsOnFloorList)
+	{
+		BinaryFormatter formatter = new BinaryFormatter();
+		string path = Application.persistentDataPath + "/itemsOnFloor.info";
+		FileStream stream  =  new FileStream(path, FileMode.Create);
+		ItemsOnFloorData data = new ItemsOnFloorData(itemsOnFloorList);
+		formatter.Serialize(stream, data);
+		stream.Close();
+	}
+
+	public static void LoadItemsOnFloor(ItemsOnFloorList items)
+	{
+		string path = Application.persistentDataPath + "/itemsOnFloor.info";
+		if(File.Exists(path))
+		{
+			BinaryFormatter formatter = new BinaryFormatter();
+			FileStream stream = new FileStream(path, FileMode.Open);
+			ItemsOnFloorData data =formatter.Deserialize(stream) as ItemsOnFloorData;
+			stream.Close();
+			items.itemDataList = data.itemDataList;
+		} else {
+			Debug.LogError("No item save file at "+ path );
+		}
+	} 
 
 	public static void SavePlayer (PlayerStats player) 
 	{

@@ -1,25 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UI;
 
  [System.Serializable]
 public class ItemData 
 {
-    public bool edible;
-    public int Damage;
+    
+    
 
     public string name;
     
-    Image icon;
+    public string spritePath;
 
-    public ItemData(ItemController item)
+    public float[] position;
+
+    public ItemData(Item item)
     {
-        edible = item.edible;
-        Damage = item.Damage;
-        name = item.name;
-        icon = item.GetComponent<Image>();;
+        var renderer = item.GetComponent<SpriteRenderer>();
+        
+        
+        
+        position = new float[2];
+        position[0] = item.transform.position.x;
+        position[1] = item.transform.position.y;
 
+        name = item.name;
     }
 
 }
