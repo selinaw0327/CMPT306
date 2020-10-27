@@ -1,1 +1,21 @@
-
+- Selina's repo is working and the new default
+- Things to cut:
+  - Ally system
+  - Morality
+- Bob's been working on map generation
+  - 30x30 tile rooms
+- Required for Milestone 3:
+  - General story components
+  - Map
+  - Ghostly Guide
+  - Some dialogue
+  - Tasks
+  - Combat
+  - Animation
+- Jobs:
+  - Bob: map creation
+  - Adam: combat animation/bat animation, different selectable characters (in main menu branch)
+  - Alyanna: dialogue
+  - Selina: combat system
+  - Jordan: main menu (in main menu branch)
+  - Jasper: start looking into tasks (ask if needs help)
