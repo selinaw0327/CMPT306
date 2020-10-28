@@ -593,7 +593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -34.26535}
+  m_LocalPosition: {x: -45, y: 45, z: -34.26535}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -979,7 +979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACQn+sxk80acgIAABsFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoXxR2JIby0hpId8TGknF1+EtcYaZMmjjwDJ8N+7km3s0BPi7e7bt08rfxIuTQOFVXqtOXtSDMj3CfFn8m0yBB/hSHdKbvgH9DlvnNnKJ9GQ85tarhCPfZlRNVjNix9yJ3xyhKCTvFS6XrEdLJWxBuGSCgMY0sr6aonQ54Qc8Wd650tOeErm/vSBp7tocsZjAdKCHqXGs5u7KI6zOFlNo3lXNk1m0SKLs+R23qGeYnozy+J5msyzBaKLwOdkIWjdAPPDDbRJz5S0bSWO3WX4EQslBDedZmJPTfBk01SgwZvCOEULgk6fXgHfVdazjWtfytKA7fzR9HTPNTrZkpKfqrW3pmbfynqnwvk2yW0WJLWkT//Fp3EIl1rVj33fOPI9bMWL/W96KqixI//H8P1X4U4eqNjTrYC3CuSzWmvlJMOg1c6XOgPJ/fD3MtqygmI/4K3UK9A1g939dfeX7Wc4h+mPS8HrrQ/NblpgI1SwO+wIaLyYXyg4bJDpKBD1Kv4a+EN341XrAg9cG4uhbkrp5W2V0z6VrIJnfhpnl0pLCHAnugFJhT29Io29vsKr2KjtVeSB+kfVNe9i/Vu5KgnwkB9FV6FXdbhclqnU4QlM9eKs4BIG0T7wjD4tlZTtho096cs2Tpe0GJXtHGdfV4tQWuJji7bx7SJJIpZOU/zLojTK0jgt021Bwu5xiXNS8doK7ezBW5MDucQ96781k7WmTdh2pulhzT9qNbKcy1JtCg0gX1qGi3DQ2AQfJVsxjgZtwFouw32Tz5wIVeyB5ReiPEy6OlpN84ElJw1/V9YjOVmGj0tOzuT8D1BLAwQUAAAICAAAkJ/r7XWm4GwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UmJimqWBoUGSoamFkZFBirGuMZCbYmBsYGZsaJxmnJSsFAtUX1JZkOqXmJsK0ROQWJKRlpmXkpmXrudelJniDjJaKbYWAFBLAQItABQAAAgIAACQn+sxk80acgIAABsFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACQn+vtdabgbAAAAHgAAAAJACQAAAAAAAAAAAAAAL8CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAdgMAAAAA
+    dataString: UEsDBBQAAAgIAACQn+sssqIDXAIAAAoFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1zmzAQ/SseneuMgCZOemsdx+khHxOnkwsXGS1GYyEx+ojtZPzfuxJgiDs9Id7bXb19u/BJhLINFE6bpRH8QXMgPyYknMm3yUDew55ttFqJD+hj3gR3VQhiMeaFOaERT0Ka1TU4I4qfaiNDMEXQK1FqUy/4BubaOotwyaQFpIx2IVsh9Dkhe3xMb0LKAU/pLJw+8HRDJ0c8FqAcmCG0D+zD2iivCsnqBniQPAQnKb2Y0SxJL7usAYhpCpvrMtILmiSz5HoWQgstpbCdROIOTbRg1VRgIHjABcOOo6xgQAViU7lQZJz7VJYWXCfVsMOtMGhcW5T80q2bNbPbVu87kz4KubyK2tqiD//w0yTSpdH1fX9vQsMdrhLF9oUdCmbdyO4xfPtVuFc7JrdsLeGtAvWol0Z7xZF0xodUbyG9HV5Prc0rKLYD3ko9A33z/6GFHo6x+/1cinodqIvvLbCSOtodVwIMTug3Co4LY7sSiAYVfyy8ss14szriThjrkOq6VEHeWnsTQskieha68W6ujYIId6IbUEy6wzOWcecjPONG154xdyx8Q93lHdd/GmcpER7iKT2jnvXuNCxb6d0D2OrJOykUDKID8Yg+zbVS7YaNPenTVt6UrBilbbzgX1eLMFbe0ISuk8vrNKU8m2b4ymlGr7IkK7N1QeLuCYV9MvncCu3swampobjCPet/LZOlYU3cdm7Ybik+aj2yXKhSrwoDoJ7aCifhYPAS/Dr5ggs0aAXOCRXnTT5zInWxBZ6fCuWx08XeGZYPVXLSiHftApKTefyX5ORIjn8BUEsDBBQAAAgIAACQn+vtdabgbAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSYmKapYGhQZKhqYWRkUGKsa4xkJtiYGxgZmxonGaclKwUC1RfUlmQ6peYmwrRE5BYkpGWmZeSmZeu516UmeIOMlopthYAUEsBAi0AFAAACAgAAJCf6yyyogNcAgAACgUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAJCf6+11puBsAAAAeAAAAAkAJAAAAAAAAAAAAAAAqQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABgAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -1986,7 +1986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106918497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -45, y: 45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 744668863}
@@ -2551,6 +2551,14 @@ PrefabInstance:
       propertyPath: startingPositions.Array.data[3]
       value: 
       objectReference: {fileID: 1289872562}
+    - target: {fileID: 8487828611187968985, guid: 788e262082f8246958ed17f3345d08cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1106918499}
+    - target: {fileID: 8487828611187968985, guid: 788e262082f8246958ed17f3345d08cf, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 8487828611187968986, guid: 788e262082f8246958ed17f3345d08cf, type: 3}
       propertyPath: m_Name
       value: Level Generation
