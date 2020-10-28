@@ -43,8 +43,10 @@ public class Item : MonoBehaviour
                     ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                     itemsOnFloorList.itemList.Remove(gameObject);
                     foreach(ItemData itemData in itemsOnFloorList.itemDataList){
-                        if(itemData.name == gameObject.name && itemData.position[0]== gameObject.transform.position.x && itemData.position[1]== gameObject.transform.position.y){
+                        
+                        if(itemData.position[0]== gameObject.transform.position.x && itemData.position[1] == gameObject.transform.position.y){
                             itemsOnFloorList.itemDataList.Remove(itemData);
+                            
                             break;
                         }
                     }

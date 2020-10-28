@@ -46,8 +46,11 @@ public class SaveLoadRunner : MonoBehaviour
 
     public void  LoadItemsOnFloor()
     {
+        
         foreach(GameObject item in itemsOnFloorList.itemList){
+            
             Destroy(item);
+            
         }
         SaveLoad.LoadItemsOnFloor(itemsOnFloorList);
         itemsOnFloorList.itemList = new List<GameObject>();

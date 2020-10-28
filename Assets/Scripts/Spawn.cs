@@ -31,7 +31,8 @@ public class Spawn : MonoBehaviour
         newItem.GetComponent<CircleCollider2D>().isTrigger = true;
         newItem.GetComponent<CircleCollider2D>().radius = 0.25f;
 
-        GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>().itemDataList.Add(new ItemData(newItem.GetComponent<Item>()));
-        GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>().itemList.Add(newItem);
+        ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+        itemsOnFloorList.itemDataList.Add(new ItemData(newItem.GetComponent<Item>()));
+        itemsOnFloorList.itemList.Add(newItem);
     }
 }

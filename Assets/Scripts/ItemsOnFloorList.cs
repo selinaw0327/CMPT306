@@ -13,10 +13,12 @@ public class ItemsOnFloorList : MonoBehaviour
     void Start()
     {
         GameObject[] itemArray = GameObject.FindGameObjectsWithTag("Item");
-
+        
         foreach(GameObject item in itemArray){
+            
             itemDataList.Add(new ItemData(item.GetComponent<Item>()));
             itemList.Add(item);
+            
         }
     }
 
