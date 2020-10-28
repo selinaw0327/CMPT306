@@ -1,0 +1,2899 @@
+fileFormatVersion: 2
+guid: 5fe50d2fbb9224ebc8767a517a8877f1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3914259882982101236
+    second: Spider Sprite Sheet (1)_0
+  - first:
+      213: -713143430315971048
+    second: Spider Sprite Sheet (1)_1
+  - first:
+      213: -5499461092863255208
+    second: Spider Sprite Sheet (1)_2
+  - first:
+      213: 5807192010073304358
+    second: Spider Sprite Sheet (1)_3
+  - first:
+      213: 2544255032011208791
+    second: Spider Sprite Sheet (1)_4
+  - first:
+      213: -3490027333063408046
+    second: Spider Sprite Sheet (1)_5
+  - first:
+      213: 397323565493960411
+    second: Spider Sprite Sheet (1)_6
+  - first:
+      213: 4013895013865435697
+    second: Spider Sprite Sheet (1)_7
+  - first:
+      213: -3779446380652883133
+    second: Spider Sprite Sheet (1)_8
+  - first:
+      213: 4483834825032200662
+    second: Spider Sprite Sheet (1)_9
+  - first:
+      213: -4910051957522003981
+    second: Spider Sprite Sheet (1)_10
+  - first:
+      213: 6318781980840448523
+    second: Spider Sprite Sheet (1)_11
+  - first:
+      213: 90202023253185745
+    second: Spider Sprite Sheet (1)_12
+  - first:
+      213: -8530193671890559602
+    second: Spider Sprite Sheet (1)_13
+  - first:
+      213: -5008763947009952070
+    second: Spider Sprite Sheet (1)_14
+  - first:
+      213: 903487052210554144
+    second: Spider Sprite Sheet (1)_15
+  - first:
+      213: -5719850309925810627
+    second: Spider Sprite Sheet (1)_16
+  - first:
+      213: -7263966868118686897
+    second: Spider Sprite Sheet (1)_17
+  - first:
+      213: 4836437088173049175
+    second: Spider Sprite Sheet (1)_18
+  - first:
+      213: -4538889824942571428
+    second: Spider Sprite Sheet (1)_19
+  - first:
+      213: -7440710716692287152
+    second: Spider Sprite Sheet (1)_20
+  - first:
+      213: 139142052753334243
+    second: Spider Sprite Sheet (1)_21
+  - first:
+      213: 3026136983052064345
+    second: Spider Sprite Sheet (1)_22
+  - first:
+      213: -7890211005347768175
+    second: Spider Sprite Sheet (1)_23
+  - first:
+      213: -4155120542509698081
+    second: Spider Sprite Sheet (1)_24
+  - first:
+      213: 4306890231394676957
+    second: Spider Sprite Sheet (1)_25
+  - first:
+      213: 5174930141012663061
+    second: Spider Sprite Sheet (1)_26
+  - first:
+      213: -2912368360952390731
+    second: Spider Sprite Sheet (1)_27
+  - first:
+      213: 4640243987813340374
+    second: Spider Sprite Sheet (1)_28
+  - first:
+      213: -3560344903716403158
+    second: Spider Sprite Sheet (1)_29
+  - first:
+      213: 3906459696129128591
+    second: Spider Sprite Sheet (1)_30
+  - first:
+      213: 4137806596581481459
+    second: Spider Sprite Sheet (1)_31
+  - first:
+      213: -4231858414358212831
+    second: Spider Sprite Sheet (1)_32
+  - first:
+      213: -8621859415508591567
+    second: Spider Sprite Sheet (1)_33
+  - first:
+      213: -3799429753459407169
+    second: Spider Sprite Sheet (1)_34
+  - first:
+      213: -8605906205096244698
+    second: Spider Sprite Sheet (1)_35
+  - first:
+      213: 4454551147689510881
+    second: Spider Sprite Sheet (1)_36
+  - first:
+      213: -7289421529782518861
+    second: Spider Sprite Sheet (1)_37
+  - first:
+      213: -5701106805597152027
+    second: Spider Sprite Sheet (1)_38
+  - first:
+      213: -2525537349156281413
+    second: Spider Sprite Sheet (1)_39
+  - first:
+      213: 3444197133739117379
+    second: Spider Sprite Sheet (1)_40
+  - first:
+      213: -7054223241014865419
+    second: Spider Sprite Sheet (1)_41
+  - first:
+      213: -5074848686277094587
+    second: Spider Sprite Sheet (1)_42
+  - first:
+      213: -1422028535905875755
+    second: Spider Sprite Sheet (1)_43
+  - first:
+      213: 7170810061170574562
+    second: Spider Sprite Sheet (1)_44
+  - first:
+      213: -6283770752064663805
+    second: Spider Sprite Sheet (1)_45
+  - first:
+      213: 7247399788452957992
+    second: Spider Sprite Sheet (1)_46
+  - first:
+      213: 4392045659516779670
+    second: Spider Sprite Sheet (1)_47
+  - first:
+      213: 4334407173390142069
+    second: Spider Sprite Sheet (1)_48
+  - first:
+      213: 8143442434900141439
+    second: Spider Sprite Sheet (1)_49
+  - first:
+      213: 555946200851108211
+    second: Spider Sprite Sheet (1)_50
+  - first:
+      213: 7276978177519823338
+    second: Spider Sprite Sheet (1)_51
+  - first:
+      213: 7598370447448711280
+    second: Spider Sprite Sheet (1)_52
+  - first:
+      213: 4594692730664030
+    second: Spider Sprite Sheet (1)_53
+  - first:
+      213: -8954218513588587936
+    second: Spider Sprite Sheet (1)_54
+  - first:
+      213: 1424102766418521493
+    second: Spider Sprite Sheet (1)_55
+  - first:
+      213: -6396746894589024287
+    second: Spider Sprite Sheet (1)_56
+  - first:
+      213: 592984306292634403
+    second: Spider Sprite Sheet (1)_57
+  - first:
+      213: -8262291818572918238
+    second: Spider Sprite Sheet (1)_58
+  - first:
+      213: -127351317080159758
+    second: Spider Sprite Sheet (1)_59
+  - first:
+      213: 5267321005909288248
+    second: Spider Sprite Sheet (1)_60
+  - first:
+      213: 8669208551272713623
+    second: Spider Sprite Sheet (1)_61
+  - first:
+      213: 3011673497303776762
+    second: Spider Sprite Sheet (1)_62
+  - first:
+      213: 5136276200558469012
+    second: Spider Sprite Sheet (1)_63
+  - first:
+      213: -5810276281909328979
+    second: Spider Sprite Sheet (1)_64
+  - first:
+      213: 1205590236439449951
+    second: Spider Sprite Sheet (1)_65
+  - first:
+      213: -6962179559390802523
+    second: Spider Sprite Sheet (1)_66
+  - first:
+      213: 697578394562708480
+    second: Spider Sprite Sheet (1)_67
+  - first:
+      213: 2516415649171621547
+    second: Spider Sprite Sheet (1)_68
+  - first:
+      213: 1319101081214010684
+    second: Spider Sprite Sheet (1)_69
+  - first:
+      213: -6430063676231615655
+    second: Spider Sprite Sheet (1)_70
+  - first:
+      213: 2745447103967872015
+    second: Spider Sprite Sheet (1)_71
+  - first:
+      213: 4391821325758698280
+    second: Spider Sprite Sheet (1)_72
+  - first:
+      213: -579856321822857560
+    second: Spider Sprite Sheet (1)_73
+  - first:
+      213: -7763564541825925860
+    second: Spider Sprite Sheet (1)_74
+  - first:
+      213: 5099108940616274252
+    second: Spider Sprite Sheet (1)_75
+  - first:
+      213: -9004446945826943731
+    second: Spider Sprite Sheet (1)_76
+  - first:
+      213: -3615900063284381311
+    second: Spider Sprite Sheet (1)_77
+  - first:
+      213: 3130210056099549663
+    second: Spider Sprite Sheet (1)_78
+  - first:
+      213: -403472112420018191
+    second: Spider Sprite Sheet (1)_79
+  - first:
+      213: -6628838523134855716
+    second: Spider Sprite Sheet (1)_80
+  - first:
+      213: -1756853519412645465
+    second: Spider Sprite Sheet (1)_81
+  - first:
+      213: 3705397853988496996
+    second: Spider Sprite Sheet (1)_82
+  - first:
+      213: 8540318303304859315
+    second: Spider Sprite Sheet (1)_83
+  - first:
+      213: -6268658840227069367
+    second: Spider Sprite Sheet (1)_84
+  - first:
+      213: -8785286959503492579
+    second: Spider Sprite Sheet (1)_85
+  - first:
+      213: 5102102144641905539
+    second: Spider Sprite Sheet (1)_86
+  - first:
+      213: -1216708165253656473
+    second: Spider Sprite Sheet (1)_87
+  - first:
+      213: 3796409274622221844
+    second: Spider Sprite Sheet (1)_88
+  - first:
+      213: 524651128003846551
+    second: Spider Sprite Sheet (1)_89
+  - first:
+      213: 2292280998813016928
+    second: Spider Sprite Sheet (1)_90
+  - first:
+      213: 3615244471728622696
+    second: Spider Sprite Sheet (1)_91
+  - first:
+      213: 7297226678588941820
+    second: Spider Sprite Sheet (1)_92
+  - first:
+      213: -3220444923095451701
+    second: Spider Sprite Sheet (1)_93
+  - first:
+      213: -1862698949057644153
+    second: Spider Sprite Sheet (1)_94
+  - first:
+      213: 5635812919487100647
+    second: Spider Sprite Sheet (1)_95
+  - first:
+      213: -8535473163777772423
+    second: Spider Sprite Sheet (1)_96
+  - first:
+      213: -5988041217862284
+    second: Spider Sprite Sheet (1)_97
+  - first:
+      213: -7503327717509853519
+    second: Spider Sprite Sheet (1)_98
+  - first:
+      213: -1740202536559069456
+    second: Spider Sprite Sheet (1)_99
+  - first:
+      213: 8429605579979565834
+    second: Spider Sprite Sheet (1)_100
+  - first:
+      213: 3742887386560819700
+    second: Spider Sprite Sheet (1)_101
+  - first:
+      213: -6588228698933997159
+    second: Spider Sprite Sheet (1)_102
+  - first:
+      213: 5625794464270617596
+    second: Spider Sprite Sheet (1)_103
+  - first:
+      213: 2923572368896366882
+    second: Spider Sprite Sheet (1)_104
+  - first:
+      213: 5467754666223535284
+    second: Spider Sprite Sheet (1)_105
+  - first:
+      213: -9207197089582039943
+    second: Spider Sprite Sheet (1)_106
+  - first:
+      213: -9218661521806809091
+    second: Spider Sprite Sheet (1)_107
+  - first:
+      213: 4731237653788835491
+    second: Spider Sprite Sheet (1)_108
+  - first:
+      213: -2641915170235913711
+    second: Spider Sprite Sheet (1)_109
+  - first:
+      213: -5282228562573616190
+    second: Spider Sprite Sheet (1)_110
+  - first:
+      213: 5303808896758415377
+    second: Spider Sprite Sheet (1)_111
+  - first:
+      213: -8061784414588898882
+    second: Spider Sprite Sheet (1)_112
+  - first:
+      213: 4507550128653452926
+    second: Spider Sprite Sheet (1)_113
+  - first:
+      213: -892059743713647322
+    second: Spider Sprite Sheet (1)_114
+  - first:
+      213: 6714832036129820853
+    second: Spider Sprite Sheet (1)_115
+  - first:
+      213: -5537728356942592914
+    second: Spider Sprite Sheet (1)_116
+  - first:
+      213: -5344530795631213889
+    second: Spider Sprite Sheet (1)_117
+  - first:
+      213: 5790611057076423773
+    second: Spider Sprite Sheet (1)_118
+  - first:
+      213: -5235389510740519626
+    second: Spider Sprite Sheet (1)_119
+  - first:
+      213: 5759462721862348276
+    second: Spider Sprite Sheet (1)_120
+  - first:
+      213: -1765733288881978835
+    second: Spider Sprite Sheet (1)_121
+  - first:
+      213: -5676052852069753274
+    second: Spider Sprite Sheet (1)_122
+  - first:
+      213: 97186016236058132
+    second: Spider Sprite Sheet (1)_123
+  - first:
+      213: 2685715640592033612
+    second: Spider Sprite Sheet (1)_124
+  - first:
+      213: 6585504878559182956
+    second: Spider Sprite Sheet (1)_125
+  - first:
+      213: 4253881953085179340
+    second: Spider Sprite Sheet (1)_126
+  - first:
+      213: -4139197633239295788
+    second: Spider Sprite Sheet (1)_127
+  - first:
+      213: -8762129141427341272
+    second: Spider Sprite Sheet (1)_128
+  - first:
+      213: 172275367122650272
+    second: Spider Sprite Sheet (1)_129
+  - first:
+      213: 3686593332578912278
+    second: Spider Sprite Sheet (1)_130
+  - first:
+      213: 2277024285143934135
+    second: Spider Sprite Sheet (1)_131
+  - first:
+      213: -1888314378850896438
+    second: Spider Sprite Sheet (1)_132
+  - first:
+      213: -1835577820484048819
+    second: Spider Sprite Sheet (1)_133
+  - first:
+      213: -3198799483866980701
+    second: Spider Sprite Sheet (1)_134
+  - first:
+      213: -4701805971853665211
+    second: Spider Sprite Sheet (1)_135
+  - first:
+      213: 1647992065106750831
+    second: Spider Sprite Sheet (1)_136
+  - first:
+      213: 6330346961279931904
+    second: Spider Sprite Sheet (1)_137
+  - first:
+      213: -329399746176266396
+    second: Spider Sprite Sheet (1)_138
+  - first:
+      213: 4062244223117903373
+    second: Spider Sprite Sheet (1)_139
+  - first:
+      213: 2002027473701545435
+    second: Spider Sprite Sheet (1)_140
+  - first:
+      213: -4599538561814504221
+    second: Spider Sprite Sheet (1)_141
+  - first:
+      213: 1158411485193353053
+    second: Spider Sprite Sheet (1)_142
+  - first:
+      213: 3342098039708558038
+    second: Spider Sprite Sheet (1)_143
+  - first:
+      213: -5604942372773732868
+    second: Spider Sprite Sheet (1)_144
+  - first:
+      213: -482721061542024384
+    second: Spider Sprite Sheet (1)_145
+  - first:
+      213: -886327387316032152
+    second: Spider Sprite Sheet (1)_146
+  - first:
+      213: 3285260510735599115
+    second: Spider Sprite Sheet (1)_147
+  - first:
+      213: 4192165574465729920
+    second: Spider Sprite Sheet (1)_148
+  - first:
+      213: -722870259003046970
+    second: Spider Sprite Sheet (1)_149
+  - first:
+      213: 6819862845745317367
+    second: Spider Sprite Sheet (1)_150
+  - first:
+      213: -3286013016734187813
+    second: Spider Sprite Sheet (1)_151
+  - first:
+      213: -7595932590065105945
+    second: Spider Sprite Sheet (1)_152
+  - first:
+      213: 2396145067681501497
+    second: Spider Sprite Sheet (1)_153
+  - first:
+      213: -5812002828114115607
+    second: Spider Sprite Sheet (1)_154
+  - first:
+      213: 2734153270056495242
+    second: Spider Sprite Sheet (1)_155
+  - first:
+      213: -8520386028543078825
+    second: Spider Sprite Sheet (1)_156
+  - first:
+      213: -1242836177644562745
+    second: Spider Sprite Sheet (1)_157
+  - first:
+      213: 4202427007489493522
+    second: Spider Sprite Sheet (1)_158
+  - first:
+      213: 193454251863449870
+    second: Spider Sprite Sheet (1)_159
+  - first:
+      213: 2455452742006721989
+    second: Spider Sprite Sheet (1)_160
+  - first:
+      213: -2971880570529651539
+    second: Spider Sprite Sheet (1)_161
+  - first:
+      213: -1494234066095625207
+    second: Spider Sprite Sheet (1)_162
+  - first:
+      213: 2886103818306640719
+    second: Spider Sprite Sheet (1)_163
+  - first:
+      213: -7936065799861539669
+    second: Spider Sprite Sheet (1)_164
+  - first:
+      213: 4378264462332649164
+    second: Spider Sprite Sheet (1)_165
+  - first:
+      213: -1099618150602837133
+    second: Spider Sprite Sheet (1)_166
+  - first:
+      213: -4795146033337315208
+    second: Spider Sprite Sheet (1)_167
+  - first:
+      213: 4708483130686285926
+    second: Spider Sprite Sheet (1)_168
+  - first:
+      213: -2762800536247633502
+    second: Spider Sprite Sheet (1)_169
+  - first:
+      213: -6504244140110897293
+    second: Spider Sprite Sheet (1)_170
+  - first:
+      213: 9058540424059480952
+    second: Spider Sprite Sheet (1)_171
+  - first:
+      213: 6570393943596821000
+    second: Spider Sprite Sheet (1)_172
+  - first:
+      213: 3916137732864603750
+    second: Spider Sprite Sheet (1)_173
+  - first:
+      213: 650786527703737263
+    second: Spider Sprite Sheet (1)_174
+  - first:
+      213: 1797667404875627658
+    second: Spider Sprite Sheet (1)_175
+  - first:
+      213: -1804349512703633477
+    second: Spider Sprite Sheet (1)_176
+  - first:
+      213: 6428103550802312557
+    second: Spider Sprite Sheet (1)_177
+  - first:
+      213: 2819790773769573635
+    second: Spider Sprite Sheet (1)_178
+  - first:
+      213: -7274278263923877844
+    second: Spider Sprite Sheet (1)_179
+  - first:
+      213: -1065605294623880434
+    second: Spider Sprite Sheet (1)_180
+  - first:
+      213: 7394232865565688972
+    second: Spider Sprite Sheet (1)_181
+  - first:
+      213: -2662868534371876839
+    second: Spider Sprite Sheet (1)_182
+  - first:
+      213: 5223537729038417326
+    second: Spider Sprite Sheet (1)_183
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 476
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f2a440061cda9c0800000000000000
+      internalID: -3914259882982101236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 476
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81eec1a14d76a16f0800000000000000
+      internalID: -713143430315971048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 476
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85dddcff54dfda3b0800000000000000
+      internalID: -5499461092863255208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 476
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62de7e68d5a479050800000000000000
+      internalID: 5807192010073304358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 476
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7583709b8720f4320800000000000000
+      internalID: 2544255032011208791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_5
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 444
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2560a5ca1aee09fc0800000000000000
+      internalID: -3490027333063408046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_6
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 444
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdeb82e7da3938500800000000000000
+      internalID: 397323565493960411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_7
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 444
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1323923af3834b730800000000000000
+      internalID: 4013895013865435697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_8
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 444
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3439c898a85bc8bc0800000000000000
+      internalID: -3779446380652883133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_9
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 444
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1f1995408c93e30800000000000000
+      internalID: 4483834825032200662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_10
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 444
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7803b52cdfbdbb0800000000000000
+      internalID: -4910051957522003981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_11
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 428
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b025225bbb2d0b750800000000000000
+      internalID: 6318781980840448523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_12
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 428
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d417022346704100800000000000000
+      internalID: 90202023253185745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_13
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 428
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d9da1ec0aae9980800000000000000
+      internalID: -8530193671890559602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_14
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 412
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab630be4abb4d7ab0800000000000000
+      internalID: -5008763947009952070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_15
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 412
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025cc26efa4d98c00800000000000000
+      internalID: 903487052210554144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_16
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 412
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ec67cb2720f90b0800000000000000
+      internalID: -5719850309925810627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_17
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 412
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43349d9e94313b90800000000000000
+      internalID: -7263966868118686897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_18
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 412
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755441b38e97e1340800000000000000
+      internalID: 4836437088173049175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_19
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 412
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50c9a590cf9201c0800000000000000
+      internalID: -4538889824942571428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_20
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 412
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0513d1796094db890800000000000000
+      internalID: -7440710716692287152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_21
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 412
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef5ea3b5f45ee100800000000000000
+      internalID: 139142052753334243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_22
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 412
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9569d7c8d8ffef920800000000000000
+      internalID: 3026136983052064345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_23
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 412
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1985e5f05e6508290800000000000000
+      internalID: -7890211005347768175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_24
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 380
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd3f7c0a1eb0656c0800000000000000
+      internalID: -4155120542509698081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_25
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 348
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd031e8b8d525cb30800000000000000
+      internalID: 4306890231394676957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_26
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 348
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b95889b8b01d740800000000000000
+      internalID: 5174930141012663061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_27
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 348
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bb9856f7603597d0800000000000000
+      internalID: -2912368360952390731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_28
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 348
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d491c46255756040800000000000000
+      internalID: 4640243987813340374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_29
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 316
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a288c107c2d179ec0800000000000000
+      internalID: -3560344903716403158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_30
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 316
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8838257568863630800000000000000
+      internalID: 3906459696129128591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_31
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 316
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fbd1823d217c6930800000000000000
+      internalID: 4137806596581481459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_32
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 284
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f4e68813b6545c0800000000000000
+      internalID: -4231858414358212831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_33
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 284
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13cd04bca80095880800000000000000
+      internalID: -8621859415508591567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_34
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 284
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb6800cf4c6b54bc0800000000000000
+      internalID: -3799429753459407169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_35
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 284
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a88ea07eda19880800000000000000
+      internalID: -8605906205096244698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_36
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 284
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e787d7eaaeb1dd30800000000000000
+      internalID: 4454551147689510881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_37
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 284
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb7a3b5db5c6da90800000000000000
+      internalID: -7289421529782518861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_38
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 284
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ecd1d9e09991e0b0800000000000000
+      internalID: -5701106805597152027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_39
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 284
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3ee8c692d73fcd0800000000000000
+      internalID: -2525537349156281413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_40
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 284
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b40f48b0f3ccf20800000000000000
+      internalID: 3444197133739117379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_41
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 268
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f11101565d5a1e90800000000000000
+      internalID: -7054223241014865419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_42
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 268
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543989de1048299b0800000000000000
+      internalID: -5074848686277094587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_43
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 268
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d88cd0b490f34ce0800000000000000
+      internalID: -1422028535905875755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_44
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 268
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e48edf02c5d38360800000000000000
+      internalID: 7170810061170574562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_45
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 268
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f42393bcf8bc8a0800000000000000
+      internalID: -6283770752064663805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_46
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 268
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82fcaff85bfe39460800000000000000
+      internalID: 7247399788452957992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_47
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 268
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c3bccd14ea3fc30800000000000000
+      internalID: 4392045659516779670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_48
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 252
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a03d90c58e62c30800000000000000
+      internalID: 4334407173390142069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_49
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 252
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75a01dafb1530170800000000000000
+      internalID: 8143442434900141439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_50
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 252
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37155f7cf1e17b700800000000000000
+      internalID: 555946200851108211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_51
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 252
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae9a65de8150df460800000000000000
+      internalID: 7276978177519823338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_52
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 252
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 070a1000aa5d27960800000000000000
+      internalID: 7598370447448711280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_53
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 252
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e54301449d2501000800000000000000
+      internalID: 4594692730664030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_54
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 252
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 062735014b93cb380800000000000000
+      internalID: -8954218513588587936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_55
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 252
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59de60cbbed63c310800000000000000
+      internalID: 1424102766418521493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_56
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 252
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e720fd37903a37a0800000000000000
+      internalID: -6396746894589024287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_57
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 220
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32334f5b514ba3800800000000000000
+      internalID: 592984306292634403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_58
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 220
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2225853dd51765d80800000000000000
+      internalID: -8262291818572918238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_59
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 220
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f942cfd6ae8b3ef0800000000000000
+      internalID: -127351317080159758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_60
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 220
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8352d232c88491940800000000000000
+      internalID: 5267321005909288248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_61
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 220
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d8366fe373f4870800000000000000
+      internalID: 8669208551272713623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_62
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 188
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afdff3ad61d9bc920800000000000000
+      internalID: 3011673497303776762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_63
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 188
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f9492cdf7b74740800000000000000
+      internalID: 5136276200558469012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_64
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 188
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3cae97180cd5fa0800000000000000
+      internalID: -5810276281909328979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_65
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 188
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5117abbeed1bb010800000000000000
+      internalID: 1205590236439449951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_66
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 188
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad8604f39e516f90800000000000000
+      internalID: -6962179559390802523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_67
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 188
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004c5ea9adb4ea900800000000000000
+      internalID: 697578394562708480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_68
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 172
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba6cb1c43ba1ce220800000000000000
+      internalID: 2516415649171621547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_69
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 172
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c354898c1736e4210800000000000000
+      internalID: 1319101081214010684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_70
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 172
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b72178723d3c6a0800000000000000
+      internalID: -6430063676231615655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_71
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 156
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0441a55899c91620800000000000000
+      internalID: 2745447103967872015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_72
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 156
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82315d61a32e2fc30800000000000000
+      internalID: 4391821325758698280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_73
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 156
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6ebfc5fbfe3f7f0800000000000000
+      internalID: -579856321822857560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_74
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 156
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1db5adae27424490800000000000000
+      internalID: -7763564541825925860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_75
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 156
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c419374b09ca3c640800000000000000
+      internalID: 5099108940616274252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_76
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 156
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d422bd537c90380800000000000000
+      internalID: -9004446945826943731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_77
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 156
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1893f90ec0eb1ddc0800000000000000
+      internalID: -3615900063284381311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_78
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 156
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd15b22267db07b20800000000000000
+      internalID: 3130210056099549663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_79
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 156
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7ad6e5044966af0800000000000000
+      internalID: -403472112420018191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_80
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 156
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd53f1bfb72a104a0800000000000000
+      internalID: -6628838523134855716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_81
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 124
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1b30548076e97e0800000000000000
+      internalID: -1756853519412645465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_82
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466aa7657b73c6330800000000000000
+      internalID: 3705397853988496996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_83
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3beb0419f3e458670800000000000000
+      internalID: 8540318303304859315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_84
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94247226fff3109a0800000000000000
+      internalID: -6268658840227069367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_85
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 92
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a3ce88e04641680800000000000000
+      internalID: -8785286959503492579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_86
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 60
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383b3235ede4ec640800000000000000
+      internalID: 5102102144641905539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_87
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 60
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7601dbebe526d1fe0800000000000000
+      internalID: -1216708165253656473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_88
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 60
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e1bdbfe1e8fa430800000000000000
+      internalID: 3796409274622221844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_89
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 28
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7916da3db6fe74700800000000000000
+      internalID: 524651128003846551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_90
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 28
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063a0a36c61dfcf10800000000000000
+      internalID: 2292280998813016928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_91
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 28
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c449151bdeb2230800000000000000
+      internalID: 3615244471728622696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_92
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 28
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf52cc67005f44560800000000000000
+      internalID: 7297226678588941820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_93
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 28
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc77f24b76eae43d0800000000000000
+      internalID: -3220444923095451701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_94
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 28
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789fce1cc2d5626e0800000000000000
+      internalID: -1862698949057644153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_95
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 28
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6f59e8dfd663e40800000000000000
+      internalID: 5635812919487100647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_96
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 28
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97475236168eb8980800000000000000
+      internalID: -8535473163777772423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_97
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 28
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4751f4288e9baeff0800000000000000
+      internalID: -5988041217862284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_98
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 12
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be8b7cf133ded790800000000000000
+      internalID: -7503327717509853519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_99
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 12
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6b923530f89d7e0800000000000000
+      internalID: -1740202536559069456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_100
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 12
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b255fec99fbf470800000000000000
+      internalID: 8429605579979565834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_101
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 12
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f17f365f3861f330800000000000000
+      internalID: 3742887386560819700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_102
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 12
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991510d77e8e194a0800000000000000
+      internalID: -6588228698933997159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_103
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 12
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb853e2246d21e40800000000000000
+      internalID: 5625794464270617596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider Sprite Sheet (1)_104
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 12
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229173b649d929820800000000000000
+      internalID: 2923572368896366882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

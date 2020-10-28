@@ -1,55 +1,103 @@
 fileFormatVersion: 2
-guid: eac91b9a67a0d467a8b26a7f941db422
+guid: 5e6ab69e820174d6e822ca8770feca84
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4956206947225884699
-    second: bat-orig_0
+      213: -6248741079362886434
+    second: Boss_0
   - first:
-      213: 6972459151877570972
-    second: bat-orig_1
+      213: 2287940250583960180
+    second: Boss_1
   - first:
-      213: 4428992130037574845
-    second: bat-orig_2
+      213: 4935984790844978548
+    second: Boss_2
   - first:
-      213: -314200836662291792
-    second: bat-orig_3
+      213: -1341004319433955295
+    second: Boss_3
   - first:
-      213: 8166001347766232108
-    second: bat-orig_4
+      213: -5999534734459318484
+    second: Boss_4
   - first:
-      213: -6383618470932405145
-    second: bat-orig_5
+      213: -7156185490814696510
+    second: Boss_5
   - first:
-      213: -4117342132710153192
-    second: bat-orig_6
+      213: 1243870551893655439
+    second: Boss_6
   - first:
-      213: -6270995040504253642
-    second: bat-orig_7
+      213: -77334111701985629
+    second: Boss_7
   - first:
-      213: -8291001227662649871
-    second: bat-orig_8
+      213: -2075714688798011193
+    second: Boss_8
   - first:
-      213: -2949963271700672124
-    second: bat-orig_9
+      213: -6239074346997327397
+    second: Boss_9
   - first:
-      213: 4997418804188303544
-    second: bat-orig_10
+      213: 6336801248783307803
+    second: Boss_10
   - first:
-      213: 5494750652304803404
-    second: bat-orig_11
+      213: 7863477865700277253
+    second: Boss_11
   - first:
-      213: 8311663214868495352
-    second: bat-orig_12
+      213: -1062783551152267458
+    second: Boss_12
   - first:
-      213: -2994995917460131891
-    second: bat-orig_13
+      213: 2749336523888890881
+    second: Boss_13
   - first:
-      213: 5437102537467636419
-    second: bat-orig_14
+      213: 8456867841273632492
+    second: Boss_14
   - first:
-      213: 5504457137823109604
-    second: bat-orig_15
+      213: 892964638181408460
+    second: Boss_15
+  - first:
+      213: -2573064321809260712
+    second: Boss_16
+  - first:
+      213: -8525165665687653785
+    second: Boss_17
+  - first:
+      213: 8120684594219722354
+    second: Boss_18
+  - first:
+      213: 1117132641777095476
+    second: Boss_19
+  - first:
+      213: 6729110025151246241
+    second: Boss_20
+  - first:
+      213: 5460223232398793741
+    second: Boss_21
+  - first:
+      213: 7333931048903773045
+    second: Boss_22
+  - first:
+      213: 8608643266416861846
+    second: Boss_23
+  - first:
+      213: 4868110562458583285
+    second: Boss_24
+  - first:
+      213: 3164928121181704560
+    second: Boss_25
+  - first:
+      213: 7877382446567120327
+    second: Boss_26
+  - first:
+      213: -4366232864221219108
+    second: Boss_27
+  - first:
+      213: -4636589440907107469
+    second: Boss_28
+  - first:
+      213: 3912229087974256110
+    second: Boss_29
+  - first:
+      213: 4459227733260487133
+    second: Boss_30
+  - first:
+      213: -2020325525169976220
+    second: Boss_31
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -94,7 +142,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -173,175 +221,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bat-orig_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b18d8ba95fbf7c440800000000000000
-      internalID: 4956206947225884699
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bat-orig_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c91859e28a623c060800000000000000
-      internalID: 6972459151877570972
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bat-orig_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dbce3ef50e0f67d30800000000000000
-      internalID: 4428992130037574845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bat-orig_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b21d96f00cb3abf0800000000000000
-      internalID: -314200836662291792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bat-orig_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c24a7f0e5f6735170800000000000000
-      internalID: 8166001347766232108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bat-orig_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 764a37292d4d867a0800000000000000
-      internalID: -6383618470932405145
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bat-orig_6
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 814ef0915234cd6c0800000000000000
-      internalID: -4117342132710153192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bat-orig_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 633f18e5c33f8f8a0800000000000000
-      internalID: -6270995040504253642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bat-orig_8
+      name: Boss_0
       rect:
         serializedVersion: 2
         x: 0
@@ -349,20 +229,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f517d0af4270fc80800000000000000
-      internalID: -8291001227662649871
+      spriteID: ed42f2778130849a0800000000000000
+      internalID: -6248741079362886434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat-orig_9
+      name: Boss_1
       rect:
         serializedVersion: 2
         x: 32
@@ -370,20 +250,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48115d1b800af07d0800000000000000
-      internalID: -2949963271700672124
+      spriteID: 47a006f298560cf10800000000000000
+      internalID: 2287940250583960180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat-orig_10
+      name: Boss_2
       rect:
         serializedVersion: 2
         x: 64
@@ -391,20 +271,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b05089cce56a5540800000000000000
-      internalID: 4997418804188303544
+      spriteID: 475bb0be304208440800000000000000
+      internalID: 4935984790844978548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat-orig_11
+      name: Boss_3
       rect:
         serializedVersion: 2
         x: 96
@@ -412,20 +292,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4649f71b96414c40800000000000000
-      internalID: 5494750652304803404
+      spriteID: 128efd92dabc36de0800000000000000
+      internalID: -1341004319433955295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat-orig_12
+      name: Boss_4
       rect:
         serializedVersion: 2
         x: 0
@@ -433,20 +313,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fbfae628a5f85370800000000000000
-      internalID: 8311663214868495352
+      spriteID: c2f4fe622fe5dbca0800000000000000
+      internalID: -5999534734459318484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat-orig_13
+      name: Boss_5
       rect:
         serializedVersion: 2
         x: 32
@@ -454,20 +334,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcf2b0cc413af66d0800000000000000
-      internalID: -2994995917460131891
+      spriteID: 2c38f21163f10bc90800000000000000
+      internalID: -7156185490814696510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat-orig_14
+      name: Boss_6
       rect:
         serializedVersion: 2
         x: 64
@@ -475,20 +355,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ca222963f7747b40800000000000000
-      internalID: 5437102537467636419
+      spriteID: f8fb0383dad134110800000000000000
+      internalID: 1243870551893655439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat-orig_15
+      name: Boss_7
       rect:
         serializedVersion: 2
         x: 96
@@ -496,14 +376,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e15f4d5a92c36c40800000000000000
-      internalID: 5504457137823109604
+      spriteID: 3a69bfef8014deef0800000000000000
+      internalID: -77334111701985629
       vertices: []
       indices: 
       edges: []

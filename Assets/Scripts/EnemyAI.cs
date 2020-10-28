@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform target;
+    Transform target;
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
     public Transform enemyGFX;
@@ -22,6 +22,7 @@ public class EnemyAI : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        target = GameObject.Find("Player").transform;
 
         InvokeRepeating("UpdatePath", 0f, 0.5f);
 
