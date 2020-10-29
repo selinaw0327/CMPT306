@@ -22,11 +22,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("i"))
-        {
-            inventory.SetActive(!show);
-            show = !show;
-        }
+
     }
 
     public int IndexOf(GameObject slot)
