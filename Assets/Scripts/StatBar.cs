@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class HealthBar : MonoBehaviour
+public class StatBar : MonoBehaviour
 {
     public Slider slider;
 
@@ -16,7 +16,7 @@ public class HealthBar : MonoBehaviour
 
     private float segmentSpacing;
 
-    public float segmentHealthAmount;
+    public float statPerSegment;
 
     public Vector3 offset;
 
@@ -30,7 +30,7 @@ public class HealthBar : MonoBehaviour
     }
 
     // Used at the start of the game to set maximum and current health / maximum and current values
-    public void SetMaxHealth(int maxHealth) {
+    public void SetMaxStat(int maxStat) {
         // Check if segments has been initialized
         if(segments == null) { 
             segments = new List<GameObject>();
@@ -39,16 +39,16 @@ public class HealthBar : MonoBehaviour
         segmentSpacing = segmentPanel.GetComponent<GridLayoutGroup>().spacing.x;
 
         // Set max health to the new max health given and set the slider to show the full health bar(0 = full health)
-        slider.maxValue = maxHealth;
+        slider.maxValue = maxStat;
         slider.value = 0;
 
         // Determine the number of segments needed as a fraction and a whole number(rounded up) if needed
-        float numSegments = maxHealth / segmentHealthAmount;
+        float numSegments = maxStat / statPerSegment;
         int wholeSegments = (int)Math.Ceiling(numSegments);
 
         // Determine the segmentSize
         float containerWidth = segmentPanel.GetComponent<RectTransform>().rect.width;
-        float segmentSize = (containerWidth - (wholeSegments - segmentSpacing)) / wholeSegments;
+        float segmentSize = (containerWidth - ((wholeSegments - 1) * segmentSpacing)) / wholeSegments;
 
         // Set cellSize to segmentSize
         segmentPanel.GetComponent<GridLayoutGroup>().cellSize = new Vector2(segmentSize, 10);
@@ -60,18 +60,9 @@ public class HealthBar : MonoBehaviour
             newSegment.transform.localScale = new Vector3(1, 1, 1);
             segments.Add(newSegment);
         }
-        
-        // WIP extra needed if the player receives health upgrades that are not the same amount as the segmentSize
-        // float remainder = (maxHealth % 25.0f) / 25.0f;
-        // if(remainder > 0) {
-        //     GameObject lastSegment = Instantiate(segmentPrefab);
-        //     lastSegment.transform.SetParent(gridLayout.transform);
-        //     lastSegment.transform.localScale = new Vector3(remainder, 1, 1);
-        //     segments.Add(lastSegment);
-        // }
     }
 
-    public void SetHealth(int health, int maxHealth) {
-        slider.value = maxHealth - health;
+    public void SetStat(int currentStat, int maxStat) {
+        slider.value = maxStat - currentStat;
     }
 }
