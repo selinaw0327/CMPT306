@@ -16,12 +16,6 @@ public class CameraMovement : MonoBehaviour
         cam = GetComponent<Camera>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void LateUpdate()
     {
         // targetPosition vector is created to fix the camera's z position so it never pops through the ground
