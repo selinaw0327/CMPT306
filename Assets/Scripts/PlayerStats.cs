@@ -82,7 +82,7 @@ public class PlayerStats : MonoBehaviour
         currentHealth -= damage;
         if(currentHealth <= 0) {
             currentHealth = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Restart the game
+            SceneManager.LoadScene("MainMenu"); // Restart the game
         }
         healthBar.SetStat(currentHealth, maxHealth);
     }
