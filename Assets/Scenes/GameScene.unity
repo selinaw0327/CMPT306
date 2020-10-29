@@ -638,9 +638,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1106918501}
-  smoothing: 0.6
-  minPosition: {x: -55, y: -55}
-  maxPosition: {x: 55, y: 55}
+  smoothing: 0.4
+  minPosition: {x: 0, y: 0}
+  maxPosition: {x: 0, y: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1576,10 +1576,16 @@ MonoBehaviour:
   healthBar: {fileID: 744668862}
   maxHealth: 100
   currentHealth: 0
+  energyBar: {fileID: 0}
+  maxEnergy: 0
+  currentEnergy: 0
+  hungerBar: {fileID: 0}
+  maxHunger: 0
   currentHunger: 0
   currentLevel: 0
   damage: 0
-  currentEnergy: 0
+  energyDecreaseRate: 0
+  hungerDecreaseRate: 0
 --- !u!114 &1106918505
 MonoBehaviour:
   m_ObjectHideFlags: 0
