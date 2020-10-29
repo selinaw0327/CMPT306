@@ -36,6 +36,7 @@ public class SaveLoadRunner : MonoBehaviour
     public void LoadPlayer()
     {
         SaveLoad.LoadPlayer(player);
+        
   
     }
 
@@ -62,8 +63,13 @@ public class SaveLoadRunner : MonoBehaviour
 
             GameObject newItem = Instantiate(item, position, Quaternion.identity);
             
-            newItem.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(itemData.name);
-
+            Texture2D spriteTexture = new Texture2D(itemData.spriteW, itemData.spriteH,TextureFormat.RGBA32, false );
+            spriteTexture.LoadRawTextureData(itemData.spriteTex);
+            spriteTexture.Apply();
+            Sprite loadedSprite = Sprite.Create(spriteTexture, new Rect(0.0f,0.0f , itemData.spriteW, itemData.spriteH), Vector2.one);
+            newItem.GetComponent<SpriteRenderer>().sprite = loadedSprite;
+            
+            item.GetComponent<Item>().itemSprite = loadedSprite;
             newItem.AddComponent<CircleCollider2D>();
             newItem.GetComponent<CircleCollider2D>().isTrigger = true;
             newItem.GetComponent<CircleCollider2D>().radius = 0.25f;

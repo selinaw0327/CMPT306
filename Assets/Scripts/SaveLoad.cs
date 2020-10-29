@@ -1,11 +1,13 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+
 using System.Collections;
 using System.Collections.Generic;
 
 public static class SaveLoad 
 {
+
 	public static void SaveItemsOnFloor(ItemsOnFloorList itemsOnFloorList)
 	{
 		BinaryFormatter formatter = new BinaryFormatter();
@@ -26,6 +28,7 @@ public static class SaveLoad
 			ItemsOnFloorData data =formatter.Deserialize(stream) as ItemsOnFloorData;
 			stream.Close();
 			items.itemDataList = data.itemDataList;
+			
 		} else {
 			Debug.LogError("No item save file at "+ path );
 		}
@@ -69,4 +72,7 @@ public static class SaveLoad
 			
 		}
 	}
+
+
+
 }
