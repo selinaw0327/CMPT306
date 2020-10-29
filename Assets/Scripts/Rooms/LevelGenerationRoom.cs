@@ -120,7 +120,6 @@ public class LevelGenerationRoom : MonoBehaviour
                         }
                         Instantiate(rooms[randBottomRoom], transform.position, Quaternion.identity);
                     }
-                   
                 }
 
                 Vector2 newPos = new Vector2(transform.position.x, transform.position.y - moveAmount);
