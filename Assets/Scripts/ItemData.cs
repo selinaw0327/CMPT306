@@ -24,7 +24,7 @@ public class ItemData
     {
         Texture2D spriteTexture =  new Texture2D((int)item.itemSprite.rect.width,(int)item.itemSprite.rect.width);
         Sprite sprite =  item.itemSprite;
-        //SetTextureImporterFormat(item.itemSprite.texture, true);
+        SetTextureImporterFormat(item.itemSprite.texture, true);
         Color[] newColors = sprite.texture.GetPixels((int)sprite.textureRect.x, 
                                                     (int)sprite.textureRect.y, 
                                                     (int)sprite.textureRect.width, 
@@ -51,7 +51,7 @@ public class ItemData
         var tImporter = AssetImporter.GetAtPath( assetPath ) as TextureImporter;
         if ( tImporter != null )
         {
-            tImporter.textureType = TextureImporterType.Advanced;
+            
 
             tImporter.isReadable = isReadable;
 
