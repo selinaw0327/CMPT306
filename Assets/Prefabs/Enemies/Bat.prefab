@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8201056986579381657}
   - component: {fileID: 9153485776742081621}
   - component: {fileID: 7089713499155554669}
+  - component: {fileID: 1800119459}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593757828702648435}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.63, y: -4.3, z: -10.23058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -112,10 +113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dab6fde59ad5436cbab1c7d97830032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   speed: 400
   nextWayPointDistance: 2
   enemyGFX: {fileID: 389636989893442646}
+  moveRight: 1
 --- !u!212 &7089713499155554669
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -167,3 +168,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1800119459
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593757828702648435}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd49863a71b7e4ed395450eccd0ebc5b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
