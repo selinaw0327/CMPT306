@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ItemsOnFloor
   - Item
+  - Inventory
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,30 @@ using System.Collections.Generic;
 
 public static class SaveLoad 
 {
+	public static void SaveInventory(Inventory inventory){
+		BinaryFormatter formatter = new BinaryFormatter();
+		string path = Application.persistentDataPath + "/inventory.info";
+		FileStream stream  =  new FileStream(path, FileMode.Create);
+		InventoryData data = new InventoryData(inventory);
+		formatter.Serialize(stream,data);
+		stream.Close();
+	}
 
+	public static void LoadInventory(Inventory inventory){
+		string path = Application.persistentDataPath + "/inventory.info";
+		if(File.Exists(path))
+		{
+			BinaryFormatter formatter = new BinaryFormatter();
+			FileStream stream = new FileStream(path, FileMode.Open);
+			InventoryData data =formatter.Deserialize(stream) as InventoryData;
+			stream.Close();
+			inventory.isFull = data.isFull;
+			inventory.itemDataArr = data.itemDataArr;
+			
+		} else {
+			Debug.LogError("No item save file at "+ path );
+		}
+	}
 	public static void SaveItemsOnFloor(ItemsOnFloorList itemsOnFloorList)
 	{
 		BinaryFormatter formatter = new BinaryFormatter();

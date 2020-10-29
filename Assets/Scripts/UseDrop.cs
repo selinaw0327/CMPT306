@@ -8,7 +8,7 @@ public class UseDrop : MonoBehaviour
     public GameObject item;
     private Inventory inventory;
     private GameObject slot;
-    private Sprite sprite;
+    public Sprite sprite;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +29,7 @@ public class UseDrop : MonoBehaviour
 
         GetComponent<Spawn>().SpawnDroppedItem(sprite);
         Destroy(gameObject);
+        inventory.itemDataArr[inventory.IndexOf(slot)] = null;
         inventory.isFull[inventory.IndexOf(slot)] = false;
 
 

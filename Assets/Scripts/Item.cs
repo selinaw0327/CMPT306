@@ -37,9 +37,10 @@ public class Item : MonoBehaviour
 
                     inventory.isFull[i] = true;
                     GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
+                    
 
                     item.GetComponent<Image>().sprite = itemSprite;
-                    
+                    item.GetComponent<UseDrop>().sprite = itemSprite; 
                     ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                     itemsOnFloorList.itemList.Remove(gameObject);
                     foreach(ItemData itemData in itemsOnFloorList.itemDataList){
@@ -50,6 +51,7 @@ public class Item : MonoBehaviour
                             break;
                         }
                     }
+                    inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
                     Destroy(gameObject);
                     
                     

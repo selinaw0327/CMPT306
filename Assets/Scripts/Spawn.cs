@@ -26,6 +26,7 @@ public class Spawn : MonoBehaviour
         GameObject newItem = Instantiate(item, playerPos, Quaternion.identity);
 
         newItem.GetComponent<SpriteRenderer>().sprite = sprite;
+        newItem.GetComponent<Item>().itemSprite = sprite;
 
         newItem.AddComponent<CircleCollider2D>();
         newItem.GetComponent<CircleCollider2D>().isTrigger = true;
