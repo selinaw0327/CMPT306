@@ -1136,6 +1136,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8487828611187968985, guid: 788e262082f8246958ed17f3345d08cf, type: 3}
+      propertyPath: rooms.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487828611187968985, guid: 788e262082f8246958ed17f3345d08cf, type: 3}
       propertyPath: startingPositions.Array.data[0]
       value: 
       objectReference: {fileID: 20886258}
@@ -1171,6 +1175,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 8487828611187968985, guid: 788e262082f8246958ed17f3345d08cf, type: 3}
+      propertyPath: rooms.Array.data[4]
+      value: 
+      objectReference: {fileID: 7250609962709985515, guid: 3c7e0b7cd34d346bab542208dfd3fac7, type: 3}
     - target: {fileID: 8487828611187968986, guid: 788e262082f8246958ed17f3345d08cf, type: 3}
       propertyPath: m_Name
       value: Level Generation

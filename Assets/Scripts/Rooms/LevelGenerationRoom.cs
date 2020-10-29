@@ -12,7 +12,7 @@ public class LevelGenerationRoom : MonoBehaviour
     public float moveAmount;
 
     private float timeBtwRoom;
-    public float startBtwRoom = 0.25f;
+    public float startBtwRoom = 0.1f;
 
     public float minX;
     public float maxX;
@@ -43,7 +43,7 @@ public class LevelGenerationRoom : MonoBehaviour
 
     private void Update()
     {
-        if (timeBtwRoom <= 0  )
+        if (timeBtwRoom <= 0 && stopGeneration == false)
         {
             Move();
             timeBtwRoom = startBtwRoom;
@@ -119,7 +119,8 @@ public class LevelGenerationRoom : MonoBehaviour
                             randBottomRoom = 1;
                         }
                         Instantiate(rooms[randBottomRoom], transform.position, Quaternion.identity);
-                    }  
+                    }
+                   
                 }
 
                 Vector2 newPos = new Vector2(transform.position.x, transform.position.y - moveAmount);
