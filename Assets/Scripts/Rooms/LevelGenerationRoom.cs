@@ -25,6 +25,7 @@ public class LevelGenerationRoom : MonoBehaviour
 
     public Rigidbody2D player;
     public Camera cam;
+    private CameraMovement cameraMovement;
 
     // Start is called before the first frame update
     private void Start()
@@ -35,7 +36,11 @@ public class LevelGenerationRoom : MonoBehaviour
 
         player.transform.position = startingPositions[randStartingPos].position;
         Vector3 temp = new Vector3(0, 0, -10.0f);
-        cam.transform.position = startingPositions[randStartingPos].position + temp; ;
+        cam.transform.position = startingPositions[randStartingPos].position + temp;
+
+        cameraMovement = Camera.main.GetComponent<CameraMovement>();
+        cameraMovement.minPosition = startingPositions[randStartingPos].position + new Vector3(-5, -10, 0);
+        cameraMovement.maxPosition = startingPositions[randStartingPos].position + new Vector3(5, 10, 0);
         
 
         direction = Random.Range(1, 6);
