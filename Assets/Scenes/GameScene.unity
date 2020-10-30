@@ -378,6 +378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Starting Position
       objectReference: {fileID: 0}
+    - target: {fileID: 8404728523057037313, guid: c9427a400dc6a4ba3803e9157074cb7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9427a400dc6a4ba3803e9157074cb7c, type: 3}
 --- !u!1 &404789823
@@ -1208,6 +1212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 2729922745911456485, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4038860008021535929, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: m_SortingLayerID
       value: -819922409
@@ -1418,7 +1426,7 @@ SpriteRenderer:
   m_SortingLayerID: -1250475257
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4581289516570652057, guid: 24b417f8b9dace945b8db76c8e35c50a, type: 3}
+  m_Sprite: {fileID: 7152930139536384079, guid: cbfa6176fe7ae5f4da09caa73cb873c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1456,6 +1464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb65b3fe8db141f4791417bac365863a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
   speed: 5
 --- !u!61 &1106918503
 BoxCollider2D:
@@ -1470,18 +1479,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0050696433, y: -0.3767861}
+  m_Offset: {x: -0.00667572, y: -0.45899773}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.125}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 1, y: 1.125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.62484735, y: 0.37142777}
+  m_Size: {x: 0.5074005, y: 0.3322792}
   m_EdgeRadius: 0
 --- !u!114 &1106918504
 MonoBehaviour:
@@ -1527,6 +1536,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  itemDataArr: []
   inventory: {fileID: 1548576076}
 --- !u!1 &1204506938
 GameObject:
@@ -1558,6 +1568,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1106918504}
+  itemsOnFloorList: {fileID: 0}
+  inventory: {fileID: 0}
+  item: {fileID: 0}
+  inventoryItem: {fileID: 0}
 --- !u!4 &1204506940
 Transform:
   m_ObjectHideFlags: 0
