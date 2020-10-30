@@ -74,6 +74,10 @@ public class PlayerStats : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R) && currentHunger > 0) {
             TakeHunger(10);
         }
+        healthBar.SetStat(currentHealth, maxHealth);
+        energyBar.SetStat(currentEnergy, maxEnergy);
+        hungerBar.SetStat(currentHunger, maxHunger);
+        
     }
 
     // Causes the player to take damage

@@ -41,8 +41,6 @@ public class SaveLoadRunner : MonoBehaviour
     public void LoadPlayer()
     {
         SaveLoad.LoadPlayer(player);
-        
-  
     }
     public void SaveInventory()
     {
