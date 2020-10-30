@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
     public GameObject inventoryItem;
     private Inventory inventory;
 
-    private Sprite itemSprite;
+    public Sprite itemSprite;
 
 
     // Start is called before the first frame update
@@ -37,11 +37,25 @@ public class Item : MonoBehaviour
 
                     inventory.isFull[i] = true;
                     GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
+                    
 
                     item.GetComponent<Image>().sprite = itemSprite;
-                    
+                    item.GetComponent<UseDrop>().sprite = itemSprite; 
+                    ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+                    itemsOnFloorList.itemList.Remove(gameObject);
+                    foreach(ItemData itemData in itemsOnFloorList.itemDataList){
+                        
+                        if(itemData.position[0]== gameObject.transform.position.x && itemData.position[1] == gameObject.transform.position.y){
+                            itemsOnFloorList.itemDataList.Remove(itemData);
+                            
+                            break;
+                        }
+                    }
+                    inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
                     Destroy(gameObject);
-
+                    
+                    
+    
                     break;
                 }
             }
