@@ -28,5 +28,11 @@ public class CameraMovement : MonoBehaviour
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition, smoothing);
         }
+
+        maxPosition.x = 60.5f;
+        maxPosition.y = 60.5f;
+        minPosition.x = -60.5f;
+        minPosition.y = -60.5f;
+
     }
 }
