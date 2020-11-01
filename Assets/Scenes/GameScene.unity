@@ -1532,6 +1532,10 @@ PrefabInstance:
       propertyPath: rooms.Array.data[2]
       value: 
       objectReference: {fileID: 8108530922584286320, guid: c39e9664bdf5f463d83b485acfb9c708, type: 3}
+    - target: {fileID: 8487828611187968985, guid: 788e262082f8246958ed17f3345d08cf, type: 3}
+      propertyPath: cameraMovement
+      value: 
+      objectReference: {fileID: 519420030}
     - target: {fileID: 8487828611187968986, guid: 788e262082f8246958ed17f3345d08cf, type: 3}
       propertyPath: m_Name
       value: Level Generation
