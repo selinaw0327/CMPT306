@@ -16,12 +16,6 @@ public class CameraMovement : MonoBehaviour
         cam = GetComponent<Camera>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void LateUpdate()
     {
         // targetPosition vector is created to fix the camera's z position so it never pops through the ground
@@ -34,5 +28,11 @@ public class CameraMovement : MonoBehaviour
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition, smoothing);
         }
+
+        maxPosition.x = 60.5f;
+        maxPosition.y = 60.5f;
+        minPosition.x = -60.5f;
+        minPosition.y = -60.5f;
+
     }
 }
