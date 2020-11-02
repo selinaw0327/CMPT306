@@ -72,3 +72,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraChange: {x: 0, y: 30}
   playerChange: {x: 0, y: 2, z: 0}
+  boundaryMin: {x: -52.5, y: -55.5}
+  boundaryMax: {x: 52.5, y: 55.5}
