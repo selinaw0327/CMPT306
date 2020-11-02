@@ -39,8 +39,8 @@ public class LevelGenerationRoom : MonoBehaviour
         cam.transform.position = startingPositions[randStartingPos].position + temp;
 
         cameraMovement = Camera.main.GetComponent<CameraMovement>();
-        cameraMovement.minPosition = startingPositions[randStartingPos].position + new Vector3(-5, -10, 0);
-        cameraMovement.maxPosition = startingPositions[randStartingPos].position + new Vector3(5, 10, 0);
+        cameraMovement.minPosition = startingPositions[randStartingPos].position + new Vector3(-7, -10, 0);
+        cameraMovement.maxPosition = startingPositions[randStartingPos].position + new Vector3(7, 10, 0);
         
 
         direction = Random.Range(1, 6);
