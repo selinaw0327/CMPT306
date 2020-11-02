@@ -37,26 +37,26 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetMaxStat(maxHealth);
         healthBar.transform.position = transform.position + healthBar.offset; // Places healthbar above players head based on its offset
 
-        currentEnergy = maxEnergy;
-        energyBar.SetMaxStat(maxEnergy);
+        // currentEnergy = maxEnergy;
+        // energyBar.SetMaxStat(maxEnergy);
 
-        currentHunger = maxHunger;
-        hungerBar.SetMaxStat(maxHunger);
+        // currentHunger = maxHunger;
+        // hungerBar.SetMaxStat(maxHunger);
     }
 
     // Update is called once per frame
     void Update()
     {
         // Timed system to decrease energy
-        if(Time.time >= energyNextTimeToDecrease) {
-            energyNextTimeToDecrease = Time.time + 1.0f / energyDecreaseRate;
-            TakeEnergy(1);
-        }
-        // Timed system to decrease hunger
-        if(Time.time >= hungerNextTimeToDecrease) {
-            hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
-            TakeHunger(1);
-        }
+        // if(Time.time >= energyNextTimeToDecrease) {
+        //     energyNextTimeToDecrease = Time.time + 1.0f / energyDecreaseRate;
+        //     TakeEnergy(1);
+        // }
+        // // Timed system to decrease hunger
+        // if(Time.time >= hungerNextTimeToDecrease) {
+        //     hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
+        //     TakeHunger(1);
+        // }
 
         // Simple test to take damage
         if(Input.GetKeyDown(KeyCode.Space) && currentHealth > 0) {
@@ -74,9 +74,6 @@ public class PlayerStats : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R) && currentHunger > 0) {
             TakeHunger(10);
         }
-        healthBar.SetStat(currentHealth, maxHealth);
-        energyBar.SetStat(currentEnergy, maxEnergy);
-        hungerBar.SetStat(currentHunger, maxHunger);
         
     }
 
