@@ -30,6 +30,15 @@ public class ProcGenDungeon : MonoBehaviour
     private int maxRouteLength;
     [SerializeField]
     private int maxRoutes = 20;
+
+
+    public GameObject[] objects;
+
+    public Sprite sprite;
+
+    private List<Vector3Int> spawnLocations = new List<Vector3Int>();
+
+    
     
 
     private int routeCount = 0;
@@ -46,6 +55,8 @@ public class ProcGenDungeon : MonoBehaviour
         NewRoute(x, y, routeLength, previousPos);
 
         FillWalls();
+
+        FillSpawnLocations();
     }
 
     private void FillWalls()
@@ -155,12 +166,29 @@ public class ProcGenDungeon : MonoBehaviour
 
     private void GenerateSquare(int x, int y, int radius)
     {
+        if(Random.Range(0, 4) == 1) {
+            spawnLocations.Add(new Vector3Int(x, y, 0));
+        }
         for (int tileX = x - radius; tileX <= x + radius; tileX++)
         {
             for (int tileY = y - radius; tileY <= y + radius; tileY++)
             {
                 Vector3Int tilePos = new Vector3Int(tileX, tileY, 0);
                 groundMap.SetTile(tilePos, groundTile);
+            }
+        }
+    }
+
+    private void FillSpawnLocations() {
+        for(int i = 0; i< spawnLocations.Capacity -1; i++) {
+            int rand = Random.Range(0, objects.Length);
+
+
+            GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity);
+
+            if(rand == 1) {
+                newObject.name = "Banana";
+                newObject.GetComponent<SpriteRenderer>().sprite = sprite;
             }
         }
     }
