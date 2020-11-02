@@ -10,6 +10,7 @@ public class SaveLoadRunner : MonoBehaviour
     public ItemsOnFloorList itemsOnFloorList;
     public Inventory inventory;
 
+    public ChallengeMenu challenges;
     public GameObject item;
     public GameObject inventoryItem;
     void Start() 
@@ -17,6 +18,7 @@ public class SaveLoadRunner : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        challenges = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
     }
 
     public void SaveAll() 
@@ -24,6 +26,7 @@ public class SaveLoadRunner : MonoBehaviour
         SavePlayer();
         SaveItemsOnFloor();
         SaveInventory();
+        SaveChallenges();
 
     }
 
@@ -32,6 +35,7 @@ public class SaveLoadRunner : MonoBehaviour
         LoadPlayer();
         LoadItemsOnFloor();
         LoadInventory();
+        LoadChallenges();
     }
 
     public void SavePlayer()
@@ -114,5 +118,16 @@ public class SaveLoadRunner : MonoBehaviour
             GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>().itemList.Add(newItem);
         }
     }
+
+
+    public void SaveChallenges(){
+        SaveLoad.SaveChallenges(challenges);
+
+    }
+
+    public void LoadChallenges(){
+        SaveLoad.LoadChallenges(challenges);
+    }
+
 
 }
