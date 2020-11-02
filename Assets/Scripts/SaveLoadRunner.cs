@@ -55,7 +55,7 @@ public class SaveLoadRunner : MonoBehaviour
     {
         int i = 0;
         foreach(GameObject slot in inventory.slots){
-            if(inventory.isFull[i]){
+            if(inventory.occupied[i]){
                 
                 foreach (Transform child in slot.transform)
                 {
@@ -69,7 +69,7 @@ public class SaveLoadRunner : MonoBehaviour
         
         i=0;
         foreach(InventoryItemData itemData in inventory.itemDataArr){
-            if(inventory.isFull[i]){
+            if(inventory.occupied[i]){
                 GameObject newItem = Instantiate(inventoryItem, inventory.slots[i].transform, false);
             
                 Texture2D spriteTexture = new Texture2D(itemData.spriteW, itemData.spriteH,TextureFormat.RGBA32, false );

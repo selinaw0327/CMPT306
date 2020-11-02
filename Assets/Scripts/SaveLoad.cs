@@ -48,7 +48,7 @@ public static class SaveLoad
 			FileStream stream = new FileStream(path, FileMode.Open);
 			InventoryData data =formatter.Deserialize(stream) as InventoryData;
 			stream.Close();
-			inventory.isFull = data.isFull;
+			inventory.occupied = data.isFull;
 			inventory.itemDataArr = data.itemDataArr;
 			
 		} else {

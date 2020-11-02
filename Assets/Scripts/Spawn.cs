@@ -25,7 +25,7 @@ public class Spawn : MonoBehaviour
         Vector2 playerPos = new Vector2(player.position.x, player.position.y + 2);
         GameObject newItem = Instantiate(item, playerPos, Quaternion.identity, GameObject.Find("Environment").transform);
 
-        newItem.name = sprite.name.Remove(sprite.name.Length-2);
+        newItem.name = sprite.name;
 
         newItem.GetComponent<SpriteRenderer>().sprite = sprite;
         newItem.GetComponent<Item>().itemSprite = sprite;

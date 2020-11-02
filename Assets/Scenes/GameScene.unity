@@ -3909,7 +3909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee20600a8b3aa04bb618f432c470f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 00000000000000000000
+  occupied: 00000000000000000000
   slots:
   - {fileID: 1354888154}
   - {fileID: 1699685759}
@@ -3922,6 +3922,26 @@ MonoBehaviour:
   - {fileID: 2029304012}
   - {fileID: 1137948977}
   itemDataArr:
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
   - name: 
     spriteTex: 
     spriteW: 0

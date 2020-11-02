@@ -5,13 +5,14 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 
-    public bool[] isFull;
+    public bool[] occupied;
     public GameObject[] slots;
     public InventoryItemData[] itemDataArr;
 
     public GameObject inventory;
 
     private bool show = true;
+    private string[] items;
 
 
     // Start is called before the first frame update

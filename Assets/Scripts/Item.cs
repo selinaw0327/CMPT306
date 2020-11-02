@@ -31,11 +31,11 @@ public class Item : MonoBehaviour
         {
             for (int i = 0; i < inventory.slots.Length; i++)
             {
-                if (inventory.isFull[i] == false)
+                if (inventory.occupied[i] == false)
                 {
                     // ITEM CAN BE ADDED TO THE INVENTORY
 
-                    inventory.isFull[i] = true;
+                    inventory.occupied[i] = true;
                     GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
                     
 

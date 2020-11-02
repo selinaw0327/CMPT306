@@ -26,12 +26,10 @@ public class UseDrop : MonoBehaviour
 
     public void Drop()
     {
-
         GetComponent<Spawn>().SpawnDroppedItem(sprite);
         Destroy(gameObject);
         inventory.itemDataArr[inventory.IndexOf(slot)] = null;
-        inventory.isFull[inventory.IndexOf(slot)] = false;
-
+        inventory.occupied[inventory.IndexOf(slot)] = false;
 
     }
 }

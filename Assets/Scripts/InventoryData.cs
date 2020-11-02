@@ -11,7 +11,7 @@ public class InventoryData
     
     public InventoryData(Inventory inventory){
         itemDataArr = inventory.itemDataArr;
-        isFull = inventory.isFull;
+        isFull = inventory.occupied;
     }
 
 
