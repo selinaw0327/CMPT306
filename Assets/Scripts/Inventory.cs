@@ -12,7 +12,8 @@ public class Inventory : MonoBehaviour
     public GameObject inventory;
 
     private bool show = true;
-    private string[] items;
+    public string[] items;
+    public int[] quantity;
 
 
     // Start is called before the first frame update
@@ -31,10 +32,22 @@ public class Inventory : MonoBehaviour
             challengeMenu.updateChallenge("inv");
             show = !show;
         }
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+
+            slots[i].GetComponent<Slot>().UpdateQuantity(quantity[i]);
+
+        }
     }
 
     public int IndexOf(GameObject slot)
     {
         return System.Array.IndexOf(slots, slot);
+    }
+
+    public int IndexOf(string itemName)
+    {
+        return System.Array.IndexOf(items, itemName);
     }
 }

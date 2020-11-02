@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,36 +30,46 @@ public class Item : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            for (int i = 0; i < inventory.slots.Length; i++)
+
+
+            if (!inventory.items.Contains(name))
             {
-                if (inventory.occupied[i] == false)
+                for (int i = 0; i < inventory.slots.Length; i++)
                 {
-                    // ITEM CAN BE ADDED TO THE INVENTORY
+                    if (inventory.occupied[i] == false)
+                    {
+                        // ITEM CAN BE ADDED TO THE INVENTORY
 
-                    inventory.occupied[i] = true;
-                    GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
-                    
+                        inventory.occupied[i] = true;
+                        GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
+                        item.name = transform.name;
+                        inventory.items[i] = transform.name;
 
-                    item.GetComponent<Image>().sprite = itemSprite;
-                    item.GetComponent<UseDrop>().sprite = itemSprite; 
-                    ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
-                    itemsOnFloorList.itemList.Remove(gameObject);
-                    foreach(ItemData itemData in itemsOnFloorList.itemDataList){
-                        
-                        if(itemData.position[0]== gameObject.transform.position.x && itemData.position[1] == gameObject.transform.position.y){
-                            itemsOnFloorList.itemDataList.Remove(itemData);
-                            
-                            break;
+                        item.GetComponent<Image>().sprite = itemSprite;
+                        item.GetComponent<UseDrop>().sprite = itemSprite;
+                        ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+                        itemsOnFloorList.itemList.Remove(gameObject);
+                        foreach (ItemData itemData in itemsOnFloorList.itemDataList)
+                        {
+                            if (itemData.position[0] == gameObject.transform.position.x && itemData.position[1] == gameObject.transform.position.y)
+                            {
+                                itemsOnFloorList.itemDataList.Remove(itemData);
+
+                                break;
+                            }
                         }
+                        inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
+                        break;
                     }
-                    inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
-                    Destroy(gameObject);
-                    
-                    
-    
-                    break;
                 }
+
             }
+
+            inventory.quantity[inventory.IndexOf(name)] += 1;
+            Destroy(gameObject);
+            //Debug.Log(string.Join(", ", inventory.items));
+            //Debug.Log(string.Join(", ", inventory.quantity));
+
         }
     }
 
