@@ -7,6 +7,30 @@ using System.Collections.Generic;
 
 public static class SaveLoad 
 {
+
+	public static void SaveChallenges(ChallengeMenu challenges){
+		BinaryFormatter formatter = new BinaryFormatter();
+		string path = Application.persistentDataPath + "/challenges.info";
+		FileStream stream  =  new FileStream(path, FileMode.Create);
+		ChallengeData data = new ChallengeData(challenges);
+		formatter.Serialize(stream, data);
+		stream.Close();
+	} 
+	public static void LoadChallenges(ChallengeMenu challenges){
+		string path = Application.persistentDataPath + "/challenges.info";
+		if(File.Exists(path))
+		{
+			BinaryFormatter formatter = new BinaryFormatter();
+			FileStream stream = new FileStream(path, FileMode.Open);
+			ChallengeData data =formatter.Deserialize(stream) as ChallengeData;
+			stream.Close();
+			challenges.challengeList = data.challengeList;
+			
+		} else {
+			Debug.LogError("No item save file at "+ path );
+		}
+	}
+
 	public static void SaveInventory(Inventory inventory){
 		BinaryFormatter formatter = new BinaryFormatter();
 		string path = Application.persistentDataPath + "/inventory.info";

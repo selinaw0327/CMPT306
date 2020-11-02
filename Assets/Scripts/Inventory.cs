@@ -26,6 +26,8 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown("i"))
         {
             inventory.SetActive(!show);
+            ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+            challengeMenu.updateChallenge("inv");
             show = !show;
         }
     }
