@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1800119459}
   m_Layer: 0
   m_Name: Bat
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,8 @@ MonoBehaviour:
   speed: 400
   nextWayPointDistance: 2
   enemyGFX: {fileID: 389636989893442646}
-  moveRight: 1
+  startPos: {x: 0, y: 0, z: 0}
+  endPos: {x: 0, y: 0, z: 0}
 --- !u!212 &7089713499155554669
 SpriteRenderer:
   m_ObjectHideFlags: 0

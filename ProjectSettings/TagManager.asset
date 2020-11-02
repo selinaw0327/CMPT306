@@ -9,6 +9,7 @@ TagManager:
   - Item
   - Inventory
   - HealthBar
+  - enemy
   layers:
   - Default
   - TransparentFX
