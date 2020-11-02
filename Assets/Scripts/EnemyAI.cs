@@ -48,11 +48,11 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // void Awake(){
-    //      startPos = this.transform.position;
-    //      endPos = new Vector3(this.transform.position.x - 2, this.transform.position.y, this.transform.position.z);
+    void Awake(){
+         startPos = this.transform.position;
+         endPos = new Vector3(this.transform.position.x - 2, this.transform.position.y, this.transform.position.z);
          
-    //  }
+     }
 
     // Update is called once per frame
     void FixedUpdate()
