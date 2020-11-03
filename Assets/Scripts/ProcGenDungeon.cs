@@ -191,6 +191,7 @@ public class ProcGenDungeon : MonoBehaviour
             if(rand == 1) {
                 newObject.name = "Banana";
                 newObject.GetComponent<SpriteRenderer>().sprite = sprite;
+                newObject.GetComponent<Item>().itemSprite = sprite;
                 ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                 itemLists.itemList.Add(newObject);
                 itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));

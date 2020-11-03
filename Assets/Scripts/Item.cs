@@ -58,7 +58,7 @@ public class Item : MonoBehaviour
                                 break;
                             }
                         }
-                        // inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
+                        inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
                         break;
                     }
                 }

@@ -3541,6 +3541,7 @@ MonoBehaviour:
   - {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
   - {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
   sprite: {fileID: -5728686177044832811, guid: b1f24b3bc2e2f1d4b858657ad5c115a0, type: 3}
+  seed: 0
 --- !u!156049354 &1425784081
 Grid:
   m_ObjectHideFlags: 0
@@ -3899,7 +3900,47 @@ MonoBehaviour:
   - {fileID: 1364944508}
   - {fileID: 219859808}
   - {fileID: 630102024}
-  itemDataArr: []
+  itemDataArr:
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
   inventory: {fileID: 276408736}
   items:
   - 

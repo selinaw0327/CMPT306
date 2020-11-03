@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6468483152870090978}
   m_Layer: 5
   m_Name: Inventory Item
-  m_TagString: Untagged
+  m_TagString: InventoryItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
+  sprite: {fileID: 0}
 --- !u!114 &6121494940968563883
 MonoBehaviour:
   m_ObjectHideFlags: 0

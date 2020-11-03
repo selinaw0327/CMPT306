@@ -36,11 +36,11 @@ public class UseDrop : MonoBehaviour
         {
             Destroy(gameObject);
             inventory.items[itemIndex] = "";
-            // inventory.itemDataArr[inventory.IndexOf(slot)] = null;
+            inventory.itemDataArr[inventory.IndexOf(slot)] = null;
             inventory.occupied[inventory.IndexOf(slot)] = false;
         }
 
-        //Debug.Log(string.Join(", ", inventory.items));
-        //Debug.Log(string.Join(", ", inventory.quantity));
+        Debug.Log(string.Join(", ", inventory.items));
+        Debug.Log(string.Join(", ", inventory.quantity));
     }
 }
