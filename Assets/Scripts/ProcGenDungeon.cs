@@ -180,9 +180,8 @@ public class ProcGenDungeon : MonoBehaviour
     }
 
     private void FillSpawnLocations() {
-        for(int i = 0; i< spawnLocations.Capacity -1; i++) {
+        for(int i = 0; i < spawnLocations.Count; i++) {
             int rand = Random.Range(0, objects.Length);
-
 
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity);
 
