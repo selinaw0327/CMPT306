@@ -54,15 +54,9 @@ public class SaveLoadRunner : MonoBehaviour
     public void LoadInventory()
     {
         int i = 0;
-        foreach(GameObject slot in inventory.slots){
-            if(inventory.occupied[i]){
-                
-                foreach (Transform child in slot.transform)
-                {
-                    GameObject.Destroy(child.gameObject);
-
-                }
-            }
+        GameObject[] items = GameObject.FindGameObjectsWithTag("InventoryItem");
+        foreach( GameObject item in items ){
+            Destroy(item);
         }
 
         SaveLoad.LoadInventory(inventory);

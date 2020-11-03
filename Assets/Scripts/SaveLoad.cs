@@ -49,6 +49,7 @@ public static class SaveLoad
 			InventoryData data =formatter.Deserialize(stream) as InventoryData;
 			stream.Close();
 			inventory.occupied = data.isFull;
+			inventory.quantity = data.quantity;
 			inventory.itemDataArr = data.itemDataArr;
 			
 		} else {

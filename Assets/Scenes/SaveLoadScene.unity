@@ -421,7 +421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319685271}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.42, y: 0.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1776453819}
@@ -5106,10 +5106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dab6fde59ad5436cbab1c7d97830032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1106918501}
   speed: 400
   nextWayPointDistance: 2
   enemyGFX: {fileID: 833566802}
+  startPos: {x: 0, y: 0, z: 0}
+  endPos: {x: 0, y: 0, z: 0}
 --- !u!58 &936436024
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5588,7 +5589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee20600a8b3aa04bb618f432c470f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0000000000
+  occupied: 
   slots:
   - {fileID: 1268524766}
   - {fileID: 503269998}
@@ -5683,6 +5684,7 @@ MonoBehaviour:
   player: {fileID: 1106918504}
   itemsOnFloorList: {fileID: 0}
   inventory: {fileID: 0}
+  challenges: {fileID: 0}
   item: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
   inventoryItem: {fileID: 2825149634833932108, guid: 96aed9e12e6117844a864b4947554837, type: 3}
 --- !u!4 &1204506940

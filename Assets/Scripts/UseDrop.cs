@@ -40,7 +40,7 @@ public class UseDrop : MonoBehaviour
             inventory.occupied[inventory.IndexOf(slot)] = false;
         }
 
-        //Debug.Log(string.Join(", ", inventory.items));
-        //Debug.Log(string.Join(", ", inventory.quantity));
+        Debug.Log(string.Join(", ", inventory.items));
+        Debug.Log(string.Join(", ", inventory.quantity));
     }
 }
