@@ -76,7 +76,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
       propertyPath: m_Name
-      value: Rat
+      value: Rat Variant
       objectReference: {fileID: 0}
     - target: {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
       propertyPath: m_IsActive
