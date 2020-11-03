@@ -37,7 +37,8 @@ public class ProcGenDungeon : MonoBehaviour
     public Sprite sprite;
 
     private List<Vector3Int> spawnLocations = new List<Vector3Int>();
-
+    public int seed;
+ 
     
     
 
@@ -45,6 +46,8 @@ public class ProcGenDungeon : MonoBehaviour
 
     private void Start()
     {
+        seed = Random.RandomRange(1, 10000000);
+        Random.seed = seed;
         int x = 0;
         int y = 0;
         int routeLength = 0;
@@ -188,6 +191,9 @@ public class ProcGenDungeon : MonoBehaviour
             if(rand == 1) {
                 newObject.name = "Banana";
                 newObject.GetComponent<SpriteRenderer>().sprite = sprite;
+                ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+                itemLists.itemList.Add(newObject);
+                itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
             }
         }
     }
