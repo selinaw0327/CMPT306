@@ -21,7 +21,6 @@ public class KnockBack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // when you can't spell XD
         if (other.gameObject.CompareTag("enemy"))
         {
             Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();

@@ -11,6 +11,7 @@ TagManager:
   - HealthBar
   - Challenges
   - InventoryItem
+  - enemy
   layers:
   - Default
   - TransparentFX
