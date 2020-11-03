@@ -20,19 +20,15 @@ public class Spawn : MonoBehaviour
         
     }
 
-    public void SpawnDroppedItem(Sprite sprite)
+    public void SpawnDroppedItem(string name, Sprite sprite)
     {
         Vector2 playerPos = new Vector2(player.position.x, player.position.y + 2);
         GameObject newItem = Instantiate(item, playerPos, Quaternion.identity, GameObject.Find("Environment").transform);
 
-        newItem.name = sprite.name;
+        newItem.name = name;
 
         newItem.GetComponent<SpriteRenderer>().sprite = sprite;
         newItem.GetComponent<Item>().itemSprite = sprite;
-
-        newItem.AddComponent<CircleCollider2D>();
-        newItem.GetComponent<CircleCollider2D>().isTrigger = true;
-        newItem.GetComponent<CircleCollider2D>().radius = 0.25f;
 
         ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         itemsOnFloorList.itemDataList.Add(new ItemData(newItem.GetComponent<Item>()));

@@ -125,7 +125,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5dbde5cf94e319241b60ca152f95d01f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4475a906db726c64aa1e1f978ba7c2b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -222,9 +222,9 @@ GameObject:
   - component: {fileID: 4038860008021535929}
   - component: {fileID: 2029234097051213053}
   - component: {fileID: 3442036478844084949}
-  - component: {fileID: 1135562802510208939}
+  - component: {fileID: 4050838066957914223}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: StatBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1135562802510208939
+--- !u!114 &4050838066957914223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -322,14 +322,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2729922745911456485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af3bc5f3ae935ee47ae1c7da3bf64838, type: 3}
+  m_Script: {fileID: 11500000, guid: 30c2b4427b299d14181a097254d55029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1833632694152267651}
   segmentPanel: {fileID: 152531860766030437}
-  segmentPrefab: {fileID: 7894260800924252472, guid: f44abf24527897c4b8657f98be37bbb9, type: 3}
-  segmentHealthAmount: 25
-  offset: {x: 0, y: 0.5, z: 0}
+  segmentPrefab: {fileID: 0}
+  statPerSegment: 25
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &4235714781763387951
 GameObject:
   m_ObjectHideFlags: 0

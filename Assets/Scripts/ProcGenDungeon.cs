@@ -166,7 +166,7 @@ public class ProcGenDungeon : MonoBehaviour
 
     private void GenerateSquare(int x, int y, int radius)
     {
-        if(Random.Range(0, 4) == 1) {
+        if(Random.Range(0, 3) == 1) {
             spawnLocations.Add(new Vector3Int(x, y, 0));
         }
         for (int tileX = x - radius; tileX <= x + radius; tileX++)
@@ -191,5 +191,30 @@ public class ProcGenDungeon : MonoBehaviour
                 newObject.GetComponent<SpriteRenderer>().sprite = sprite;
             }
         }
+    }
+
+    private void SpawnFruit(GameObject newObject) {
+        int rand = Random.Range(0, 6);
+
+        switch (rand) {
+            case 0:
+                newObject.name = "Banana";
+                break;
+            case 1:
+                newObject.name = "Cherries";
+                break;
+            case 2:
+                newObject.name = "Kiwi";
+                break;
+            case 3:
+                newObject.name = "Melon";
+                break;
+            case 4:
+                newObject.name = "Orange";
+                break;
+            case 5:
+                newObject.name = "Pineapple";
+                break;
+        }        
     }
 }
