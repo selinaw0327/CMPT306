@@ -27,7 +27,6 @@ public class UseDrop : MonoBehaviour
     public void Drop()
     {
         GetComponent<Spawn>().SpawnDroppedItem(name, sprite);
-        Debug.Log("HELP");
 
         int itemIndex = inventory.IndexOf(name);
 

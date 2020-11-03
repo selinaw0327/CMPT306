@@ -183,7 +183,7 @@ public class ProcGenDungeon : MonoBehaviour
         for(int i = 0; i < spawnLocations.Count; i++) {
             int rand = Random.Range(0, objects.Length);
 
-            GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity);
+            GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
 
             if(rand == 1) {
                 newObject.name = "Banana";
