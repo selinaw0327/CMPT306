@@ -1,9 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
+
+    public GameObject quantity;
+
+    private string itemName;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +25,20 @@ public class Slot : MonoBehaviour
 
     public void DropItem()
     {
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+
+        }
+    }
+
+    public void UpdateQuantity(int i)
+    {
+        quantity.GetComponent<Text>().text = i.ToString();
+    }
+
+    public string Name()
+    {
+        return itemName;
     }
 }
