@@ -776,7 +776,6 @@ GameObject:
   - component: {fileID: 1425784082}
   - component: {fileID: 1425784081}
   - component: {fileID: 1425784080}
-  - component: {fileID: 1425784083}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -808,7 +807,13 @@ MonoBehaviour:
   roomRate: 15
   maxRouteLength: 100
   maxRoutes: 10
-  item: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
+  objects:
+  - {fileID: 310442576336504095, guid: 86c70164001184c54967d05d7622ce21, type: 3}
+  - {fileID: 5816125629025628187, guid: da44ca0bdc6c34a738cf0713d15ad547, type: 3}
+  - {fileID: 7308052195899748718, guid: e11e4dc50852241e59765c4a6929905c, type: 3}
+  - {fileID: 7645254304260983366, guid: 382def9d770cd4123b235c533a327f12, type: 3}
+  - {fileID: 4910912158102595517, guid: 94c3d013e7eeb42d6878965759703fd1, type: 3}
+  - {fileID: 7645254304260983366, guid: 382def9d770cd4123b235c533a327f12, type: 3}
   sprite: {fileID: -5728686177044832811, guid: b1f24b3bc2e2f1d4b858657ad5c115a0, type: 3}
 --- !u!156049354 &1425784081
 Grid:
@@ -839,23 +844,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1425784083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425784079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671c6d750affa4850ae8e28e94d009bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &1466675193
 GameObject:
   m_ObjectHideFlags: 0
