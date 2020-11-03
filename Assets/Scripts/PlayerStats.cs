@@ -30,25 +30,22 @@ public class PlayerStats : MonoBehaviour
     private float hungerNextTimeToDecrease = 0.0f;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        // Set current and max health, as well as position of healthbar
-        currentHealth = maxHealth;
-        healthBar.SetMaxStat(maxHealth);
-        healthBar.transform.position = transform.position + healthBar.offset; // Places healthbar above players head based on its offset
-
-        // Set current and max energy
-        currentEnergy = maxEnergy;
-        energyBar.SetMaxStat(maxEnergy);
-
-        // Set current and amx hunger
-        currentHunger = maxHunger;
-        hungerBar.SetMaxStat(maxHunger);
+    void Start() {
+        switch (MenuFunctions.character) {
+            case 1:
+                SetAllStats(100, 150, 100);
+                break;
+            case 2:
+                SetAllStats(150, 50, 150);
+                break;
+            case 3:
+                SetAllStats(50, 200, 50);
+                break;
+        }
     }
-
+    
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         // Timed system to decrease energy
         if(Time.time >= energyNextTimeToDecrease) {
             energyNextTimeToDecrease = Time.time + 1.0f / energyDecreaseRate;
@@ -59,6 +56,23 @@ public class PlayerStats : MonoBehaviour
             hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
             TakeHunger(1);
         }
+    }
+
+    private void SetAllStats(int newMaxHealth, int newMaxEnergy, int newMaxHunger) {
+        maxHealth = newMaxHealth;
+        currentHealth = maxHealth;
+        healthBar.SetMaxStat(maxHealth);
+        healthBar.transform.position = transform.position + healthBar.offset; // Places healthbar above players head based on its offset
+
+        // Set current and max energy
+        maxEnergy = newMaxEnergy;
+        currentEnergy = maxEnergy;
+        energyBar.SetMaxStat(maxEnergy);
+
+        // Set current and amx hunger
+        maxHunger = newMaxHunger;
+        currentHunger = maxHunger;
+        hungerBar.SetMaxStat(maxHunger);
     }
 
     // Causes the player to take damage
