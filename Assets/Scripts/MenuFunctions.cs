@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuFunctions : MonoBehaviour
 {
     // 
-    public static int character;
+    public static int character = 1;
 
     public void LoadScene(string sceneName) {
         SceneManager.LoadScene(sceneName);

@@ -169,8 +169,11 @@ public class ProcGenDungeon : MonoBehaviour
 
     private void GenerateSquare(int x, int y, int radius)
     {
-        if(Random.Range(0, 3) == 1) {
+        // Check if the player is in the first room, random chance to make a spawn point
+        if(routeCount > 1) {
+            if(Random.Range(0, 3) == 1) {
             spawnLocations.Add(new Vector3Int(x, y, 0));
+            }
         }
         for (int tileX = x - radius; tileX <= x + radius; tileX++)
         {
