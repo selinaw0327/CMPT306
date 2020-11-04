@@ -62,7 +62,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     // Causes the player to take damage
-    private void TakeDamage(int damage) {
+    public void TakeDamage(int damage) {
         // Set current health and check if the player has died
         currentHealth -= damage;
         if(currentHealth <= 0) {

@@ -12,6 +12,7 @@ TagManager:
   - Challenges
   - InventoryItem
   - enemy
+  - playerHitBox
   layers:
   - Default
   - TransparentFX
