@@ -23,7 +23,7 @@ public class EnemyStats : MonoBehaviour
         // Set current health and check if the enemy has died
         currentHealth -= damage;
         if(currentHealth <= 0) {
-            Destroy(this);
+            Destroy(this.transform.parent.gameObject);
         }
         healthBar.SetStat(currentHealth, maxHealth);
     }

@@ -29,6 +29,10 @@ public class KnockBack : MonoBehaviour
                 Vector2 difference = enemy.transform.position - transform.position;
                 difference = difference.normalized * thrust;
                 enemy.AddForce(difference, ForceMode2D.Impulse);
+
+                EnemyStats enemyStats = other.transform.parent.GetComponentInChildren<EnemyStats>();
+                int damage = GetComponent<PlayerStats>().damage;
+                enemyStats.TakeDamage(damage);
             }
         }
     }

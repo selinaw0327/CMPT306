@@ -4093,7 +4093,6 @@ GameObject:
   - component: {fileID: 1481483265}
   - component: {fileID: 1481483266}
   - component: {fileID: 1481483273}
-  - component: {fileID: 1481483274}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4123,7 +4122,7 @@ MonoBehaviour:
   maxHunger: 100
   currentHunger: 0
   currentLevel: 0
-  damage: 25
+  damage: 10
   energyDecreaseRate: 1
   hungerDecreaseRate: 1
 --- !u!114 &1481483266
@@ -4367,18 +4366,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 5
---- !u!114 &1481483274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481483264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 656b7ed67ceec024dafbe47e3f13ff08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1589972133
 GameObject:
   m_ObjectHideFlags: 0
