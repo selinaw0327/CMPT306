@@ -49,6 +49,5 @@ public class KnockBack : MonoBehaviour
                 enemyStats.TakeDamage(damage);
             }
         }
-
     }
 }
