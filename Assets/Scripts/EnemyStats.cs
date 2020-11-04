@@ -19,7 +19,7 @@ public class EnemyStats : MonoBehaviour
     }
 
     // Causes the enemy to take damage
-    private void TakeDamage(int damage) {
+    public void TakeDamage(int damage) {
         // Set current health and check if the enemy has died
         currentHealth -= damage;
         if(currentHealth <= 0) {
