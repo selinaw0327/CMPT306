@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("enemy"))
         {
-            EnemyStats enemyStats = other.parent.Find("HealthBar").GetComponent<EnemyStats>();
+            EnemyStats enemyStats = other.transform.parent.gameObject.GetComponentInChild<EnemyStats>();
             enemyStats.TakeDamage(damage);
         }
     }
