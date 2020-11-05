@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuFunctions : MonoBehaviour
 {
     // 
-    public static int character;
+    public static int character = 1;
 
     public void LoadScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
@@ -17,6 +17,10 @@ public class MenuFunctions : MonoBehaviour
     }
 
     public void QuitGame() {
-        Application.Quit();
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else 
+            Application.Quit();
+        #endif
     }
 }

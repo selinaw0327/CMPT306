@@ -6,10 +6,17 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
+    public enum ItemType
+    {
+        Fruit
+    }
+
     public GameObject inventoryItem;
     private Inventory inventory;
 
     public Sprite itemSprite;
+    
+    public ItemType itemType;
 
 
     // Start is called before the first frame update
