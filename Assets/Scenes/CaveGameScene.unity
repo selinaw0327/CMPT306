@@ -2166,7 +2166,8 @@ GameObject:
   - component: {fileID: 659289227}
   - component: {fileID: 659289225}
   - component: {fileID: 659289226}
-  m_Layer: 0
+  - component: {fileID: 659289228}
+  m_Layer: 8
   m_Name: Dynamic Pit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2273,6 +2274,22 @@ Transform:
   m_Father: {fileID: 1425784082}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!19719996 &659289228
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659289224}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &677810561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,14 +2962,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946062164}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACQn+s+uTqARwIAAPQEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE2P2jAQ/SvI51IBWwT01gaW7YEFLa32kouxJ8TCsSN/LF/iv3fsJCRL1RNm3pvxezPjXIlQtgTmtFkawVeaA/neI+FMvvRa8AVOdK/VVlyg4bwL7vJAopHzRp3QGB+GNKsLcEawH2ovA3mAQa9Epk2x4HtItHUWwxmVFhAy2oVshaFrj5zwpz8LKWc8jSbhdMHTbNC74ZGBcmBaakNsaBXLKyZpUQIPklvyeNDQ8RSJCu3UnCCdaSmFrbUQdy6j14SW1qMTJHBB0VsUEPg5iH3ugs5u8jrLLLhalKHnuTDYoqoq+amrvhXUHiplH1R6uEuvSq7+QfvDCGdGFy/NrcPox+WCHd7omVHrOm3thuefZXt1pPJAdxLec1Cvemm0V7yT6y2M5p3/d2tJDiwIc8bDXexD0Jf/H09wcYvuT4kUxS5AX79Vga3Usd9x+GBwMr9QclwNW5fAaFDxx8Jvuu/uUA08C2MdQrVPFeTttDeBShaxa8GNd4k2CmK4Fl2CotKdN1jGPY7wAetc+4A80/Ba6strrHkEDykx3PIHgwdoo4/3cdlcH1dg87V3UihoRQfgFfuUaKWqDev2pEnbepNR1knbe8E/LxcZTGbT0RjGbPoEIwqsP4Vp9jSdjIdDPpuy8YzE7RMKfVK5qYTW7cGpqba4wk1rPiK9paFl3HZu6HEpLoXutFyoTG+ZAVDrqsJdOBi8BF8lX3CBDdqCc0LFeZNrSqRmB+DpvVAanS5OztC0rZKSUnxoFyIpSeJXIyU3cvsLUEsDBBQAAAgIAACQn+umHIh+bQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSgbmlhZFpqmmyhXGqUWJqsq5FqkWasYW5qaFhiqVFsqmlUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACQn+s+uTqARwIAAPQEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACQn+umHIh+bQAAAHgAAAAJACQAAAAAAAAAAAAAAJQCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAATAMAAAAA
+    dataString: UEsDBBQAAAgIAACQn+uGFPiKTAIAAPQEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk0HSCnQW2sI6YHAhHRy8UVIa6xBljz6CF/Df+9KtrFDpyfEvrer93ZXvhChbAnMabMwgi81B/KjR8KZfOm14DMc6U6rjThDw3kX3OWBRCPnlTqhMT4IaVYX4IxgP9VOBnIfg16JTJtizneQaOsshjMqLSBktAvZCkOXHjniz8M0pJzwNByH0xlP037vikcGyoFpqQ2xoVUsr5ikRQk8SG7Jo35Dx1MkKrRTc4J0pqUUttZC3KmMXhNaWo9OkMAFRW9RQODnIHa5Czq7yasss+BqUYaeZsJgi6qq5Jeu+lZQu6+UfVDpwz3D0feoqSq6/Ad/GEQ4M7p4bu4dREcuF2z/Sk+MWtdpbDc8+yzcqwOVe7qV8J6DetELo73iCDrjQ6q3MJy1f2/WkhzYvo1XUu+Cvvz/eIKHa3R/TKQotgH6+q0KbKSO/Y7DB4OT+Y2C42rYugRGg4o/Ft7orrtDNfAkjHUI1S5VkLfV3gQqmceeBTfeJdooiOFadAmKSndaYxl3P8I7rHPtHfJEw2upL6+x5hHcpcRwy+/376C1PtyGZXN9WILNV95JoaAVHYAX7FOilao2rNuTJm3jTUZZJ23nBf+8WqQ/nk6GIxixySMMKbCHCUyyx8l4NBjw6YSNpiTunlDok8p1JbRuD05NtcUV7lnzEektDC3jtnNDDwtxLnSn5UJlesMMgFpVFW7CweAl+Cr5nAts0AacEyrOm1xSIjXbA09vhdLodH50hqZtlZSU4kO7EElJEr8aKbmS619QSwMEFAAACAgAAJCf66YciH5tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tJKBuaWFkWmqabKFcapRYmqyrkWqRZqxhbmpoWGKpUWyqaVSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAJCf64YU+IpMAgAA9AQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAJCf66YciH5tAAAAeAAAAAkAJAAAAAAAAAAAAAAAmQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABRAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -3028,7 +3045,8 @@ GameObject:
   - component: {fileID: 1003276355}
   - component: {fileID: 1003276353}
   - component: {fileID: 1003276354}
-  m_Layer: 0
+  - component: {fileID: 1003276356}
+  m_Layer: 8
   m_Name: Dynamic Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3135,6 +3153,22 @@ Transform:
   m_Father: {fileID: 1425784082}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!19719996 &1003276356
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003276352}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1098875629
 GameObject:
   m_ObjectHideFlags: 0
