@@ -30,23 +30,22 @@ public class PlayerStats : MonoBehaviour
     private float hungerNextTimeToDecrease = 0.0f;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        // Set current and max health, as well as position of healthbar
-        currentHealth = maxHealth;
-        healthBar.SetMaxStat(maxHealth);
-        healthBar.transform.position = transform.position + healthBar.offset; // Places healthbar above players head based on its offset
-
-        currentEnergy = maxEnergy;
-        energyBar.SetMaxStat(maxEnergy);
-
-        currentHunger = maxHunger;
-        hungerBar.SetMaxStat(maxHunger);
+    void Start() {
+        switch (MenuFunctions.character) {
+            case 1:
+                SetAllStats(100, 150, 100);
+                break;
+            case 2:
+                SetAllStats(150, 50, 150);
+                break;
+            case 3:
+                SetAllStats(50, 200, 50);
+                break;
+        }
     }
-
+    
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         // Timed system to decrease energy
         if(Time.time >= energyNextTimeToDecrease) {
             energyNextTimeToDecrease = Time.time + 1.0f / energyDecreaseRate;
@@ -57,31 +56,27 @@ public class PlayerStats : MonoBehaviour
             hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
             TakeHunger(1);
         }
+    }
 
-        // Simple test to take damage
-        if(Input.GetKeyDown(KeyCode.Space) && currentHealth > 0) {
-            TakeDamage(10);
-        }
-        // Test to heal player
-        if(Input.GetKeyDown(KeyCode.H) && currentHealth < maxHealth) {
-            Heal(10);
-        }
-        // Test to take away energy
-        if(Input.GetKeyDown(KeyCode.Y) && currentEnergy > 0) {
-            TakeEnergy(10);
-        }
-        // Test to take away hunger
-        if(Input.GetKeyDown(KeyCode.R) && currentHunger > 0) {
-            TakeHunger(10);
-        }
-        healthBar.SetStat(currentHealth, maxHealth);
-        energyBar.SetStat(currentEnergy, maxEnergy);
-        hungerBar.SetStat(currentHunger, maxHunger);
-        
+    private void SetAllStats(int newMaxHealth, int newMaxEnergy, int newMaxHunger) {
+        maxHealth = newMaxHealth;
+        currentHealth = maxHealth;
+        healthBar.SetMaxStat(maxHealth);
+        healthBar.transform.position = transform.position + healthBar.offset; // Places healthbar above players head based on its offset
+
+        // Set current and max energy
+        maxEnergy = newMaxEnergy;
+        currentEnergy = maxEnergy;
+        energyBar.SetMaxStat(maxEnergy);
+
+        // Set current and amx hunger
+        maxHunger = newMaxHunger;
+        currentHunger = maxHunger;
+        hungerBar.SetMaxStat(maxHunger);
     }
 
     // Causes the player to take damage
-    private void TakeDamage(int damage) {
+    public void TakeDamage(int damage) {
         // Set current health and check if the player has died
         currentHealth -= damage;
         if(currentHealth <= 0) {
@@ -101,6 +96,7 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetStat(currentHealth, maxHealth);
     }
 
+    // Causes the player to lose energy
     public void TakeEnergy(int energyLoss) {
         currentEnergy -= energyLoss;
         if(currentEnergy <= 0) {
@@ -109,6 +105,7 @@ public class PlayerStats : MonoBehaviour
         energyBar.SetStat(currentEnergy, maxEnergy);
     }
 
+    // Causes the player to lose hunger
     public void TakeHunger(int hungerLoss) {
         currentHunger -= hungerLoss;
         if(currentHunger <= 0) {

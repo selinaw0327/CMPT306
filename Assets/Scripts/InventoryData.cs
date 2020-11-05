@@ -7,9 +7,11 @@ using UnityEngine;
 public class InventoryData 
 {
     public InventoryItemData[] itemDataArr;
+    public int[] quantity;
     public bool[] isFull;
     
     public InventoryData(Inventory inventory){
+        quantity = inventory.quantity;
         itemDataArr = inventory.itemDataArr;
         isFull = inventory.occupied;
     }

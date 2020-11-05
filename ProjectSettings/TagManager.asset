@@ -10,6 +10,9 @@ TagManager:
   - Inventory
   - HealthBar
   - Challenges
+  - InventoryItem
+  - enemy
+  - playerHitBox
   layers:
   - Default
   - TransparentFX
