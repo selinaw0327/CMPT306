@@ -3851,6 +3851,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 4038860008021535929, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1250475257
+      objectReference: {fileID: 0}
     - target: {fileID: 4050838066957914223, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: segmentPrefab
       value: 
