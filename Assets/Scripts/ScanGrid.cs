@@ -12,6 +12,7 @@ public class ScanGrid : MonoBehaviour
 
     private Vector3Int size;
     private Vector3 center;
+    private Vector3 mapCenter;
 
    void Start()
     {
@@ -23,14 +24,14 @@ public class ScanGrid : MonoBehaviour
         //yield on a new YieldInstruction that waits for 0.1 seconds.
         yield return new WaitForSeconds(1);
         
-        getMapSize();
+        calcMapSize();
         setAGridDimensions();
        
         AstarPath.active.Scan();
         
     }
 
-    private void getMapSize(){
+    private void calcMapSize(){
         size = map.GetComponent<Tilemap>().size;
         center = map.GetComponent<Tilemap>().cellBounds.center;
     }
@@ -42,7 +43,16 @@ public class ScanGrid : MonoBehaviour
         var gg = AstarPath.active.data.gridGraph;
         gg.SetDimensions(width, depth, nodeSize);
         gg.center = new Vector3(center.x, center.y, center.z);
+        mapCenter = gg.center;
 
+    }
+
+    public Vector3Int getMapSize(){
+        return size;
+    }
+
+    public Vector3 getMapCenter(){
+        return mapCenter;
     }
 
 }
