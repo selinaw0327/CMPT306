@@ -35,7 +35,7 @@ public class KnockBack : MonoBehaviour
                 playerStats.TakeDamage(damage);
             }
         }
-        if (other.gameObject.CompareTag("enemy") && gameObject.GetComponent<PlayerMovement>().currentState == PlayerState.attack)
+        else if (other.gameObject.CompareTag("enemy") && gameObject.GetComponent<PlayerMovement>().currentState == PlayerState.attack)
         {
             Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
             if (enemy != null)
