@@ -58,12 +58,14 @@ public class UseDrop : MonoBehaviour
     {
         inventory.quantity[itemIndex] -= 1;
 
+        // if the quantity is 0
         if (inventory.quantity[itemIndex] == 0)
         {
             Destroy(gameObject);
             inventory.items[itemIndex] = "";
             inventory.itemDataArr[inventory.IndexOf(slot)] = null;
             inventory.occupied[inventory.IndexOf(slot)] = false;
+            inventory.inventoryItems[inventory.IndexOf(slot)] = null;
         }
     }
 }
