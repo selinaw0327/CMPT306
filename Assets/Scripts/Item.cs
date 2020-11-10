@@ -18,6 +18,8 @@ public class Item : MonoBehaviour
     
     public ItemType itemType;
 
+    private bool added = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +39,6 @@ public class Item : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-
-
             if (!inventory.items.Contains(name))
             {
                 for (int i = 0; i < inventory.slots.Length; i++)
@@ -46,7 +46,7 @@ public class Item : MonoBehaviour
                     if (inventory.occupied[i] == false)
                     {
                         // ITEM CAN BE ADDED TO THE INVENTORY
-
+                        
                         inventory.occupied[i] = true;
                         GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
                         item.name = transform.name;
@@ -68,11 +68,15 @@ public class Item : MonoBehaviour
                         inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
                         break;
                     }
-                }
-
+                }                
             }
 
-            inventory.quantity[inventory.IndexOf(name)] += 1;
+            if (!added)
+            {
+                inventory.quantity[inventory.IndexOf(name)] += 1;
+                Debug.Log("quantity +1");
+                added = true;
+            }
             Destroy(gameObject);
             //Debug.Log(string.Join(", ", inventory.items));
             //Debug.Log(string.Join(", ", inventory.quantity));
