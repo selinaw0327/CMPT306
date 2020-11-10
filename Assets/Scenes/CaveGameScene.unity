@@ -3815,7 +3815,6 @@ MonoBehaviour:
   - {fileID: 4121880872312635667, guid: ffc9f271fad56c243a45f100b9dc6778, type: 3}
   - {fileID: 837517196756356485, guid: 131e485692e27e84c86170dad18cda85, type: 3}
   - {fileID: 1775669009216684005, guid: a2c110585eb710b408972fbc3b96136d, type: 3}
-  exitRoom: {fileID: 2297155117476114885, guid: f9ace8028ade73648a308b74e930b1db, type: 3}
   seed: 0
 --- !u!156049354 &1425784081
 Grid:
