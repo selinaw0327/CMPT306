@@ -3800,14 +3800,14 @@ MonoBehaviour:
   player: {fileID: 0}
   deviationRate: 15
   roomRate: 10
-  maxRouteLength: 250
+  maxRouteLength: 150
   maxRoutes: 20
   objects:
   - {fileID: 4246496661039566702, guid: 0f5d90fee59cd2241bc28217dca4b83d, type: 3}
   - {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
   - {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
   - {fileID: 4246496661039566702, guid: d30f75ebfb287564cbe7db68bc11ecf4, type: 3}
-  sprites:
+  fruitSprites:
   - {fileID: -5728686177044832811, guid: b1f24b3bc2e2f1d4b858657ad5c115a0, type: 3}
   - {fileID: -4570538037665054336, guid: 3d6be91968cb95546ac95aeff5e52f84, type: 3}
   - {fileID: 4138223980208024357, guid: 5100b75572e484e458e4340e2afe9454, type: 3}
@@ -3815,6 +3815,7 @@ MonoBehaviour:
   - {fileID: 4121880872312635667, guid: ffc9f271fad56c243a45f100b9dc6778, type: 3}
   - {fileID: 837517196756356485, guid: 131e485692e27e84c86170dad18cda85, type: 3}
   - {fileID: 1775669009216684005, guid: a2c110585eb710b408972fbc3b96136d, type: 3}
+  exitRoom: {fileID: 2297155117476114885, guid: f9ace8028ade73648a308b74e930b1db, type: 3}
   seed: 0
 --- !u!156049354 &1425784081
 Grid:

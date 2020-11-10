@@ -33,7 +33,7 @@ public class ProcGenDungeon : MonoBehaviour
 
     public GameObject[] objects;
 
-    public Sprite[] sprites;
+    public Sprite[] fruitSprites;
 
     private List<Vector3Int> spawnLocations = new List<Vector3Int>();
     public int seed;
@@ -224,8 +224,8 @@ public class ProcGenDungeon : MonoBehaviour
                 newObject.name = "Strawberry";
                 break;
         }        
-        newObject.GetComponent<SpriteRenderer>().sprite = sprites[rand];
-        newObject.GetComponent<Item>().itemSprite = sprites[rand];
+        newObject.GetComponent<SpriteRenderer>().sprite = fruitSprites[rand];
+        newObject.GetComponent<Item>().itemSprite = fruitSprites[rand];
         ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         itemLists.itemList.Add(newObject);
         itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
