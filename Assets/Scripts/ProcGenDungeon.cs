@@ -31,17 +31,13 @@ public class ProcGenDungeon : MonoBehaviour
     [SerializeField]
     private int maxRoutes = 20;
 
-
     public GameObject[] objects;
 
-    public Sprite sprite;
+    public Sprite[] sprites;
 
     private List<Vector3Int> spawnLocations = new List<Vector3Int>();
     public int seed;
  
-    
-    
-
     private int routeCount = 0;
 
     private void Start()
@@ -169,10 +165,13 @@ public class ProcGenDungeon : MonoBehaviour
 
     private void GenerateSquare(int x, int y, int radius)
     {
-        // Check if the player is in the first room, random chance to make a spawn point
-        if(routeCount > 1) {
-            if(Random.Range(0, 3) == 1) {
-            spawnLocations.Add(new Vector3Int(x, y, 0));
+        // Create spawn points for objects and items
+        if(routeCount > 1) {    // Check if the player is in the first room
+            if(Random.Range(0, 3) == 1) {   // Random chance to create a spawn point
+                Vector3Int location = new Vector3Int(x, y, 0);
+                if(!spawnLocations.Contains(location)) {    // Check if the location is already a spawn point
+                    spawnLocations.Add(new Vector3Int(x, y, 0));
+                }
             }
         }
         for (int tileX = x - radius; tileX <= x + radius; tileX++)
@@ -189,15 +188,12 @@ public class ProcGenDungeon : MonoBehaviour
         for(int i = 0; i < spawnLocations.Count; i++) {
             int rand = Random.Range(0, objects.Length);
 
+            Debug.Log(objects[rand].name);
+
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
 
-            if(rand == 1) {
-                newObject.name = "Banana";
-                newObject.GetComponent<SpriteRenderer>().sprite = sprite;
-                newObject.GetComponent<Item>().itemSprite = sprite;
-                ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
-                itemLists.itemList.Add(newObject);
-                itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
+            if(objects[rand].name.Equals("Item")) {
+                SpawnFruit(newObject);
             }
         }
     }
@@ -224,6 +220,14 @@ public class ProcGenDungeon : MonoBehaviour
             case 5:
                 newObject.name = "Pineapple";
                 break;
+            case 6:
+                newObject.name = "Strawberry";
+                break;
         }        
+        newObject.GetComponent<SpriteRenderer>().sprite = sprites[rand];
+        newObject.GetComponent<Item>().itemSprite = sprites[rand];
+        ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+        itemLists.itemList.Add(newObject);
+        itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
     }
 }
