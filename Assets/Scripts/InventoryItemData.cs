@@ -13,7 +13,6 @@ public class InventoryItemData
     
 
     public InventoryItemData(UseDrop item){
-        Debug.Log(item.sprite);
         Texture2D spriteTexture =  new Texture2D((int)item.sprite.rect.width,(int)item.sprite.rect.width);
         Sprite sprite =  item.sprite;
         

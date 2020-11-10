@@ -51,7 +51,7 @@ public class Item : MonoBehaviour
                         GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
                         item.name = transform.name;
                         inventory.items[i] = transform.name;
-
+                        inventory.inventoryItems[i] = item;
                         item.GetComponent<Image>().sprite = itemSprite;
                         item.GetComponent<UseDrop>().sprite = itemSprite;
                         ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
@@ -74,7 +74,6 @@ public class Item : MonoBehaviour
             if (!added)
             {
                 inventory.quantity[inventory.IndexOf(name)] += 1;
-                Debug.Log("quantity +1");
                 added = true;
             }
             Destroy(gameObject);

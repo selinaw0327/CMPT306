@@ -4690,6 +4690,17 @@ MonoBehaviour:
     spriteW: 0
     spriteH: 0
   inventory: {fileID: 276408736}
+  inventoryItems:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   items:
   - 
   - 
