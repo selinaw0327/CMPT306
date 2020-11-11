@@ -12,7 +12,7 @@ public class UseDrop : MonoBehaviour
 
     private int itemIndex;
 
-    private Item.ItemType itemType;
+    public Item.ItemType itemType;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class UseDrop : MonoBehaviour
 
         itemIndex = inventory.IndexOf(name);
 
-        itemType = item.GetComponent<Item>().itemType;
+        //itemType = item.GetComponent<Item>().itemType;
     }
 
     // Update is called once per frame
@@ -35,28 +35,44 @@ public class UseDrop : MonoBehaviour
     public void Use()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("Item Type: " + itemType.ToString());
 
         switch (itemType)
         {
             case Item.ItemType.Fruit:
                 player.GetComponent<PlayerStats>().TakeHunger(-10);
+                UpdateQuantity(-1);
+                break;
+            case Item.ItemType.SilverBar:
+                if (inventory.quantity[itemIndex] < 10)
+                {
+                    Debug.Log("You need 10 silver bars to forge a silver sword");
+                } else if (inventory.quantity[itemIndex] >= 10)
+                {
+                    UpdateQuantity(-10);
+                    Sprite silverSword = GameObject.Find("Sprite Atlas").GetComponent<SpriteAtlas>().silverSword;
+                    Forge("Silver Sword", Item.ItemType.SilverSword, silverSword);
+                }
                 break;
             default:
                 break;        
         }
+    }
 
-        UpdateQuantity();
+    public void Forge(string name, Item.ItemType itemType, Sprite forgedSprite)
+    {
+        GetComponent<Spawn>().SpawnDroppedItem(name, itemType, forgedSprite);
     }
 
     public void Drop()
     {
-        GetComponent<Spawn>().SpawnDroppedItem(name, sprite);
-        UpdateQuantity();
+        GetComponent<Spawn>().SpawnDroppedItem(name, itemType, sprite);
+        UpdateQuantity(-1);
     }
 
-    private void UpdateQuantity()
+    private void UpdateQuantity(int i)
     {
-        inventory.quantity[itemIndex] -= 1;
+        inventory.quantity[itemIndex] += i;
 
         // if the quantity is 0
         if (inventory.quantity[itemIndex] == 0)

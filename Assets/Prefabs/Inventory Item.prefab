@@ -92,7 +92,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
+  inventoryItem: {fileID: 2825149634833932108}
   sprite: {fileID: 0}
+  itemType: 0
 --- !u!114 &2493268659366028854
 MonoBehaviour:
   m_ObjectHideFlags: 0

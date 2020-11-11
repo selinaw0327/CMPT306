@@ -8,7 +8,9 @@ public class Item : MonoBehaviour
 {
     public enum ItemType
     {
-        Fruit
+        Fruit,
+        SilverBar,
+        SilverSword
     }
 
     public GameObject inventoryItem;
@@ -55,6 +57,7 @@ public class Item : MonoBehaviour
                         inventory.inventoryItems[i] = item;
                         item.GetComponent<Image>().sprite = itemSprite;
                         item.GetComponent<UseDrop>().sprite = itemSprite;
+                        item.GetComponent<UseDrop>().itemType = itemType;
                         ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                         itemsOnFloorList.itemList.Remove(gameObject);
                         foreach (ItemData itemData in itemsOnFloorList.itemDataList)
@@ -78,8 +81,6 @@ public class Item : MonoBehaviour
                 added = true;
             }
             Destroy(gameObject);
-            //Debug.Log(string.Join(", ", inventory.items));
-            //Debug.Log(string.Join(", ", inventory.quantity));
 
         }
     }

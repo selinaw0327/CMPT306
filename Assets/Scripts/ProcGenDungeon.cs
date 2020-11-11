@@ -192,9 +192,10 @@ public class ProcGenDungeon : MonoBehaviour
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
 
             if(rand == 1) {
-                newObject.name = "Banana";
+                newObject.name = "Silver Bar";
                 newObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 newObject.GetComponent<Item>().itemSprite = sprite;
+                newObject.GetComponent<Item>().itemType = Item.ItemType.SilverBar;
                 ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                 itemLists.itemList.Add(newObject);
                 itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
