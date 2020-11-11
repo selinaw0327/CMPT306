@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System;
+﻿
 using UnityEngine;
-using UnityEditor;
-using UnityEngine.UI;
+
 
  [System.Serializable]
 public class ItemData 

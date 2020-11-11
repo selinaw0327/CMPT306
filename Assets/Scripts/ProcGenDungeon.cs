@@ -15,11 +15,11 @@ public class ProcGenDungeon : MonoBehaviour
     [SerializeField]
     private Tile botWallTile;
     [SerializeField]
-    private Tilemap groundMap;
+    public Tilemap groundMap;
     [SerializeField]
-    private Tilemap pitMap;
+    public Tilemap pitMap;
     [SerializeField]
-    private Tilemap wallMap;
+    public Tilemap wallMap;
     [SerializeField]
     private GameObject player;
     [SerializeField]
@@ -33,6 +33,7 @@ public class ProcGenDungeon : MonoBehaviour
 
 
     public GameObject[] objects;
+    public List<GameObject> createdObjects = new List<GameObject>();
 
     public Sprite sprite;
 
@@ -42,15 +43,21 @@ public class ProcGenDungeon : MonoBehaviour
     
     
 
-    private int routeCount = 0;
+    private int routeCount;
 
-    private void Start()
+    public void Start()
     {
-        seed = Random.RandomRange(1, 10000000);
+        seed = Random.Range(1, 10000000);
+        Debug.Log("SEED: "+ seed);
+        GenerateAll();
+    }
+
+    public void GenerateAll(){
         Random.seed = seed;
         int x = 0;
         int y = 0;
         int routeLength = 0;
+        routeCount = 0;
         GenerateSquare(x, y, 1);
         Vector2Int previousPos = new Vector2Int(x, y);
         y += 3;
@@ -187,10 +194,11 @@ public class ProcGenDungeon : MonoBehaviour
 
     private void FillSpawnLocations() {
         for(int i = 0; i < spawnLocations.Count; i++) {
+            
             int rand = Random.Range(0, objects.Length);
 
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
-
+            createdObjects.Add(newObject);
             if(rand == 1) {
                 newObject.name = "Banana";
                 newObject.GetComponent<SpriteRenderer>().sprite = sprite;

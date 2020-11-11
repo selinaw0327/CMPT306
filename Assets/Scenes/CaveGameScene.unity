@@ -4203,6 +4203,7 @@ MonoBehaviour:
   challenges: {fileID: 0}
   item: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
   inventoryItem: {fileID: 2825149634833932108, guid: 96aed9e12e6117844a864b4947554837, type: 3}
+  map: {fileID: 0}
 --- !u!1001 &1144224051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4744,7 +4745,7 @@ GameObject:
   - component: {fileID: 1425784083}
   m_Layer: 11
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

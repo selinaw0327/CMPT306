@@ -8,6 +8,7 @@ public class EnemyStats : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
+    public Sprite sprite;
     public int damage;
 
     // Start is called before the first frame update

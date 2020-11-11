@@ -8,6 +8,28 @@ using System.Collections.Generic;
 public static class SaveLoad 
 {
 
+	public static void SaveMapSeed(ProcGenDungeon map){
+		BinaryFormatter formatter = new BinaryFormatter();
+		string path = Application.persistentDataPath + "/seed.info";
+		FileStream stream  =  new FileStream(path, FileMode.Create);
+		MapSeedData data = new MapSeedData(map);
+		formatter.Serialize(stream, data);
+		stream.Close();
+	}
+	public static void LoadMapSeed(ProcGenDungeon map){
+		string path = Application.persistentDataPath + "/seed.info";
+		if(File.Exists(path))
+		{
+			BinaryFormatter formatter = new BinaryFormatter();
+			FileStream stream = new FileStream(path, FileMode.Open);
+			MapSeedData data =formatter.Deserialize(stream) as MapSeedData;
+			stream.Close();
+			map.seed = data.seed;
+			
+		} else {
+			Debug.LogError("No item save file at "+ path );
+		}
+	}
 	public static void SaveChallenges(ChallengeMenu challenges){
 		BinaryFormatter formatter = new BinaryFormatter();
 		string path = Application.persistentDataPath + "/challenges.info";

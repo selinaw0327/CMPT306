@@ -13,12 +13,14 @@ public class SaveLoadRunner : MonoBehaviour
     public ChallengeMenu challenges;
     public GameObject item;
     public GameObject inventoryItem;
+    public ProcGenDungeon map;
     void Start() 
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         challenges = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+        map = GameObject.FindGameObjectWithTag("map").GetComponent<ProcGenDungeon>();
     }
 
     public void SaveAll() 
@@ -27,15 +29,18 @@ public class SaveLoadRunner : MonoBehaviour
         SaveItemsOnFloor();
         SaveInventory();
         SaveChallenges();
+        SaveMapSeed();
 
     }
 
     public void LoadAll()
     {
+        LoadMap();
         LoadPlayer();
         LoadItemsOnFloor();
         LoadInventory();
         LoadChallenges();
+        
     }
 
     public void SavePlayer()
@@ -46,11 +51,42 @@ public class SaveLoadRunner : MonoBehaviour
     {
         SaveLoad.LoadPlayer(player);
     }
+
     public void SaveInventory()
     {
         SaveLoad.SaveInventory(inventory);
     }
+    
+    public void SaveMapSeed()
+    {
+        SaveLoad.SaveMapSeed(map);
+    }
+    public void LoadMap() 
+    {
+        foreach(GameObject createdObject in map.createdObjects){
+            Destroy(createdObject);
+        }
+        for (int xMap = map.groundMap.cellBounds.xMin - 10; xMap <= map.groundMap.cellBounds.xMax + 10; xMap++)
+        {
+            for (int yMap = map.groundMap.cellBounds.yMin - 10; yMap <=  map.groundMap.cellBounds.yMax + 10; yMap++)
+            {
+                Vector3Int pos = new Vector3Int(xMap, yMap, 0);
+            
+                
+                map.pitMap.SetTile(pos, null);
+                map.groundMap.SetTile(pos, null);
+                map.wallMap.SetTile(pos, null);
+            }
+        }
 
+        SaveLoad.LoadMapSeed(map);
+        map.createdObjects = new List<GameObject>();
+        map.GenerateAll();
+        foreach(GameObject createdObject in map.createdObjects){
+            Destroy(createdObject);
+        }
+        
+    }
     public void LoadInventory()
     {
         int i = 0;

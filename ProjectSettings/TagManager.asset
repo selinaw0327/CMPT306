@@ -13,6 +13,7 @@ TagManager:
   - InventoryItem
   - enemy
   - playerHitBox
+  - map
   layers:
   - Default
   - TransparentFX
