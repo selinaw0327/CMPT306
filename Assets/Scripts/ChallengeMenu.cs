@@ -33,17 +33,7 @@ public class ChallengeMenu : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.LeftControl)){
-            if(!GameIsPaused){
-                challengeText.text = "";
-                foreach(Challenge c in challengeList ){
-                    if(!c.completed){
-                        challengeText.text += ("\t Challenge: "+c.description+"\n");
-                    }
-                }
-                Pause();
-            } else {
-                Resume();
-            }      
+            ShowHide();
         }
     }
     public void AddChallenge(string description, string name){
@@ -69,6 +59,26 @@ public class ChallengeMenu : MonoBehaviour
             Debug.Log("Error tried to update challenge that does not exist");
         }
         
+    }
+
+    public void ShowHide()
+    {
+        if (!GameIsPaused)
+        {
+            challengeText.text = "";
+            foreach (Challenge c in challengeList)
+            {
+                if (!c.completed)
+                {
+                    challengeText.text += ("\t Challenge: " + c.description + "\n");
+                }
+            }
+            Pause();
+        }
+        else
+        {
+            Resume();
+        }
     }
 
     public void Resume () {
