@@ -49,6 +49,7 @@ public class Item : MonoBehaviour
                         
                         inventory.occupied[i] = true;
                         GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
+                        item.transform.SetSiblingIndex(0);
                         item.name = transform.name;
                         inventory.items[i] = transform.name;
                         inventory.inventoryItems[i] = item;
