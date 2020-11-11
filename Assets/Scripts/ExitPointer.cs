@@ -27,7 +27,6 @@ public class ExitPointer : MonoBehaviour
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if (angle < 0) angle += 360;
 
-        Debug.Log(angle);
         pointerRectTransform.localEulerAngles = new Vector3(0,0, angle);
     }
 }
