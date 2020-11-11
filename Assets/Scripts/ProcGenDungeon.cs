@@ -31,7 +31,7 @@ public class ProcGenDungeon : MonoBehaviour
     [SerializeField]
     private int maxRoutes = 20;
 
-    public GameObject exit;
+    public GameObject exitPrefab;
 
     public GameObject[] objects;
 
@@ -57,7 +57,7 @@ public class ProcGenDungeon : MonoBehaviour
 
         FillWalls();
 
-        FillSpawnLocations();
+        // FillSpawnLocations();
     }
 
     private void FillWalls()
@@ -115,7 +115,8 @@ public class ProcGenDungeon : MonoBehaviour
             lastWallF.x += 1.5f;
         }
         lastWallF.y += 0.5f;
-        Instantiate(exit, lastWallF, Quaternion.identity, GameObject.Find("Environment").transform);
+        GameObject exit = Instantiate(exitPrefab, lastWallF, Quaternion.identity, GameObject.Find("Environment").transform);
+        exit.name = "Exit";
     }
 
     private void NewRoute(int x, int y, int routeLength, Vector2Int previousPos)
@@ -218,8 +219,6 @@ public class ProcGenDungeon : MonoBehaviour
     private void FillSpawnLocations() {
         for(int i = 0; i < spawnLocations.Count; i++) {
             int rand = Random.Range(0, objects.Length);
-
-            Debug.Log(objects[rand].name);
 
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
 
