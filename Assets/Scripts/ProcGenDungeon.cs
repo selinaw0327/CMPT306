@@ -31,6 +31,8 @@ public class ProcGenDungeon : MonoBehaviour
     [SerializeField]
     private int maxRoutes = 20;
 
+    public GameObject exit;
+
     public GameObject[] objects;
 
     public Sprite[] fruitSprites;
@@ -60,6 +62,7 @@ public class ProcGenDungeon : MonoBehaviour
 
     private void FillWalls()
     {
+        Vector3Int lastWall = new Vector3Int(0,0,0);
         BoundsInt bounds = groundMap.cellBounds;
         for (int xMap = bounds.xMin - 10; xMap <= bounds.xMax + 10; xMap++)
         {
@@ -77,6 +80,13 @@ public class ProcGenDungeon : MonoBehaviour
                     if (tileBelow != null)
                     {
                         wallMap.SetTile(pos, topWallTile);
+
+                        // Find position of wall tile farthest from the player for exit
+                        int absPos = Mathf.Abs(pos.x) + Mathf.Abs(pos.y);
+                        int absLastWall = Mathf.Abs(lastWall.x) + Mathf.Abs(lastWall.y);
+                        if(absPos > absLastWall) {
+                            lastWall = pos;
+                        }                        
                     }
                     else if (tileAbove != null)
                     {
@@ -85,6 +95,27 @@ public class ProcGenDungeon : MonoBehaviour
                 }
             }
         }
+        Vector3Int posRight = new Vector3Int(lastWall.x+1, lastWall.y, 0);
+        Vector3Int posLeft = new Vector3Int(lastWall.x-1, lastWall.y, 0);
+
+        TileBase tileRight = wallMap.GetTile(posRight);
+        TileBase tileLeft = wallMap.GetTile(posLeft);
+
+        Vector3 lastWallF = lastWall;
+
+        // Move the exit one tile to the left
+        if((tileRight == null) && (tileLeft == null)) {
+            lastWallF.x -= 0.5f;
+            Debug.Log("Hello");
+        }
+        else if(tileRight == null) {
+            lastWallF.x -= 1.5f;
+        }
+        else {
+            lastWallF.x += 1.5f;
+        }
+        lastWallF.y += 0.5f;
+        Instantiate(exit, lastWallF, Quaternion.identity, GameObject.Find("Environment").transform);
     }
 
     private void NewRoute(int x, int y, int routeLength, Vector2Int previousPos)
