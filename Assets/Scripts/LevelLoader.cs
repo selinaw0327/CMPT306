@@ -18,7 +18,19 @@ public class LevelLoader : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        SceneManager.LoadScene("ExitRoomScene");
+        switch (SceneManager.GetActiveScene().name) {
+            case "TutorialScene":
+                SceneManager.LoadScene("CaveGameScene");
+                break;
+            case "CaveGameScene":
+                SceneManager.LoadScene("ExitRoomScene");
+                break;
+            case "ExitRoomScene":
+                SceneManager.LoadScene("CaveGameScene");
+                ProcGenDungeon.caveLevel++;
+                break;
+        }
+        Camera.main.GetComponent<CameraMovement>().UpdatePlayerReference();
     }
 
 
