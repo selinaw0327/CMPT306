@@ -19,6 +19,7 @@ public class Exit : MonoBehaviour
     {
         if (entity.gameObject.CompareTag("Player")) {
             LevelLoader.LoadNextLevel();
+            entity.transform.position = new Vector3(0, -6, 0);
         }
     }
 }
