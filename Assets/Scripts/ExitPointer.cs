@@ -14,7 +14,7 @@ public class ExitPointer : MonoBehaviour
     IEnumerator Coroutine() {
         yield return new WaitForSeconds(1);
         exitPosition = GameObject.Find("Exit").transform.position;
-        pointerRectTransform = transform.Find("Pointer").GetComponent<RectTransform>();
+        pointerRectTransform = this.GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class ExitPointer : MonoBehaviour
         Vector3 fromPosition = Camera.main.transform.position;
         fromPosition.z = 0.0f;
 
-        Vector3 dir = toPosition - fromPosition;
+        Vector3 dir = (toPosition - fromPosition).normalized;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if (angle < 0) angle += 360;
 

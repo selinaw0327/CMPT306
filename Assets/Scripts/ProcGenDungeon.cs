@@ -57,7 +57,7 @@ public class ProcGenDungeon : MonoBehaviour
 
         FillWalls();
 
-        // FillSpawnLocations();
+        FillSpawnLocations();
     }
 
     private void FillWalls()
@@ -98,21 +98,16 @@ public class ProcGenDungeon : MonoBehaviour
         Vector3Int posRight = new Vector3Int(lastWall.x+1, lastWall.y, 0);
         Vector3Int posLeft = new Vector3Int(lastWall.x-1, lastWall.y, 0);
 
-        TileBase tileRight = wallMap.GetTile(posRight);
-        TileBase tileLeft = wallMap.GetTile(posLeft);
+        TileBase wallTileRight = wallMap.GetTile(posRight);
+        TileBase wallTileLeft = wallMap.GetTile(posLeft);
 
         Vector3 lastWallF = lastWall;
 
-        // Move the exit one tile to the left
-        if((tileRight == null) && (tileLeft == null)) {
-            lastWallF.x -= 0.5f;
-            Debug.Log("Hello");
-        }
-        else if(tileRight == null) {
-            lastWallF.x -= 1.5f;
+        if(wallTileRight == null) {
+            lastWallF.x -= 0.55f;
         }
         else {
-            lastWallF.x += 1.5f;
+            lastWallF.x += 0.5f;
         }
         lastWallF.y += 0.5f;
         GameObject exit = Instantiate(exitPrefab, lastWallF, Quaternion.identity, GameObject.Find("Environment").transform);
