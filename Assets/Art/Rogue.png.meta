@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: f97463282a2c71f47b112406118e61e3
+guid: 5fbe3521af127f04d93345f98c3b98a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4942803658038726614
-    second: Swords_0
+      213: 4979363154352999712
+    second: Rogue_Bronze
   - first:
-      213: 6123003023063038561
-    second: Swords_1
+      213: 7921502813010559805
+    second: Rogue_Silver
   - first:
-      213: 4978276593797209138
-    second: Swords_2
-  - first:
-      213: -9004990608046106943
-    second: Swords_3
+      213: 500092995896763561
+    second: Rogue_Silver_Sword
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Swords_0
+      name: Rogue_Bronze
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 24
-        height: 24
+        x: 15
+        y: 143
+        width: 17
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,20 +112,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6df46e72dbd589440800000000000000
-      internalID: 4942803658038726614
+      spriteID: 02d01e638604a1540800000000000000
+      internalID: 4979363154352999712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Swords_1
+      name: Rogue_Silver
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
-        width: 24
-        height: 24
+        x: 31
+        y: 143
+        width: 17
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16ab054fec649f450800000000000000
-      internalID: 6123003023063038561
+      spriteID: d3380c8a6d4deed60800000000000000
+      internalID: 7921502813010559805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Swords_2
+      name: Rogue_Silver_Sword
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 24
-        height: 24
+        x: 16
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,29 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23c9cee9f24661540800000000000000
-      internalID: 4978276593797209138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Swords_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c6dea1a0c8d70380800000000000000
-      internalID: -9004990608046106943
+      spriteID: 9a4661f1eefa0f600800000000000000
+      internalID: 500092995896763561
       vertices: []
       indices: 
       edges: []
