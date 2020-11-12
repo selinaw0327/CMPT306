@@ -136,6 +136,12 @@ public static class SaveLoad
 		BinaryFormatter formatter = new BinaryFormatter();
 		string path = Application.persistentDataPath + "/itemsOnFloor.info";
 		FileStream stream  =  new FileStream(path, FileMode.Create);
+		foreach(GameObject item in itemsOnFloorList.itemList){
+			if(item != null){
+				ItemData newData = new ItemData(item.GetComponent<Item>());
+				itemsOnFloorList.itemDataList.Add(newData);
+			}
+		}
 		ItemsOnFloorData data = new ItemsOnFloorData(itemsOnFloorList);
 		formatter.Serialize(stream, data);
 		stream.Close();

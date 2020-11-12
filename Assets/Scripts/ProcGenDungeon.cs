@@ -209,7 +209,7 @@ public class ProcGenDungeon : MonoBehaviour
                 newObject.GetComponent<Item>().itemSprite = sprite;
                 ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                 itemLists.itemList.Add(newObject);
-                itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
+                
             } else if(rand == 2) {
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
         

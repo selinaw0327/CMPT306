@@ -57,15 +57,6 @@ public class Item : MonoBehaviour
                         item.GetComponent<UseDrop>().sprite = itemSprite;
                         ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                         itemsOnFloorList.itemList.Remove(gameObject);
-                        foreach (ItemData itemData in itemsOnFloorList.itemDataList)
-                        {
-                            if (itemData.position[0] == gameObject.transform.position.x && itemData.position[1] == gameObject.transform.position.y)
-                            {
-                                itemsOnFloorList.itemDataList.Remove(itemData);
-
-                                break;
-                            }
-                        }
                         inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
                         break;
                     }

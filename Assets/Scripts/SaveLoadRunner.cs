@@ -217,6 +217,7 @@ public class SaveLoadRunner : MonoBehaviour
             newItem.GetComponent<CircleCollider2D>().radius = 0.25f;
             GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>().itemList.Add(newItem);
         }
+        itemsOnFloorList.itemDataList = new List<ItemData>();
     }
 
 
