@@ -198,7 +198,12 @@ public class ProcGenDungeon : MonoBehaviour
             int rand = Random.Range(0, objects.Length);
 
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
+
             createdObjects.Add(newObject);
+            if(rand == 0){
+                GameObject.FindGameObjectWithTag("Enviroment").GetComponent<RockList>().rockList.Add(newObject);
+                GameObject.FindGameObjectWithTag("Enviroment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
+            }
             if(rand == 1) {
                 newObject.name = "Banana";
                 newObject.GetComponent<SpriteRenderer>().sprite = sprite;

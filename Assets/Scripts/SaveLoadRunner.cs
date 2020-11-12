@@ -12,8 +12,10 @@ public class SaveLoadRunner : MonoBehaviour
 
     public ChallengeMenu challenges;
     public GameObject item;
+    public GameObject rock;
     public GameObject inventoryItem;
     public ProcGenDungeon map;
+    public RockList rockList;
     void Start() 
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
@@ -21,12 +23,14 @@ public class SaveLoadRunner : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         challenges = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
         map = GameObject.FindGameObjectWithTag("map").GetComponent<ProcGenDungeon>();
+        rockList = GameObject.FindGameObjectWithTag("Enviroment").GetComponent<RockList>();
     }
 
     public void SaveAll() 
     {
         SavePlayer();
         SaveItemsOnFloor();
+        SaveRocks();
         SaveInventory();
         SaveChallenges();
         SaveMapSeed();
@@ -37,6 +41,7 @@ public class SaveLoadRunner : MonoBehaviour
     {
         LoadMap();
         LoadPlayer();
+        LoadRocks();
         LoadItemsOnFloor();
         LoadInventory();
         LoadChallenges();
@@ -110,6 +115,33 @@ public class SaveLoadRunner : MonoBehaviour
             }
             i++;
         }
+    }
+
+    public void SaveRocks()
+    {
+        SaveLoad.SaveRocks(rockList);
+    }
+
+    public void LoadRocks()
+    {
+        foreach(GameObject rock in  rockList.rockList){
+            
+            Destroy(rock);
+            
+        } 
+
+        SaveLoad.LoadRocks(rockList);
+        rockList.rockList = new List<GameObject>();
+
+        foreach(RockData rockData in rockList.rockDataList){
+            Vector2 position;
+            position.x = rockData.position[0];
+            position.y = rockData.position[1];
+
+            GameObject newItem = Instantiate(rock, position, Quaternion.identity);
+        }
+
+
     }
     public void SaveItemsOnFloor()
     {

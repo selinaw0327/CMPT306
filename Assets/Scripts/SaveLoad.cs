@@ -78,6 +78,29 @@ public static class SaveLoad
 			Debug.LogError("No item save file at "+ path );
 		}
 	}
+	public static void SaveRocks(RockList rockList){
+		BinaryFormatter formatter = new BinaryFormatter();
+		string path = Application.persistentDataPath + "/rocks.info";
+		FileStream stream  =  new FileStream(path, FileMode.Create);
+		RockDataList data = new RockDataList(rockList);
+		formatter.Serialize(stream, data);
+		stream.Close();
+	}
+	public static void LoadRocks(RockList rockList)
+	{
+		string path = Application.persistentDataPath + "/rocks.info";
+		if(File.Exists(path))
+		{
+			BinaryFormatter formatter = new BinaryFormatter();
+			FileStream stream = new FileStream(path, FileMode.Open);
+			RockDataList data =formatter.Deserialize(stream) as RockDataList;
+			stream.Close();
+			rockList.rockDataList = data.rockDataList;
+			
+		} else {
+			Debug.LogError("No item save file at "+ path );
+		}
+	}
 	public static void SaveItemsOnFloor(ItemsOnFloorList itemsOnFloorList)
 	{
 		BinaryFormatter formatter = new BinaryFormatter();
