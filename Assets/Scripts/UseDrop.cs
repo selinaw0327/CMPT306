@@ -10,6 +10,8 @@ public class UseDrop : MonoBehaviour
     private GameObject slot;
     public Sprite sprite;
 
+    private GameObject spriteAtlas;
+
     private int itemIndex;
 
     public Item.ItemType itemType;
@@ -20,10 +22,10 @@ public class UseDrop : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         slot = transform.parent.gameObject;
         sprite = gameObject.GetComponent<Image>().sprite;
+        spriteAtlas = GameObject.Find("Sprite Atlas");
 
         itemIndex = inventory.IndexOf(name);
 
-        //itemType = item.GetComponent<Item>().itemType;
     }
 
     // Update is called once per frame
@@ -41,7 +43,21 @@ public class UseDrop : MonoBehaviour
         {
             case Item.ItemType.Fruit:
                 player.GetComponent<PlayerStats>().TakeHunger(-10);
+                player.GetComponent<PlayerStats>().Heal(10);
                 UpdateQuantity(-1);
+                break;
+            // BARS
+            case Item.ItemType.CopperBar:
+                if (inventory.quantity[itemIndex] < 10)
+                {
+                    Debug.Log("You need 10 copper bars to forge a silver sword");
+                }
+                else if (inventory.quantity[itemIndex] >= 10)
+                {
+                    UpdateQuantity(-10);
+                    Sprite copperSword = spriteAtlas.GetComponent<SpriteAtlas>().copperSword;
+                    Forge("Copper Sword", Item.ItemType.CopperSword, copperSword);
+                }
                 break;
             case Item.ItemType.SilverBar:
                 if (inventory.quantity[itemIndex] < 10)
@@ -50,12 +66,64 @@ public class UseDrop : MonoBehaviour
                 } else if (inventory.quantity[itemIndex] >= 10)
                 {
                     UpdateQuantity(-10);
-                    Sprite silverSword = GameObject.Find("Sprite Atlas").GetComponent<SpriteAtlas>().silverSword;
+                    Sprite silverSword = spriteAtlas.GetComponent<SpriteAtlas>().silverSword;
                     Forge("Silver Sword", Item.ItemType.SilverSword, silverSword);
                 }
                 break;
+            case Item.ItemType.IronBar:
+                if (inventory.quantity[itemIndex] < 10)
+                {
+                    Debug.Log("You need 10 iron bars to forge a iron sword");
+                }
+                else if (inventory.quantity[itemIndex] >= 10)
+                {
+                    UpdateQuantity(-10);
+                    Sprite ironSword = spriteAtlas.GetComponent<SpriteAtlas>().ironSword;
+                    Forge("Iron Sword", Item.ItemType.IronSword, ironSword);
+                }
+                break;
+            case Item.ItemType.GoldBar:
+                if (inventory.quantity[itemIndex] < 10)
+                {
+                    Debug.Log("You need 10 gold bars to forge a gold sword");
+                }
+                else if (inventory.quantity[itemIndex] >= 10)
+                {
+                    UpdateQuantity(-10);
+                    Sprite goldSword = spriteAtlas.GetComponent<SpriteAtlas>().goldSword;
+                    Forge("Gold Sword", Item.ItemType.GoldSword, goldSword);
+                }
+                break;
+            case Item.ItemType.ObsidianBar:
+                if (inventory.quantity[itemIndex] < 10)
+                {
+                    Debug.Log("You need 10 obsidian bars to forge a obsidian sword");
+                }
+                else if (inventory.quantity[itemIndex] >= 10)
+                {
+                    UpdateQuantity(-10);
+                    Sprite obsidianSword = spriteAtlas.GetComponent<SpriteAtlas>().obsidianSword;
+                    Forge("Obsidian Sword", Item.ItemType.ObsidianSword, obsidianSword);
+                }
+                break;
+            // SWORDS
+            case Item.ItemType.CopperSword:
+                // Code for what happens when Copper sword is right-clicked in inventory
+                break;
+            case Item.ItemType.SilverSword:
+                // Code for what happens when Silver sword is right-clicked in inventory
+                break;
+            case Item.ItemType.IronSword:
+                // Code for what happens when Iron sword is right-clicked in inventory
+                break;
+            case Item.ItemType.GoldSword:
+                // Code for what happens when Gold sword is right-clicked in inventory
+                break;
+            case Item.ItemType.ObsidianSword:
+                // Code for what happens when Obsidian sword is right-clicked in inventory
+                break;
             default:
-                break;        
+                break;
         }
     }
 

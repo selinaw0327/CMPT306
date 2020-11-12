@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 5fbe3521af127f04d93345f98c3b98a8
+guid: c4042fa5514572b49add4a5d2110e374
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4979363154352999712
-    second: Rogue_Bronze
+      213: -2142185268650758390
+    second: Bars_Copper
   - first:
-      213: 7921502813010559805
-    second: Rogue_Silver
+      213: -359480309759690003
+    second: Bars_Iron
   - first:
-      213: 500092995896763561
-    second: Rogue_Silver_Sword
+      213: -5256262549046456686
+    second: Bars_Silver
+  - first:
+      213: 7663870149554596596
+    second: Bars_Gold
+  - first:
+      213: -2176166862104932541
+    second: Bars_Obsidian
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -29,7 +35,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -98,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rogue_Bronze
+      name: Bars_Copper
       rect:
         serializedVersion: 2
-        x: 15
-        y: 143
-        width: 17
-        height: 17
+        x: 0
+        y: 0
+        width: 36
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02d01e638604a1540800000000000000
-      internalID: 4979363154352999712
+      spriteID: a0f2ff219dd6542e0800000000000000
+      internalID: -2142185268650758390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rogue_Silver
+      name: Bars_Iron
       rect:
         serializedVersion: 2
-        x: 31
-        y: 143
-        width: 17
-        height: 17
+        x: 36
+        y: 0
+        width: 36
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3380c8a6d4deed60800000000000000
-      internalID: 7921502813010559805
+      spriteID: deab609109ed20bf0800000000000000
+      internalID: -359480309759690003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rogue_Silver_Sword
+      name: Bars_Silver
       rect:
         serializedVersion: 2
-        x: 16
-        y: 112
-        width: 16
-        height: 16
+        x: 72
+        y: 0
+        width: 36
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +160,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a4661f1eefa0f600800000000000000
-      internalID: 500092995896763561
+      spriteID: 29e85ed7f010e07b0800000000000000
+      internalID: -5256262549046456686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bars_Gold
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4faebeccb498b5a60800000000000000
+      internalID: 7663870149554596596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bars_Obsidian
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f424cc4c3bcc1e0800000000000000
+      internalID: -2176166862104932541
       vertices: []
       indices: 
       edges: []
