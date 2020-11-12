@@ -9,8 +9,16 @@ public class Item : MonoBehaviour
     public enum ItemType
     {
         Fruit,
+        CopperBar,
+        CopperSword,
         SilverBar,
-        SilverSword
+        SilverSword,
+        IronBar,
+        IronSword,
+        GoldBar,
+        GoldSword,
+        ObsidianBar,
+        ObsidianSword
     }
 
     public GameObject inventoryItem;
