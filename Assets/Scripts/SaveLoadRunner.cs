@@ -171,11 +171,11 @@ public class SaveLoadRunner : MonoBehaviour
 
             GameObject newBat = Instantiate(bat, position, Quaternion.identity);
             
-            newBat.transform.GetComponentInChildren<EnemyStats>().currentHealth = batData.currentHealth;
-            Debug.Log("New current Health: "+ newBat.transform.GetComponentInChildren<EnemyStats>().currentHealth);
+            
             newBat.transform.GetComponentInChildren<EnemyStats>().maxHealth = batData.maxHealth;
             newBat.transform.GetComponentInChildren<EnemyStats>().damage = batData.damage;
-            newBat.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(batData.currentHealth,batData.maxHealth); 
+            newBat.transform.GetComponentInChildren<EnemyStats>().currentHealth = batData.currentHealth;
+            newBat.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(batData.currentHealth, batData.maxHealth);
             enemyLists.batList.Add(newBat);
         }
         enemyLists.batDataList = new List<EnemyData>();

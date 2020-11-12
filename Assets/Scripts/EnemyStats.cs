@@ -14,13 +14,21 @@ public class EnemyStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        currentHealth = maxHealth;
+        if(currentHealth == 0){
+            currentHealth = maxHealth;
+        }
         healthBar.SetMaxStat(maxHealth);
         healthBar.transform.position = transform.position + healthBar.offset;
     }
 
+    void Update()
+    {
+        healthBar.SetStat(currentHealth, maxHealth);
+    }
+
     // Causes the enemy to take damage
     public void TakeDamage(int damage) {
+        Debug.Log("Current health:"+ currentHealth + "Damage: "+ damage);
         // Set current health and check if the enemy has died
         currentHealth -= damage;
         if(currentHealth <= 0) {
@@ -39,6 +47,7 @@ public class EnemyStats : MonoBehaviour
             objectList.Remove(this.transform.parent.gameObject);
             
         }
+        Debug.Log("New Health: "+ currentHealth);
         healthBar.SetStat(currentHealth, maxHealth);
     }
 }
