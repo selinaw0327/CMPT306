@@ -16,6 +16,7 @@ public class CameraMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(this.transform);
         cam = GetComponent<Camera>();
         StartCoroutine(CameraCoroutine());
     }
@@ -39,7 +40,10 @@ public class CameraMovement : MonoBehaviour
 
         targetPosition.x = Mathf.Clamp(targetPosition.x, minPosition.x + 10.5f, maxPosition.x - 10.5f);
         targetPosition.y = Mathf.Clamp(targetPosition.y, minPosition.y + 5.0f, maxPosition.y - 5.0f);
+    }
 
+    public void UpdatePlayerReference() {
+        map = GameObject.Find("Pit");
     }
 }
 

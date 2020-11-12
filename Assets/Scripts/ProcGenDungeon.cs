@@ -31,17 +31,17 @@ public class ProcGenDungeon : MonoBehaviour
     [SerializeField]
     private int maxRoutes = 20;
 
+    public GameObject exitPrefab;
 
     public GameObject[] objects;
 
-    public Sprite sprite;
+    public Sprite[] fruitSprites;
+
+    public static int caveLevel = 1;
 
     private List<Vector3Int> spawnLocations = new List<Vector3Int>();
     public int seed;
  
-    
-    
-
     private int routeCount = 0;
 
     private void Start()
@@ -64,6 +64,7 @@ public class ProcGenDungeon : MonoBehaviour
 
     private void FillWalls()
     {
+        Vector3Int lastWall = new Vector3Int(0,0,0);
         BoundsInt bounds = groundMap.cellBounds;
         for (int xMap = bounds.xMin - 10; xMap <= bounds.xMax + 10; xMap++)
         {
@@ -81,6 +82,13 @@ public class ProcGenDungeon : MonoBehaviour
                     if (tileBelow != null)
                     {
                         wallMap.SetTile(pos, topWallTile);
+
+                        // Find position of wall tile farthest from the player for exit
+                        int absPos = Mathf.Abs(pos.x) + Mathf.Abs(pos.y);
+                        int absLastWall = Mathf.Abs(lastWall.x) + Mathf.Abs(lastWall.y);
+                        if(absPos > absLastWall) {
+                            lastWall = pos;
+                        }                        
                     }
                     else if (tileAbove != null)
                     {
@@ -89,6 +97,23 @@ public class ProcGenDungeon : MonoBehaviour
                 }
             }
         }
+        Vector3Int posRight = new Vector3Int(lastWall.x+1, lastWall.y, 0);
+        Vector3Int posLeft = new Vector3Int(lastWall.x-1, lastWall.y, 0);
+
+        TileBase wallTileRight = wallMap.GetTile(posRight);
+        TileBase wallTileLeft = wallMap.GetTile(posLeft);
+
+        Vector3 lastWallF = lastWall;
+
+        if(wallTileRight == null) {
+            lastWallF.x -= 0.55f;
+        }
+        else {
+            lastWallF.x += 0.5f;
+        }
+        lastWallF.y += 0.5f;
+        GameObject exit = Instantiate(exitPrefab, lastWallF, Quaternion.identity, GameObject.Find("Environment").transform);
+        exit.name = "Exit";
     }
 
     private void NewRoute(int x, int y, int routeLength, Vector2Int previousPos)
@@ -169,10 +194,13 @@ public class ProcGenDungeon : MonoBehaviour
 
     private void GenerateSquare(int x, int y, int radius)
     {
-        // Check if the player is in the first room, random chance to make a spawn point
-        if(routeCount > 1) {
-            if(Random.Range(0, 3) == 1) {
-            spawnLocations.Add(new Vector3Int(x, y, 0));
+        // Create spawn points for objects and items
+        if(routeCount > 1) {    // Check if the player is in the first room
+            if(Random.Range(0, 3) == 1) {   // Random chance to create a spawn point
+                Vector3Int location = new Vector3Int(x, y, 0);
+                if(!spawnLocations.Contains(location)) {    // Check if the location is already a spawn point
+                    spawnLocations.Add(new Vector3Int(x, y, 0));
+                }
             }
         }
         for (int tileX = x - radius; tileX <= x + radius; tileX++)
@@ -191,14 +219,8 @@ public class ProcGenDungeon : MonoBehaviour
 
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
 
-            if(rand == 1) {
-                newObject.name = "Silver Bar";
-                newObject.GetComponent<SpriteRenderer>().sprite = sprite;
-                newObject.GetComponent<Item>().itemSprite = sprite;
-                newObject.GetComponent<Item>().itemType = Item.ItemType.SilverBar;
-                ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
-                itemLists.itemList.Add(newObject);
-                itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
+            if(objects[rand].name.Equals("Item")) {
+                SpawnFruit(newObject);
             }
         }
     }
@@ -225,6 +247,14 @@ public class ProcGenDungeon : MonoBehaviour
             case 5:
                 newObject.name = "Pineapple";
                 break;
+            case 6:
+                newObject.name = "Strawberry";
+                break;
         }        
+        newObject.GetComponent<SpriteRenderer>().sprite = fruitSprites[rand];
+        newObject.GetComponent<Item>().itemSprite = fruitSprites[rand];
+        ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+        itemLists.itemList.Add(newObject);
+        itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
     }
 }
