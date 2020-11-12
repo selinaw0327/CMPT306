@@ -400,8 +400,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1481483272}
   smoothing: 0.6
-  minPosition: {x: -4.75, y: -5}
-  maxPosition: {x: 3.75, y: 5}
+  map: {fileID: 0}
+  minPosition: {x: 0, y: 0, z: 0}
+  maxPosition: {x: 0, y: 0, z: 0}
 --- !u!81 &90338979
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2000,8 +2001,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1481483272}
   smoothing: 0.6
-  minPosition: {x: -4.75, y: -5}
-  maxPosition: {x: 3.75, y: 5}
+  map: {fileID: 659289224}
+  minPosition: {x: 0, y: 0, z: 0}
+  maxPosition: {x: 0, y: 0, z: 0}
 --- !u!81 &493263600
 AudioListener:
   m_ObjectHideFlags: 0
