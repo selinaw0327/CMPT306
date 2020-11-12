@@ -37,6 +37,8 @@ public class ProcGenDungeon : MonoBehaviour
 
     public Sprite[] fruitSprites;
 
+    public static int caveLevel = 1;
+
     private List<Vector3Int> spawnLocations = new List<Vector3Int>();
     public int seed;
  
