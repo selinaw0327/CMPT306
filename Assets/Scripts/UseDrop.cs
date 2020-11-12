@@ -35,7 +35,7 @@ public class UseDrop : MonoBehaviour
     public void Use()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log("Item Type: " + itemType.ToString());
+        //Debug.Log("Item Type: " + itemType.ToString());
 
         switch (itemType)
         {

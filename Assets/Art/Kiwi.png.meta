@@ -1,19 +1,58 @@
 fileFormatVersion: 2
-guid: f97463282a2c71f47b112406118e61e3
+guid: 60d6e1af1b190404da8473e369145556
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4942803658038726614
-    second: Swords_0
+      213: 4138223980208024357
+    second: Kiwi_0
   - first:
-      213: 6123003023063038561
-    second: Swords_1
+      213: 4027297436301884547
+    second: Kiwi_1
   - first:
-      213: 4978276593797209138
-    second: Swords_2
+      213: 7839148961451991454
+    second: Kiwi_2
   - first:
-      213: -9004990608046106943
-    second: Swords_3
+      213: -730248880921602624
+    second: Kiwi_3
+  - first:
+      213: -2773199153295840776
+    second: Kiwi_4
+  - first:
+      213: 433390274577684119
+    second: Kiwi_5
+  - first:
+      213: -4823085682731260845
+    second: Kiwi_6
+  - first:
+      213: 3686063136471726221
+    second: Kiwi_7
+  - first:
+      213: 7554967952476731917
+    second: Kiwi_8
+  - first:
+      213: -2447911064218208986
+    second: Kiwi_9
+  - first:
+      213: 1065612581672122212
+    second: Kiwi_10
+  - first:
+      213: -3489895863418248697
+    second: Kiwi_11
+  - first:
+      213: 1055780198316226049
+    second: Kiwi_12
+  - first:
+      213: 6147472920748202901
+    second: Kiwi_13
+  - first:
+      213: 4395527864148419765
+    second: Kiwi_14
+  - first:
+      213: -3046725879948077466
+    second: Kiwi_15
+  - first:
+      213: -6983844126893656030
+    second: Kiwi_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +83,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -71,14 +110,14 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -90,7 +129,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,85 +140,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Swords_0
+      name: Kiwi_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 24
-        height: 24
+        x: 6
+        y: 6
+        width: 20
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6df46e72dbd589440800000000000000
-      internalID: 4942803658038726614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Swords_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16ab054fec649f450800000000000000
-      internalID: 6123003023063038561
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Swords_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23c9cee9f24661540800000000000000
-      internalID: 4978276593797209138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Swords_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c6dea1a0c8d70380800000000000000
-      internalID: -9004990608046106943
+      spriteID: 1b71817b1f78b8b428ea9187a4a49f06
+      internalID: 4138223980208024357
       vertices: []
       indices: 
       edges: []
