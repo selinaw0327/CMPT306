@@ -4628,8 +4628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a145017e586f6ba47ad632081fa06cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  silverBar: {fileID: 6840092680898023259, guid: bc8ad1578dd9ebd48ba813506583e529, type: 3}
-  silverSword: {fileID: 4942803658038726614, guid: f97463282a2c71f47b112406118e61e3, type: 3}
+  silverBar: {fileID: -5256262549046456686, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
+  silverSword: {fileID: 6123003023063038561, guid: f97463282a2c71f47b112406118e61e3, type: 3}
 --- !u!4 &1263968928
 Transform:
   m_ObjectHideFlags: 0
