@@ -48,7 +48,7 @@ public class ProcGenDungeon : MonoBehaviour
     public void Start()
     {
         seed = Random.Range(1, 10000000);
-        Debug.Log("SEED: "+ seed);
+        
         GenerateAll();
     }
 
@@ -201,18 +201,19 @@ public class ProcGenDungeon : MonoBehaviour
 
             createdObjects.Add(newObject);
             if(rand == 0){
-                GameObject.FindGameObjectWithTag("Enviroment").GetComponent<RockList>().rockList.Add(newObject);
-                GameObject.FindGameObjectWithTag("Enviroment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
-            }
-            if(rand == 1) {
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
+            } else if(rand == 1) {
                 newObject.name = "Banana";
                 newObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 newObject.GetComponent<Item>().itemSprite = sprite;
                 ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                 itemLists.itemList.Add(newObject);
                 itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
-            }
-        }
+            } else if(rand == 2) {
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
+        
+            }}
     }
 
     private void SpawnFruit(GameObject newObject) {

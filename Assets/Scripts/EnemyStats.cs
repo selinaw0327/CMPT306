@@ -8,12 +8,12 @@ public class EnemyStats : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
-    public Sprite sprite;
+    
     public int damage;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         currentHealth = maxHealth;
         healthBar.SetMaxStat(maxHealth);
         healthBar.transform.position = transform.position + healthBar.offset;
@@ -25,6 +25,19 @@ public class EnemyStats : MonoBehaviour
         currentHealth -= damage;
         if(currentHealth <= 0) {
             Destroy(this.transform.parent.gameObject);
+            EnemyLists enemyLists = GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
+            List<GameObject> objectList;
+            
+            
+            if(this.name == "Bat"){
+                objectList = enemyLists.batList;
+                
+            } else {
+                
+                objectList = new List<GameObject>();
+            }
+            objectList.Remove(this.transform.parent.gameObject);
+            
         }
         healthBar.SetStat(currentHealth, maxHealth);
     }

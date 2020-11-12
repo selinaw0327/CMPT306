@@ -14,8 +14,10 @@ public class SaveLoadRunner : MonoBehaviour
     public GameObject item;
     public GameObject rock;
     public GameObject inventoryItem;
+    public GameObject bat;
     public ProcGenDungeon map;
     public RockList rockList;
+    public EnemyLists enemyLists;
     void Start() 
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
@@ -23,7 +25,8 @@ public class SaveLoadRunner : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         challenges = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
         map = GameObject.FindGameObjectWithTag("map").GetComponent<ProcGenDungeon>();
-        rockList = GameObject.FindGameObjectWithTag("Enviroment").GetComponent<RockList>();
+        rockList = GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>();
+        enemyLists =  GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
     }
 
     public void SaveAll() 
@@ -31,6 +34,7 @@ public class SaveLoadRunner : MonoBehaviour
         SavePlayer();
         SaveItemsOnFloor();
         SaveRocks();
+        SaveEnemies();
         SaveInventory();
         SaveChallenges();
         SaveMapSeed();
@@ -42,6 +46,7 @@ public class SaveLoadRunner : MonoBehaviour
         LoadMap();
         LoadPlayer();
         LoadRocks();
+        LoadEnemies();
         LoadItemsOnFloor();
         LoadInventory();
         LoadChallenges();
@@ -138,9 +143,42 @@ public class SaveLoadRunner : MonoBehaviour
             position.x = rockData.position[0];
             position.y = rockData.position[1];
 
-            GameObject newItem = Instantiate(rock, position, Quaternion.identity);
+            GameObject newRock = Instantiate(rock, position, Quaternion.identity);
+            rockList.rockList.Add(newRock);
         }
 
+
+    }
+    public void SaveEnemies()
+    {
+        SaveLoad.SaveEnemies(enemyLists);
+
+    }
+
+    public void LoadEnemies()
+    {
+        foreach(GameObject bat in enemyLists.batList){
+            Destroy(bat);
+        }
+
+        SaveLoad.LoadEnemies(enemyLists);
+        enemyLists.batList = new List<GameObject>();
+
+        foreach(EnemyData batData in enemyLists.batDataList){
+            Vector2 position;
+            position.x = batData.position[0];
+            position.y = batData.position[1];
+
+            GameObject newBat = Instantiate(bat, position, Quaternion.identity);
+            
+            newBat.transform.GetComponentInChildren<EnemyStats>().currentHealth = batData.currentHealth;
+            Debug.Log("New current Health: "+ newBat.transform.GetComponentInChildren<EnemyStats>().currentHealth);
+            newBat.transform.GetComponentInChildren<EnemyStats>().maxHealth = batData.maxHealth;
+            newBat.transform.GetComponentInChildren<EnemyStats>().damage = batData.damage;
+            newBat.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(batData.currentHealth,batData.maxHealth); 
+            enemyLists.batList.Add(newBat);
+        }
+        enemyLists.batDataList = new List<EnemyData>();
 
     }
     public void SaveItemsOnFloor()
