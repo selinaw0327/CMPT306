@@ -18,7 +18,7 @@ public class LevelLoader : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("ExitRoomScene");
     }
 
 
