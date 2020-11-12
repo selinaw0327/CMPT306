@@ -5,7 +5,6 @@ using UnityEngine;
 public class Exit : MonoBehaviour
 {
     private LevelLoader LevelLoader;
-    private string[] levels = {"TutorialScene", "CaveGameScene", "ExitRoom"};
 
     void Start() {
         StartCoroutine(Coroutine());
@@ -19,8 +18,7 @@ public class Exit : MonoBehaviour
      private void OnTriggerEnter2D(Collider2D entity)
     {
         if (entity.gameObject.CompareTag("Player")) {
-            LevelLoader.LoadNextLevel(levels[1]);
-            entity.transform.position = new Vector3(0, -6, 0);
+            LevelLoader.LoadNextLevel();
         }
     }
 }

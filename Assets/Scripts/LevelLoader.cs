@@ -9,11 +9,11 @@ public class LevelLoader : MonoBehaviour
 
     private GameObject exit;
 
-    public void LoadNextLevel(string nextLevel) {
-        StartCoroutine(LoadLevel(nextLevel));
+    public void LoadNextLevel() {
+        StartCoroutine(LoadLevel());
     }
 
-    IEnumerator LoadLevel(string nextLevel) {
+    IEnumerator LoadLevel() {
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(1);
