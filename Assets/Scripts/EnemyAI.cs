@@ -64,6 +64,7 @@ public class EnemyAI : MonoBehaviour
  
         if (distance < minAttackDistance)
         {
+            animator.SetBool("isMoving", true);
             Chase();
         }
         else{
@@ -117,16 +118,16 @@ public class EnemyAI : MonoBehaviour
 
      void changeDirection(Vector2 force){
 
-        if (force.x >= 0.01f){
-            // enemyGFX.localScale = new Vector3(1f, 1f, 1f);
-            animator.SetFloat("moveX", force.x);
-            animator.SetBool("isMoving", true);
+        if (force.x <= -0.01f){
+            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            // animator.SetFloat("moveX", force.x);
+            // animator.SetBool("isMoving", true);
         
         }
-        else if(force.x <= -0.01f){
-            //  enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-             animator.SetFloat("moveX", force.x);
-            animator.SetBool("isMoving", true);
+        else if(force.x >= 0.01f){
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            //  animator.SetFloat("moveX", force.x);
+            // animator.SetBool("isMoving", true);
         }
          
 
