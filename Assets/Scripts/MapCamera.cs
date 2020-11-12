@@ -34,12 +34,9 @@ public class MapCamera : MonoBehaviour
      {
          yield return new WaitForSeconds(waitTime);
          mapSize = grid.GetComponent<ScanGrid>().getMapSize();
-         Debug.Log("map size: " + mapSize);
          mapX = mapSize.x;
          mapY = mapSize.y;
          mapCenter = grid.GetComponent<ScanGrid>().getMapCenter();
-         Debug.Log("map center: " + mapCenter);
-
          calcCameraSize();
          
      }
@@ -66,7 +63,6 @@ public class MapCamera : MonoBehaviour
          this.GetComponent<Camera>().Render();
          if (Input.GetKeyDown("m")){
              if (!mapOn){
-                Debug.Log("m pressed!");
                 canvas.GetComponent<Image>().enabled = true;
                 renderTexture.GetComponent<RawImage>().enabled = true;
                 mapOn = true;
