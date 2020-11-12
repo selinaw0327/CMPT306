@@ -8,7 +8,9 @@ public class Item : MonoBehaviour
 {
     public enum ItemType
     {
-        Fruit
+        Fruit,
+        SilverBar,
+        SilverSword
     }
 
     public GameObject inventoryItem;
@@ -17,6 +19,8 @@ public class Item : MonoBehaviour
     public Sprite itemSprite;
     
     public ItemType itemType;
+
+    private bool added = false;
 
 
     // Start is called before the first frame update
@@ -37,8 +41,6 @@ public class Item : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-
-
             if (!inventory.items.Contains(name))
             {
                 for (int i = 0; i < inventory.slots.Length; i++)
@@ -46,14 +48,16 @@ public class Item : MonoBehaviour
                     if (inventory.occupied[i] == false)
                     {
                         // ITEM CAN BE ADDED TO THE INVENTORY
-
+                        
                         inventory.occupied[i] = true;
                         GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
+                        item.transform.SetSiblingIndex(0);
                         item.name = transform.name;
                         inventory.items[i] = transform.name;
-
+                        inventory.inventoryItems[i] = item;
                         item.GetComponent<Image>().sprite = itemSprite;
                         item.GetComponent<UseDrop>().sprite = itemSprite;
+                        item.GetComponent<UseDrop>().itemType = itemType;
                         ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                         itemsOnFloorList.itemList.Remove(gameObject);
                         foreach (ItemData itemData in itemsOnFloorList.itemDataList)
@@ -68,14 +72,15 @@ public class Item : MonoBehaviour
                         inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
                         break;
                     }
-                }
-
+                }                
             }
 
-            inventory.quantity[inventory.IndexOf(name)] += 1;
+            if (!added)
+            {
+                inventory.quantity[inventory.IndexOf(name)] += 1;
+                added = true;
+            }
             Destroy(gameObject);
-            //Debug.Log(string.Join(", ", inventory.items));
-            //Debug.Log(string.Join(", ", inventory.quantity));
 
         }
     }

@@ -34,7 +34,8 @@ public class Slot : MonoBehaviour
 
     public void UpdateQuantity(int i)
     {
-        quantity.GetComponent<Text>().text = i.ToString();
+        if (i == 0) quantity.GetComponent<Text>().text = "";
+        else quantity.GetComponent<Text>().text = i.ToString();
     }
 
     public string Name()

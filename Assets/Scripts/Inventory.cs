@@ -11,6 +11,8 @@ public class Inventory : MonoBehaviour
 
     public GameObject inventory;
 
+    public GameObject[] inventoryItems;
+
     private bool show = true;
     public string[] items;
     public int[] quantity;
@@ -33,11 +35,29 @@ public class Inventory : MonoBehaviour
             show = !show;
         }
 
+        // Detecting alpha numbers for using inventory items
+        if (Input.GetKeyDown(KeyCode.Alpha1)) Use(0);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) Use(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3)) Use(2);
+        if (Input.GetKeyDown(KeyCode.Alpha4)) Use(3);
+        if (Input.GetKeyDown(KeyCode.Alpha5)) Use(4);
+        if (Input.GetKeyDown(KeyCode.Alpha6)) Use(5);
+        if (Input.GetKeyDown(KeyCode.Alpha7)) Use(6);
+        if (Input.GetKeyDown(KeyCode.Alpha8)) Use(7);
+        if (Input.GetKeyDown(KeyCode.Alpha9)) Use(8);
+        if (Input.GetKeyDown(KeyCode.Alpha0)) Use(9);
+
         for (int i = 0; i < slots.Length; i++)
         {
-
             slots[i].GetComponent<Slot>().UpdateQuantity(quantity[i]);
+        }
+    }
 
+    public void Use(int i)
+    {
+        if (occupied[i])
+        {
+            inventoryItems[i].GetComponent<UseDrop>().Use();
         }
     }
 
