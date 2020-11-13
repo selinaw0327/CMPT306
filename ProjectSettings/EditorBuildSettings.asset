@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CaveGameScene.unity
     guid: a18e06d53dddfca4391ecaa979f7c37a
+  - enabled: 1
+    path: Assets/Scenes/ExitRoomScene.unity
+    guid: 7a90aca03b477ed41b590545c6b15ca7
   m_configObjects: {}

@@ -8,7 +8,17 @@ public class Item : MonoBehaviour
 {
     public enum ItemType
     {
-        Fruit
+        Fruit,
+        CopperBar,
+        CopperSword,
+        SilverBar,
+        SilverSword,
+        IronBar,
+        IronSword,
+        GoldBar,
+        GoldSword,
+        ObsidianBar,
+        ObsidianSword
     }
 
     public GameObject inventoryItem;
@@ -55,6 +65,7 @@ public class Item : MonoBehaviour
                         inventory.inventoryItems[i] = item;
                         item.GetComponent<Image>().sprite = itemSprite;
                         item.GetComponent<UseDrop>().sprite = itemSprite;
+                        item.GetComponent<UseDrop>().itemType = itemType;
                         ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                         itemsOnFloorList.itemList.Remove(gameObject);
                         inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
@@ -69,8 +80,6 @@ public class Item : MonoBehaviour
                 added = true;
             }
             Destroy(gameObject);
-            //Debug.Log(string.Join(", ", inventory.items));
-            //Debug.Log(string.Join(", ", inventory.quantity));
 
         }
     }
