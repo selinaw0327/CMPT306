@@ -16,6 +16,8 @@ public class UseDrop : MonoBehaviour
 
     public Item.ItemType itemType;
 
+    private ChangeSkin changeSkin;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class UseDrop : MonoBehaviour
 
         itemIndex = inventory.IndexOf(name);
 
+        changeSkin = GameObject.FindGameObjectWithTag("Player").GetComponent<ChangeSkin>();
     }
 
     // Update is called once per frame
@@ -109,18 +112,23 @@ public class UseDrop : MonoBehaviour
             // SWORDS
             case Item.ItemType.CopperSword:
                 // Code for what happens when Copper sword is right-clicked in inventory
+                changeSkin.CopperSkin();
                 break;
             case Item.ItemType.SilverSword:
                 // Code for what happens when Silver sword is right-clicked in inventory
+                changeSkin.SilverSkin();
                 break;
             case Item.ItemType.IronSword:
                 // Code for what happens when Iron sword is right-clicked in inventory
+                changeSkin.IronSkin();
                 break;
             case Item.ItemType.GoldSword:
                 // Code for what happens when Gold sword is right-clicked in inventory
+                changeSkin.GoldSkin();
                 break;
             case Item.ItemType.ObsidianSword:
                 // Code for what happens when Obsidian sword is right-clicked in inventory
+                changeSkin.ObsidianSkin();
                 break;
             default:
                 break;

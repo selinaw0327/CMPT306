@@ -38,7 +38,7 @@ public class ChangeSkin : MonoBehaviour
         GetComponent<Animator>().runtimeAnimatorController = ironAnim as RuntimeAnimatorController;
     }
 
-    public void goldSkin()
+    public void GoldSkin()
     {
         GetComponent<Animator>().runtimeAnimatorController = goldAnim as RuntimeAnimatorController;
     }
