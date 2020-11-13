@@ -210,7 +210,6 @@ public class ProcGenDungeon : MonoBehaviour
         if(routeCount > 1) {    // Check if the player is in the first room
             if(Random.Range(0, 3) == 1) {   // Random chance to create a spawn point
                 Vector3Int location = new Vector3Int(x, y, 0);
-                
                 if(!spawnLocations.Contains(location)) {    // Check if the location is already a spawn point
                     spawnLocations.Add(new Vector3Int(x, y, 0));
                 }

@@ -34,11 +34,9 @@ public class MapCamera : MonoBehaviour
      {
          yield return new WaitForSeconds(waitTime);
          mapSize = grid.GetComponent<ScanGrid>().getMapSize();
-         Debug.Log("map size: " + mapSize);
          mapX = mapSize.x;
          mapY = mapSize.y;
          mapCenter = grid.GetComponent<ScanGrid>().getMapCenter();
-         Debug.Log("map center: " + mapCenter);
 
          calcCameraSize();
          
