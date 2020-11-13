@@ -49,7 +49,7 @@ public class Spawn : MonoBehaviour
         newItem.GetComponent<Item>().itemSprite = sprite;
 
         ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
-        itemsOnFloorList.itemDataList.Add(new ItemData(newItem.GetComponent<Item>()));
+        
         itemsOnFloorList.itemList.Add(newItem);
     }
 }

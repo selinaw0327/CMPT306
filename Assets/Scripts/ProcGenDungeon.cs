@@ -15,11 +15,11 @@ public class ProcGenDungeon : MonoBehaviour
     [SerializeField]
     private Tile botWallTile;
     [SerializeField]
-    private Tilemap groundMap;
+    public Tilemap groundMap;
     [SerializeField]
-    private Tilemap pitMap;
+    public Tilemap pitMap;
     [SerializeField]
-    private Tilemap wallMap;
+    public Tilemap wallMap;
     [SerializeField]
     private GameObject player;
     [SerializeField]
@@ -34,6 +34,7 @@ public class ProcGenDungeon : MonoBehaviour
     public GameObject exitPrefab;
 
     public GameObject[] objects;
+    public List<GameObject> createdObjects = new List<GameObject>();
 
     public Sprite[] fruitSprites;
 
@@ -44,15 +45,24 @@ public class ProcGenDungeon : MonoBehaviour
     private List<Vector3Int> spawnLocations = new List<Vector3Int>();
     public int seed;
  
-    private int routeCount = 0;
+    
+    
 
-    private void Start()
+    private int routeCount;
+
+    public void Start()
     {
-        seed = Random.RandomRange(1, 10000000);
+        seed = Random.Range(1, 10000000);
+        
+        GenerateAll();
+    }
+
+    public void GenerateAll(){
         Random.seed = seed;
         int x = 0;
         int y = 0;
         int routeLength = 0;
+        routeCount = 0;
         GenerateSquare(x, y, 1);
         Vector2Int previousPos = new Vector2Int(x, y);
         y += 3;
@@ -215,15 +225,35 @@ public class ProcGenDungeon : MonoBehaviour
         }
     }
 
-    private void FillSpawnLocations() {
+
+private void FillSpawnLocations() {
         for(int i = 0; i < spawnLocations.Count; i++) {
+            
             int rand = Random.Range(0, objects.Length);
 
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
 
-            if(objects[rand].name.Equals("Item")) {
-                SpawnBars(newObject);
+
+            createdObjects.Add(newObject);
+            if(rand == 0){
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
+            } else if(rand == 1) {
+                int barOrFruitRand = Random.Range(0, 2);
+                Debug.Log(barOrFruitRand);
+                if(barOrFruitRand == 0 ){
+                    
+                    SpawnFruit(newObject);
+                } else {
+                    SpawnBars(newObject);
+                }
+                
+            } else if(rand == 2) {
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
+        
             }
+            
+            
         }
     }
 
@@ -257,9 +287,8 @@ public class ProcGenDungeon : MonoBehaviour
         newObject.GetComponent<Item>().itemSprite = fruitSprites[rand];
         ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         itemLists.itemList.Add(newObject);
-        itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
+        
     }
-
     private void SpawnBars(GameObject newObject) {
         // int rand = Random.RandomRange(0, 4);
         int rand  = 0;
@@ -285,8 +314,9 @@ public class ProcGenDungeon : MonoBehaviour
         newObject.GetComponent<SpriteRenderer>().sprite = spriteAtlas.copperBar;
         newObject.GetComponent<Item>().itemSprite = spriteAtlas.copperBar;
         newObject.GetComponent<Item>().itemType = Item.ItemType.CopperBar;
-        // ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
-        // itemLists.itemList.Add(newObject);
-        // itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
+        ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+        itemLists.itemList.Add(newObject);
+       
     }
+    
 }
