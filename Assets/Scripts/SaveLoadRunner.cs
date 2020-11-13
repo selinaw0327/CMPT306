@@ -111,7 +111,7 @@ public class SaveLoadRunner : MonoBehaviour
         foreach(InventoryItemData itemData in inventory.itemDataArr){
             if(inventory.occupied[i]){
                 GameObject newItem = Instantiate(inventoryItem, inventory.slots[i].transform, false);
-            
+                newItem.name = itemData.name;
                 Texture2D spriteTexture = new Texture2D(itemData.spriteW, itemData.spriteH,TextureFormat.RGBA32, false );
                 spriteTexture.LoadRawTextureData(itemData.spriteTex);
                 spriteTexture.Apply();
@@ -205,6 +205,7 @@ public class SaveLoadRunner : MonoBehaviour
 
             GameObject newItem = Instantiate(item, position, Quaternion.identity);
             
+            newItem.name = itemData.name;
             Texture2D spriteTexture = new Texture2D(itemData.spriteW, itemData.spriteH,TextureFormat.RGBA32, false );
             spriteTexture.LoadRawTextureData(itemData.spriteTex);
             spriteTexture.Apply();
