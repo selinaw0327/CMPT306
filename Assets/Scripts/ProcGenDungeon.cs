@@ -210,6 +210,7 @@ public class ProcGenDungeon : MonoBehaviour
         if(routeCount > 1) {    // Check if the player is in the first room
             if(Random.Range(0, 3) == 1) {   // Random chance to create a spawn point
                 Vector3Int location = new Vector3Int(x, y, 0);
+                Debug.Log(location);
                 if(!spawnLocations.Contains(location)) {    // Check if the location is already a spawn point
                     spawnLocations.Add(new Vector3Int(x, y, 0));
                 }
@@ -225,12 +226,14 @@ public class ProcGenDungeon : MonoBehaviour
         }
     }
 
-    private void FillSpawnLocations() {
+
+private void FillSpawnLocations() {
         for(int i = 0; i < spawnLocations.Count; i++) {
             
             int rand = Random.Range(0, objects.Length);
 
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
+
 
             createdObjects.Add(newObject);
             if(rand == 0){
@@ -247,6 +250,10 @@ public class ProcGenDungeon : MonoBehaviour
             } else if(rand == 2) {
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
         
+            }
+            if(objects[rand].name.Equals("Item")) {
+                SpawnBars(newObject);
+
             }
             
         }
