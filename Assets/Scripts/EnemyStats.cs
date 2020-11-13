@@ -32,6 +32,7 @@ public class EnemyStats : MonoBehaviour
         // Set current health and check if the enemy has died
         currentHealth -= damage;
         if(currentHealth <= 0) {
+            transform.parent.gameObject.GetComponent<EnemyDrop>().Drop();
             Destroy(this.transform.parent.gameObject);
             EnemyLists enemyLists = GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
             List<GameObject> objectList;
