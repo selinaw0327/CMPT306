@@ -46,13 +46,11 @@ public class MapCamera : MonoBehaviour
 
         if (mapY> mapX){
             mapCamera.GetComponent<Camera>().orthographicSize = mapY/2 + 10;
-            Debug.Log("height > width！");
         }
         else{
             float ratio = mapCamera.GetComponent<Camera>().aspect;
             float height = mapX/ratio;
             mapCamera.GetComponent<Camera>().orthographicSize = height/2 + 10;
-            Debug.Log("width > height!");
 
         }
         
