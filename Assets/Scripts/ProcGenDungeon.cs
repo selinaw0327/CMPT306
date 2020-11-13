@@ -37,6 +37,8 @@ public class ProcGenDungeon : MonoBehaviour
 
     public Sprite[] fruitSprites;
 
+    public SpriteAtlas spriteAtlas;
+
     public static int caveLevel = 1;
 
     private List<Vector3Int> spawnLocations = new List<Vector3Int>();
@@ -198,6 +200,7 @@ public class ProcGenDungeon : MonoBehaviour
         if(routeCount > 1) {    // Check if the player is in the first room
             if(Random.Range(0, 3) == 1) {   // Random chance to create a spawn point
                 Vector3Int location = new Vector3Int(x, y, 0);
+                Debug.Log(location);
                 if(!spawnLocations.Contains(location)) {    // Check if the location is already a spawn point
                     spawnLocations.Add(new Vector3Int(x, y, 0));
                 }
@@ -220,7 +223,7 @@ public class ProcGenDungeon : MonoBehaviour
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
 
             if(objects[rand].name.Equals("Item")) {
-                SpawnFruit(newObject);
+                SpawnBars(newObject);
             }
         }
     }
@@ -256,5 +259,35 @@ public class ProcGenDungeon : MonoBehaviour
         ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         itemLists.itemList.Add(newObject);
         itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
+    }
+
+    private void SpawnBars(GameObject newObject) {
+        // int rand = Random.RandomRange(0, 4);
+        int rand  = 0;
+
+        switch (rand) {
+            case 0:
+                newObject.name = "Copper Bar";
+                break;
+            case 1:
+                newObject.name = "Iron Bar";
+                break;
+            case 2:
+                newObject.name = "Silver Bar";
+                break;
+            case 3:
+                newObject.name = "Gold Bar";
+                break;
+            case 4:
+                newObject.name = "Obsidian Bar";
+                break;
+        }
+        
+        newObject.GetComponent<SpriteRenderer>().sprite = spriteAtlas.copperBar;
+        newObject.GetComponent<Item>().itemSprite = spriteAtlas.copperBar;
+        newObject.GetComponent<Item>().itemType = Item.ItemType.CopperBar;
+        // ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+        // itemLists.itemList.Add(newObject);
+        // itemLists.itemDataList.Add(new ItemData(newObject.GetComponent<Item>()));
     }
 }
