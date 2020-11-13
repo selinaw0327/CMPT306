@@ -33,7 +33,6 @@ public class MapCamera : MonoBehaviour
      {
          yield return new WaitForSeconds(waitTime);
          mapSize = grid.GetComponent<ScanGrid>().getMapSize();
-         Debug.Log("map size from map camera: " + mapSize);
          mapX = mapSize.x;
          mapY = mapSize.y;
          mapCenter = grid.GetComponent<ScanGrid>().getMapCenter();
@@ -44,10 +43,6 @@ public class MapCamera : MonoBehaviour
      
      void calcCameraSize() {
         transform.position = new Vector3(mapCenter.x, mapCenter.y, -1f);
-        Debug.Log("Map X: " + mapX);
-        Debug.Log("Map Y: " + mapY);
-
-        
         if (mapX == 0 && mapY == 0){
             mapCamera.GetComponent<Camera>().orthographicSize = 20;    // For tutorial scene where PCG is not used for the map
         }

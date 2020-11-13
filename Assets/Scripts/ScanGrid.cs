@@ -33,7 +33,6 @@ public class ScanGrid : MonoBehaviour
 
     private void calcMapSize(){
         size = map.GetComponent<Tilemap>().size;
-        Debug.Log("map size: " + size);
         center = map.GetComponent<Tilemap>().cellBounds.center;
     }
 
