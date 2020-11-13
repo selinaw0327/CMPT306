@@ -210,7 +210,7 @@ public class ProcGenDungeon : MonoBehaviour
         if(routeCount > 1) {    // Check if the player is in the first room
             if(Random.Range(0, 3) == 1) {   // Random chance to create a spawn point
                 Vector3Int location = new Vector3Int(x, y, 0);
-                Debug.Log(location);
+                
                 if(!spawnLocations.Contains(location)) {    // Check if the location is already a spawn point
                     spawnLocations.Add(new Vector3Int(x, y, 0));
                 }
@@ -241,7 +241,9 @@ private void FillSpawnLocations() {
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
             } else if(rand == 1) {
                 int barOrFruitRand = Random.Range(0, 2);
-                if(barOrFruitRand ==0 ){
+                Debug.Log(barOrFruitRand);
+                if(barOrFruitRand == 0 ){
+                    
                     SpawnFruit(newObject);
                 } else {
                     SpawnBars(newObject);
@@ -251,10 +253,7 @@ private void FillSpawnLocations() {
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
         
             }
-            if(objects[rand].name.Equals("Item")) {
-                SpawnBars(newObject);
-
-            }
+            
             
         }
     }
