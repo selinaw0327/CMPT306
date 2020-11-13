@@ -4,16 +4,31 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 4942803658038726614
-    second: Swords_0
+    second: Swords_Copper
   - first:
       213: 6123003023063038561
-    second: Swords_1
+    second: Swords_Silver
   - first:
       213: 4978276593797209138
-    second: Swords_2
+    second: Swords_Iron
   - first:
       213: -9004990608046106943
-    second: Swords_3
+    second: Swords_Gold
+  - first:
+      213: 8289387723579576647
+    second: Swords_Obsidian
+  - first:
+      213: 3555856580732353026
+    second: Swords_Copper
+  - first:
+      213: -109761599910494025
+    second: Swords_Silver
+  - first:
+      213: 8966946799109626378
+    second: Swords_Iron
+  - first:
+      213: 9095397541037950810
+    second: Swords_Gold
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +47,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -101,85 +116,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Swords_0
+      name: Swords_Copper
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
-        height: 24
+        width: 36
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6df46e72dbd589440800000000000000
-      internalID: 4942803658038726614
+      spriteID: 20a79ce68b0f85130800000000000000
+      internalID: 3555856580732353026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Swords_1
+      name: Swords_Silver
       rect:
         serializedVersion: 2
-        x: 24
+        x: 36
         y: 0
-        width: 24
-        height: 24
+        width: 36
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16ab054fec649f450800000000000000
-      internalID: 6123003023063038561
+      spriteID: 7b04b5b086c0a7ef0800000000000000
+      internalID: -109761599910494025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Swords_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23c9cee9f24661540800000000000000
-      internalID: 4978276593797209138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Swords_3
+      name: Swords_Iron
       rect:
         serializedVersion: 2
         x: 72
         y: 0
-        width: 24
-        height: 24
+        width: 36
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c6dea1a0c8d70380800000000000000
-      internalID: -9004990608046106943
+      spriteID: a0a51c8da9ef07c70800000000000000
+      internalID: 8966946799109626378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swords_Gold
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a574784cfd7593e70800000000000000
+      internalID: 9095397541037950810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swords_Obsidian
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 741d17d2732d90370800000000000000
+      internalID: 8289387723579576647
       vertices: []
       indices: 
       edges: []

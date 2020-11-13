@@ -13,6 +13,9 @@ TagManager:
   - InventoryItem
   - enemy
   - playerHitBox
+  - map
+  - Rock
+  - Environment
   layers:
   - Default
   - TransparentFX
