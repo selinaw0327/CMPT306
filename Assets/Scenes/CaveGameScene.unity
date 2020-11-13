@@ -5465,6 +5465,7 @@ GameObject:
   - component: {fileID: 1481483266}
   - component: {fileID: 1481483273}
   - component: {fileID: 1481483274}
+  - component: {fileID: 1481483275}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5603,7 +5604,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 1, y: 1.125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5767,7 +5768,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 1, y: 1.125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5776,6 +5777,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1481483275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481483264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f4c454bba83d246b4a951f22d859d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  copperAnim: {fileID: 22100000, guid: 3f9e0e0150122e843b71ada1b24854fa, type: 2}
+  silverAnim: {fileID: 22100000, guid: a38090df344abf1498f41140879f358b, type: 2}
+  ironAnim: {fileID: 22100000, guid: e3867b59bd4cce54c87dd41d20beb90f, type: 2}
+  goldAnim: {fileID: 22100000, guid: a88207d5420efd845baf0c6dd13bf876, type: 2}
+  obsidianAnim: {fileID: 22100000, guid: 4cab2efe175f6fc43a2f9335b9ed9f3b, type: 2}
 --- !u!1 &1580600595
 GameObject:
   m_ObjectHideFlags: 0
