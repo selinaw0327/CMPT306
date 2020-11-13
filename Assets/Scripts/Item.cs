@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
+    [System.Serializable]
     public enum ItemType
     {
         Fruit,
@@ -68,15 +69,6 @@ public class Item : MonoBehaviour
                         item.GetComponent<UseDrop>().itemType = itemType;
                         ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                         itemsOnFloorList.itemList.Remove(gameObject);
-                        foreach (ItemData itemData in itemsOnFloorList.itemDataList)
-                        {
-                            if (itemData.position[0] == gameObject.transform.position.x && itemData.position[1] == gameObject.transform.position.y)
-                            {
-                                itemsOnFloorList.itemDataList.Remove(itemData);
-
-                                break;
-                            }
-                        }
                         inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
                         break;
                     }
