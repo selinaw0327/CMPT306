@@ -17,7 +17,6 @@ public class MapCamera : MonoBehaviour
 
 
     void Awake() {
-
         map.SetActive(true);
     }
 
@@ -43,16 +42,17 @@ public class MapCamera : MonoBehaviour
 
      
      void calcCameraSize() {
-
         transform.position = new Vector3(mapCenter.x, mapCenter.y, -1f);
 
         if (mapY> mapX){
             mapCamera.GetComponent<Camera>().orthographicSize = mapY/2 + 10;
+            Debug.Log("height > width！");
         }
         else{
-            float screenAspect = (float) Screen.width / (float) Screen.height;
-            float height = mapX/screenAspect + 10;
-            mapCamera.GetComponent<Camera>().orthographicSize = height;
+            float ratio = mapCamera.GetComponent<Camera>().aspect;
+            float height = mapX/ratio;
+            mapCamera.GetComponent<Camera>().orthographicSize = height/2 + 10;
+            Debug.Log("width > height!");
 
         }
         
