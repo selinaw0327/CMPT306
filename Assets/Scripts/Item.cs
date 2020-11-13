@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
+    [System.Serializable]
     public enum ItemType
     {
         Fruit,

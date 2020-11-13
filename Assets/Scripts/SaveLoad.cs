@@ -73,6 +73,7 @@ public static class SaveLoad
 			inventory.occupied = data.isFull;
 			inventory.quantity = data.quantity;
 			inventory.itemDataArr = data.itemDataArr;
+			inventory.items = data.items;
 			
 		} else {
 			Debug.LogError("No item save file at "+ path );

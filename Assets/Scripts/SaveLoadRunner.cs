@@ -191,7 +191,7 @@ public class SaveLoadRunner : MonoBehaviour
     {
         
         foreach(GameObject item in itemsOnFloorList.itemList){
-            
+            Debug.Log("Destroyed Item");
             Destroy(item);
             
         }
@@ -199,6 +199,7 @@ public class SaveLoadRunner : MonoBehaviour
         itemsOnFloorList.itemList = new List<GameObject>();
 
         foreach(ItemData itemData in itemsOnFloorList.itemDataList){
+            Debug.Log("Recreated Item");
             Vector2 position;
             position.x = itemData.position[0];
             position.y = itemData.position[1];
@@ -206,6 +207,7 @@ public class SaveLoadRunner : MonoBehaviour
             GameObject newItem = Instantiate(item, position, Quaternion.identity);
             
             newItem.name = itemData.name;
+            
             Texture2D spriteTexture = new Texture2D(itemData.spriteW, itemData.spriteH,TextureFormat.RGBA32, false );
             spriteTexture.LoadRawTextureData(itemData.spriteTex);
             spriteTexture.Apply();
@@ -213,6 +215,7 @@ public class SaveLoadRunner : MonoBehaviour
             newItem.GetComponent<SpriteRenderer>().sprite = loadedSprite;
             
             item.GetComponent<Item>().itemSprite = loadedSprite;
+            item.GetComponent<Item>().itemType = itemData.itemType;
             newItem.AddComponent<CircleCollider2D>();
             newItem.GetComponent<CircleCollider2D>().isTrigger = true;
             newItem.GetComponent<CircleCollider2D>().radius = 0.25f;

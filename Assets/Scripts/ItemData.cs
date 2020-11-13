@@ -6,17 +6,17 @@ using UnityEngine;
 public class ItemData 
 {
     
-    public string name;
-    
-    
     public float[] position;
-    
+    public Item.ItemType itemType;
     public byte[] spriteTex;
     public int spriteW;
     public int spriteH;
 
+    public string name;
+
     public ItemData(Item item)
     {
+        itemType = item.itemType;
         Texture2D spriteTexture =  new Texture2D((int)item.itemSprite.rect.width,(int)item.itemSprite.rect.width);
         Sprite sprite =  item.itemSprite;
         
