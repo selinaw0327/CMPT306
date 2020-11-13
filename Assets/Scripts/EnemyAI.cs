@@ -71,6 +71,7 @@ public class EnemyAI : MonoBehaviour
             animator.SetBool("isMoving", false);
             // transform.position = Vector3.MoveTowards(transform.position, startPos, wanderSpeed * Time.deltaTime);
             // Patrol();
+        
             
         }
     }
@@ -118,13 +119,13 @@ public class EnemyAI : MonoBehaviour
 
      void changeDirection(Vector2 force){
 
-        if (force.x <= -0.01f){
+        if (rb.velocity.x <= -0.01f){
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
             // animator.SetFloat("moveX", force.x);
             // animator.SetBool("isMoving", true);
         
         }
-        else if(force.x >= 0.01f){
+        else if(rb.velocity.x >= 0.01f){
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
             //  animator.SetFloat("moveX", force.x);
             // animator.SetBool("isMoving", true);
