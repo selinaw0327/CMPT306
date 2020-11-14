@@ -410,7 +410,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90338977}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &90338980
 Camera:
   m_ObjectHideFlags: 0
@@ -674,7 +674,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 205349634}
-  - component: {fileID: 205349635}
   m_Layer: 5
   m_Name: Map
   m_TagString: Untagged
@@ -703,24 +702,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &205349635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205349633}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d83a915aae2e4463ba7186b93128e5ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid: {fileID: 603045241}
-  map: {fileID: 0}
-  mapCamera: {fileID: 0}
-  canvas: {fileID: 1717190836}
-  image: {fileID: 0}
-  renderTexture: {fileID: 353699630}
 --- !u!1 &219859808 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8979576911410888322, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
@@ -1479,7 +1460,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1, y: 10}
-  m_SizeDelta: {x: 500, y: 350}
+  m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &353699632
 MonoBehaviour:
@@ -4318,9 +4299,9 @@ MonoBehaviour:
   inventory: {fileID: 0}
   challenges: {fileID: 0}
   item: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
-  rock: {fileID: 4246496661039566702, guid: 0f5d90fee59cd2241bc28217dca4b83d, type: 3}
+  rock: {fileID: 0}
   inventoryItem: {fileID: 2825149634833932108, guid: 96aed9e12e6117844a864b4947554837, type: 3}
-  bat: {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
+  bat: {fileID: 0}
   map: {fileID: 0}
   rockList: {fileID: 0}
   enemyLists: {fileID: 0}
@@ -4747,16 +4728,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a145017e586f6ba47ad632081fa06cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  copperBar: {fileID: -2142185268650758390, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
-  copperSword: {fileID: 4942803658038726614, guid: f97463282a2c71f47b112406118e61e3, type: 3}
+  copperBar: {fileID: 0}
+  copperSword: {fileID: 0}
   silverBar: {fileID: -5256262549046456686, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
   silverSword: {fileID: 6123003023063038561, guid: f97463282a2c71f47b112406118e61e3, type: 3}
-  ironBar: {fileID: -359480309759690003, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
-  ironSword: {fileID: 4978276593797209138, guid: f97463282a2c71f47b112406118e61e3, type: 3}
-  goldBar: {fileID: 7663870149554596596, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
-  goldSword: {fileID: -9004990608046106943, guid: f97463282a2c71f47b112406118e61e3, type: 3}
-  obsidianBar: {fileID: -2176166862104932541, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
-  obsidianSword: {fileID: 8289387723579576647, guid: f97463282a2c71f47b112406118e61e3, type: 3}
+  ironBar: {fileID: 0}
+  ironSword: {fileID: 0}
+  goldBar: {fileID: 0}
+  goldSword: {fileID: 0}
+  obsidianBar: {fileID: 0}
+  obsidianSword: {fileID: 0}
 --- !u!4 &1263968928
 Transform:
   m_ObjectHideFlags: 0
@@ -5035,21 +5016,14 @@ MonoBehaviour:
   roomRate: 10
   maxRouteLength: 10
   maxRoutes: 20
-  exitPrefab: {fileID: 5250879337292495368, guid: 070c1158f71f4ae46ba1e47e42f16d3a, type: 3}
+  exitPrefab: {fileID: 0}
   objects:
   - {fileID: 4246496661039566702, guid: 0f5d90fee59cd2241bc28217dca4b83d, type: 3}
   - {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
   - {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
   createdObjects: []
-  fruitSprites:
-  - {fileID: -5728686177044832811, guid: b1f24b3bc2e2f1d4b858657ad5c115a0, type: 3}
-  - {fileID: -4570538037665054336, guid: 3d6be91968cb95546ac95aeff5e52f84, type: 3}
-  - {fileID: 4138223980208024357, guid: 5100b75572e484e458e4340e2afe9454, type: 3}
-  - {fileID: 3776312371561069292, guid: 031678d507e557a41b7a16fc33bf6c39, type: 3}
-  - {fileID: 4121880872312635667, guid: ffc9f271fad56c243a45f100b9dc6778, type: 3}
-  - {fileID: 837517196756356485, guid: 131e485692e27e84c86170dad18cda85, type: 3}
-  - {fileID: 1775669009216684005, guid: a2c110585eb710b408972fbc3b96136d, type: 3}
-  spriteAtlas: {fileID: 1263968927}
+  fruitSprites: []
+  spriteAtlas: {fileID: 0}
   seed: 0
 --- !u!156049354 &1425784081
 Grid:
@@ -7283,7 +7257,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2080738647}
   - component: {fileID: 2080738650}
-  - component: {fileID: 2080738649}
   - component: {fileID: 2080738651}
   m_Layer: 0
   m_Name: MapCamera
@@ -7306,14 +7279,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &2080738649
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080738646}
-  m_Enabled: 0
 --- !u!20 &2080738650
 Camera:
   m_ObjectHideFlags: 0
