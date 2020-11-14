@@ -4728,16 +4728,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a145017e586f6ba47ad632081fa06cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  copperBar: {fileID: 0}
-  copperSword: {fileID: 0}
+  copperBar: {fileID: -2142185268650758390, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
+  copperSword: {fileID: 4942803658038726614, guid: f97463282a2c71f47b112406118e61e3, type: 3}
   silverBar: {fileID: -5256262549046456686, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
   silverSword: {fileID: 6123003023063038561, guid: f97463282a2c71f47b112406118e61e3, type: 3}
-  ironBar: {fileID: 0}
-  ironSword: {fileID: 0}
-  goldBar: {fileID: 0}
-  goldSword: {fileID: 0}
-  obsidianBar: {fileID: 0}
-  obsidianSword: {fileID: 0}
+  ironBar: {fileID: -359480309759690003, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
+  ironSword: {fileID: 4978276593797209138, guid: f97463282a2c71f47b112406118e61e3, type: 3}
+  goldBar: {fileID: 7663870149554596596, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
+  goldSword: {fileID: -9004990608046106943, guid: f97463282a2c71f47b112406118e61e3, type: 3}
+  obsidianBar: {fileID: -2176166862104932541, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
+  obsidianSword: {fileID: 8289387723579576647, guid: f97463282a2c71f47b112406118e61e3, type: 3}
 --- !u!4 &1263968928
 Transform:
   m_ObjectHideFlags: 0
@@ -5016,14 +5016,14 @@ MonoBehaviour:
   roomRate: 10
   maxRouteLength: 10
   maxRoutes: 20
-  exitPrefab: {fileID: 0}
+  exitPrefab: {fileID: 5250879337292495368, guid: 070c1158f71f4ae46ba1e47e42f16d3a, type: 3}
   objects:
   - {fileID: 4246496661039566702, guid: 0f5d90fee59cd2241bc28217dca4b83d, type: 3}
   - {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
   - {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
   createdObjects: []
   fruitSprites: []
-  spriteAtlas: {fileID: 0}
+  spriteAtlas: {fileID: 1263968927}
   seed: 0
 --- !u!156049354 &1425784081
 Grid:
