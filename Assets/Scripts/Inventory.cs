@@ -59,10 +59,6 @@ public class Inventory : MonoBehaviour
         {
             inventoryItems[i].GetComponent<UseDrop>().Use();
         }
-        else
-        {
-            Debug.Log("Slot " + i + " is empty.");
-        }
     }
 
     public int IndexOf(GameObject slot)

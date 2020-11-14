@@ -6,9 +6,20 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
+    [System.Serializable]
     public enum ItemType
     {
-        Fruit
+        Fruit,
+        CopperBar,
+        CopperSword,
+        SilverBar,
+        SilverSword,
+        IronBar,
+        IronSword,
+        GoldBar,
+        GoldSword,
+        ObsidianBar,
+        ObsidianSword
     }
 
     public GameObject inventoryItem;
@@ -49,22 +60,15 @@ public class Item : MonoBehaviour
                         
                         inventory.occupied[i] = true;
                         GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
+                        item.transform.SetSiblingIndex(0);
                         item.name = transform.name;
                         inventory.items[i] = transform.name;
                         inventory.inventoryItems[i] = item;
                         item.GetComponent<Image>().sprite = itemSprite;
                         item.GetComponent<UseDrop>().sprite = itemSprite;
+                        item.GetComponent<UseDrop>().itemType = itemType;
                         ItemsOnFloorList itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
                         itemsOnFloorList.itemList.Remove(gameObject);
-                        foreach (ItemData itemData in itemsOnFloorList.itemDataList)
-                        {
-                            if (itemData.position[0] == gameObject.transform.position.x && itemData.position[1] == gameObject.transform.position.y)
-                            {
-                                itemsOnFloorList.itemDataList.Remove(itemData);
-
-                                break;
-                            }
-                        }
                         inventory.itemDataArr[i] = new InventoryItemData(item.GetComponent<UseDrop>());
                         break;
                     }
@@ -77,8 +81,6 @@ public class Item : MonoBehaviour
                 added = true;
             }
             Destroy(gameObject);
-            //Debug.Log(string.Join(", ", inventory.items));
-            //Debug.Log(string.Join(", ", inventory.quantity));
 
         }
     }
