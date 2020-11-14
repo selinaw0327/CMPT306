@@ -10,7 +10,7 @@ public class LevelLoader : MonoBehaviour
 
     private GameObject exit;
 
-    public GameObject player, mainCamera, menus;
+    public GameObject player, mainCamera, menus, mapCamera;
 
     bool loaded;
     bool unloaded;
@@ -34,6 +34,7 @@ public class LevelLoader : MonoBehaviour
             SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName("ExitRoomScene"));
             SceneManager.MoveGameObjectToScene(mainCamera, SceneManager.GetSceneByName("ExitRoomScene"));
             SceneManager.MoveGameObjectToScene(menus, SceneManager.GetSceneByName("ExitRoomScene"));
+            SceneManager.MoveGameObjectToScene(mapCamera, SceneManager.GetSceneByName("ExitRoomScene"));
             player.transform.position = new Vector3(0,-6,0);
             if(!unloaded) {
                 unloaded = true;
