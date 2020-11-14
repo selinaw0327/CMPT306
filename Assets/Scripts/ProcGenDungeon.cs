@@ -251,7 +251,7 @@ private void FillSpawnLocations() {
     }
 
     private void SpawnFruit(GameObject newObject) {
-        int rand = Random.Range(0, 7);
+        int rand = Random.Range(0, 8);
 
         switch (rand) {
             case 0:
@@ -274,6 +274,9 @@ private void FillSpawnLocations() {
                 break;
             case 6:
                 newObject.name = "Strawberry";
+                break;
+            case 7: 
+                newObject.name = "Apple";
                 break;
         }        
         newObject.GetComponent<SpriteRenderer>().sprite = fruitSprites[rand];
