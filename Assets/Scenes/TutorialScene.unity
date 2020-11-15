@@ -28266,6 +28266,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1978335066
 GameObject:
   m_ObjectHideFlags: 0
@@ -28346,6 +28347,8 @@ CanvasRenderer:
   m_GameObject: {fileID: 1978335066}
   m_CullTransparentMesh: 0
 =======
+=======
+>>>>>>> parent of c63264c... redo dialogue
 =======
 >>>>>>> parent of c63264c... redo dialogue
 --- !u!224 &1977755932 stripped
@@ -29348,6 +29351,7 @@ TilemapCollider2D:
   m_ExtrusionFactor: 0.00001
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &2056345412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29682,6 +29686,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &2111897197 stripped
 =======
+=======
+>>>>>>> parent of c63264c... redo dialogue
 =======
 >>>>>>> parent of c63264c... redo dialogue
 --- !u!224 &2022269221 stripped
