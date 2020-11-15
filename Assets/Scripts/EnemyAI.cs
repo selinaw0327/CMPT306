@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.SceneManagement;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
+    Scene activeScene;
+    string activeSceneName;
+    bool chasePlayerOn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +35,25 @@ public class EnemyAI : MonoBehaviour
         target = GameObject.Find("Player").transform;
         animator = GetComponent<Animator>();
 
-        InvokeRepeating("UpdatePath", 0f, 0.5f);
+        findScene();
+        // InvokeRepeating("UpdatePath", 0f, 0.5f);
 
     
+    }
+
+    void findScene(){
+
+        activeScene = SceneManager.GetActiveScene();
+        activeSceneName = activeScene.name;
+        if (activeSceneName == "TutorialScene"){
+            chasePlayerOn = false;
+        }
+        else{
+            chasePlayerOn = true;
+            InvokeRepeating("UpdatePath", 0f, 0.5f);
+        }
+
+        
     }
 
     void UpdatePath(){
@@ -61,16 +82,27 @@ public class EnemyAI : MonoBehaviour
         float minAttackDistance = 12.5f;
 
         float distance = Vector3.Distance(target.position, enemyGFX.position);
- 
-        if (distance < minAttackDistance)
-        {
-            Chase();
+
+        if (chasePlayerOn){
+            if (distance < minAttackDistance)
+            {
+                animator.SetBool("isMoving", true);
+                Chase();
+            }
+            else{
+                animator.SetBool("isMoving", false);       
+            }
         }
-        else{
-            animator.SetBool("isMoving", false);
-            // transform.position = Vector3.MoveTowards(transform.position, startPos, wanderSpeed * Time.deltaTime);
-            // Patrol();
-            
+  
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            chasePlayerOn = true;
+            InvokeRepeating("UpdatePath", 0f, 0.5f);
+            // It is object tagged with TagB
         }
     }
 
@@ -103,30 +135,18 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    // void Patrol(){
-    //     transform.position = Vector3.Lerp (startPos, endPos, Mathf.PingPong(Time.time*wanderSpeed, 1.0f));
-    //  }
-
-    //  void OnTriggerEnter2D(Collider2D other) {
-    //      if(other.gameObject.CompareTag("obstacles")){
-    //          Debug.Log("Collide with obstacles!");
-    //          endPos = this.transform.position;
-    //      }
-         
-    //  }
-
      void changeDirection(Vector2 force){
 
-        if (force.x >= 0.01f){
-            // enemyGFX.localScale = new Vector3(1f, 1f, 1f);
-            animator.SetFloat("moveX", force.x);
-            animator.SetBool("isMoving", true);
+        if (rb.velocity.x <= -0.01f){
+            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            // animator.SetFloat("moveX", force.x);
+            // animator.SetBool("isMoving", true);
         
         }
-        else if(force.x <= -0.01f){
-            //  enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-             animator.SetFloat("moveX", force.x);
-            animator.SetBool("isMoving", true);
+        else if(rb.velocity.x >= 0.01f){
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            //  animator.SetFloat("moveX", force.x);
+            // animator.SetBool("isMoving", true);
         }
          
 

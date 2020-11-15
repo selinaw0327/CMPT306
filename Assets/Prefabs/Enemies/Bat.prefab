@@ -29,11 +29,12 @@ GameObject:
   - component: {fileID: 186299428007183263}
   - component: {fileID: 8201056986579381657}
   - component: {fileID: 9153485776742081621}
+  - component: {fileID: 1418891338789051535}
   - component: {fileID: 7089713499155554669}
   - component: {fileID: 1800119459}
   - component: {fileID: 6375785585615990826}
   - component: {fileID: 3662166312510098708}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Bat
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -137,6 +138,22 @@ MonoBehaviour:
   enemyGFX: {fileID: 389636989893442646}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1418891338789051535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593757828702648435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041ec1fa783161b4ca35601a41c02cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
+  itemSprite: {fileID: -2142185268650758390, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
+  itemName: Copper Bar
+  itemType: 1
 --- !u!212 &7089713499155554669
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -243,9 +260,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 389636989893442646}
     m_Modifications:
+    - target: {fileID: 152531860766030437, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 241841624405191285, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 848098645301038997, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833632694152267651, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2729922745911456485, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729922745911456485, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4050838066957914223, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: segmentPrefab
@@ -254,6 +291,14 @@ PrefabInstance:
     - target: {fileID: 4050838066957914223, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: offset.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235714781763387951, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324796715283134573, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7995918831036697098, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: m_LocalPosition.x
