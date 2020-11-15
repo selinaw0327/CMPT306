@@ -21955,6 +21955,7 @@ GameObject:
   - component: {fileID: 390420472}
   - component: {fileID: 390420471}
   - component: {fileID: 390420470}
+  - component: {fileID: 390420473}
   m_Layer: 5
   m_Name: Dialogue Text
   m_TagString: Untagged
@@ -22078,6 +22079,25 @@ RectTransform:
   m_AnchoredPosition: {x: 776.1, y: -282}
   m_SizeDelta: {x: 1441.7102, y: 267.37543}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &390420473
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390420469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2f9cfe18c5934df5babff906f0b6024, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &429310973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26561,6 +26581,7 @@ MonoBehaviour:
     this cave and survive. '
   typingSpeed: 0.02
   continueButton: {fileID: 603188949}
+  textDisplayAnim: {fileID: 390420473}
 --- !u!4 &1444602427
 Transform:
   m_ObjectHideFlags: 0

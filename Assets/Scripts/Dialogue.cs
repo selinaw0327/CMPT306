@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour
     public float typingSpeed;
 
     public GameObject continueButton;
+    public Animator textDisplayAnim;
 
     void Start()
     {
@@ -36,6 +37,8 @@ public class Dialogue : MonoBehaviour
 
     public void NextSentence()
     {
+        textDisplayAnim.SetTrigger("Change");
+
         continueButton.SetActive(false);
 
         if (index < sentences.Length - 1)
