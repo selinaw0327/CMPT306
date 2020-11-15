@@ -191,7 +191,6 @@ public class SaveLoadRunner : MonoBehaviour
     {
         
         foreach(GameObject item in itemsOnFloorList.itemList){
-            Debug.Log("Destroyed Item");
             Destroy(item);
             
         }
@@ -199,7 +198,6 @@ public class SaveLoadRunner : MonoBehaviour
         itemsOnFloorList.itemList = new List<GameObject>();
 
         foreach(ItemData itemData in itemsOnFloorList.itemDataList){
-            Debug.Log("Recreated Item");
             Vector2 position;
             position.x = itemData.position[0];
             position.y = itemData.position[1];
