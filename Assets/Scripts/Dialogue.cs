@@ -11,12 +11,9 @@ public class Dialogue : MonoBehaviour
     public float typingSpeed;
 
     public GameObject continueButton;
-    public Animator textDisplayAnim;
-    private AudioSource source;
 
     void Start()
     {
-        source = GetComponent<AudioSource>();
         StartCoroutine(Type());
     }
 
@@ -39,8 +36,6 @@ public class Dialogue : MonoBehaviour
 
     public void NextSentence()
     {
-        source.Play();
-        textDisplayAnim.SetTrigger("Change");
         continueButton.SetActive(false);
 
         if (index < sentences.Length - 1)
