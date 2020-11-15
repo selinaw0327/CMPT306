@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private Animator animator;
     private Vector3 movement;
-    private AudioSource footstep;
 
     // Start is called before the first frame update
     void Start()
@@ -76,10 +75,5 @@ public class PlayerMovement : MonoBehaviour
     {
         // moves the character
         transform.Translate(new Vector3(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime));
-    }
-
-    private void Footstep()
-    {
-        footstep.Play();
     }
 }
