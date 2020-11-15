@@ -25886,6 +25886,7 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1393028595}
   m_CullTransparentMesh: 0
 --- !u!1 &1397193265
@@ -25906,6 +25907,81 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &1397193266
+=======
+  m_GameObject: {fileID: 548420653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee20600a8b3aa04bb618f432c470f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  occupied: 00000000000000000000
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemDataArr:
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  - name: 
+    spriteTex: 
+    spriteW: 0
+    spriteH: 0
+  inventory: {fileID: 922130957}
+  items:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  quantity: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!114 &548420657
+>>>>>>> parent of c63264c... redo dialogue
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26445,7 +26521,49 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!20 &1581913022
+=======
+--- !u!4 &849181899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849181898}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1885844828}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &849181900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849181898}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a12e8c29888c5c47805fec3d54d3a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  smoothing: 0.4
+  minPosition: {x: 0, y: 0}
+  maxPosition: {x: 0, y: 0}
+--- !u!81 &849181901
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849181898}
+  m_Enabled: 0
+--- !u!20 &849181902
+>>>>>>> parent of c63264c... redo dialogue
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27651,6 +27769,46 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 8979576911410888322, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
+      propertyPath: m_Name
+      value: Slot 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
+--- !u!1001 &1853031954
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 922130958}
+    m_Modifications:
+    - target: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> parent of c63264c... redo dialogue
     - target: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -27829,6 +27987,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1924978380}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -27839,10 +27998,25 @@ MonoBehaviour:
   batDataList: []
 --- !u!114 &1924978382
 MonoBehaviour:
+=======
+  m_GameObject: {fileID: 1885844824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a12e8c29888c5c47805fec3d54d3a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 548420663}
+  smoothing: 0.6
+  minPosition: {x: -4.75, y: -5}
+  maxPosition: {x: 3.75, y: 5}
+--- !u!81 &1885844826
+AudioListener:
+>>>>>>> parent of c63264c... redo dialogue
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1924978380}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -27852,6 +28026,54 @@ MonoBehaviour:
   rockDataList: []
   rockList: []
 --- !u!4 &1924978383
+=======
+  m_GameObject: {fileID: 1885844824}
+  m_Enabled: 1
+--- !u!20 &1885844827
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885844824}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.31764707, g: 0.31764707, b: 0.31764707, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 0
+  m_HDR: 1
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 0
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1885844828
+>>>>>>> parent of c63264c... redo dialogue
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28042,6 +28264,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.76666665, y: 1.6333333}
   m_EdgeRadius: 0
+<<<<<<< HEAD
 --- !u!1 &1978335066
 GameObject:
   m_ObjectHideFlags: 0
@@ -28121,6 +28344,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978335066}
   m_CullTransparentMesh: 0
+=======
+--- !u!224 &1977755932 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
+  m_PrefabInstance: {fileID: 1956977122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1986982521 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
+  m_PrefabInstance: {fileID: 16917842}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> parent of c63264c... redo dialogue
 --- !u!1 &2012242160
 GameObject:
   m_ObjectHideFlags: 0
@@ -29108,6 +29343,7 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+<<<<<<< HEAD
 --- !u!1001 &2056345412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29441,6 +29677,14 @@ GameObject:
   m_PrefabInstance: {fileID: 313158172}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &2111897197 stripped
+=======
+--- !u!224 &2022269221 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
+  m_PrefabInstance: {fileID: 27772480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &2050793181 stripped
+>>>>>>> parent of c63264c... redo dialogue
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
   m_PrefabInstance: {fileID: 313158172}
