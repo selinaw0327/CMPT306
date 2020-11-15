@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
-        footstep = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
