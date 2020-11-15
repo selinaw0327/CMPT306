@@ -28265,6 +28265,7 @@ BoxCollider2D:
   m_Size: {x: 0.76666665, y: 1.6333333}
   m_EdgeRadius: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1978335066
 GameObject:
   m_ObjectHideFlags: 0
@@ -28345,6 +28346,8 @@ CanvasRenderer:
   m_GameObject: {fileID: 1978335066}
   m_CullTransparentMesh: 0
 =======
+=======
+>>>>>>> parent of c63264c... redo dialogue
 --- !u!224 &1977755932 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
@@ -29344,6 +29347,7 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &2056345412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29678,6 +29682,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &2111897197 stripped
 =======
+=======
+>>>>>>> parent of c63264c... redo dialogue
 --- !u!224 &2022269221 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8979576911410888321, guid: a7281434785eb5841b94017e2e1fe200, type: 3}
