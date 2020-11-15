@@ -98,6 +98,7 @@ public class EnemyAI : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // Enemy chases player only if it's being hit
         if(other.gameObject.CompareTag("Player"))
         {
             chasePlayerOn = true;
