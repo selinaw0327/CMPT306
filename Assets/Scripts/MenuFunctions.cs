@@ -9,7 +9,7 @@ public class MenuFunctions : MonoBehaviour
     public static int character = 1;
 
     public void LoadScene(string sceneName) {
-        SceneManager.LoadSceneAsync(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void SelectCharacter(int characterSelected) {
