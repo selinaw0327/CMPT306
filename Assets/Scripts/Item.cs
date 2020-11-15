@@ -48,6 +48,7 @@ public class Item : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
         if (collider.CompareTag("Player"))
         {
             if (!inventory.items.Contains(name))
@@ -79,9 +80,14 @@ public class Item : MonoBehaviour
             {
                 inventory.quantity[inventory.IndexOf(name)] += 1;
                 added = true;
+                if(name  == "Copper Bar") {
+                    challengeMenu.updateChallenge("10cop");
+                }
+                challengeMenu.updateChallenge("pickup");
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
-
+            
+        
         }
     }
 
