@@ -36,6 +36,7 @@ public class EnemyStats : MonoBehaviour
                 ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
                 challengeMenu.updateChallenge("5bat");
             }
+            transform.parent.gameObject.GetComponent<EnemyDrop>().Drop();
             Destroy(this.transform.parent.gameObject);
             EnemyLists enemyLists = GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
             List<GameObject> objectList;
