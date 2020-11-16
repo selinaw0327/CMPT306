@@ -31,13 +31,14 @@ public class SaveLoadRunner : MonoBehaviour
 
     public void SaveAll() 
     {
+        SaveMapSeed();
         SavePlayer();
         SaveItemsOnFloor();
         SaveRocks();
         SaveEnemies();
         SaveInventory();
         SaveChallenges();
-        SaveMapSeed();
+        
 
     }
 
@@ -69,6 +70,7 @@ public class SaveLoadRunner : MonoBehaviour
     
     public void SaveMapSeed()
     {
+        
         SaveLoad.SaveMapSeed(map);
     }
     public void LoadMap() 
@@ -90,6 +92,7 @@ public class SaveLoadRunner : MonoBehaviour
         }
 
         SaveLoad.LoadMapSeed(map);
+        
         map.createdObjects = new List<GameObject>();
         map.GenerateAll();
         foreach(GameObject createdObject in map.createdObjects){

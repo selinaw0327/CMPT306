@@ -240,7 +240,7 @@ private void FillSpawnLocations() {
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
             } else if(rand == 1) {
                 int barOrFruitRand = Random.Range(0, 2);
-                Debug.Log(barOrFruitRand);
+                
                 if(barOrFruitRand == 0 ){
                     
                     SpawnFruit(newObject);
