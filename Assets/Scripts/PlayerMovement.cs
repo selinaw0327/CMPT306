@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private Animator animator;
     private Vector3 movement;
-    //private AudioSource footstep;
+
+    // Sound effect
     private AudioSource[] sounds;
     private AudioSource footstep;
     private AudioSource attack;
@@ -30,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
-        //footstep = GetComponent<AudioSource>();
+
+        // Sound effects
         sounds = GetComponents<AudioSource>();
 
         footstep = sounds[0];
