@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private Vector3 movement;
 
+    // Sound effect
+    private AudioSource[] sounds;
+    private AudioSource footstep;
+    private AudioSource attack;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +31,12 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
+
+        // Sound effects
+        sounds = GetComponents<AudioSource>();
+
+        footstep = sounds[0];
+        attack = sounds[1];
     }
 
     // Update is called once per frame
@@ -74,5 +85,15 @@ public class PlayerMovement : MonoBehaviour
     {
         // moves the character
         transform.Translate(new Vector3(movement.x * speed * Time.deltaTime, movement.y * speed * Time.deltaTime));
+    }
+
+    public void Footstep()
+    {
+        footstep.Play();
+    }
+
+    public void Attack()
+    {
+        attack.Play();
     }
 }

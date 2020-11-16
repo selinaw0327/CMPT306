@@ -53,7 +53,7 @@ public class UseDrop : MonoBehaviour
             case Item.ItemType.CopperBar:
                 if (inventory.quantity[itemIndex] < 10)
                 {
-                    Debug.Log("You need 10 copper bars to forge a silver sword");
+                    Debug.Log("You need 10 copper bars to forge a copper sword");
                 }
                 else if (inventory.quantity[itemIndex] >= 10)
                 {
@@ -112,32 +112,47 @@ public class UseDrop : MonoBehaviour
             // SWORDS
             case Item.ItemType.CopperSword:
                 // Code for what happens when Copper sword is right-clicked in inventory
+                Equip(spriteAtlas.GetComponent<SpriteAtlas>().copperSword);
                 changeSkin.CopperSkin();
                 break;
             case Item.ItemType.SilverSword:
                 // Code for what happens when Silver sword is right-clicked in inventory
+                Equip(spriteAtlas.GetComponent<SpriteAtlas>().silverSword);
                 changeSkin.SilverSkin();
                 break;
             case Item.ItemType.IronSword:
-                // Code for what happens when Iron sword is right-clicked in inventory
+                // Code for what happens when Iron sword is right-clicked in 
+                Equip(spriteAtlas.GetComponent<SpriteAtlas>().ironSword);
                 changeSkin.IronSkin();
                 break;
             case Item.ItemType.GoldSword:
                 // Code for what happens when Gold sword is right-clicked in inventory
+                Equip(spriteAtlas.GetComponent<SpriteAtlas>().goldSword);
                 changeSkin.GoldSkin();
                 break;
             case Item.ItemType.ObsidianSword:
                 // Code for what happens when Obsidian sword is right-clicked in inventory
+                Equip(spriteAtlas.GetComponent<SpriteAtlas>().obsidianSword);
                 changeSkin.ObsidianSkin();
                 break;
             default:
                 break;
         }
+        //UpdateQuantity(-1);
     }
 
     public void Forge(string name, Item.ItemType itemType, Sprite forgedSprite)
     {
         GetComponent<Spawn>().SpawnDroppedItem(name, itemType, forgedSprite);
+    }
+
+    public void Equip(Sprite swordSprite)
+    {
+        var image = GameObject.Find("Equipped Sword").transform.Find("Image");
+
+        image.GetComponent<Image>().sprite = swordSprite;
+        image.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+        image.GetComponent<RectTransform>().rotation = new Quaternion(0, 0, 0, 0);
     }
 
     public void Drop()
@@ -148,7 +163,10 @@ public class UseDrop : MonoBehaviour
 
     private void UpdateQuantity(int i)
     {
+        
         inventory.quantity[itemIndex] += i;
+
+        //Debug.Log(inventory.quantity[itemIndex] + ", " + i);
 
         // if the quantity is 0
         if (inventory.quantity[itemIndex] == 0)
