@@ -12,38 +12,55 @@ public class LevelLoader : MonoBehaviour
 
     public GameObject player, mainCamera, menus, mapCamera;
 
+    private string[] scenes = {"TutorialScene", "CaveGameScene", "ExitRoomScene"};
+    private int nextScene;
+    private int previousScene;
+
     bool loaded;
     bool unloaded;
 
+    void Start() {
+        player = GameObject.Find("Player");
+        mainCamera = GameObject.Find("Main Camera");
+        menus = GameObject.Find("Menus");
+        mapCamera = GameObject.Find("MapCamera");
+    }
+
     public void LoadNextLevel() {
-        transition.SetTrigger("Start");
+        // transition.SetTrigger("Start");
 
-        if(!loaded) {
-            switch (SceneManager.GetActiveScene().name) {
-            case "TutorialScene":
-                SceneManager.LoadScene("CaveGameScene");
-                break;
-            case "CaveGameScene":
-                SceneManager.LoadSceneAsync("ExitRoomScene", LoadSceneMode.Additive);
-                break;
-            case "ExitRoomScene":
-                SceneManager.LoadScene("CaveGameScene");
-                ProcGenDungeon.caveLevel++;
-                break;
-            }
-            SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName("ExitRoomScene"));
-            SceneManager.MoveGameObjectToScene(mainCamera, SceneManager.GetSceneByName("ExitRoomScene"));
-            SceneManager.MoveGameObjectToScene(menus, SceneManager.GetSceneByName("ExitRoomScene"));
-            SceneManager.MoveGameObjectToScene(mapCamera, SceneManager.GetSceneByName("ExitRoomScene"));
-            player.transform.position = new Vector3(0,-6,0);
-            if(!unloaded) {
-                unloaded = true;
-                UnloadScene("CaveGameScene");
-            }
-            loaded = true;
-        }
+        // if(!loaded) {
+        //     switch (SceneManager.GetActiveScene().name) {
+        //     case "TutorialScene":
+        //         previousScene = 0;
+        //         nextScene = 1;
+        //         SceneManager.LoadScene(scenes[nextScene]);
+        //         break;
+        //     case "CaveGameScene":
+        //         previousScene = 1;
+        //         nextScene = 2;
+        //         SceneManager.LoadSceneAsync(scenes[nextScene], LoadSceneMode.Additive);
+        //         break;
+        //     case "ExitRoomScene":
+        //         previousScene = 2;
+        //         nextScene = 1;
+        //         SceneManager.LoadScene(scenes[nextScene]);
+        //         ProcGenDungeon.caveLevel++;
+        //         break;
+        //     }
+        //     SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(scenes[nextScene]));
+        //     SceneManager.MoveGameObjectToScene(mainCamera, SceneManager.GetSceneByName(scenes[nextScene]));
+        //     SceneManager.MoveGameObjectToScene(menus, SceneManager.GetSceneByName(scenes[nextScene]));
+        //     SceneManager.MoveGameObjectToScene(mapCamera, SceneManager.GetSceneByName(scenes[nextScene]));
+        //     player.transform.position = new Vector3(0,-6,0);
+        //     if(!unloaded) {
+        //         unloaded = true;
+        //         UnloadScene(scenes[previousScene]);
+        //     }
+        //     loaded = true;
+        // }
 
-        // StartCoroutine(LoadLevel());
+        StartCoroutine(LoadLevel());
     }
 
     IEnumerator LoadLevel() {
@@ -54,23 +71,33 @@ public class LevelLoader : MonoBehaviour
         if(!loaded) {
             switch (SceneManager.GetActiveScene().name) {
             case "TutorialScene":
-                SceneManager.LoadScene("CaveGameScene");
+                previousScene = 0;
+                nextScene = 1;
+                // SceneManager.LoadScene(scenes[nextScene]);
                 break;
             case "CaveGameScene":
-                SceneManager.LoadSceneAsync("ExitRoomScene", LoadSceneMode.Additive);
+                previousScene = 1;
+                nextScene = 2;
+                // SceneManager.LoadSceneAsync(scenes[nextScene], LoadSceneMode.Additive);
                 break;
             case "ExitRoomScene":
-                SceneManager.LoadScene("CaveGameScene");
+                previousScene = 2;
+                nextScene = 1;
+                // SceneManager.LoadScene(scenes[nextScene]);
                 ProcGenDungeon.caveLevel++;
                 break;
             }
-            SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName("ExitRoomScene"));
-            SceneManager.MoveGameObjectToScene(mainCamera, SceneManager.GetSceneByName("ExitRoomScene"));
-            SceneManager.MoveGameObjectToScene(menus, SceneManager.GetSceneByName("ExitRoomScene"));
-            player.transform.position = new Vector3(0,-6,0);
+            SceneManager.LoadSceneAsync(scenes[nextScene], LoadSceneMode.Additive);
+
+
+            SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(scenes[nextScene]));
+            SceneManager.MoveGameObjectToScene(mainCamera, SceneManager.GetSceneByName(scenes[nextScene]));
+            SceneManager.MoveGameObjectToScene(menus, SceneManager.GetSceneByName(scenes[nextScene]));
+            SceneManager.MoveGameObjectToScene(mapCamera, SceneManager.GetSceneByName(scenes[nextScene]));
+            player.transform.position = new Vector3(0,0,0);
             if(!unloaded) {
                 unloaded = true;
-                UnloadScene("CaveGameScene");
+                UnloadScene(scenes[previousScene]);
             }
             loaded = true;
         }
