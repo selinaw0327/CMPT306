@@ -153,6 +153,8 @@ public class UseDrop : MonoBehaviour
         image.GetComponent<Image>().sprite = swordSprite;
         image.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
         image.GetComponent<RectTransform>().rotation = new Quaternion(0, 0, 0, 0);
+
+        UpdateQuantity(-1);
     }
 
     public void Drop()
