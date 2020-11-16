@@ -228,9 +228,11 @@ public class ProcGenDungeon : MonoBehaviour
 
 private void FillSpawnLocations() {
         for(int i = 0; i < spawnLocations.Count; i++) {
+            
             int rand = Random.Range(0, objects.Length);
 
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
+
 
             createdObjects.Add(newObject);
             if(rand == 0){
@@ -238,20 +240,25 @@ private void FillSpawnLocations() {
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
             } else if(rand == 1) {
                 int barOrFruitRand = Random.Range(0, 2);
-
+                
                 if(barOrFruitRand == 0 ){
+                    
                     SpawnFruit(newObject);
                 } else {
                     SpawnBars(newObject);
                 }
+                
             } else if(rand == 2) {
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
+        
             }
+            
+            
         }
     }
 
     private void SpawnFruit(GameObject newObject) {
-        int rand = Random.Range(0, 8);
+        int rand = Random.Range(0, 6);
 
         switch (rand) {
             case 0:
@@ -274,9 +281,6 @@ private void FillSpawnLocations() {
                 break;
             case 6:
                 newObject.name = "Strawberry";
-                break;
-            case 7: 
-                newObject.name = "Apple";
                 break;
         }        
         newObject.GetComponent<SpriteRenderer>().sprite = fruitSprites[rand];
