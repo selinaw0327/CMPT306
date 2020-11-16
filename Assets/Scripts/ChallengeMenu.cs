@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
+
 public class ChallengeMenu : MonoBehaviour
 {
     public Text challengeText;
@@ -12,11 +17,7 @@ public class ChallengeMenu : MonoBehaviour
 
     public GameObject challengeMenuUI;
     public GameObject challengeCompletedUI;
-    public delegate void OnComplete(); 
-    //type for challenges to calll void functions when they are completed
-    //so specific events can happen when ceratain challenges are completed
 
-    
     [System.Serializable]
     public struct Challenge
     {
@@ -26,10 +27,8 @@ public class ChallengeMenu : MonoBehaviour
 
         public int count;
         public bool countable;
-
-        public OnComplete oncompleteMethod;
-        
     }
+
 
     public List<Challenge> challengeList = new List<Challenge>();
 
@@ -39,7 +38,7 @@ public class ChallengeMenu : MonoBehaviour
 
         AddChallenge("Hit I to open and close your Inventory","inv");
         AddChallenge("Pick up an Item", "pickup");
-        AddChallenge("Collect 10 copper bars", "10cop", 10, cop10OnComplete);
+        AddChallenge("Collect 10 copper bars", "10cop", 10);
         
     }
     void Update()
@@ -60,14 +59,15 @@ public class ChallengeMenu : MonoBehaviour
             }
         }
     }
-    public void AddChallenge(string description, string name, int count = 1, OnComplete onComplete = null){
+    
+    public void AddChallenge(string description, string name, int count = 1){
         Challenge newChallenge = new Challenge();
         newChallenge.description = description;
         newChallenge.completed = false;
         newChallenge.name = name;
         newChallenge.count = count;
         newChallenge.countable = count!=1; 
-        newChallenge.oncompleteMethod = onComplete;
+        
         
         challengeList.Add(newChallenge);
     }   
@@ -93,9 +93,7 @@ public class ChallengeMenu : MonoBehaviour
                 challenge.completed = true;
                 completedText.text = challenge.description;
                 openCompleted();
-                if(challenge.oncompleteMethod!= null){
-                    challenge.oncompleteMethod();
-                }
+                OnComplete(challenge.name);
             }
             challengeList[challengeIndex] = challenge;
             
@@ -139,8 +137,10 @@ public class ChallengeMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    private void OnComplete(string challengeName){
+        if(challengeName == "10cop"){
+            AddChallenge("Kill 5 bats", "5bat", 5);
+        }
 
-    private void  cop10OnComplete(){
-        AddChallenge("Kill 5 bats", "5bat", 5);
     }
 }
