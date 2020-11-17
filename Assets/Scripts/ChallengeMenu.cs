@@ -112,6 +112,7 @@ public class ChallengeMenu : MonoBehaviour
         else
         {
             Resume();
+            closeCompleted();
         }
     }
 
@@ -130,11 +131,13 @@ public class ChallengeMenu : MonoBehaviour
     public void openCompleted() {
         challengeCompletedUI.SetActive(true);
         Time.timeScale = 0;
+        GameIsPaused = true;
     }
 
     public void closeCompleted() {
         challengeCompletedUI.SetActive(false);
         Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 
     private void OnComplete(string challengeName){
