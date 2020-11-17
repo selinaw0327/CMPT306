@@ -47,7 +47,9 @@ public class SaveLoadRunner : MonoBehaviour
     }
     public void SaveAll() 
     {
-
+        if(currentScene == "CaveGameScene"){
+        SaveMapSeed();
+        }
         SavePlayer();
         SaveItemsOnFloor();
         SaveRocks();
@@ -55,24 +57,23 @@ public class SaveLoadRunner : MonoBehaviour
         SaveInventory();
         SaveChallenges();
 
-        if(currentScene == "CaveGameScene"){
-        SaveMapSeed();
-        }
+  
 
     }
 
     public void LoadAll()
     {
 
+        if(currentScene == "CaveGameScene"){
+        LoadMap();
+        }
         LoadPlayer();
         LoadRocks();
         LoadEnemies();
         LoadItemsOnFloor();
         LoadInventory();
         LoadChallenges();
-        if(currentScene == "CaveGameScene"){
-        LoadMap();
-        }
+        
         
     }
 
@@ -116,13 +117,13 @@ public class SaveLoadRunner : MonoBehaviour
         SaveLoad.LoadMapSeed(map);
         
         map.createdObjects = new List<GameObject>();
-        map.onload = true;
-        map.GenerateAll();
+        
+        map.GenerateAll(true);
 
         foreach(GameObject createdObject in map.createdObjects){
             Destroy(createdObject);
         }
-        map.onload = false;
+        
     }
     public void LoadInventory()
     {
@@ -171,7 +172,7 @@ public class SaveLoadRunner : MonoBehaviour
             position.x = rockData.position[0];
             position.y = rockData.position[1];
 
-            GameObject newRock = Instantiate(rock, position, Quaternion.identity);
+            GameObject newRock = Instantiate(rock, position, Quaternion.identity, GameObject.Find("Environment").transform );
             rockList.rockList.Add(newRock);
         }
 
