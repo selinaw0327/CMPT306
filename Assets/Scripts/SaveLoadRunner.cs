@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.IO;
 
 public class SaveLoadRunner : MonoBehaviour
@@ -18,20 +19,29 @@ public class SaveLoadRunner : MonoBehaviour
     public ProcGenDungeon map;
     public RockList rockList;
     public EnemyLists enemyLists;
+
+    string currentScene;
     void Start() 
     {
+        currentScene = SceneManager.GetActiveScene().name;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         challenges = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+        if(currentScene == "CaveGameScene"){
         map = GameObject.FindGameObjectWithTag("map").GetComponent<ProcGenDungeon>();
+        }
         rockList = GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>();
         enemyLists =  GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
     }
-
+    void Update() {
+        currentScene = SceneManager.GetActiveScene().name;
+    }
     public void SaveAll() 
     {
+        if(currentScene == "CaveGameScene"){
         SaveMapSeed();
+        }
         SavePlayer();
         SaveItemsOnFloor();
         SaveRocks();
@@ -44,7 +54,9 @@ public class SaveLoadRunner : MonoBehaviour
 
     public void LoadAll()
     {
+        if(currentScene == "CaveGameScene"){
         LoadMap();
+        }
         LoadPlayer();
         LoadRocks();
         LoadEnemies();
