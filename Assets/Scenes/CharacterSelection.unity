@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6259764160381265873, guid: 23a8b611f7a57f647ac9ff8f37260dff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: CaveGameScene
+      value: Intro
       objectReference: {fileID: 0}
     - target: {fileID: 6259764160381265873, guid: 23a8b611f7a57f647ac9ff8f37260dff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -821,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6259764160381265873, guid: 23a8b611f7a57f647ac9ff8f37260dff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: CaveGameScene
+      value: Intro
       objectReference: {fileID: 0}
     - target: {fileID: 6259764160381265873, guid: 23a8b611f7a57f647ac9ff8f37260dff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -1585,7 +1585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6259764160381265873, guid: 23a8b611f7a57f647ac9ff8f37260dff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: CaveGameScene
+      value: Intro
       objectReference: {fileID: 0}
     - target: {fileID: 6259764160381265873, guid: 23a8b611f7a57f647ac9ff8f37260dff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target

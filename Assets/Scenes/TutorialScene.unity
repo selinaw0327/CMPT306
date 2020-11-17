@@ -27150,23 +27150,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 390420470}
   sentences:
-  - "GHOST: Hello, little poor rookie! Welcome to hell! I was like you once, thrown
-    down in this cave. I wasn\u2019t able to escape but I can help you get started.
-    I wish you a better fate than the one I ended up with. "
-  - 'ROOKIE: THANK YOU!'
+  - "GHOST: I was like you once, thrown down in this cave. I wasn\u2019t able to
+    escape but I can help you get started."
+  - 'GHOST: I wish you a better fate than the one I ended up with. '
   - 'GHOST: Use WASD or the Arrow Keys on your keyboard to move around the map. Careful!
-    People here are not friendly. If you get too close to the other captives, they
-    will attack you. '
-  - "GHOST: Pressing \u2018I\u2019 on your keyboard or clicking on the backpack icon
-    in the bottom-left will show or hide your inventory. "
-  - "GHOST: To pick up items from the ground, simply walk by that item. That item
-    will then be added to your inventory. If you ever want to drop an item, click
-    on that item\u2019s inventory slot. "
-  - "GHOST: You will need to find food and water to sustain your health. If your
-    health drops to zero by either starving or being attacked, you\u2019ll end up
-    like me. "
+    The creatures down here are not friendly. If you get too close to them, they
+    will start to attack you. '
+  - 'GHOST: Pressing [ I ] on your keyboard will show and hide your inventory. '
+  - "GHOST: To pick up items from the ground, simply walk by the item. That item
+    will then be added to your inventory. If you ever want to drop an item, left-click
+    on that item\u2019s inventory slot. To use an item, right-click on it. "
+  - "GHOST: You will need to find food to sustain your health. If your health drops
+    to zero by either starving or being attacked, you\u2019ll die and end up like
+    me. Stuck here forever."
   - 'GHOST: You need to fend for yourself, fight off foes, forge your way out of
-    this cave and survive. '
+    this cave and survive. I wish you luck.'
   typingSpeed: 0.02
   continueButton: {fileID: 603188949}
   textDisplayAnim: {fileID: 390420473}
@@ -28559,6 +28557,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1349442595346049893, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1349442596836745965, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -29115,7 +29117,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   challengeText: {fileID: 191094805}
+  completedText: {fileID: 0}
   challengeMenuUI: {fileID: 1489173441}
+  challengeCompletedUI: {fileID: 0}
   challengeList: []
 --- !u!114 &1856315104
 MonoBehaviour:
