@@ -79,6 +79,21 @@ public class ChallengeMenu : MonoBehaviour
         challengeList.Add(newChallenge);
     }   
 
+    public void incrementChallenge(string name ){
+        int  challengeIndex = challengeList.FindIndex(challenge => challenge.name == name);
+        if(challengeIndex!=-1){
+            Challenge challenge = challengeList[challengeIndex];
+            if(challenge.countable && !challenge.completed){ 
+                challenge.count += 1;       
+            }
+            challengeList[challengeIndex] = challenge;
+            
+        } else {
+            Debug.Log("Error tried to update challenge that does not exist");
+        }
+    
+    }
+
     public  void updateChallenge(string name){
         int  challengeIndex = challengeList.FindIndex(challenge => challenge.name == name);
         if(challengeIndex!=-1){

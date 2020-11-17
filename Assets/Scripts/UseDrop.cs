@@ -164,6 +164,10 @@ public class UseDrop : MonoBehaviour
     public void Drop()
     {
         GetComponent<Spawn>().SpawnDroppedItem(name, itemType, sprite);
+        if(name == "Copper Bar"){
+            ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+            challengeMenu.incrementChallenge("10cop");
+        }
         UpdateQuantity(-1);
     }
 
