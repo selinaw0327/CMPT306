@@ -20,7 +20,7 @@ public class PlayerStats : MonoBehaviour
     public int maxHunger;
     public int currentHunger;
 
-    public int currentLevel;
+    public int currentLevel = 0;
     public int damage;
     
     public float energyDecreaseRate;
@@ -31,8 +31,6 @@ public class PlayerStats : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        DontDestroyOnLoad(this.transform);
-
         switch (MenuFunctions.character) {
             case 1:
                 SetAllStats(100, 150, 100);

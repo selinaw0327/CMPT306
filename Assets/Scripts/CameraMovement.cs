@@ -16,14 +16,13 @@ public class CameraMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this.transform);
         cam = GetComponent<Camera>();
         StartCoroutine(CameraCoroutine());
     }
 
     IEnumerator CameraCoroutine()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         minPosition = map.GetComponent<Tilemap>().origin;
         maxPosition = map.GetComponent<Tilemap>().origin + map.GetComponent<Tilemap>().size;
     }

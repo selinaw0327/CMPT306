@@ -5,9 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
+    public static LevelLoader levelLoader;
     public Animator transition;
 
     private GameObject exit;
+
+    public GameObject objectsToMove;
+
+    private string[] scenes = {"TutorialScene", "CaveGameScene", "ExitRoomScene"};
+    private static int nextScene = 0;
+    private static int previousScene = 0;
+
+    bool loaded = false;
+    bool unloaded = false;
+
+    void Start() {
+        // Time.timeScale = 1;
+        objectsToMove = GameObject.Find("ObjectsToMove");
+    }
 
     public void LoadNextLevel() {
         StartCoroutine(LoadLevel());
@@ -18,20 +33,49 @@ public class LevelLoader : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        switch (SceneManager.GetActiveScene().name) {
+        if(!loaded) {
+            switch (SceneManager.GetActiveScene().name) {
             case "TutorialScene":
-                SceneManager.LoadScene("CaveGameScene");
+                previousScene = 0;
+                nextScene = 1;
+                // Destroy(GameObject.Find("Skip Button"));
                 break;
             case "CaveGameScene":
-                SceneManager.LoadScene("ExitRoomScene");
+                previousScene = 1;
+                nextScene = 2;
                 break;
             case "ExitRoomScene":
-                SceneManager.LoadScene("CaveGameScene");
+                previousScene = 2;
+                nextScene = 1;
                 ProcGenDungeon.caveLevel++;
                 break;
+            }
+
+            SceneManager.LoadSceneAsync(scenes[nextScene], LoadSceneMode.Additive);
+            SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(scenes[nextScene]));
+            
+            if(nextScene == 1) {
+                objectsToMove.transform.GetChild(2).transform.position = new Vector3(0,0,0);
+            }
+            else if (nextScene == 2) {
+                objectsToMove.transform.GetChild(2).transform.position = new Vector3(0,-6,0);
+            }
+
+            if(!unloaded) {
+                unloaded = true;
+                UnloadScene(scenes[previousScene]);
+            }
+            loaded = true;
         }
-        Camera.main.GetComponent<CameraMovement>().UpdatePlayerReference();
     }
 
+    public void UnloadScene(string scene) {
+        StartCoroutine(Unload(scene));
+    }
 
+    IEnumerator Unload(string scene) {
+        yield return new WaitForSeconds(1);
+
+        SceneManager.UnloadSceneAsync(scene);
+    }
 }

@@ -22,7 +22,7 @@ public class ScanGrid : MonoBehaviour
     IEnumerator ExampleCoroutine()
     {
         //yield on a new YieldInstruction that waits for 0.1 seconds.
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         
         calcMapSize();
         setAGridDimensions();

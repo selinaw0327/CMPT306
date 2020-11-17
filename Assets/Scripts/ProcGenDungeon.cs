@@ -57,7 +57,13 @@ public class ProcGenDungeon : MonoBehaviour
         GenerateAll();
     }
 
-    public void GenerateAll(){
+    public void GenerateAll() {
+        StartCoroutine(Generate());
+    }
+
+    IEnumerator Generate(){
+        yield return new WaitForSeconds(1);
+
         Random.seed = seed;
         int x = 0;
         int y = 0;
@@ -211,7 +217,7 @@ public class ProcGenDungeon : MonoBehaviour
             if(Random.Range(0, 3) == 1) {   // Random chance to create a spawn point
                 Vector3Int location = new Vector3Int(x, y, 0);
                 if(!spawnLocations.Contains(location)) {    // Check if the location is already a spawn point
-                    spawnLocations.Add(new Vector3Int(x, y, 0));
+                    spawnLocations.Add(location);
                 }
             }
         }
@@ -226,39 +232,33 @@ public class ProcGenDungeon : MonoBehaviour
     }
 
 
-private void FillSpawnLocations() {
+    private void FillSpawnLocations() {
         for(int i = 0; i < spawnLocations.Count; i++) {
-            
             int rand = Random.Range(0, objects.Length);
 
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
-
 
             createdObjects.Add(newObject);
             if(rand == 0){
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
+
             } else if(rand == 1) {
                 int barOrFruitRand = Random.Range(0, 2);
-                
+
                 if(barOrFruitRand == 0 ){
-                    
                     SpawnFruit(newObject);
                 } else {
                     SpawnBars(newObject);
                 }
-                
             } else if(rand == 2) {
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
-        
             }
-            
-            
         }
     }
 
     private void SpawnFruit(GameObject newObject) {
-        int rand = Random.Range(0, 6);
+        int rand = Random.Range(0, 8);
 
         switch (rand) {
             case 0:
@@ -282,13 +282,16 @@ private void FillSpawnLocations() {
             case 6:
                 newObject.name = "Strawberry";
                 break;
+            case 7: 
+                newObject.name = "Apple";
+                break;
         }        
         newObject.GetComponent<SpriteRenderer>().sprite = fruitSprites[rand];
         newObject.GetComponent<Item>().itemSprite = fruitSprites[rand];
         ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         itemLists.itemList.Add(newObject);
-        
     }
+
     private void SpawnBars(GameObject newObject) {
         // int rand = Random.RandomRange(0, 4);
         int rand  = 0;
@@ -316,7 +319,5 @@ private void FillSpawnLocations() {
         newObject.GetComponent<Item>().itemType = Item.ItemType.CopperBar;
         ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         itemLists.itemList.Add(newObject);
-       
     }
-    
 }
