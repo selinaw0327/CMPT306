@@ -55,14 +55,14 @@ public class ProcGenDungeon : MonoBehaviour
     {
         seed = Random.Range(1, 10000000);
         onload = false;
-        GenerateAll();
+        GenerateAll(onload);
     }
 
-    public void GenerateAll() {
-        StartCoroutine(Generate());
+    public void GenerateAll(bool onload) {
+        StartCoroutine(Generate(onload));
     }
 
-    IEnumerator Generate(){
+    IEnumerator Generate(bool onload){
         yield return new WaitForSeconds(1);
 
         Random.seed = seed;
@@ -78,6 +78,7 @@ public class ProcGenDungeon : MonoBehaviour
 
         FillWalls();
         if(!onload){
+            Debug.Log("not on load");
             FillSpawnLocations();
         }
     }
