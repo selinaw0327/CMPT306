@@ -235,7 +235,6 @@ public class ProcGenDungeon : MonoBehaviour
     private void FillSpawnLocations() {
         for(int i = 0; i < spawnLocations.Count; i++) {
             int rand = Random.Range(0, objects.Length);
-            Debug.Log(objects[rand]);
 
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
 
