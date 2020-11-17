@@ -25683,42 +25683,52 @@ MonoBehaviour:
     spriteTex: 
     spriteW: 0
     spriteH: 0
+    itemType: 0
   - name: 
     spriteTex: 
     spriteW: 0
     spriteH: 0
+    itemType: 0
   - name: 
     spriteTex: 
     spriteW: 0
     spriteH: 0
+    itemType: 0
   - name: 
     spriteTex: 
     spriteW: 0
     spriteH: 0
+    itemType: 0
   - name: 
     spriteTex: 
     spriteW: 0
     spriteH: 0
+    itemType: 0
   - name: 
     spriteTex: 
     spriteW: 0
     spriteH: 0
+    itemType: 0
   - name: 
     spriteTex: 
     spriteW: 0
     spriteH: 0
+    itemType: 0
   - name: 
     spriteTex: 
     spriteW: 0
     spriteH: 0
+    itemType: 0
   - name: 
     spriteTex: 
     spriteW: 0
     spriteH: 0
+    itemType: 0
   - name: 
     spriteTex: 
     spriteW: 0
     spriteH: 0
+    itemType: 0
   inventory: {fileID: 1732990077}
   inventoryItems:
   - {fileID: 0}
@@ -25808,6 +25818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   speed: 5
+  swordEquipped: 0
 --- !u!95 &1200133276
 Animator:
   serializedVersion: 3
@@ -28957,6 +28968,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 1349442596836745967, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
 --- !u!1 &1691640053
@@ -29759,7 +29774,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8058635044977053328, guid: 10eb34f0b957541c4ade577ebfc93a9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
