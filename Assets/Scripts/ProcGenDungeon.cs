@@ -45,6 +45,7 @@ public class ProcGenDungeon : MonoBehaviour
     private List<Vector3Int> spawnLocations = new List<Vector3Int>();
     public int seed;
  
+    public bool onload;
     
     
 
@@ -53,7 +54,7 @@ public class ProcGenDungeon : MonoBehaviour
     public void Start()
     {
         seed = Random.Range(1, 10000000);
-        
+        onload = false;
         GenerateAll();
     }
 
@@ -76,8 +77,9 @@ public class ProcGenDungeon : MonoBehaviour
         NewRoute(x, y, routeLength, previousPos);
 
         FillWalls();
-
-        FillSpawnLocations();
+        if(!onload){
+            FillSpawnLocations();
+        }
     }
 
     private void FillWalls()

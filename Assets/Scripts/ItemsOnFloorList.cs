@@ -16,7 +16,6 @@ public class ItemsOnFloorList : MonoBehaviour
         
         foreach(GameObject item in itemArray){
             
-            itemDataList.Add(new ItemData(item.GetComponent<Item>()));
             itemList.Add(item);
             
         }

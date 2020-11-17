@@ -47,30 +47,32 @@ public class SaveLoadRunner : MonoBehaviour
     }
     public void SaveAll() 
     {
-        if(currentScene == "CaveGameScene"){
-        SaveMapSeed();
-        }
+
         SavePlayer();
         SaveItemsOnFloor();
         SaveRocks();
         SaveEnemies();
         SaveInventory();
         SaveChallenges();
-        
+
+        if(currentScene == "CaveGameScene"){
+        SaveMapSeed();
+        }
 
     }
 
     public void LoadAll()
     {
-        if(currentScene == "CaveGameScene"){
-        LoadMap();
-        }
+
         LoadPlayer();
         LoadRocks();
         LoadEnemies();
         LoadItemsOnFloor();
         LoadInventory();
         LoadChallenges();
+        if(currentScene == "CaveGameScene"){
+        LoadMap();
+        }
         
     }
 
@@ -114,11 +116,13 @@ public class SaveLoadRunner : MonoBehaviour
         SaveLoad.LoadMapSeed(map);
         
         map.createdObjects = new List<GameObject>();
+        map.onload = true;
         map.GenerateAll();
+
         foreach(GameObject createdObject in map.createdObjects){
             Destroy(createdObject);
         }
-        
+        map.onload = false;
     }
     public void LoadInventory()
     {
@@ -135,6 +139,7 @@ public class SaveLoadRunner : MonoBehaviour
             if(inventory.occupied[i]){
                 GameObject newItem = Instantiate(inventoryItem, inventory.slots[i].transform, false);
                 newItem.name = itemData.name;
+                newItem.GetComponent<UseDrop>().itemType = itemData.itemType;
                 Texture2D spriteTexture = new Texture2D(itemData.spriteW, itemData.spriteH,TextureFormat.RGBA32, false );
                 spriteTexture.LoadRawTextureData(itemData.spriteTex);
                 spriteTexture.Apply();
@@ -192,7 +197,7 @@ public class SaveLoadRunner : MonoBehaviour
             position.x = batData.position[0];
             position.y = batData.position[1];
 
-            GameObject newBat = Instantiate(bat, position, Quaternion.identity);
+            GameObject newBat = Instantiate(bat, position, Quaternion.identity, GameObject.Find("Environment").transform);
             
             
             newBat.transform.GetComponentInChildren<EnemyStats>().maxHealth = batData.maxHealth;
@@ -225,7 +230,8 @@ public class SaveLoadRunner : MonoBehaviour
             position.x = itemData.position[0];
             position.y = itemData.position[1];
 
-            GameObject newItem = Instantiate(item, position, Quaternion.identity);
+
+            GameObject newItem = Instantiate(item, position, Quaternion.identity, GameObject.Find("Environment").transform);
             
             newItem.name = itemData.name;
             
@@ -237,9 +243,6 @@ public class SaveLoadRunner : MonoBehaviour
             
             item.GetComponent<Item>().itemSprite = loadedSprite;
             item.GetComponent<Item>().itemType = itemData.itemType;
-            newItem.AddComponent<CircleCollider2D>();
-            newItem.GetComponent<CircleCollider2D>().isTrigger = true;
-            newItem.GetComponent<CircleCollider2D>().radius = 0.25f;
             GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>().itemList.Add(newItem);
         }
         itemsOnFloorList.itemDataList = new List<ItemData>();

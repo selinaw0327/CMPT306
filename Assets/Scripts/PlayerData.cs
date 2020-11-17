@@ -5,7 +5,7 @@ using UnityEngine;
  [System.Serializable]
 public class PlayerData 
 {
-    public int Level;
+
     public int Health;
     public int Hunger;
     public int Energy;
@@ -16,7 +16,7 @@ public class PlayerData
     
 
     public PlayerData(PlayerStats player){
-        Level = player.currentLevel;
+
         Hunger = player.currentHunger;
         Health = player.currentHealth;
         Energy = player.currentEnergy;

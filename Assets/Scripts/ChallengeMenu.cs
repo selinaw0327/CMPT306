@@ -15,7 +15,7 @@ public class ChallengeMenu : MonoBehaviour
     public GameObject challengeMenuUI;
     public GameObject challengeCompletedUI;
 
-    private float  timeToCloseCompleted = 2.0f;
+    private float  timeToCloseCompleted = 4.0f;
     private bool completedOpen = false;
 
     [System.Serializable]

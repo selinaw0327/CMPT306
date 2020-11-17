@@ -11,6 +11,7 @@ public class InventoryData
     public bool[] isFull;
     public string[] items;
     
+    
     public InventoryData(Inventory inventory){
         quantity = inventory.quantity;
         itemDataArr = inventory.itemDataArr;
