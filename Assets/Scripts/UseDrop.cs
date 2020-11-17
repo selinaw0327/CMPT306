@@ -112,27 +112,27 @@ public class UseDrop : MonoBehaviour
             // SWORDS
             case Item.ItemType.CopperSword:
                 // Code for what happens when Copper sword is right-clicked in inventory
-                Equip(spriteAtlas.GetComponent<SpriteAtlas>().copperSword);
+                Equip(spriteAtlas.GetComponent<SpriteAtlas>().copperSword, player);
                 changeSkin.CopperSkin();
                 break;
             case Item.ItemType.SilverSword:
                 // Code for what happens when Silver sword is right-clicked in inventory
-                Equip(spriteAtlas.GetComponent<SpriteAtlas>().silverSword);
+                Equip(spriteAtlas.GetComponent<SpriteAtlas>().silverSword, player);
                 changeSkin.SilverSkin();
                 break;
             case Item.ItemType.IronSword:
                 // Code for what happens when Iron sword is right-clicked in 
-                Equip(spriteAtlas.GetComponent<SpriteAtlas>().ironSword);
+                Equip(spriteAtlas.GetComponent<SpriteAtlas>().ironSword, player);
                 changeSkin.IronSkin();
                 break;
             case Item.ItemType.GoldSword:
                 // Code for what happens when Gold sword is right-clicked in inventory
-                Equip(spriteAtlas.GetComponent<SpriteAtlas>().goldSword);
+                Equip(spriteAtlas.GetComponent<SpriteAtlas>().goldSword, player);
                 changeSkin.GoldSkin();
                 break;
             case Item.ItemType.ObsidianSword:
                 // Code for what happens when Obsidian sword is right-clicked in inventory
-                Equip(spriteAtlas.GetComponent<SpriteAtlas>().obsidianSword);
+                Equip(spriteAtlas.GetComponent<SpriteAtlas>().obsidianSword, player);
                 changeSkin.ObsidianSkin();
                 break;
             default:
@@ -146,13 +146,15 @@ public class UseDrop : MonoBehaviour
         GetComponent<Spawn>().SpawnDroppedItem(name, itemType, forgedSprite);
     }
 
-    public void Equip(Sprite swordSprite)
+    public void Equip(Sprite swordSprite, GameObject player)
     {
         var image = GameObject.Find("Equipped Sword").transform.Find("Image");
 
         image.GetComponent<Image>().sprite = swordSprite;
         image.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
         image.GetComponent<RectTransform>().rotation = new Quaternion(0, 0, 0, 0);
+
+        player.GetComponent<PlayerStats>().swordEquipped = true;
 
         UpdateQuantity(-1);
     }
