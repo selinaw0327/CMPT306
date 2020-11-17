@@ -22,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource footstep;
     private AudioSource attack;
 
+    // Equipped sword
+    public bool swordEquipped;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +51,10 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetButtonDown("attack") && currentState != PlayerState.attack)
         {
-            StartCoroutine(AttackCo());
+            if (swordEquipped)
+            {
+                StartCoroutine(AttackCo());
+            }
         }
         else if (currentState == PlayerState.walk)
         {
