@@ -25778,6 +25778,7 @@ MonoBehaviour:
   damage: 10
   energyDecreaseRate: 1
   hungerDecreaseRate: 1
+  swordEquipped: 0
 --- !u!61 &1200133274
 BoxCollider2D:
   m_ObjectHideFlags: 0
