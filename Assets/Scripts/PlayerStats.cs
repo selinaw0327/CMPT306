@@ -20,7 +20,7 @@ public class PlayerStats : MonoBehaviour
     public int maxHunger;
     public int currentHunger;
 
-    public int currentLevel;
+    public int currentLevel = 0;
     public int damage;
     
     public float energyDecreaseRate;

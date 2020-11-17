@@ -16,8 +16,6 @@ public class CameraMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.Find("Player").transform;
-
         cam = GetComponent<Camera>();
         StartCoroutine(CameraCoroutine());
     }

@@ -240,8 +240,8 @@ public class ProcGenDungeon : MonoBehaviour
 
             createdObjects.Add(newObject);
             if(rand == 0){
-                // GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
-                // GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
 
             } else if(rand == 1) {
                 int barOrFruitRand = Random.Range(0, 2);
@@ -252,7 +252,7 @@ public class ProcGenDungeon : MonoBehaviour
                     SpawnBars(newObject);
                 }
             } else if(rand == 2) {
-                // GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
             }
         }
     }
@@ -288,8 +288,8 @@ public class ProcGenDungeon : MonoBehaviour
         }        
         newObject.GetComponent<SpriteRenderer>().sprite = fruitSprites[rand];
         newObject.GetComponent<Item>().itemSprite = fruitSprites[rand];
-        // ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
-        // itemLists.itemList.Add(newObject);
+        ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+        itemLists.itemList.Add(newObject);
     }
 
     private void SpawnBars(GameObject newObject) {
@@ -317,7 +317,7 @@ public class ProcGenDungeon : MonoBehaviour
         newObject.GetComponent<SpriteRenderer>().sprite = spriteAtlas.copperBar;
         newObject.GetComponent<Item>().itemSprite = spriteAtlas.copperBar;
         newObject.GetComponent<Item>().itemType = Item.ItemType.CopperBar;
-        // ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
-        // itemLists.itemList.Add(newObject);
+        ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+        itemLists.itemList.Add(newObject);
     }
 }

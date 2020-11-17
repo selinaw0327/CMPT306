@@ -10,7 +10,7 @@ public class LevelLoader : MonoBehaviour
 
     private GameObject exit;
 
-    public GameObject player;
+    public GameObject objectsToMove;
 
     private string[] scenes = {"TutorialScene", "CaveGameScene", "ExitRoomScene"};
     private static int nextScene = 0;
@@ -20,42 +20,12 @@ public class LevelLoader : MonoBehaviour
     bool unloaded = false;
 
     void Start() {
-        player = GameObject.Find("Player");
+        // Time.timeScale = 1;
+        objectsToMove = GameObject.Find("ObjectsToMove");
     }
 
     public void LoadNextLevel() {
-        // transition.SetTrigger("Start");
-
-        if(!loaded) {
-            switch (SceneManager.GetActiveScene().name) {
-            case "TutorialScene":
-                previousScene = 0;
-                nextScene = 1;
-                break;
-            case "CaveGameScene":
-                previousScene = 1;
-                nextScene = 2;
-                break;
-            case "ExitRoomScene":
-                previousScene = 2;
-                nextScene = 1;
-                ProcGenDungeon.caveLevel++;
-                break;
-            }
-
-            SceneManager.LoadSceneAsync(scenes[nextScene], LoadSceneMode.Additive);
-
-            SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(scenes[nextScene]));
-            
-            player.transform.position = new Vector3(0,0,0);
-            if(!unloaded) {
-                unloaded = true;
-                UnloadScene(scenes[previousScene]);
-            }
-            loaded = true;
-        }
-
-        // StartCoroutine(LoadLevel());
+        StartCoroutine(LoadLevel());
     }
 
     IEnumerator LoadLevel() {
@@ -68,6 +38,7 @@ public class LevelLoader : MonoBehaviour
             case "TutorialScene":
                 previousScene = 0;
                 nextScene = 1;
+                // Destroy(GameObject.Find("Skip Button"));
                 break;
             case "CaveGameScene":
                 previousScene = 1;
@@ -81,10 +52,15 @@ public class LevelLoader : MonoBehaviour
             }
 
             SceneManager.LoadSceneAsync(scenes[nextScene], LoadSceneMode.Additive);
-
-            SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(scenes[nextScene]));
+            SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(scenes[nextScene]));
             
-            player.transform.position = new Vector3(0,0,0);
+            if(nextScene == 1) {
+                objectsToMove.transform.GetChild(2).transform.position = new Vector3(0,0,0);
+            }
+            else if (nextScene == 2) {
+                objectsToMove.transform.GetChild(2).transform.position = new Vector3(0,-6,0);
+            }
+
             if(!unloaded) {
                 unloaded = true;
                 UnloadScene(scenes[previousScene]);
