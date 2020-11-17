@@ -16,8 +16,8 @@ public class EnemyData
 
     public EnemyData(EnemyStats enemyStats){
         position = new float[2];
-        position[0] = enemyStats.transform.position.x;
-        position[1] = enemyStats.transform.position.y;
+        position[0] = enemyStats.transform.parent.gameObject.transform.position.x;
+        position[1] = enemyStats.transform.parent.gameObject.transform.position.y;
 
         maxHealth = enemyStats.maxHealth;
         currentHealth = enemyStats.currentHealth;
