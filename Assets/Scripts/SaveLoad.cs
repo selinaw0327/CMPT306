@@ -184,7 +184,7 @@ public static class SaveLoad
 			PlayerData data =formatter.Deserialize(stream) as PlayerData;
 			stream.Close();
 			
-			player.currentLevel = data.Level;
+			
             player.currentHealth = data.Health;
             player.currentEnergy = data.Energy;
             player.currentHunger = data.Hunger;
