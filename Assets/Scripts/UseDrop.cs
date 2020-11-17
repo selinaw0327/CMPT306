@@ -155,6 +155,8 @@ public class UseDrop : MonoBehaviour
         image.GetComponent<RectTransform>().rotation = new Quaternion(0, 0, 0, 0);
 
         UpdateQuantity(-1);
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().swordEquipped = true;
     }
 
     public void Drop()
