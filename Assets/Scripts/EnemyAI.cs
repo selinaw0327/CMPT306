@@ -117,16 +117,16 @@ public class EnemyAI : MonoBehaviour
 
      void changeDirection(Vector2 force){
 
-        if (force.x >= 0.01f){
-            // enemyGFX.localScale = new Vector3(1f, 1f, 1f);
-            animator.SetFloat("moveX", force.x);
-            animator.SetBool("isMoving", true);
+        if (rb.velocity.x <= 0.01f){
+            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            // animator.SetFloat("moveX", force.x);
+            // animator.SetBool("isMoving", true);
         
         }
-        else if(force.x <= -0.01f){
-            //  enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-             animator.SetFloat("moveX", force.x);
-            animator.SetBool("isMoving", true);
+        else if(rb.velocity.x >= -0.01f){
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            //  animator.SetFloat("moveX", force.x);
+            // animator.SetBool("isMoving", true);
         }
          
 
