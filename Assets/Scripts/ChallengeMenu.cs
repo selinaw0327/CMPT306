@@ -18,6 +18,10 @@ public class ChallengeMenu : MonoBehaviour
     private float  timeToCloseCompleted = 4.0f;
     private bool completedOpen = false;
 
+    public GameObject incomplete;
+
+    private int incompleteChallenges;
+
     [System.Serializable]
     public struct Challenge
     {
@@ -64,6 +68,26 @@ public class ChallengeMenu : MonoBehaviour
                 closeCompleted();
                 timeToCloseCompleted = 2.0f;
             }
+        }
+
+        incompleteChallenges = 0;
+
+        foreach (Challenge c in challengeList)
+        {
+            if (!c.completed)
+            {
+                incompleteChallenges++;
+            }
+        }
+
+        if (incompleteChallenges > 0)
+        {
+            incomplete.SetActive(true);
+            incomplete.transform.Find("Text").GetComponent<Text>().text = incompleteChallenges.ToString();
+        }
+        else
+        {
+            incomplete.SetActive(false);
         }
     }
     
