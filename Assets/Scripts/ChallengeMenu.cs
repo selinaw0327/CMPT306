@@ -1,11 +1,8 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-using System;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 
 
 public class ChallengeMenu : MonoBehaviour
@@ -17,6 +14,9 @@ public class ChallengeMenu : MonoBehaviour
 
     public GameObject challengeMenuUI;
     public GameObject challengeCompletedUI;
+
+    private float  timeToCloseCompleted = 2.0f;
+    private bool completedOpen = false;
 
     [System.Serializable]
     public struct Challenge
@@ -35,7 +35,6 @@ public class ChallengeMenu : MonoBehaviour
 
     void Start()
     {
-
         AddChallenge("Hit I to open and close your Inventory","inv");
         AddChallenge("Pick up an Item", "pickup");
         AddChallenge("Collect 10 copper bars", "10cop", 10);
@@ -56,6 +55,14 @@ public class ChallengeMenu : MonoBehaviour
                     challengeText.text += " ( " + c.count + " left ) ";
                 }
                 challengeText.text += "\n\n";
+            }
+        }
+        if(completedOpen){
+            if(timeToCloseCompleted > 0){
+                timeToCloseCompleted -= Time.unscaledDeltaTime;
+            } else {
+                closeCompleted();
+                timeToCloseCompleted = 2.0f;
             }
         }
     }
@@ -129,14 +136,15 @@ public class ChallengeMenu : MonoBehaviour
     }
 
     public void openCompleted() {
+        completedOpen = true;
         challengeCompletedUI.SetActive(true);
-        Time.timeScale = 0;
         GameIsPaused = true;
+
     }
 
     public void closeCompleted() {
+        completedOpen = false;
         challengeCompletedUI.SetActive(false);
-        Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
