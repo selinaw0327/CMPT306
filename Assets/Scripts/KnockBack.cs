@@ -21,6 +21,10 @@ public class KnockBack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (gameObject.CompareTag("enemy") && other.gameObject.CompareTag("enemy"))
+        {
+            return;
+        }
         if (other.gameObject.CompareTag("Player"))
         {
             Rigidbody2D enemy = GetComponent<Rigidbody2D>();
