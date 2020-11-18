@@ -40,7 +40,7 @@ public class ProcGenDungeon : MonoBehaviour
 
     public SpriteAtlas spriteAtlas;
 
-    public static int caveLevel = 1;
+    public static int caveLevel = 0;
 
     private List<Vector3Int> spawnLocations = new List<Vector3Int>();
     public int seed;

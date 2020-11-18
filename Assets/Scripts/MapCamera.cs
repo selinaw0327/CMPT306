@@ -42,8 +42,7 @@ public class MapCamera : MonoBehaviour
      void calcCameraSize() {
 
         transform.position = new Vector3(mapCenter.x, mapCenter.y, -1f);
-        Debug.Log("Map y: " + mapY + "\nMap x: " + mapX);
-
+        
         if (mapY> mapX){
             mapCamera.GetComponent<Camera>().orthographicSize = mapY/2 + 10;
         }

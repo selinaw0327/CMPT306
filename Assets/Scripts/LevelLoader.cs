@@ -12,6 +12,8 @@ public class LevelLoader : MonoBehaviour
 
     public GameObject objectsToMove;
 
+    public GameObject[] bosses;
+
     private string[] scenes = {"TutorialScene", "CaveGameScene", "ExitRoomScene"};
     private static int nextScene = 0;
     private static int previousScene = 0;
@@ -20,7 +22,17 @@ public class LevelLoader : MonoBehaviour
     bool unloaded = false;
 
     void Start() {
+        StartCoroutine(LateStart());
+    }
+
+    IEnumerator LateStart() {
+        yield return new WaitForSeconds(1);
+
         objectsToMove = GameObject.Find("ObjectsToMove");
+
+        if(SceneManager.GetActiveScene().name.Equals("ExitRoomScene")) {
+            Instantiate(bosses[ProcGenDungeon.caveLevel], new Vector3(0, 20, 0), Quaternion.identity, GameObject.Find("Environment").transform);          
+        }
     }
 
     public void LoadNextLevel() {
