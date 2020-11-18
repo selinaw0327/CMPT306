@@ -34,7 +34,11 @@ public class EnemyStats : MonoBehaviour
         currentHealth -= damage;
         if(currentHealth <= 0) {
 
-            transform.parent.gameObject.GetComponent<EnemyDrop>().Drop();
+            // if the enemy is not in tutorial scene, run enemy item drop script
+            if (!transform.parent.gameObject.GetComponent<EnemyDrop>().tutorial)
+            {
+                transform.parent.gameObject.GetComponent<EnemyDrop>().Drop();
+            }
 
             if (this.transform.parent.gameObject.name == "Bat"){
                 ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
