@@ -12,15 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterSelection.unity
     guid: ab56b184e7ff1904188e904dac8691ae
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 2dff4f0a90ebb1746b64d61b6053feca
+  - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: 186432816096b4735b34e309a7bdfc34
+  - enabled: 1
     path: Assets/Scenes/CaveGameScene.unity
     guid: a18e06d53dddfca4391ecaa979f7c37a
   - enabled: 1
     path: Assets/Scenes/ExitRoomScene.unity
     guid: 7a90aca03b477ed41b590545c6b15ca7
   - enabled: 1
-    path: Assets/Scenes/Intro.unity
-    guid: 2dff4f0a90ebb1746b64d61b6053feca
-  - enabled: 1
-    path: Assets/Scenes/TutorialScene.unity
-    guid: 186432816096b4735b34e309a7bdfc34
+    path: Assets/Scenes/Outro.unity
+    guid: 5977dc8abe023f7449ee811b60d572f9
   m_configObjects: {}
