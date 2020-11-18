@@ -24,6 +24,7 @@ public class EnemyStats : MonoBehaviour
     void Update()
     {
         healthBar.SetStat(currentHealth, maxHealth);
+        
     }
 
     // Causes the enemy to take damage
@@ -32,10 +33,14 @@ public class EnemyStats : MonoBehaviour
         // Set current health and check if the enemy has died
         currentHealth -= damage;
         if(currentHealth <= 0) {
-            if(this.transform.parent.gameObject.name == "Bat"){
+
+            transform.parent.gameObject.GetComponent<EnemyDrop>().Drop();
+
+            if (this.transform.parent.gameObject.name == "Bat"){
                 ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
                 challengeMenu.updateChallenge("5bat");
             }
+
             Destroy(this.transform.parent.gameObject);
             EnemyLists enemyLists = GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
             List<GameObject> objectList;
