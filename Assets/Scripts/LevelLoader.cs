@@ -61,20 +61,24 @@ public class LevelLoader : MonoBehaviour
                 ProcGenDungeon.caveLevel++;
                 break;
             }
-
-            SceneManager.LoadSceneAsync(scenes[nextScene], LoadSceneMode.Additive);
-            SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(scenes[nextScene]));
+            if(ProcGenDungeon.caveLevel > 2) {
+                SceneManager.LoadScene("Outro");
+            }
+            else {
+                SceneManager.LoadSceneAsync(scenes[nextScene], LoadSceneMode.Additive);
+                SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(scenes[nextScene]));
             
-            if(nextScene == 1) {
-                objectsToMove.transform.GetChild(1).transform.position = new Vector3(0,0,0);
-            }
-            else if (nextScene == 2) {
-                objectsToMove.transform.GetChild(1).transform.position = new Vector3(0,-6,0);
-            }
+                if(nextScene == 1) {
+                    objectsToMove.transform.GetChild(1).transform.position = new Vector3(0,0,0);
+                }
+                else if (nextScene == 2) {
+                    objectsToMove.transform.GetChild(1).transform.position = new Vector3(0,-6,0);
+                }
 
-            if(!unloaded) {
-                unloaded = true;
-                UnloadScene(scenes[previousScene]);
+                if(!unloaded) {
+                    unloaded = true;
+                    UnloadScene(scenes[previousScene]);
+                }
             }
             loaded = true;
         }
