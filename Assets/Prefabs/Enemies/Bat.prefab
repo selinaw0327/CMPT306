@@ -33,6 +33,7 @@ GameObject:
   - component: {fileID: 1800119459}
   - component: {fileID: 6375785585615990826}
   - component: {fileID: 3662166312510098708}
+  - component: {fileID: 256696027514161921}
   m_Layer: 8
   m_Name: Bat
   m_TagString: enemy
@@ -220,8 +221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 5
-  isPlayer: 0
-  isEnemy: 1
 --- !u!58 &3662166312510098708
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -238,6 +237,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &256696027514161921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593757828702648435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841311c391210f7488434ff2dd445c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
+  spriteAtlas: {fileID: 7075723357422317502, guid: 6902b61eb889886418175ff727129d86, type: 3}
 --- !u!1001 &2424111541198155363
 PrefabInstance:
   m_ObjectHideFlags: 0
