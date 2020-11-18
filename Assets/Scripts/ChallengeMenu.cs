@@ -39,6 +39,8 @@ public class ChallengeMenu : MonoBehaviour
 
     void Start()
     {
+        
+        incomplete = GameObject.FindGameObjectWithTag("Incomplete");
         AddChallenge("Hit I to open and close your Inventory","inv");
         AddChallenge("Pick up an Item", "pickup");
         AddChallenge("Collect 10 copper bars", "10cop", 10);
@@ -46,6 +48,7 @@ public class ChallengeMenu : MonoBehaviour
     }
     void Update()
     {
+        
         if(Input.GetKeyDown(KeyCode.LeftControl)){
             ShowHide();
         }
