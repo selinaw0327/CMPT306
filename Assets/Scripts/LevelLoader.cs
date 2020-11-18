@@ -20,7 +20,6 @@ public class LevelLoader : MonoBehaviour
     bool unloaded = false;
 
     void Start() {
-        // Time.timeScale = 1;
         objectsToMove = GameObject.Find("ObjectsToMove");
     }
 
@@ -38,7 +37,7 @@ public class LevelLoader : MonoBehaviour
             case "TutorialScene":
                 previousScene = 0;
                 nextScene = 1;
-                // Destroy(GameObject.Find("Skip Button"));
+                GameObject.Find("Skip Button").SetActive(false);
                 break;
             case "CaveGameScene":
                 previousScene = 1;
