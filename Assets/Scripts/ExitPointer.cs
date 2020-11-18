@@ -8,13 +8,14 @@ public class ExitPointer : MonoBehaviour
     private RectTransform pointerRectTransform;
 
     void Start() {
-        StartCoroutine(Coroutine());
+        StartCoroutine(SetReferences());
     }
 
-    IEnumerator Coroutine() {
-        yield return new WaitForSeconds(1);
+    IEnumerator SetReferences() {
+        yield return new WaitForSeconds(1.5f);
         exitPosition = GameObject.Find("Exit").transform.position;
         pointerRectTransform = this.GetComponent<RectTransform>();
+        this.GetComponentInParent<Canvas>().worldCamera = Camera.main;
     }
 
     // Update is called once per frame
