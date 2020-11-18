@@ -30,7 +30,7 @@ public class KnockBack : MonoBehaviour
         {
             // if the enemy collides with the player, the player takes damage and is knocked back
             Rigidbody2D enemy = GetComponent<Rigidbody2D>();
-            if (enemy != null)
+            if (enemy != null && !other.isTrigger)
             {
                 Vector2 difference = enemy.transform.position - other.gameObject.transform.position;
                 difference = difference.normalized * thrust;
@@ -46,7 +46,7 @@ public class KnockBack : MonoBehaviour
             // if the enemy is hit by the player's sword hitbox, the enemy is knocked back and takes damage
             Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
             PlayerStats playerStats = GetComponent<PlayerStats>();
-            if (enemy != null && playerStats.swordEquipped)
+            if (enemy != null && playerStats.swordEquipped && !other.isTrigger)
             {
                 Vector2 difference = enemy.transform.position - transform.position;
                 difference = difference.normalized * thrust;

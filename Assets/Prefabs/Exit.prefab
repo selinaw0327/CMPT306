@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03584f8e5a799ba449be78662eddd77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
+  promptPrefab: {fileID: 3160006152469406327, guid: 2b79fb3c42ce2a74db16579215a91299, type: 3}

@@ -10,6 +10,8 @@ public class EnemyDrop : MonoBehaviour
 
     private GameObject enemy;
 
+    public bool tutorial;
+
     private void Start()
     {
         enemy = gameObject;
@@ -18,8 +20,6 @@ public class EnemyDrop : MonoBehaviour
     public void Drop()
     {
         int chance = Random.Range(0, 100);
-
-        Debug.Log(chance);
 
         switch (name)
         {

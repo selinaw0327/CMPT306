@@ -23187,6 +23187,10 @@ PrefabInstance:
       propertyPath: spriteAtlas
       value: 
       objectReference: {fileID: 7075723357422317502, guid: 6902b61eb889886418175ff727129d86, type: 3}
+    - target: {fileID: 256696027514161921, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
+      propertyPath: tutorial
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 389636989893442646, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.16
