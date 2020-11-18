@@ -54,10 +54,10 @@ public class LevelLoader : MonoBehaviour
             SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(scenes[nextScene]));
             
             if(nextScene == 1) {
-                objectsToMove.transform.GetChild(2).transform.position = new Vector3(0,0,0);
+                objectsToMove.transform.GetChild(1).transform.position = new Vector3(0,0,0);
             }
             else if (nextScene == 2) {
-                objectsToMove.transform.GetChild(2).transform.position = new Vector3(0,-6,0);
+                objectsToMove.transform.GetChild(1).transform.position = new Vector3(0,-6,0);
             }
 
             if(!unloaded) {
