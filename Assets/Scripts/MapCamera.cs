@@ -15,38 +15,34 @@ public class MapCamera : MonoBehaviour
     private float minX, maxX, minY, maxY;
     private bool mapOn = false;
 
-
-    void Awake() {
-
-        map.SetActive(true);
-    }
-
      void Start()
-     {
-        canvas.GetComponent<Image>().enabled = false;
-        renderTexture.GetComponent<RawImage>().enabled = false;
-        
-        StartCoroutine(LateStart(1f));
-         
+     {        
+        StartCoroutine(LateStart(2.0f));
      }
  
      IEnumerator LateStart(float waitTime)
      {
-         yield return new WaitForSeconds(waitTime);
-         mapSize = grid.GetComponent<ScanGrid>().getMapSize();
-         mapX = mapSize.x;
-         mapY = mapSize.y;
-         mapCenter = grid.GetComponent<ScanGrid>().getMapCenter();
+        yield return new WaitForSeconds(waitTime);
 
-         calcCameraSize();
-         
+        map = GameObject.Find("Map");
+        mapCamera = GameObject.Find("MapCamera");
+        canvas = GameObject.Find("MapBackground");
+        image = GameObject.Find("MapImage");
+        renderTexture = GameObject.Find("MapRenderTexture");  
+
+        mapSize = grid.GetComponent<ScanGrid>().getMapSize();
+        mapX = mapSize.x;
+        mapY = mapSize.y;
+        mapCenter = grid.GetComponent<ScanGrid>().getMapCenter();
+
+        calcCameraSize();
      }
 
      
      void calcCameraSize() {
 
         transform.position = new Vector3(mapCenter.x, mapCenter.y, -1f);
-
+        
         if (mapY> mapX){
             mapCamera.GetComponent<Camera>().orthographicSize = mapY/2 + 10;
         }

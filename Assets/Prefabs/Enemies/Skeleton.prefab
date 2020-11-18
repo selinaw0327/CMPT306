@@ -324,6 +324,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1833632694152267651, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2729922745911456485, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: m_Name
       value: HealthBar
@@ -342,7 +346,7 @@ PrefabInstance:
       objectReference: {fileID: 7894260800924252472, guid: f44abf24527897c4b8657f98be37bbb9, type: 3}
     - target: {fileID: 4050838066957914223, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: offset.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4235714781763387951, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: m_Layer
