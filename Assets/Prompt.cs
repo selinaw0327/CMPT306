@@ -13,6 +13,7 @@ public class Prompt : MonoBehaviour
     public void Yes()
     {
         GameObject.Find("Exit").GetComponent<Exit>().NextLevel();
+        Destroy(GameObject.Find("ExitPointer"));
         Destroy(GameObject.Find("Prompt"));
     }
 }

@@ -17,7 +17,7 @@ public class ExitPointer : MonoBehaviour
         pointerRectTransform = this.GetComponent<RectTransform>();
         this.GetComponentInParent<Canvas>().worldCamera = Camera.main;
         this.GetComponentInParent<Canvas>().sortingLayerName = "UI";
-        this.GetComponentInParent<Canvas>().sortingOrder = 0;
+        this.GetComponentInParent<Canvas>().sortingOrder = 1;
     }
 
     // Update is called once per frame
