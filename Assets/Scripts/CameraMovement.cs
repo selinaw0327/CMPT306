@@ -17,12 +17,13 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         cam = GetComponent<Camera>();
-        StartCoroutine(CameraCoroutine());
+        StartCoroutine(CameraCoroutine("Pits"));
     }
 
-    IEnumerator CameraCoroutine()
+    IEnumerator CameraCoroutine(string currentMap)
     {
         yield return new WaitForSeconds(2);
+        map = GameObject.Find(currentMap);
         minPosition = map.GetComponent<Tilemap>().origin;
         maxPosition = map.GetComponent<Tilemap>().origin + map.GetComponent<Tilemap>().size;
     }
@@ -41,8 +42,12 @@ public class CameraMovement : MonoBehaviour
         targetPosition.y = Mathf.Clamp(targetPosition.y, minPosition.y + 5.0f, maxPosition.y - 5.0f);
     }
 
-    public void UpdatePlayerReference() {
-        map = GameObject.Find("Pit");
+    public void UpdatePlayerReference(string currentMap) {
+        if (currentMap != null)
+        {
+            StartCoroutine(CameraCoroutine(currentMap));
+        }
+        
     }
 }
 

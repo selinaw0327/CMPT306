@@ -18,11 +18,15 @@ public class LevelLoader : MonoBehaviour
     private static int nextScene = 0;
     private static int previousScene = 0;
 
+    private string nextMap;
+    private CameraMovement cameraMovement;
+
     bool loaded = false;
     bool unloaded = false;
 
     void Start() {
         StartCoroutine(LateStart());
+        cameraMovement = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
     }
 
     IEnumerator LateStart() {
@@ -50,15 +54,18 @@ public class LevelLoader : MonoBehaviour
                 previousScene = 0;
                 nextScene = 1;
                 GameObject.Find("Skip Button").SetActive(false);
+                nextMap = "Dynamic Pit";
                 break;
             case "CaveGameScene":
                 previousScene = 1;
                 nextScene = 2;
+                nextMap = "Pit";
                 break;
             case "ExitRoomScene":
                 previousScene = 2;
                 nextScene = 1;
                 ProcGenDungeon.caveLevel++;
+                nextMap = "Dynamic Pit";
                 break;
             }
             if(ProcGenDungeon.caveLevel > 2) {
@@ -81,6 +88,7 @@ public class LevelLoader : MonoBehaviour
                 }
             }
             loaded = true;
+            cameraMovement.UpdatePlayerReference(nextMap);
         }
     }
 
