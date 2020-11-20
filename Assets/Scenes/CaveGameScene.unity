@@ -6576,10 +6576,15 @@ MonoBehaviour:
   maxRouteLength: 100
   maxRoutes: 20
   exitPrefab: {fileID: 5250879337292495368, guid: 070c1158f71f4ae46ba1e47e42f16d3a, type: 3}
-  objects:
+  rockPrefabs:
   - {fileID: 4246496661039566702, guid: 0f5d90fee59cd2241bc28217dca4b83d, type: 3}
-  - {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
+  - {fileID: 4246496661039566702, guid: d30f75ebfb287564cbe7db68bc11ecf4, type: 3}
+  - {fileID: 4246496661039566702, guid: ff7c029c906285047acd935df69f9f18, type: 3}
+  enemyPrefabs:
+  - {fileID: 593757828702648435, guid: be02ab93cac3f480f88c14f1b4d535cf, type: 3}
+  - {fileID: 1774442238285305079, guid: 9373bae9b184e4391a59bfc3176fd23a, type: 3}
   - {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
+  itemPrefab: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
   createdObjects: []
   fruitSprites:
   - {fileID: -5728686177044832811, guid: 7d9c35dffee05914fb90c1d33a54492a, type: 3}
@@ -8457,6 +8462,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rockDataList: []
   rockList: []
+  smallRockOneDataList: []
+  smallRockOneList: []
+  smallRockTwoDataList: []
+  smallrockTwoList: []
 --- !u!114 &1960686391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8471,6 +8480,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   batList: []
   batDataList: []
+  wormList: []
+  wormDataList: []
+  ratList: []
+  ratDataList: []
 --- !u!1 &1988427520
 GameObject:
   m_ObjectHideFlags: 0
