@@ -63,8 +63,6 @@ public class ProcGenDungeon : MonoBehaviour
     }
 
     IEnumerator Generate(bool onload){
-        yield return new WaitForSeconds(1);
-
         Random.seed = seed;
         int x = 0;
         int y = 0;
@@ -77,6 +75,9 @@ public class ProcGenDungeon : MonoBehaviour
         NewRoute(x, y, routeLength, previousPos);
 
         FillWalls();
+
+        yield return new WaitForSeconds(1);
+
         if(!onload){
             Debug.Log("not on load");
             FillSpawnLocations();
