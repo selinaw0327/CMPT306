@@ -31,25 +31,22 @@ public class ProcGenDungeon : MonoBehaviour
     [SerializeField]
     private int maxRoutes = 20;
 
+    private int routeCount;
+
+    public static int caveLevel = 0;
+
     public GameObject exitPrefab;
 
     public GameObject[] objects;
     public List<GameObject> createdObjects = new List<GameObject>();
 
-    public Sprite[] fruitSprites;
+    private List<Vector3Int> spawnLocations = new List<Vector3Int>();
 
+    public Sprite[] fruitSprites;
     public SpriteAtlas spriteAtlas;
 
-    public static int caveLevel = 0;
-
-    private List<Vector3Int> spawnLocations = new List<Vector3Int>();
     public int seed;
- 
     public bool onload;
-    
-    
-
-    private int routeCount;
 
     public void Start()
     {
@@ -241,22 +238,33 @@ public class ProcGenDungeon : MonoBehaviour
             int rand = Random.Range(0, objects.Length);
 
             GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
-
             createdObjects.Add(newObject);
-            if(rand == 0){
-                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
-                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
 
-            } else if(rand == 1) {
-                int barOrFruitRand = Random.Range(0, 2);
-
-                if(barOrFruitRand == 0 ){
+            switch(objects[rand].name) {
+                case "Large Rock":
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
+                    break;
+                case "Small Rock 1":
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
+                    break;
+                case "Small Rock 2":
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
+                    break;
+                case "Worm":
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().wormList.Add(newObject);
+                    break;
+                case "Rat":
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().ratList.Add(newObject);
+                    break;
+                case "Bat":
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
+                    break;
+                case "Item":
                     SpawnFruit(newObject);
-                } else {
-                    SpawnBars(newObject);
-                }
-            } else if(rand == 2) {
-                GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
+                    break;
             }
         }
     }
@@ -296,32 +304,32 @@ public class ProcGenDungeon : MonoBehaviour
         itemLists.itemList.Add(newObject);
     }
 
-    private void SpawnBars(GameObject newObject) {
-        // int rand = Random.RandomRange(0, 4);
-        int rand  = 0;
+    // private void SpawnBars(GameObject newObject) {
+    //     // int rand = Random.RandomRange(0, 4);
+    //     int rand  = 0;
 
-        switch (rand) {
-            case 0:
-                newObject.name = "Copper Bar";
-                break;
-            case 1:
-                newObject.name = "Iron Bar";
-                break;
-            case 2:
-                newObject.name = "Silver Bar";
-                break;
-            case 3:
-                newObject.name = "Gold Bar";
-                break;
-            case 4:
-                newObject.name = "Obsidian Bar";
-                break;
-        }
+    //     switch (rand) {
+    //         case 0:
+    //             newObject.name = "Copper Bar";
+    //             break;
+    //         case 1:
+    //             newObject.name = "Iron Bar";
+    //             break;
+    //         case 2:
+    //             newObject.name = "Silver Bar";
+    //             break;
+    //         case 3:
+    //             newObject.name = "Gold Bar";
+    //             break;
+    //         case 4:
+    //             newObject.name = "Obsidian Bar";
+    //             break;
+    //     }
         
-        newObject.GetComponent<SpriteRenderer>().sprite = spriteAtlas.copperBar;
-        newObject.GetComponent<Item>().itemSprite = spriteAtlas.copperBar;
-        newObject.GetComponent<Item>().itemType = Item.ItemType.CopperBar;
-        ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
-        itemLists.itemList.Add(newObject);
-    }
+    //     newObject.GetComponent<SpriteRenderer>().sprite = spriteAtlas.copperBar;
+    //     newObject.GetComponent<Item>().itemSprite = spriteAtlas.copperBar;
+    //     newObject.GetComponent<Item>().itemType = Item.ItemType.CopperBar;
+    //     ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+    //     itemLists.itemList.Add(newObject);
+    // }
 }

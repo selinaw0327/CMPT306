@@ -8,6 +8,12 @@ public class EnemyLists : MonoBehaviour
     public List<GameObject> batList = new List<GameObject>();
     public List<EnemyData> batDataList = new List<EnemyData>();
 
+    public List<GameObject> wormList = new List<GameObject>();
+    public List<EnemyData> wormDataList = new List<EnemyData>();
+
+    public List<GameObject> ratList = new List<GameObject>();
+    public List<EnemyData> ratDataList = new List<EnemyData>();
+
     // Start is called before the first frame update
     void Start()
     {

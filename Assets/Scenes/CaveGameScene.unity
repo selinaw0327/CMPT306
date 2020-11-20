@@ -2065,11 +2065,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8946565345794507998, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8946565345794507998, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58cae5346ccad904fbfb6e3a7503225d, type: 3}
@@ -3237,7 +3237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &517855097
 Transform:
   m_ObjectHideFlags: 0
@@ -5258,9 +5258,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 799549.94}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1022640009
 MonoBehaviour:
@@ -6578,8 +6578,12 @@ MonoBehaviour:
   exitPrefab: {fileID: 5250879337292495368, guid: 070c1158f71f4ae46ba1e47e42f16d3a, type: 3}
   objects:
   - {fileID: 4246496661039566702, guid: 0f5d90fee59cd2241bc28217dca4b83d, type: 3}
-  - {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
+  - {fileID: 4246496661039566702, guid: d30f75ebfb287564cbe7db68bc11ecf4, type: 3}
+  - {fileID: 4246496661039566702, guid: ff7c029c906285047acd935df69f9f18, type: 3}
+  - {fileID: 593757828702648435, guid: be02ab93cac3f480f88c14f1b4d535cf, type: 3}
+  - {fileID: 1774442238285305079, guid: 9373bae9b184e4391a59bfc3176fd23a, type: 3}
   - {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
+  - {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
   createdObjects: []
   fruitSprites:
   - {fileID: -5728686177044832811, guid: 7d9c35dffee05914fb90c1d33a54492a, type: 3}
@@ -8471,6 +8475,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   batList: []
   batDataList: []
+  wormList: []
+  wormDataList: []
+  ratList: []
+  ratDataList: []
 --- !u!1 &1988427520
 GameObject:
   m_ObjectHideFlags: 0
