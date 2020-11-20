@@ -37,7 +37,9 @@ public class ProcGenDungeon : MonoBehaviour
 
     public GameObject exitPrefab;
 
-    public GameObject[] objects;
+    public GameObject[] rockPrefabs;
+    public GameObject[] enemyPrefabs;
+    public GameObject itemPrefab;
     public List<GameObject> createdObjects = new List<GameObject>();
 
     private List<Vector3Int> spawnLocations = new List<Vector3Int>();
@@ -235,42 +237,67 @@ public class ProcGenDungeon : MonoBehaviour
 
     private void FillSpawnLocations() {
         for(int i = 0; i < spawnLocations.Count; i++) {
-            int rand = Random.Range(0, objects.Length);
+            Debug.Log(spawnLocations.Count);
+            int rand = Random.Range(0, 100);
 
-            GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
-            createdObjects.Add(newObject);
-
-            switch(objects[rand].name) {
-                case "Large Rock":
-                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
-                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
-                    break;
-                case "Small Rock 1":
-                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
-                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
-                    break;
-                case "Small Rock 2":
-                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
-                    GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
-                    break;
-                case "Worm":
-                    GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().wormList.Add(newObject);
-                    break;
-                case "Rat":
-                    GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().ratList.Add(newObject);
-                    break;
-                case "Bat":
-                    GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
-                    break;
-                case "Item":
-                    SpawnFruit(newObject);
-                    break;
+            if(rand < 50) {
+                SpawnRocks(spawnLocations[i]);
             }
+            else if(rand < 85) {
+                SpawnEnemies(spawnLocations[i]);
+            }
+            else {
+                SpawnFruit(spawnLocations[i]);
+            }    
         }
     }
 
-    private void SpawnFruit(GameObject newObject) {
+    private void SpawnRocks(Vector3 spawnLocation) {
+        int rand = Random.Range(0, rockPrefabs.Length);
+        
+        GameObject newObject = Instantiate(rockPrefabs[rand], spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        createdObjects.Add(newObject);
+        
+        switch(rockPrefabs[rand].name) {
+            case "Large Rock":
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
+                break;
+            case "Small Rock One":
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockOneList.Add(newObject);
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockOneDataList.Add(new RockData(newObject));
+                break;
+            case "Small Rock Two":
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallrockTwoList.Add(newObject);
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockTwoDataList.Add(new RockData(newObject));
+                break;
+        }
+    }
+
+    private void SpawnEnemies(Vector3 spawnLocation) {
+        int rand = Random.Range(0, enemyPrefabs.Length);
+        
+        GameObject newObject = Instantiate(enemyPrefabs[rand], spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        createdObjects.Add(newObject);
+
+        switch(enemyPrefabs[rand].name) {
+            case "Worm":
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().wormList.Add(newObject);
+                break;
+            case "Rat":
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().ratList.Add(newObject);
+                break;
+            case "Bat":
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
+                break;
+        }
+    }
+
+    private void SpawnFruit(Vector3 spawnLocation) {
         int rand = Random.Range(0, 8);
+
+        GameObject newObject = Instantiate(itemPrefab, spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        createdObjects.Add(newObject);
 
         switch (rand) {
             case 0:
@@ -300,6 +327,7 @@ public class ProcGenDungeon : MonoBehaviour
         }        
         newObject.GetComponent<SpriteRenderer>().sprite = fruitSprites[rand];
         newObject.GetComponent<Item>().itemSprite = fruitSprites[rand];
+
         ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         itemLists.itemList.Add(newObject);
     }
