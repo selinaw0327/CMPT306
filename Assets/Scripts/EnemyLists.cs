@@ -20,9 +20,16 @@ public class EnemyLists : MonoBehaviour
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("enemy");
 
         foreach(GameObject enemy in enemyArray){
-            if(enemy.name == "Bat"){
-                batList.Add(enemy);
-
+            switch (enemy.name) {
+                case "Worm":
+                    wormList.Add(enemy);
+                    break;
+                case "Rat":
+                    ratList.Add(enemy);
+                    break;
+                case "Bat":
+                    batList.Add(enemy);
+                    break;
             }
         }
     }

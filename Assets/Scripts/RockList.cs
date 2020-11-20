@@ -17,13 +17,21 @@ public class RockList : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] rockArray = GameObject.FindGameObjectsWithTag("Large Rock");
+        GameObject[] rockArray = GameObject.FindGameObjectsWithTag("Rock");
         
         foreach(GameObject rock in rockArray){
-            
-            rockDataList.Add(new RockData(rock));
-            rockList.Add(rock);
-            
+
+            switch (rock.name) {
+                case "Large Rock":
+                    rockList.Add(rock);
+                    break;
+                case "Small Rock One":
+                    smallRockOneList.Add(rock);
+                    break;
+                case "Small Rock Two":
+                    smallrockTwoList.Add(rock);
+                    break;
+            }
         }
     }
 

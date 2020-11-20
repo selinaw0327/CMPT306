@@ -286,6 +286,8 @@ public class ProcGenDungeon : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockTwoDataList.Add(new RockData(newObject));
                 break;
         }
+
+        newObject.name = rockPrefabs[rand].name;
     }
 
     // Choose an enemy to spawn depending on the level of the cave
@@ -310,6 +312,8 @@ public class ProcGenDungeon : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
                 break;
         }
+
+        newObject.name = enemyPrefabs[rand].name;
     }
 
     // Randomly select a fruit to spawn
