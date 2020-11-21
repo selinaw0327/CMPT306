@@ -249,14 +249,30 @@ public class ProcGenDungeon : MonoBehaviour
             } else if(rand == 1) {
                 int barOrFruitRand = Random.Range(0, 2);
 
-                if(barOrFruitRand == 0 ){
-                    SpawnFruit(newObject);
-                } else {
-                    SpawnBars(newObject);
-                }
-            } else if(rand == 2) {
+    // Choose an enemy to spawn depending on the level of the cave
+    // First Level: Worms
+    // Second Level: Worms and Rats
+    // Third Level: Worms, Rats, and Bats
+    private void SpawnEnemies(Vector3 spawnLocation) {
+        int rand = Random.Range(0 , caveLevel + 1);
+        GameObject newObject;
+                
+        newObject = Instantiate(enemyPrefabs[rand], spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        createdObjects.Add(newObject);
+        EnemyLists enemyLists =  GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
+        switch(enemyPrefabs[rand].name) {
+            case "Worm":
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().wormList.Add(newObject);
+                enemyLists.wormList.Add(newObject);
+                break;
+            case "Rat":
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().ratList.Add(newObject);
+                enemyLists.ratList.Add(newObject);
+                break;
+            case "Bat":
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
-            }
+                enemyLists.batList.Add(newObject);
+                break;
         }
     }
 
