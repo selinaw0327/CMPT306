@@ -18,6 +18,10 @@ public class ChallengeMenu : MonoBehaviour
     private float  timeToCloseCompleted = 4.0f;
     private bool completedOpen = false;
 
+    public GameObject incomplete;
+
+    private int incompleteChallenges;
+
     [System.Serializable]
     public struct Challenge
     {
@@ -35,6 +39,8 @@ public class ChallengeMenu : MonoBehaviour
 
     void Start()
     {
+        
+        incomplete = GameObject.FindGameObjectWithTag("Incomplete");
         AddChallenge("Hit I to open and close your Inventory","inv");
         AddChallenge("Pick up an Item", "pickup");
         AddChallenge("Collect 10 copper bars", "10cop", 10);
@@ -42,6 +48,7 @@ public class ChallengeMenu : MonoBehaviour
     }
     void Update()
     {
+        
         if(Input.GetKeyDown(KeyCode.LeftControl)){
             ShowHide();
         }
@@ -65,6 +72,26 @@ public class ChallengeMenu : MonoBehaviour
                 timeToCloseCompleted = 2.0f;
             }
         }
+
+        incompleteChallenges = 0;
+
+        foreach (Challenge c in challengeList)
+        {
+            if (!c.completed)
+            {
+                incompleteChallenges++;
+            }
+        }
+
+        if (incompleteChallenges > 0)
+        {
+            incomplete.SetActive(true);
+            incomplete.transform.Find("Text").GetComponent<Text>().text = incompleteChallenges.ToString();
+        }
+        else
+        {
+            incomplete.SetActive(false);
+        }
     }
     
     public void AddChallenge(string description, string name, int count = 1){
@@ -78,6 +105,21 @@ public class ChallengeMenu : MonoBehaviour
         
         challengeList.Add(newChallenge);
     }   
+
+    public void incrementChallenge(string name ){
+        int  challengeIndex = challengeList.FindIndex(challenge => challenge.name == name);
+        if(challengeIndex!=-1){
+            Challenge challenge = challengeList[challengeIndex];
+            if(challenge.countable && !challenge.completed){ 
+                challenge.count += 1;       
+            }
+            challengeList[challengeIndex] = challenge;
+            
+        } else {
+            Debug.Log("Error tried to update challenge that does not exist");
+        }
+    
+    }
 
     public  void updateChallenge(string name){
         int  challengeIndex = challengeList.FindIndex(challenge => challenge.name == name);

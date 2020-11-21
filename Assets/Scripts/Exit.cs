@@ -6,6 +6,10 @@ public class Exit : MonoBehaviour
 {
     private LevelLoader LevelLoader;
 
+    public GameObject promptPrefab;
+
+    public bool prompt;
+
     void Start() {
         StartCoroutine(Coroutine());
     }
@@ -18,7 +22,18 @@ public class Exit : MonoBehaviour
      private void OnTriggerEnter2D(Collider2D entity)
     {
         if (entity.gameObject.CompareTag("Player")) {
-            LevelLoader.LoadNextLevel();
+
+            if (!prompt)
+            {
+                GameObject p = Instantiate(promptPrefab, GameObject.Find("UILayer").transform);
+                p.name = "Prompt";
+                prompt = true;
+            }
         }
+    }
+
+    public void NextLevel()
+    {
+        LevelLoader.LoadNextLevel();
     }
 }

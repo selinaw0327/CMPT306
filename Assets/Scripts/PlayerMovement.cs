@@ -16,11 +16,15 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private Animator animator;
     private Vector3 movement;
+    private Vector2 attackDirection;
 
     // Sound effect
     private AudioSource[] sounds;
     private AudioSource footstep;
     private AudioSource attack;
+
+    // Equipped sword
+    public bool swordEquipped;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
+        animator.SetFloat("attackX", 0);
+        animator.SetFloat("attackY", -1);
 
         // Sound effects
         sounds = GetComponents<AudioSource>();
@@ -46,9 +52,21 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        attackDirection = Vector2.zero;
+        attackDirection.x = movement.x;
+        attackDirection.y = movement.y;
+
+        if ((attackDirection.x == 1 || attackDirection.x == -1) && (attackDirection.y == 1 || attackDirection.y == -1))
+        {
+            attackDirection.x = 0;
+        }
+
         if(Input.GetButtonDown("attack") && currentState != PlayerState.attack)
         {
-            StartCoroutine(AttackCo());
+            if (swordEquipped)
+            {
+                StartCoroutine(AttackCo());
+            }
         }
         else if (currentState == PlayerState.walk)
         {
@@ -62,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         currentState = PlayerState.attack;
         yield return null;
         animator.SetBool("attacking", false);
-        yield return new WaitForSeconds(0.33f);
+        yield return new WaitForSeconds(0.1f);
         currentState = PlayerState.walk;
     }
 
@@ -73,6 +91,8 @@ public class PlayerMovement : MonoBehaviour
             MoveCharacter();
             animator.SetFloat("moveX", movement.x);
             animator.SetFloat("moveY", movement.y);
+            animator.SetFloat("attackX", attackDirection.x);
+            animator.SetFloat("attackY", attackDirection.y);
             animator.SetBool("isMoving", true);
         }
         else

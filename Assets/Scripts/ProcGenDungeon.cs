@@ -31,28 +31,40 @@ public class ProcGenDungeon : MonoBehaviour
     [SerializeField]
     private int maxRoutes = 20;
 
+    private int routeCount;
+
+    public static int caveLevel = 0;
+
     public GameObject exitPrefab;
 
-    public GameObject[] objects;
+    public GameObject[] rockPrefabs;
+    public GameObject[] enemyPrefabs;
+    public GameObject itemPrefab;
     public List<GameObject> createdObjects = new List<GameObject>();
 
-    public Sprite[] fruitSprites;
+    private List<Vector3Int> spawnLocations = new List<Vector3Int>();
 
+    public Sprite[] fruitSprites;
     public SpriteAtlas spriteAtlas;
 
-    public static int caveLevel = 1;
-
-    private List<Vector3Int> spawnLocations = new List<Vector3Int>();
     public int seed;
- 
     public bool onload;
-    
-    
-
-    private int routeCount;
 
     public void Start()
     {
+        // Set Size of cave depending on level
+        // switch(caveLevel) {
+        //     case 0:
+        //         maxRouteLength = 100;
+        //         break;
+        //     case 1:
+        //         maxRouteLength = 150;
+        //         break;
+        //     case 2:
+        //         maxRouteLength = 200;
+        //         break;
+        // }
+
         seed = Random.Range(1, 10000000);
         onload = false;
         GenerateAll(onload);
@@ -63,8 +75,6 @@ public class ProcGenDungeon : MonoBehaviour
     }
 
     IEnumerator Generate(bool onload){
-        yield return new WaitForSeconds(1);
-
         Random.seed = seed;
         int x = 0;
         int y = 0;
@@ -77,6 +87,9 @@ public class ProcGenDungeon : MonoBehaviour
         NewRoute(x, y, routeLength, previousPos);
 
         FillWalls();
+
+        yield return new WaitForSeconds(1);
+
         if(!onload){
             Debug.Log("not on load");
             FillSpawnLocations();
@@ -237,17 +250,45 @@ public class ProcGenDungeon : MonoBehaviour
 
     private void FillSpawnLocations() {
         for(int i = 0; i < spawnLocations.Count; i++) {
-            int rand = Random.Range(0, objects.Length);
+            Debug.Log(spawnLocations.Count);
+            int rand = Random.Range(0, 100);
 
-            GameObject newObject = Instantiate(objects[rand], spawnLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
+            if(rand < 50) { // 50% chance to spawn rocks
+                SpawnRocks(spawnLocations[i]);
+            }
+            else if(rand < 85) { // 35% chance to spawn enemies
+                SpawnEnemies(spawnLocations[i]);
+            }
+            else { // 15% chance to spawn fruit
+                SpawnFruit(spawnLocations[i]);
+            }    
+        }
+    }
 
-            createdObjects.Add(newObject);
-            if(rand == 0){
+    // Randomly select on the rock refabs
+    private void SpawnRocks(Vector3 spawnLocation) {
+        int rand = Random.Range(0, rockPrefabs.Length);
+        
+        GameObject newObject = Instantiate(rockPrefabs[rand], spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        createdObjects.Add(newObject);
+        
+        switch(rockPrefabs[rand].name) {
+            case "Large Rock":
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
+                break;
+            case "Small Rock One":
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockOneList.Add(newObject);
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockOneDataList.Add(new RockData(newObject));
+                break;
+            case "Small Rock Two":
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallrockTwoList.Add(newObject);
+                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockTwoDataList.Add(new RockData(newObject));
+                break;
+        }
 
-            } else if(rand == 1) {
-                int barOrFruitRand = Random.Range(0, 2);
+        newObject.name = rockPrefabs[rand].name;
+    }
 
     // Choose an enemy to spawn depending on the level of the cave
     // First Level: Worms
@@ -274,10 +315,16 @@ public class ProcGenDungeon : MonoBehaviour
                 enemyLists.batList.Add(newObject);
                 break;
         }
+
+        newObject.name = enemyPrefabs[rand].name;
     }
 
-    private void SpawnFruit(GameObject newObject) {
-        int rand = Random.Range(0, 8);
+    // Randomly select a fruit to spawn
+    private void SpawnFruit(Vector3 spawnLocation) {
+        int rand = Random.Range(0, fruitSprites.Length);
+
+        GameObject newObject = Instantiate(itemPrefab, spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        createdObjects.Add(newObject);
 
         switch (rand) {
             case 0:
@@ -307,36 +354,37 @@ public class ProcGenDungeon : MonoBehaviour
         }        
         newObject.GetComponent<SpriteRenderer>().sprite = fruitSprites[rand];
         newObject.GetComponent<Item>().itemSprite = fruitSprites[rand];
+
         ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         itemLists.itemList.Add(newObject);
     }
 
-    private void SpawnBars(GameObject newObject) {
-        // int rand = Random.RandomRange(0, 4);
-        int rand  = 0;
+    // private void SpawnBars(GameObject newObject) {
+    //     // int rand = Random.RandomRange(0, 4);
+    //     int rand  = 0;
 
-        switch (rand) {
-            case 0:
-                newObject.name = "Copper Bar";
-                break;
-            case 1:
-                newObject.name = "Iron Bar";
-                break;
-            case 2:
-                newObject.name = "Silver Bar";
-                break;
-            case 3:
-                newObject.name = "Gold Bar";
-                break;
-            case 4:
-                newObject.name = "Obsidian Bar";
-                break;
-        }
+    //     switch (rand) {
+    //         case 0:
+    //             newObject.name = "Copper Bar";
+    //             break;
+    //         case 1:
+    //             newObject.name = "Iron Bar";
+    //             break;
+    //         case 2:
+    //             newObject.name = "Silver Bar";
+    //             break;
+    //         case 3:
+    //             newObject.name = "Gold Bar";
+    //             break;
+    //         case 4:
+    //             newObject.name = "Obsidian Bar";
+    //             break;
+    //     }
         
-        newObject.GetComponent<SpriteRenderer>().sprite = spriteAtlas.copperBar;
-        newObject.GetComponent<Item>().itemSprite = spriteAtlas.copperBar;
-        newObject.GetComponent<Item>().itemType = Item.ItemType.CopperBar;
-        ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
-        itemLists.itemList.Add(newObject);
-    }
+    //     newObject.GetComponent<SpriteRenderer>().sprite = spriteAtlas.copperBar;
+    //     newObject.GetComponent<Item>().itemSprite = spriteAtlas.copperBar;
+    //     newObject.GetComponent<Item>().itemType = Item.ItemType.CopperBar;
+    //     ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
+    //     itemLists.itemList.Add(newObject);
+    // }
 }
