@@ -20,7 +20,7 @@ public class LevelLoader : MonoBehaviour
                                         new Vector3(3, 11, 0),
                                         new Vector3(-3, 11, 0)};
 
-    private string[] scenes = {"TutorialScene", "CaveGameScene", "ExitRoomScene"};
+    private string[] scenes = {"MainMenu", "Intro", "TutorialScene", "CaveGameScene", "ExitRoomScene", "Outro"};
     private static int nextScene = 0;
     private static int previousScene = 0;
 
@@ -60,35 +60,53 @@ public class LevelLoader : MonoBehaviour
 
         if(!loaded) {
             switch (SceneManager.GetActiveScene().name) {
-            case "TutorialScene":
-                previousScene = 0;
-                nextScene = 1;
-                GameObject.Find("Skip Button").SetActive(false);
-                nextMap = "Dynamic Pit";
-                break;
-            case "CaveGameScene":
-                previousScene = 1;
-                nextScene = 2;
-                nextMap = "Pit";
-                break;
-            case "ExitRoomScene":
-                previousScene = 2;
-                nextScene = 1;
-                ProcGenDungeon.caveLevel++;
-                nextMap = "Dynamic Pit";
-                break;
+                case "Intro":
+                    previousScene = 1;
+                    break;
+                case "TutorialScene":
+                    previousScene = 2;
+                    nextScene = 3;
+                    GameObject.Find("Skip Button").SetActive(false);
+                    nextMap = "Dynamic Pit";
+                    break;
+                case "CaveGameScene":
+                    previousScene = 3;
+                    nextScene = 4;
+                    nextMap = "Pit";
+                    break;
+                case "ExitRoomScene":
+                    ProcGenDungeon.caveLevel++;
+                    if(ProcGenDungeon.caveLevel > 2) {
+                        nextScene = 5;
+                    }
+                    else {
+                        previousScene = 4;
+                        nextScene = 3;
+                    }
+                    nextMap = "Dynamic Pit";
+                    break;
+                case "Outro":
+                    previousScene = 5;
+                    nextScene = 0;
+                    break;
             }
-            if(ProcGenDungeon.caveLevel > 2) {
+            if(previousScene == 1) { // If intro, load tutorial
+                SceneManager.LoadScene("TuroialScene");
+            }
+            else if(nextScene == 5) { // If end of game, load outro
                 SceneManager.LoadScene("Outro");
             }
-            else {
+            else if(nextScene == 0) { // If outro, load main menu
+                SceneManager.LoadScene("MainMenu");
+            } 
+            else { // Else load next level
                 SceneManager.LoadSceneAsync(scenes[nextScene], LoadSceneMode.Additive);
                 SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(scenes[nextScene]));
             
-                if(nextScene == 1) {
+                if(scenes[nextScene].Equals("CaveGameScene")) {
                     objectsToMove.transform.GetChild(1).transform.position = new Vector3(0,0,0);
                 }
-                else if (nextScene == 2) {
+                else if (scenes[nextScene].Equals("ExitRoomScene")) {
                     objectsToMove.transform.GetChild(1).transform.position = new Vector3(0,-6,0);
                 }
 
