@@ -1918,6 +1918,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8224480481136021908, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
+      propertyPath: enemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224480481136021908, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
       propertyPath: bosses.Array.data[0]
       value: 
       objectReference: {fileID: 593757828702648435, guid: 1de91bdc34fa04908b13a0e10e136a56, type: 3}
@@ -1929,6 +1933,18 @@ PrefabInstance:
       propertyPath: bosses.Array.data[2]
       value: 
       objectReference: {fileID: 593757828702648435, guid: 8c191d732c99f49bda105791e1fd54ae, type: 3}
+    - target: {fileID: 8224480481136021908, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 593757828702648435, guid: be02ab93cac3f480f88c14f1b4d535cf, type: 3}
+    - target: {fileID: 8224480481136021908, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
+      propertyPath: enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 1774442238285305079, guid: 9373bae9b184e4391a59bfc3176fd23a, type: 3}
+    - target: {fileID: 8224480481136021908, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
+      propertyPath: enemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
 --- !u!1001 &537861455
@@ -2425,6 +2441,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   batList: []
   batDataList: []
+  wormList: []
+  wormDataList: []
+  ratList: []
+  ratDataList: []
 --- !u!114 &733719276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2439,6 +2459,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rockDataList: []
   rockList: []
+  smallRockOneDataList: []
+  smallRockOneList: []
+  smallRockTwoDataList: []
+  smallrockTwoList: []
 --- !u!4 &733719277
 Transform:
   m_ObjectHideFlags: 0

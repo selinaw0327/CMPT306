@@ -36,6 +36,7 @@ public class ProcGenDungeon : MonoBehaviour
     public static int caveLevel = 0;
 
     public GameObject exitPrefab;
+    Vector3Int lastWall = new Vector3Int(0,0,0);
 
     public GameObject[] rockPrefabs;
     public GameObject[] enemyPrefabs;
@@ -92,13 +93,13 @@ public class ProcGenDungeon : MonoBehaviour
 
         if(!onload){
             Debug.Log("not on load");
+            SpawnExit();
             FillSpawnLocations();
         }
     }
 
     private void FillWalls()
     {
-        Vector3Int lastWall = new Vector3Int(0,0,0);
         BoundsInt bounds = groundMap.cellBounds;
         for (int xMap = bounds.xMin - 10; xMap <= bounds.xMax + 10; xMap++)
         {
@@ -131,23 +132,6 @@ public class ProcGenDungeon : MonoBehaviour
                 }
             }
         }
-        Vector3Int posRight = new Vector3Int(lastWall.x+1, lastWall.y, 0);
-        Vector3Int posLeft = new Vector3Int(lastWall.x-1, lastWall.y, 0);
-
-        TileBase wallTileRight = wallMap.GetTile(posRight);
-        TileBase wallTileLeft = wallMap.GetTile(posLeft);
-
-        Vector3 lastWallF = lastWall;
-
-        if(wallTileRight == null) {
-            lastWallF.x -= 0.55f;
-        }
-        else {
-            lastWallF.x += 0.5f;
-        }
-        lastWallF.y += 0.5f;
-        GameObject exit = Instantiate(exitPrefab, lastWallF, Quaternion.identity, GameObject.Find("Environment").transform);
-        exit.name = "Exit";
     }
 
     private void NewRoute(int x, int y, int routeLength, Vector2Int previousPos)
@@ -247,10 +231,28 @@ public class ProcGenDungeon : MonoBehaviour
         }
     }
 
+    private void SpawnExit() {
+        Vector3Int posRight = new Vector3Int(lastWall.x+1, lastWall.y, 0);
+        Vector3Int posLeft = new Vector3Int(lastWall.x-1, lastWall.y, 0);
+
+        TileBase wallTileRight = wallMap.GetTile(posRight);
+        TileBase wallTileLeft = wallMap.GetTile(posLeft);
+
+        Vector3 lastWallF = lastWall;
+
+        if(wallTileRight == null) {
+            lastWallF.x -= 0.55f;
+        }
+        else {
+            lastWallF.x += 0.5f;
+        }
+        lastWallF.y += 0.5f;
+        GameObject exit = Instantiate(exitPrefab, lastWallF, Quaternion.identity, GameObject.Find("Environment").transform);
+        exit.name = "Exit";
+    }
 
     private void FillSpawnLocations() {
         for(int i = 0; i < spawnLocations.Count; i++) {
-            Debug.Log(spawnLocations.Count);
             int rand = Random.Range(0, 100);
 
             if(rand < 50) { // 50% chance to spawn rocks

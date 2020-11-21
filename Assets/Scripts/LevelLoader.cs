@@ -13,6 +13,12 @@ public class LevelLoader : MonoBehaviour
     public GameObject objectsToMove;
 
     public GameObject[] bosses;
+    public GameObject[] enemies;
+    private Vector3[] enemyLocations = {new Vector3(0, 19, 0), 
+                                        new Vector3(4, 16, 9),
+                                        new Vector3(-4, 16, 0),
+                                        new Vector3(3, 11, 0),
+                                        new Vector3(-3, 11, 0)};
 
     private string[] scenes = {"TutorialScene", "CaveGameScene", "ExitRoomScene"};
     private static int nextScene = 0;
@@ -35,7 +41,11 @@ public class LevelLoader : MonoBehaviour
         objectsToMove = GameObject.Find("ObjectsToMove");
 
         if(SceneManager.GetActiveScene().name.Equals("ExitRoomScene")) {
-            Instantiate(bosses[ProcGenDungeon.caveLevel], new Vector3(0, 20, 0), Quaternion.identity, GameObject.Find("Environment").transform);          
+            Instantiate(bosses[ProcGenDungeon.caveLevel], new Vector3(0, 15, 0), Quaternion.identity, GameObject.Find("Environment").transform);
+
+            for(int i = 0; i < enemyLocations.Length; i++) {
+                Instantiate(enemies[ProcGenDungeon.caveLevel], enemyLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
+            }
         }
     }
 
