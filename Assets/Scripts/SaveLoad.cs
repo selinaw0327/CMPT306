@@ -90,6 +90,18 @@ public static class SaveLoad
 				enemyLists.batDataList.Add(newData);
 			}
 		}
+		foreach(GameObject worm in enemyLists.wormList){
+			if(worm != null){
+				EnemyData newData = new EnemyData(worm.GetComponentInChildren<EnemyStats>());
+				enemyLists.wormDataList.Add(newData);
+			}
+		}
+		foreach(GameObject rat in enemyLists.ratList){
+			if(rat != null){
+				EnemyData newData = new EnemyData(rat.GetComponentInChildren<EnemyStats>());
+				enemyLists.ratDataList.Add(newData);
+			}
+		}
 		EnemyDataLists data = new EnemyDataLists(enemyLists);
 		formatter.Serialize(stream, data);
 		stream.Close();
@@ -104,6 +116,8 @@ public static class SaveLoad
 			EnemyDataLists data =formatter.Deserialize(stream) as EnemyDataLists;
 			stream.Close();
 			enemyLists.batDataList = data.batDataList;
+			enemyLists.ratDataList = data.ratDataList;
+			enemyLists.wormDataList = data.wormDataList;
 			
 		} else {
 			Debug.LogError("No item save file at "+ path );

@@ -16,6 +16,8 @@ public class SaveLoadRunner : MonoBehaviour
     public GameObject rock;
     public GameObject inventoryItem;
     public GameObject bat;
+    public GameObject worm;
+    public GameObject rat;
     public ProcGenDungeon map;
     public RockList rockList;
     public EnemyLists enemyLists;
@@ -189,9 +191,19 @@ public class SaveLoadRunner : MonoBehaviour
         foreach(GameObject bat in enemyLists.batList){
             Destroy(bat);
         }
+        foreach(GameObject worm in enemyLists.wormList){
+            Destroy(worm);
+        }
+        foreach(GameObject rat in enemyLists.ratList){
+            Destroy(rat);
+        }
+
 
         SaveLoad.LoadEnemies(enemyLists);
         enemyLists.batList = new List<GameObject>();
+        enemyLists.ratList = new List<GameObject>();
+        enemyLists.wormList = new List<GameObject>();
+
 
         foreach(EnemyData batData in enemyLists.batDataList){
             Vector2 position;
@@ -207,7 +219,36 @@ public class SaveLoadRunner : MonoBehaviour
             newBat.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(batData.currentHealth, batData.maxHealth);
             enemyLists.batList.Add(newBat);
         }
+        foreach(EnemyData ratData in enemyLists.ratDataList){
+            Vector2 position;
+            position.x = ratData.position[0];
+            position.y = ratData.position[1];
+
+            GameObject newRat = Instantiate(rat, position, Quaternion.identity, GameObject.Find("Environment").transform);
+            
+            
+            newRat.transform.GetComponentInChildren<EnemyStats>().maxHealth = ratData.maxHealth;
+            newRat.transform.GetComponentInChildren<EnemyStats>().damage = ratData.damage;
+            newRat.transform.GetComponentInChildren<EnemyStats>().currentHealth = ratData.currentHealth;
+            newRat.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(ratData.currentHealth, ratData.maxHealth);
+            enemyLists.ratList.Add(newRat);
+        }
+        foreach(EnemyData wormData in enemyLists.wormDataList){
+            Vector2 position;
+            position.x = wormData.position[0];
+            position.y = wormData.position[1];
+
+            GameObject newWorm = Instantiate(worm, position, Quaternion.identity, GameObject.Find("Environment").transform);
+            
+            newWorm.transform.GetComponentInChildren<EnemyStats>().maxHealth = wormData.maxHealth;
+            newWorm.transform.GetComponentInChildren<EnemyStats>().damage = wormData.damage;
+            newWorm.transform.GetComponentInChildren<EnemyStats>().currentHealth = wormData.currentHealth;
+            newWorm.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(wormData.currentHealth,wormData.maxHealth);
+            enemyLists.wormList.Add(newWorm);
+        }
         enemyLists.batDataList = new List<EnemyData>();
+        enemyLists.ratDataList = new List<EnemyData>();
+        enemyLists.wormDataList = new List<EnemyData>();
 
     }
     public void SaveItemsOnFloor()

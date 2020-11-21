@@ -4840,6 +4840,8 @@ MonoBehaviour:
   rock: {fileID: 4246496661039566702, guid: 0f5d90fee59cd2241bc28217dca4b83d, type: 3}
   inventoryItem: {fileID: 2825149634833932108, guid: 96aed9e12e6117844a864b4947554837, type: 3}
   bat: {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
+  worm: {fileID: 593757828702648435, guid: be02ab93cac3f480f88c14f1b4d535cf, type: 3}
+  rat: {fileID: 1774442238285305079, guid: 9373bae9b184e4391a59bfc3176fd23a, type: 3}
   map: {fileID: 0}
   rockList: {fileID: 0}
   enemyLists: {fileID: 0}
@@ -29746,6 +29748,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   batList: []
   batDataList: []
+  wormList: []
+  wormDataList: []
+  ratList: []
+  ratDataList: []
 --- !u!114 &1924978382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29760,6 +29766,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rockDataList: []
   rockList: []
+  smallRockOneDataList: []
+  smallRockOneList: []
+  smallRockTwoDataList: []
+  smallrockTwoList: []
 --- !u!4 &1924978383
 Transform:
   m_ObjectHideFlags: 0

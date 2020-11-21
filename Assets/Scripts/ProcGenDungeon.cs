@@ -300,19 +300,15 @@ public class ProcGenDungeon : MonoBehaviour
                 
         newObject = Instantiate(enemyPrefabs[rand], spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(newObject);
-        EnemyLists enemyLists =  GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
         switch(enemyPrefabs[rand].name) {
             case "Worm":
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().wormList.Add(newObject);
-                enemyLists.wormList.Add(newObject);
                 break;
             case "Rat":
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().ratList.Add(newObject);
-                enemyLists.ratList.Add(newObject);
                 break;
             case "Bat":
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
-                enemyLists.batList.Add(newObject);
                 break;
         }
 
