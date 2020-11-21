@@ -268,10 +268,17 @@ public class ProcGenDungeon : MonoBehaviour
     }
 
     // Randomly select on the rock refabs
-    private void SpawnRocks(Vector3 spawnLocation) {
+    private void SpawnRocks(Vector3 location) {
         int rand = Random.Range(0, rockPrefabs.Length);
+
+        // Adds slightly more random location to spawn
+        int randSpawn = Random.Range(0, 2); // 50% chance to move the object right one tile
+        if(randSpawn == 1) location.x++;
+
+        randSpawn = Random.Range(0, 2);
+        if(randSpawn == 1) location.y++; // 50% chance to move the object up one tile
         
-        GameObject newObject = Instantiate(rockPrefabs[rand], spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        GameObject newObject = Instantiate(rockPrefabs[rand], location, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(newObject);
         
         switch(rockPrefabs[rand].name) {
@@ -296,11 +303,18 @@ public class ProcGenDungeon : MonoBehaviour
     // First Level: Worms
     // Second Level: Worms and Rats
     // Third Level: Worms, Rats, and Bats
-    private void SpawnEnemies(Vector3 spawnLocation) {
+    private void SpawnEnemies(Vector3 location) {
         int rand = Random.Range(0 , caveLevel + 1);
         GameObject newObject;
+
+        // Adds slightly more random location to spawn
+        int randSpawn = Random.Range(0, 2); // 50% chance to move the object right one tile
+        if(randSpawn == 1) location.x++;
+
+        randSpawn = Random.Range(0, 2);
+        if(randSpawn == 1) location.y++; // 50% chance to move the object up one tile
                 
-        newObject = Instantiate(enemyPrefabs[rand], spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        newObject = Instantiate(enemyPrefabs[rand], location, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(newObject);
 
         switch(enemyPrefabs[rand].name) {
@@ -319,10 +333,17 @@ public class ProcGenDungeon : MonoBehaviour
     }
 
     // Randomly select a fruit to spawn
-    private void SpawnFruit(Vector3 spawnLocation) {
+    private void SpawnFruit(Vector3 location) {
         int rand = Random.Range(0, fruitSprites.Length);
 
-        GameObject newObject = Instantiate(itemPrefab, spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        // Adds slightly more random location to spawn
+        int randSpawn = Random.Range(0, 2); // 50% chance to move the object right one tile
+        if(randSpawn == 1) location.x++;
+
+        randSpawn = Random.Range(0, 2);
+        if(randSpawn == 1) location.y++; // 50% chance to move the object up one tile
+
+        GameObject newObject = Instantiate(itemPrefab, location, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(newObject);
 
         switch (rand) {
