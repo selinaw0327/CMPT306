@@ -68,7 +68,7 @@ public class TextLoader : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("TutorialScene");
+                SceneManager.LoadScene("MainMenu");
             }
         }
     }
