@@ -90,6 +90,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 4447748098873355763, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
+      propertyPath: damageText
+      value: 
+      objectReference: {fileID: 3548901578697284184, guid: 41666949b967c41cb865556ed1bd15fd, type: 3}
     - target: {fileID: 6740966554016197309, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

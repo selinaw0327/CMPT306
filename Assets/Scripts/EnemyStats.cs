@@ -7,9 +7,9 @@ public class EnemyStats : MonoBehaviour
     public StatBar healthBar;
     public int maxHealth;
     public int currentHealth;
-
-    
     public int damage;
+
+    public GameObject damageText;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,12 @@ public class EnemyStats : MonoBehaviour
         Debug.Log("Current health:"+ currentHealth + "Damage: "+ damage);
         // Set current health and check if the enemy has died
         currentHealth -= damage;
+
+        // Show the enemy's damage 
+        if (damageText){
+            showDamageText();
+        }
+
         if(currentHealth <= 0) {
 
             // if the enemy is not in tutorial scene, run enemy item drop script
@@ -62,5 +68,13 @@ public class EnemyStats : MonoBehaviour
         }
         Debug.Log("New Health: "+ currentHealth);
         healthBar.SetStat(currentHealth, maxHealth);
+    }
+
+    void showDamageText(){
+        var damageTextObject = Instantiate(damageText, transform.position, Quaternion.identity);
+        damageTextObject.GetComponentInChildren<TextMesh>().text = "-" + damage.ToString();
+        Destroy(damageTextObject, 3f);
+
+
     }
 }
