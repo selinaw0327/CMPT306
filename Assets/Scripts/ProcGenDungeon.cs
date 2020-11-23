@@ -281,15 +281,12 @@ public class ProcGenDungeon : MonoBehaviour
         switch(rockPrefabs[rand].name) {
             case "Large Rock":
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockList.Add(newObject);
-                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().rockDataList.Add(new RockData(newObject));
                 break;
             case "Small Rock One":
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockOneList.Add(newObject);
-                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockOneDataList.Add(new RockData(newObject));
                 break;
             case "Small Rock Two":
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallrockTwoList.Add(newObject);
-                GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockTwoDataList.Add(new RockData(newObject));
                 break;
             default:
                 break;
@@ -312,7 +309,6 @@ public class ProcGenDungeon : MonoBehaviour
                 
         newObject = Instantiate(enemyPrefabs[rand], location, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(newObject);
-
         switch(enemyPrefabs[rand].name) {
             case "Worm":
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().wormList.Add(newObject);

@@ -90,6 +90,36 @@ public static class SaveLoad
 				enemyLists.batDataList.Add(newData);
 			}
 		}
+		foreach(GameObject worm in enemyLists.wormList){
+			if(worm != null){
+				EnemyData newData = new EnemyData(worm.GetComponentInChildren<EnemyStats>());
+				enemyLists.wormDataList.Add(newData);
+			}
+		}
+		foreach(GameObject rat in enemyLists.ratList){
+			if(rat != null){
+				EnemyData newData = new EnemyData(rat.GetComponentInChildren<EnemyStats>());
+				enemyLists.ratDataList.Add(newData);
+			}
+		}
+		foreach(GameObject skel in enemyLists.skelList){
+			if(skel != null){
+				EnemyData newData = new EnemyData(skel.GetComponentInChildren<EnemyStats>());
+				enemyLists.skelDataList.Add(newData);
+			}
+		}
+		foreach(GameObject vamp in enemyLists.vampList){
+			if(vamp != null){
+				EnemyData newData = new EnemyData(vamp.GetComponentInChildren<EnemyStats>());
+				enemyLists.vampDataList.Add(newData);
+			}
+		}
+		foreach(GameObject zomb in enemyLists.zombList){
+			if(zomb != null){
+				EnemyData newData = new EnemyData(zomb.GetComponentInChildren<EnemyStats>());
+				enemyLists.zombDataList.Add(newData);
+			}
+		}
 		EnemyDataLists data = new EnemyDataLists(enemyLists);
 		formatter.Serialize(stream, data);
 		stream.Close();
@@ -104,6 +134,11 @@ public static class SaveLoad
 			EnemyDataLists data =formatter.Deserialize(stream) as EnemyDataLists;
 			stream.Close();
 			enemyLists.batDataList = data.batDataList;
+			enemyLists.ratDataList = data.ratDataList;
+			enemyLists.wormDataList = data.wormDataList;
+			enemyLists.vampDataList = data.vampDataList;
+			enemyLists.skelDataList = data.skelDataList;
+			enemyLists.zombDataList = data.zombDataList;
 			
 		} else {
 			Debug.LogError("No item save file at "+ path );
@@ -113,6 +148,24 @@ public static class SaveLoad
 		BinaryFormatter formatter = new BinaryFormatter();
 		string path = Application.persistentDataPath + "/rocks.info";
 		FileStream stream  =  new FileStream(path, FileMode.Create);
+		foreach(GameObject rock in rockList.rockList){
+			if(rock != null){
+				RockData newData = new RockData(rock);
+				rockList.rockDataList.Add(newData);
+			}
+		}
+		foreach(GameObject rock2 in rockList.smallRockOneList){
+			if(rock2 != null){
+				RockData newData = new RockData(rock2);
+				rockList.smallRockOneDataList.Add(newData);
+			}
+		}
+		foreach(GameObject rock3 in rockList.smallrockTwoList){
+			if(rock3 != null){
+				RockData newData = new RockData(rock3);
+				rockList.smallRockTwoDataList.Add(newData);
+			}
+		}
 		RockDataList data = new RockDataList(rockList);
 		formatter.Serialize(stream, data);
 		stream.Close();
@@ -127,6 +180,8 @@ public static class SaveLoad
 			RockDataList data =formatter.Deserialize(stream) as RockDataList;
 			stream.Close();
 			rockList.rockDataList = data.rockDataList;
+			rockList.smallRockTwoDataList = data.smallRockTwoDataList;
+			rockList.smallRockOneDataList = data.smallRockOneDataList;
 			
 		} else {
 			Debug.LogError("No item save file at "+ path );

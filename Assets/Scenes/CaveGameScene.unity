@@ -5490,7 +5490,7 @@ GameObject:
   - component: {fileID: 1098875631}
   m_Layer: 0
   m_Name: SaveLoadFunctions
-  m_TagString: Untagged
+  m_TagString: savefunctions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5527,8 +5527,15 @@ MonoBehaviour:
   challenges: {fileID: 0}
   item: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
   rock: {fileID: 4246496661039566702, guid: 0f5d90fee59cd2241bc28217dca4b83d, type: 3}
+  smallrock1: {fileID: 4246496661039566702, guid: d30f75ebfb287564cbe7db68bc11ecf4, type: 3}
+  smallrock2: {fileID: 4246496661039566702, guid: ff7c029c906285047acd935df69f9f18, type: 3}
   inventoryItem: {fileID: 2825149634833932108, guid: 96aed9e12e6117844a864b4947554837, type: 3}
   bat: {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
+  worm: {fileID: 593757828702648435, guid: be02ab93cac3f480f88c14f1b4d535cf, type: 3}
+  rat: {fileID: 1774442238285305079, guid: 9373bae9b184e4391a59bfc3176fd23a, type: 3}
+  vampire: {fileID: 0}
+  skeleton: {fileID: 0}
+  zombie: {fileID: 0}
   map: {fileID: 0}
   rockList: {fileID: 0}
   enemyLists: {fileID: 0}
@@ -8487,6 +8494,12 @@ MonoBehaviour:
   wormDataList: []
   ratList: []
   ratDataList: []
+  vampList: []
+  vampDataList: []
+  skelList: []
+  skelDataList: []
+  zombList: []
+  zombDataList: []
 --- !u!1 &1988427520
 GameObject:
   m_ObjectHideFlags: 0
