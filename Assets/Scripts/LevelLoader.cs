@@ -40,11 +40,30 @@ public class LevelLoader : MonoBehaviour
 
         objectsToMove = GameObject.Find("ObjectsToMove");
 
+        // Spawn boss and enemies
         if(SceneManager.GetActiveScene().name.Equals("ExitRoomScene")) {
-            Instantiate(bosses[ProcGenDungeon.caveLevel], new Vector3(0, 15, 0), Quaternion.identity, GameObject.Find("Environment").transform);
+            GameObject newBoss = Instantiate(bosses[ProcGenDungeon.caveLevel], new Vector3(0, 15, 0), Quaternion.identity, GameObject.Find("Environment").transform);
+            newBoss.name = bosses[ProcGenDungeon.caveLevel].name;
 
+            // Spawn enemies and add them to the correct list
             for(int i = 0; i < enemyLocations.Length; i++) {
-                Instantiate(enemies[ProcGenDungeon.caveLevel], enemyLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
+                GameObject newEnemy = Instantiate(enemies[ProcGenDungeon.caveLevel], enemyLocations[i], Quaternion.identity, GameObject.Find("Environment").transform);
+
+                switch(enemies[ProcGenDungeon.caveLevel].name) {
+                    case "Worm":
+                        GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().wormList.Add(newEnemy);
+                        break;
+                    case "Rat":
+                        GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().ratList.Add(newEnemy);
+                        break;
+                    case "Bat":
+                        GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newEnemy);
+                        break;
+                    default:
+                        break;
+                }
+                newEnemy.name = enemies[ProcGenDungeon.caveLevel].name;
+                newEnemy.GetComponent<EnemyDrop>().bossRoom = true;
             }
         }
     }
@@ -88,6 +107,8 @@ public class LevelLoader : MonoBehaviour
                 case "Outro":
                     previousScene = 5;
                     nextScene = 0;
+                    break;
+                default:
                     break;
             }
             if(previousScene == 1) { // If intro, load tutorial

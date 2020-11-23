@@ -11,6 +11,7 @@ public class EnemyDrop : MonoBehaviour
     private GameObject enemy;
 
     public bool tutorial;
+    public bool bossRoom;
 
     private void Start()
     {
@@ -80,8 +81,25 @@ public class EnemyDrop : MonoBehaviour
             default:
                 break;
         }
+    }
 
-        void NewItem(string itemName, Sprite itemSprite, Item.ItemType itemType)
+    public void BossRoomDrop() {
+        switch(name) {
+            case "Worm":
+                NewItem("Apple", spriteAtlas.GetComponent<SpriteAtlas>().apple, Item.ItemType.Fruit);
+                break;
+            case "Rat":
+                NewItem("Banana", spriteAtlas.GetComponent<SpriteAtlas>().banana, Item.ItemType.Fruit);
+                break;
+            case "Bat":
+                NewItem("Orange", spriteAtlas.GetComponent<SpriteAtlas>().orange, Item.ItemType.Fruit);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void NewItem(string itemName, Sprite itemSprite, Item.ItemType itemType)
         {
             // Random new item spawn spot
             float x = enemy.transform.position.x - (1 / Random.Range(1, 11));
@@ -101,5 +119,4 @@ public class EnemyDrop : MonoBehaviour
             itemsOnFloorList.itemDataList.Add(new ItemData(newItem.GetComponent<Item>()));
             itemsOnFloorList.itemList.Add(newItem);
         }
-    }
 }

@@ -7,6 +7,12 @@ public class EnemyStats : MonoBehaviour
     public StatBar healthBar;
     public int maxHealth;
     public int currentHealth;
+
+     public bool isBoss;
+
+    private EnemyLists enemyLists;
+    private string enemyName;
+
     public int damage;
 
     public GameObject damageText;
@@ -23,6 +29,11 @@ public class EnemyStats : MonoBehaviour
         }
         healthBar.SetMaxStat(maxHealth);
         healthBar.transform.position = transform.position + healthBar.offset;
+
+
+        enemyLists = GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
+        enemyName = this.transform.parent.name;
+
         criticalHit = false;
         animator = transform.parent.gameObject.GetComponent<Animator>();
         deathAnimationFound = HasParameter("isDead", animator);
@@ -32,7 +43,6 @@ public class EnemyStats : MonoBehaviour
     void Update()
     {
         healthBar.SetStat(currentHealth, maxHealth);
-        
     }
 
     // Causes the enemy to take damage
@@ -51,34 +61,64 @@ public class EnemyStats : MonoBehaviour
         }
 
         if(currentHealth <= 0) {
+            if(isBoss) {
+                if(enemyName.Equals("zombie")) {
+                    if(enemyLists.wormList.Count == 0) {
+                        SetDeathAnimation();
+                        DestroyEnemy();
+                    }
+                }
+                else if(enemyName.Equals("Skeleton")) {
+                    if(enemyLists.ratList.Count == 0) {
+                        SetDeathAnimation();
+                        DestroyEnemy();
+                    }
+                }
+                else if(enemyName.Equals("Vampire")) {
+                    if(enemyLists.batDataList.Count == 0) {
+                        SetDeathAnimation();
+                        DestroyEnemy();
+                    }
+                } 
+            }
+            else {
+                SetDeathAnimation();
+                // if the enemy is is the boss room, run ememny boss room drop script
+                if(transform.parent.gameObject.GetComponent<EnemyDrop>().bossRoom) {
+                    transform.parent.gameObject.GetComponent<EnemyDrop>().BossRoomDrop();
+                }
+                // if the enemy is not in tutorial scene, run enemy item drop script
+                else if (!transform.parent.gameObject.GetComponent<EnemyDrop>().tutorial)
+                {
+                    transform.parent.gameObject.GetComponent<EnemyDrop>().Drop();
+                }
 
-            SetDeathAnimation();
-            // if the enemy is not in tutorial scene, run enemy item drop script
-            if (!transform.parent.gameObject.GetComponent<EnemyDrop>().tutorial)
-            {
-                transform.parent.gameObject.GetComponent<EnemyDrop>().Drop();
-            }
+                if (this.transform.parent.gameObject.name == "Bat"){
+                    ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+                    challengeMenu.updateChallenge("5bat");
+                }
 
-            if (this.transform.parent.gameObject.name == "Bat"){
-                ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
-                challengeMenu.updateChallenge("5bat");
+                List<GameObject> objectList;
+
+                // Find specific enemy list and remove the enemy from that list
+                if(enemyName.Equals("Worm")) {
+                    objectList = enemyLists.wormList;
+                }
+                else if(enemyName.Equals("Rat")) {
+                    objectList = enemyLists.ratList;
+                }
+                else if(enemyName.Equals("Bat")) {
+                    objectList = enemyLists.batList;
+                } 
+                else {
+                    objectList = new List<GameObject>();
+                }
+                objectList.Remove(this.transform.parent.gameObject);
+
+                DestroyEnemy();
             }
-            DestroyEnemy();
-            EnemyLists enemyLists = GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
-            List<GameObject> objectList;
-            
-            
-            if(this.name == "Bat"){
-                objectList = enemyLists.batList;
-                
-            } else {
-                
-                objectList = new List<GameObject>();
-            }
-            objectList.Remove(this.transform.parent.gameObject);
-            
         }
-        Debug.Log("New Health: "+ currentHealth);
+        // Debug.Log("New Health: "+ currentHealth);
         healthBar.SetStat(currentHealth, maxHealth);
     }
 
