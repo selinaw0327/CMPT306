@@ -14,10 +14,15 @@ public class SaveLoadRunner : MonoBehaviour
     public ChallengeMenu challenges;
     public GameObject item;
     public GameObject rock;
+    public GameObject smallrock1;
+    public GameObject smallrock2;
     public GameObject inventoryItem;
     public GameObject bat;
     public GameObject worm;
     public GameObject rat;
+    public GameObject vampire;
+    public GameObject skeleton;
+    public GameObject zombie;
     public ProcGenDungeon map;
     public RockList rockList;
     public EnemyLists enemyLists;
@@ -41,7 +46,7 @@ public class SaveLoadRunner : MonoBehaviour
         }
         rockList = GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>();
         enemyLists =  GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
-
+        SaveAll();
     }
 
     void Update() {
@@ -86,6 +91,7 @@ public class SaveLoadRunner : MonoBehaviour
     public void LoadPlayer()
     {
         SaveLoad.LoadPlayer(player);
+        player.healthBar.SetStat(player.currentHealth, player.maxHealth);
     }
 
     public void SaveInventory()
@@ -165,9 +171,22 @@ public class SaveLoadRunner : MonoBehaviour
             Destroy(rock);
             
         } 
+        foreach(GameObject smallrockone in  rockList.smallRockOneList){
+            
+            Destroy(smallrockone);
+            
+        } 
 
+        foreach(GameObject smallrocktwo in  rockList.smallrockTwoList){
+            
+            Destroy(smallrocktwo);
+            
+        } 
         SaveLoad.LoadRocks(rockList);
         rockList.rockList = new List<GameObject>();
+        rockList.rockList.Clear();
+        rockList.smallRockOneList.Clear();
+        rockList.smallrockTwoList.Clear();
 
         foreach(RockData rockData in rockList.rockDataList){
             Vector2 position;
@@ -177,7 +196,25 @@ public class SaveLoadRunner : MonoBehaviour
             GameObject newRock = Instantiate(rock, position, Quaternion.identity, GameObject.Find("Environment").transform );
             rockList.rockList.Add(newRock);
         }
+        foreach(RockData rockData in rockList.smallRockOneDataList){
+            Vector2 position;
+            position.x = rockData.position[0];
+            position.y = rockData.position[1];
 
+            GameObject newRock = Instantiate(smallrock1, position, Quaternion.identity, GameObject.Find("Environment").transform );
+            rockList.smallRockOneList.Add(newRock);
+        }
+        foreach(RockData rockData in rockList.smallRockTwoDataList){
+            Vector2 position;
+            position.x = rockData.position[0];
+            position.y = rockData.position[1];
+
+            GameObject newRock = Instantiate(smallrock2, position, Quaternion.identity, GameObject.Find("Environment").transform );
+            rockList.smallrockTwoList.Add(newRock);
+        }
+        rockList.rockDataList.Clear();
+        rockList.smallRockTwoDataList.Clear();
+        rockList.smallRockOneDataList.Clear();
 
     }
     public void SaveEnemies()
@@ -197,12 +234,24 @@ public class SaveLoadRunner : MonoBehaviour
         foreach(GameObject rat in enemyLists.ratList){
             Destroy(rat);
         }
+        foreach(GameObject zomb in enemyLists.zombList){
+            Destroy(zomb);
+        }
+        foreach(GameObject vamp in enemyLists.vampList){
+            Destroy(vamp);
+        }
+        foreach(GameObject skel in enemyLists.skelList){
+            Destroy(skel);
+        }
 
 
         SaveLoad.LoadEnemies(enemyLists);
         enemyLists.batList = new List<GameObject>();
         enemyLists.ratList = new List<GameObject>();
         enemyLists.wormList = new List<GameObject>();
+        enemyLists.vampList = new List<GameObject>();
+        enemyLists.zombList = new List<GameObject>();
+        enemyLists.skelList = new List<GameObject>();
 
 
         foreach(EnemyData batData in enemyLists.batDataList){
@@ -246,9 +295,53 @@ public class SaveLoadRunner : MonoBehaviour
             newWorm.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(wormData.currentHealth,wormData.maxHealth);
             enemyLists.wormList.Add(newWorm);
         }
+        foreach(EnemyData vampData in enemyLists.vampDataList){
+            Vector2 position;
+            position.x = vampData.position[0];
+            position.y = vampData.position[1];
+
+            GameObject newVamp = Instantiate(vampire, position, Quaternion.identity, GameObject.Find("Environment").transform);
+            
+            
+            newVamp.transform.GetComponentInChildren<EnemyStats>().maxHealth = vampData.maxHealth;
+            newVamp.transform.GetComponentInChildren<EnemyStats>().damage = vampData.damage;
+            newVamp.transform.GetComponentInChildren<EnemyStats>().currentHealth = vampData.currentHealth;
+            newVamp.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(vampData.currentHealth, vampData.maxHealth);
+            enemyLists.vampList.Add(newVamp);
+        }
+        foreach(EnemyData zombData in enemyLists.zombDataList){
+            Vector2 position;
+            position.x = zombData.position[0];
+            position.y = zombData.position[1];
+
+            GameObject newZomb = Instantiate(zombie, position, Quaternion.identity, GameObject.Find("Environment").transform);
+            
+            
+            newZomb.transform.GetComponentInChildren<EnemyStats>().maxHealth = zombData.maxHealth;
+            newZomb.transform.GetComponentInChildren<EnemyStats>().damage = zombData.damage;
+            newZomb.transform.GetComponentInChildren<EnemyStats>().currentHealth = zombData.currentHealth;
+            newZomb.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(zombData.currentHealth, zombData.maxHealth);
+            enemyLists.zombList.Add(newZomb);
+        }
+        foreach(EnemyData skelData in enemyLists.skelDataList){
+            Vector2 position;
+            position.x = skelData.position[0];
+            position.y = skelData.position[1];
+
+            GameObject newSkel = Instantiate(skeleton, position, Quaternion.identity, GameObject.Find("Environment").transform);
+            
+            newSkel.transform.GetComponentInChildren<EnemyStats>().maxHealth = skelData.maxHealth;
+            newSkel.transform.GetComponentInChildren<EnemyStats>().damage = skelData.damage;
+            newSkel.transform.GetComponentInChildren<EnemyStats>().currentHealth = skelData.currentHealth;
+            newSkel.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(skelData.currentHealth,skelData.maxHealth);
+            enemyLists.skelList.Add(newSkel);
+        }
         enemyLists.batDataList = new List<EnemyData>();
         enemyLists.ratDataList = new List<EnemyData>();
         enemyLists.wormDataList = new List<EnemyData>();
+        enemyLists.skelDataList = new List<EnemyData>();
+        enemyLists.vampDataList = new List<EnemyData>();
+        enemyLists.zombDataList = new List<EnemyData>();
 
     }
     public void SaveItemsOnFloor()

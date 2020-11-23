@@ -39,11 +39,26 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         objectsToMove = GameObject.Find("ObjectsToMove");
+        
 
         // Spawn boss and enemies
         if(SceneManager.GetActiveScene().name.Equals("ExitRoomScene")) {
             GameObject newBoss = Instantiate(bosses[ProcGenDungeon.caveLevel], new Vector3(0, 15, 0), Quaternion.identity, GameObject.Find("Environment").transform);
             newBoss.name = bosses[ProcGenDungeon.caveLevel].name;
+            switch(newBoss.name){
+                case "Skeleton":
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().skelList.Add(newBoss);
+                    break;
+                case "Vampire":
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().vampList.Add(newBoss);
+                    break;
+                case "zombie":
+                    GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().zombList.Add(newBoss);
+                    break;
+                default:
+                    break;
+            }
+            
 
             // Spawn enemies and add them to the correct list
             for(int i = 0; i < enemyLocations.Length; i++) {

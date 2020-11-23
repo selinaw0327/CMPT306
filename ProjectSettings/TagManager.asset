@@ -17,6 +17,7 @@ TagManager:
   - Rock
   - Environment
   - Incomplete
+  - savefunctions
   layers:
   - Default
   - TransparentFX
