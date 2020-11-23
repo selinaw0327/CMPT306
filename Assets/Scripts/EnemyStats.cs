@@ -7,13 +7,19 @@ public class EnemyStats : MonoBehaviour
     public StatBar healthBar;
     public int maxHealth;
     public int currentHealth;
-    
-    public int damage;
 
-    public bool isBoss;
+     public bool isBoss;
 
     private EnemyLists enemyLists;
     private string enemyName;
+
+    public int damage;
+
+    public GameObject damageText;
+    public bool getHit;
+    private bool criticalHit;
+    private Animator animator;
+    private bool deathAnimationFound;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +30,14 @@ public class EnemyStats : MonoBehaviour
         healthBar.SetMaxStat(maxHealth);
         healthBar.transform.position = transform.position + healthBar.offset;
 
+
         enemyLists = GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
         enemyName = this.transform.parent.name;
+
+        criticalHit = false;
+        animator = transform.parent.gameObject.GetComponent<Animator>();
+        deathAnimationFound = HasParameter("isDead", animator);
+        getHit = false;
     }
 
     void Update()
@@ -36,11 +48,22 @@ public class EnemyStats : MonoBehaviour
 
     // Causes the enemy to take damage
     public void TakeDamage(int damage) {
-        // Debug.Log("Current health:"+ currentHealth + "Damage: "+ damage);
+
+
+        getHit = true;
+        Debug.Log("Current health:"+ currentHealth + "Damage: "+ damage);
         // Set current health and check if the enemy has died
-        currentHealth -= damage;
+       
+       // calculate damage 
+        CalcDamage();
+
+        // Show the enemy's damage 
+        if (damageText){
+            ShowDamageText();
+        }
+
         if(currentHealth <= 0) {
-            
+            SetDeathAnimation();
             if(isBoss) {
                 if(enemyName.Equals("zombie")) {
                     if(enemyLists.wormList.Count == 0) {
@@ -97,4 +120,72 @@ public class EnemyStats : MonoBehaviour
         // Debug.Log("New Health: "+ currentHealth);
         healthBar.SetStat(currentHealth, maxHealth);
     }
+
+    public void ShowDamageText(){
+
+        var damageTextObject = Instantiate(damageText, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
+
+        // critical hit 
+        if(criticalHit){
+            var damageAmount = damage * 2;
+            var TextMeshObject = damageTextObject.GetComponentInChildren<TextMesh>();
+            TextMeshObject.text = "-" + damageAmount.ToString();
+            TextMeshObject.color = Color.yellow;
+            TextMeshObject.fontSize = 26;
+
+        }
+        // normal damage
+        else{
+            damageTextObject.GetComponentInChildren<TextMesh>().text = "-" + damage.ToString();           
+        }
+
+
+        Destroy(damageTextObject, 3f);
+
+    }
+
+    public void DestroyEnemy(){
+
+        // play death aniamtion if there exits one
+        if(deathAnimationFound){
+            Destroy(this.transform.parent.gameObject, 3f);
+        }
+        else{
+            Destroy(this.transform.parent.gameObject);
+        }
+
+    }
+
+    public void CalcDamage(){
+        float randValue = Random.value;
+        if (randValue < .20f) 
+            {
+                criticalHit = true;
+                currentHealth -= damage;
+            }
+        else 
+            {   
+                criticalHit = false;
+                currentHealth -= damage * 2;
+            }
+        }
+
+    public bool HasParameter(string paramName, Animator animator)
+    {
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+        if (param.name == paramName)
+            return true;
+        }
+        return false;
+    }
+
+    public void SetDeathAnimation(){
+
+        if(deathAnimationFound){
+            animator.SetBool("isDead", true);
+        }
+    }
+
+      
 }
