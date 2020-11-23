@@ -161,17 +161,17 @@ public class EnemyAI : MonoBehaviour
 
         if (rb.velocity.x <= -0.01f){
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            transform.GetChild(0).localScale = new Vector3(0.015f, 0.015f, 1f);
             // animator.SetFloat("moveX", force.x);
             // animator.SetBool("isMoving", true);
         
         }
         else if(rb.velocity.x >= 0.01f){
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            transform.GetChild(0).localScale = new Vector3(-0.015f, 0.015f, 1f);
             //  animator.SetFloat("moveX", force.x);
             // animator.SetBool("isMoving", true);
         }
-         
-
      }
  
 }
