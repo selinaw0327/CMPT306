@@ -6583,7 +6583,7 @@ MonoBehaviour:
   player: {fileID: 0}
   deviationRate: 15
   roomRate: 10
-  maxRouteLength: 100
+  maxRouteLength: 10
   maxRoutes: 20
   exitPrefab: {fileID: 5250879337292495368, guid: 070c1158f71f4ae46ba1e47e42f16d3a, type: 3}
   rockPrefabs:
