@@ -10,6 +10,7 @@ public class EnemyStats : MonoBehaviour
     public int damage;
 
     public GameObject damageText;
+    private bool criticalHit;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class EnemyStats : MonoBehaviour
         }
         healthBar.SetMaxStat(maxHealth);
         healthBar.transform.position = transform.position + healthBar.offset;
+        criticalHit = false;
     }
 
     void Update()
@@ -31,7 +33,9 @@ public class EnemyStats : MonoBehaviour
     public void TakeDamage(int damage) {
         Debug.Log("Current health:"+ currentHealth + "Damage: "+ damage);
         // Set current health and check if the enemy has died
-        currentHealth -= damage;
+       
+       // calculate damage 
+        calcDamage();
 
         // Show the enemy's damage 
         if (damageText){
@@ -71,10 +75,38 @@ public class EnemyStats : MonoBehaviour
     }
 
     void showDamageText(){
-        var damageTextObject = Instantiate(damageText, transform.position, Quaternion.identity);
-        damageTextObject.GetComponentInChildren<TextMesh>().text = "-" + damage.ToString();
+
+        var damageTextObject = Instantiate(damageText, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
+
+        // critical hit 
+        if(criticalHit){
+            var damageAmount = damage * 2;
+            damageTextObject.GetComponentInChildren<TextMesh>().text = "-" + damageAmount.ToString();
+            damageTextObject.GetComponentInChildren<TextMesh>().color = Color.yellow;
+            damageTextObject.GetComponentInChildren<TextMesh>().fontSize = 26;
+
+        }
+        // normal damage
+        else{
+            damageTextObject.GetComponentInChildren<TextMesh>().text = "-" + damage.ToString();           
+        }
+
+
         Destroy(damageTextObject, 3f);
 
-
     }
+
+    void calcDamage(){
+        float randValue = Random.value;
+        if (randValue < .20f) 
+            {
+                criticalHit = true;
+                currentHealth -= damage;
+            }
+        else 
+            {   
+                criticalHit = false;
+                currentHealth -= damage * 2;
+            }
+        }
 }

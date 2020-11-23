@@ -57,6 +57,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3548901578697284187}
     m_Modifications:
+    - target: {fileID: 1520103414120064893, guid: 8b375ba9e7b204e2c9c2e2348c44db72, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43d59b5c638b0664db55f3a4e4d130ef, type: 2}
     - target: {fileID: 2039529291067355234, guid: 8b375ba9e7b204e2c9c2e2348c44db72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -155,17 +159,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2750570803744118997, guid: 8b375ba9e7b204e2c9c2e2348c44db72, type: 3}
       propertyPath: m_Color.rgba
-      value: 4280988915
+      value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2750570803744118997, guid: 8b375ba9e7b204e2c9c2e2348c44db72, type: 3}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
     - target: {fileID: 7434515635898449568, guid: 8b375ba9e7b204e2c9c2e2348c44db72, type: 3}
       propertyPath: m_Name
       value: DamageText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434515635898449568, guid: 8b375ba9e7b204e2c9c2e2348c44db72, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7618864374198428886, guid: 8b375ba9e7b204e2c9c2e2348c44db72, type: 3}
       propertyPath: DestroyTime
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7618864374198428886, guid: 8b375ba9e7b204e2c9c2e2348c44db72, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8b375ba9e7b204e2c9c2e2348c44db72, type: 3}
 --- !u!1 &3236049430978158314 stripped
 GameObject:
