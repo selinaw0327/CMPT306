@@ -10,6 +10,7 @@ public class EnemyStats : MonoBehaviour
     public int damage;
 
     public GameObject damageText;
+    public bool getHit;
     private bool criticalHit;
     private Animator animator;
     private bool deathAnimationFound;
@@ -25,8 +26,7 @@ public class EnemyStats : MonoBehaviour
         criticalHit = false;
         animator = transform.parent.gameObject.GetComponent<Animator>();
         deathAnimationFound = HasParameter("isDead", animator);
-        Debug.Log("Hello!!");
-        Debug.Log("Death animation exits? " + deathAnimationFound);
+        getHit = false;
     }
 
     void Update()
@@ -37,6 +37,8 @@ public class EnemyStats : MonoBehaviour
 
     // Causes the enemy to take damage
     public void TakeDamage(int damage) {
+
+        getHit = true;
         Debug.Log("Current health:"+ currentHealth + "Damage: "+ damage);
         // Set current health and check if the enemy has died
        
@@ -146,5 +148,5 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
-        
+      
 }
