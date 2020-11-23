@@ -16,6 +16,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damage: 1
+  isBoss: 1
 --- !u!1 &593757828702648435
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
   spriteAtlas: {fileID: 7075723357422317502, guid: 6902b61eb889886418175ff727129d86, type: 3}
+  tutorial: 0
+  bossRoom: 0
 --- !u!1001 &2424111541198155363
 PrefabInstance:
   m_ObjectHideFlags: 0

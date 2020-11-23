@@ -291,6 +291,8 @@ public class ProcGenDungeon : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallrockTwoList.Add(newObject);
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockTwoDataList.Add(new RockData(newObject));
                 break;
+            default:
+                break;
         }
 
         newObject.name = rockPrefabs[rand].name;
@@ -321,6 +323,8 @@ public class ProcGenDungeon : MonoBehaviour
             case "Bat":
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
                 break;
+            default:
+                break;
         }
 
         newObject.name = enemyPrefabs[rand].name;
@@ -331,8 +335,8 @@ public class ProcGenDungeon : MonoBehaviour
         int rand = Random.Range(0, fruitSprites.Length);
 
         // Adds slightly more random location to spawn
-        if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
-        if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
+        // if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
+        // if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
 
         GameObject newObject = Instantiate(itemPrefab, location, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(newObject);
@@ -362,9 +366,12 @@ public class ProcGenDungeon : MonoBehaviour
             case 7: 
                 newObject.name = "Apple";
                 break;
+            default:
+                break;
         }        
         newObject.GetComponent<SpriteRenderer>().sprite = fruitSprites[rand];
         newObject.GetComponent<Item>().itemSprite = fruitSprites[rand];
+        newObject.GetComponent<Item>().itemType = Item.ItemType.Fruit;
 
         ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         itemLists.itemList.Add(newObject);

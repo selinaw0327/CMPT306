@@ -14,4 +14,7 @@ public class SpriteAtlas : MonoBehaviour
     public Sprite goldSword;
     public Sprite obsidianBar;
     public Sprite obsidianSword;
+    public Sprite apple;
+    public Sprite banana;
+    public Sprite orange;
 }
