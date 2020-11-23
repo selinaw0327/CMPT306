@@ -36,6 +36,7 @@ public class ProcGenDungeon : MonoBehaviour
     public static int caveLevel = 0;
 
     public GameObject exitPrefab;
+    Vector3Int lastWall = new Vector3Int(0,0,0);
 
     public GameObject[] rockPrefabs;
     public GameObject[] enemyPrefabs;
@@ -92,13 +93,13 @@ public class ProcGenDungeon : MonoBehaviour
 
         if(!onload){
             Debug.Log("not on load");
+            SpawnExit();
             FillSpawnLocations();
         }
     }
 
     private void FillWalls()
     {
-        Vector3Int lastWall = new Vector3Int(0,0,0);
         BoundsInt bounds = groundMap.cellBounds;
         for (int xMap = bounds.xMin - 10; xMap <= bounds.xMax + 10; xMap++)
         {
@@ -131,23 +132,6 @@ public class ProcGenDungeon : MonoBehaviour
                 }
             }
         }
-        Vector3Int posRight = new Vector3Int(lastWall.x+1, lastWall.y, 0);
-        Vector3Int posLeft = new Vector3Int(lastWall.x-1, lastWall.y, 0);
-
-        TileBase wallTileRight = wallMap.GetTile(posRight);
-        TileBase wallTileLeft = wallMap.GetTile(posLeft);
-
-        Vector3 lastWallF = lastWall;
-
-        if(wallTileRight == null) {
-            lastWallF.x -= 0.55f;
-        }
-        else {
-            lastWallF.x += 0.5f;
-        }
-        lastWallF.y += 0.5f;
-        GameObject exit = Instantiate(exitPrefab, lastWallF, Quaternion.identity, GameObject.Find("Environment").transform);
-        exit.name = "Exit";
     }
 
     private void NewRoute(int x, int y, int routeLength, Vector2Int previousPos)
@@ -247,10 +231,28 @@ public class ProcGenDungeon : MonoBehaviour
         }
     }
 
+    private void SpawnExit() {
+        Vector3Int posRight = new Vector3Int(lastWall.x+1, lastWall.y, 0);
+        Vector3Int posLeft = new Vector3Int(lastWall.x-1, lastWall.y, 0);
+
+        TileBase wallTileRight = wallMap.GetTile(posRight);
+        TileBase wallTileLeft = wallMap.GetTile(posLeft);
+
+        Vector3 lastWallF = lastWall;
+
+        if(wallTileRight == null) {
+            lastWallF.x -= 0.55f;
+        }
+        else {
+            lastWallF.x += 0.5f;
+        }
+        lastWallF.y += 0.5f;
+        GameObject exit = Instantiate(exitPrefab, lastWallF, Quaternion.identity, GameObject.Find("Environment").transform);
+        exit.name = "Exit";
+    }
 
     private void FillSpawnLocations() {
         for(int i = 0; i < spawnLocations.Count; i++) {
-            Debug.Log(spawnLocations.Count);
             int rand = Random.Range(0, 100);
 
             if(rand < 50) { // 50% chance to spawn rocks
@@ -266,10 +268,14 @@ public class ProcGenDungeon : MonoBehaviour
     }
 
     // Randomly select on the rock refabs
-    private void SpawnRocks(Vector3 spawnLocation) {
+    private void SpawnRocks(Vector3 location) {
         int rand = Random.Range(0, rockPrefabs.Length);
+
+        // Adds slightly more random location to spawn
+        if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
+        if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
         
-        GameObject newObject = Instantiate(rockPrefabs[rand], spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        GameObject newObject = Instantiate(rockPrefabs[rand], location, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(newObject);
         
         switch(rockPrefabs[rand].name) {
@@ -285,6 +291,8 @@ public class ProcGenDungeon : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallrockTwoList.Add(newObject);
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>().smallRockTwoDataList.Add(new RockData(newObject));
                 break;
+            default:
+                break;
         }
 
         newObject.name = rockPrefabs[rand].name;
@@ -294,11 +302,15 @@ public class ProcGenDungeon : MonoBehaviour
     // First Level: Worms
     // Second Level: Worms and Rats
     // Third Level: Worms, Rats, and Bats
-    private void SpawnEnemies(Vector3 spawnLocation) {
+    private void SpawnEnemies(Vector3 location) {
         int rand = Random.Range(0 , caveLevel + 1);
         GameObject newObject;
+
+        // Adds slightly more random location to spawn
+        if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
+        if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
                 
-        newObject = Instantiate(enemyPrefabs[rand], spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        newObject = Instantiate(enemyPrefabs[rand], location, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(newObject);
         switch(enemyPrefabs[rand].name) {
             case "Worm":
@@ -310,16 +322,22 @@ public class ProcGenDungeon : MonoBehaviour
             case "Bat":
                 GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().batList.Add(newObject);
                 break;
+            default:
+                break;
         }
 
         newObject.name = enemyPrefabs[rand].name;
     }
 
     // Randomly select a fruit to spawn
-    private void SpawnFruit(Vector3 spawnLocation) {
+    private void SpawnFruit(Vector3 location) {
         int rand = Random.Range(0, fruitSprites.Length);
 
-        GameObject newObject = Instantiate(itemPrefab, spawnLocation, Quaternion.identity, GameObject.Find("Environment").transform);
+        // Adds slightly more random location to spawn
+        // if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
+        // if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
+
+        GameObject newObject = Instantiate(itemPrefab, location, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(newObject);
 
         switch (rand) {
@@ -347,9 +365,12 @@ public class ProcGenDungeon : MonoBehaviour
             case 7: 
                 newObject.name = "Apple";
                 break;
+            default:
+                break;
         }        
         newObject.GetComponent<SpriteRenderer>().sprite = fruitSprites[rand];
         newObject.GetComponent<Item>().itemSprite = fruitSprites[rand];
+        newObject.GetComponent<Item>().itemType = Item.ItemType.Fruit;
 
         ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
         itemLists.itemList.Add(newObject);

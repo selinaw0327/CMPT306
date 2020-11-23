@@ -5956,6 +5956,9 @@ MonoBehaviour:
   goldSword: {fileID: -9004990608046106943, guid: f97463282a2c71f47b112406118e61e3, type: 3}
   obsidianBar: {fileID: -2176166862104932541, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
   obsidianSword: {fileID: 8289387723579576647, guid: f97463282a2c71f47b112406118e61e3, type: 3}
+  apple: {fileID: 0}
+  banana: {fileID: 0}
+  orange: {fileID: 0}
 --- !u!4 &1263968928
 Transform:
   m_ObjectHideFlags: 0
@@ -6575,7 +6578,7 @@ MonoBehaviour:
   player: {fileID: 0}
   deviationRate: 15
   roomRate: 10
-  maxRouteLength: 100
+  maxRouteLength: 10
   maxRoutes: 20
   exitPrefab: {fileID: 5250879337292495368, guid: 070c1158f71f4ae46ba1e47e42f16d3a, type: 3}
   rockPrefabs:

@@ -26,6 +26,9 @@ public class EnemyAI : MonoBehaviour
     Scene activeScene;
     string activeSceneName;
     bool chasePlayerOn;
+    private bool chase;
+
+    private EnemyStats stats;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,8 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.Find("Player").transform;
         animator = GetComponent<Animator>();
+        stats = gameObject.GetComponentInChildren<EnemyStats>();
+        chase = false;
 
         findScene();
         // InvokeRepeating("UpdatePath", 0f, 0.5f);
@@ -79,6 +84,8 @@ public class EnemyAI : MonoBehaviour
     void FixedUpdate()
     {
 
+        setChase();
+
         float minAttackDistance = 12.5f;
 
         float distance = Vector3.Distance(target.position, enemyGFX.position);
@@ -96,14 +103,29 @@ public class EnemyAI : MonoBehaviour
   
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.gameObject.CompareTag("Player"))
-        {
+    public void setChase(){
+        if (!chase){
+            chase = checkStats();
+        if (chase){
+            turnOnUpdatePath();
             chasePlayerOn = true;
-            InvokeRepeating("UpdatePath", 0f, 0.5f);
+            }
+        }
+    }
+
+    public bool checkStats()
+    {
+        if(stats.getHit)
+        {  
+            // chasePlayerOn = true;
+            return true;
             // It is object tagged with TagB
         }
+        return false;
+    }
+
+    public void turnOnUpdatePath(){
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
 
 
@@ -139,17 +161,17 @@ public class EnemyAI : MonoBehaviour
 
         if (rb.velocity.x <= -0.01f){
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            transform.GetChild(0).localScale = new Vector3(0.015f, 0.015f, 1f);
             // animator.SetFloat("moveX", force.x);
             // animator.SetBool("isMoving", true);
         
         }
         else if(rb.velocity.x >= 0.01f){
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            transform.GetChild(0).localScale = new Vector3(-0.015f, 0.015f, 1f);
             //  animator.SetFloat("moveX", force.x);
             // animator.SetBool("isMoving", true);
         }
-         
-
      }
  
 }
