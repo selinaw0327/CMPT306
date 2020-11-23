@@ -43,12 +43,10 @@ public class EnemyStats : MonoBehaviour
     void Update()
     {
         healthBar.SetStat(currentHealth, maxHealth);
-        
     }
 
     // Causes the enemy to take damage
     public void TakeDamage(int damage) {
-
 
         getHit = true;
         Debug.Log("Current health:"+ currentHealth + "Damage: "+ damage);
@@ -63,25 +61,28 @@ public class EnemyStats : MonoBehaviour
         }
 
         if(currentHealth <= 0) {
-            SetDeathAnimation();
             if(isBoss) {
                 if(enemyName.Equals("zombie")) {
                     if(enemyLists.wormList.Count == 0) {
-                        Destroy(this.transform.parent.gameObject);
+                        SetDeathAnimation();
+                        DestroyEnemy();
                     }
                 }
                 else if(enemyName.Equals("Skeleton")) {
                     if(enemyLists.ratList.Count == 0) {
-                        Destroy(this.transform.parent.gameObject);
+                        SetDeathAnimation();
+                        DestroyEnemy();
                     }
                 }
                 else if(enemyName.Equals("Vampire")) {
                     if(enemyLists.batDataList.Count == 0) {
-                        Destroy(this.transform.parent.gameObject);
+                        SetDeathAnimation();
+                        DestroyEnemy();
                     }
                 } 
             }
             else {
+                SetDeathAnimation();
                 // if the enemy is is the boss room, run ememny boss room drop script
                 if(transform.parent.gameObject.GetComponent<EnemyDrop>().bossRoom) {
                     transform.parent.gameObject.GetComponent<EnemyDrop>().BossRoomDrop();
@@ -114,7 +115,7 @@ public class EnemyStats : MonoBehaviour
                 }
                 objectList.Remove(this.transform.parent.gameObject);
 
-                Destroy(this.transform.parent.gameObject);
+                DestroyEnemy();
             }
         }
         // Debug.Log("New Health: "+ currentHealth);
