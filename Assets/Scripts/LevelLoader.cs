@@ -91,7 +91,7 @@ public class LevelLoader : MonoBehaviour
                     break;
             }
             if(previousScene == 1) { // If intro, load tutorial
-                SceneManager.LoadScene("TuroialScene");
+                SceneManager.LoadScene("TutorialScene");
             }
             else if(nextScene == 5) { // If end of game, load outro
                 SceneManager.LoadScene("Outro");
