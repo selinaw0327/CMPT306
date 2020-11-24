@@ -795,11 +795,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f4c454bba83d246b4a951f22d859d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  copperAnim: {fileID: 22100000, guid: 3f9e0e0150122e843b71ada1b24854fa, type: 2}
-  silverAnim: {fileID: 22100000, guid: a38090df344abf1498f41140879f358b, type: 2}
-  ironAnim: {fileID: 22100000, guid: e3867b59bd4cce54c87dd41d20beb90f, type: 2}
-  goldAnim: {fileID: 22100000, guid: a88207d5420efd845baf0c6dd13bf876, type: 2}
-  obsidianAnim: {fileID: 22100000, guid: 4cab2efe175f6fc43a2f9335b9ed9f3b, type: 2}
+  maleAnim: {fileID: 0}
+  femaleAnim: {fileID: 0}
+  male_copperAnim: {fileID: 0}
+  male_silverAnim: {fileID: 0}
+  male_ironAnim: {fileID: 0}
+  male_goldAnim: {fileID: 0}
+  male_obsidianAnim: {fileID: 0}
+  female_copperAnim: {fileID: 0}
+  female_silverAnim: {fileID: 0}
+  female_ironAnim: {fileID: 0}
+  female_goldAnim: {fileID: 0}
+  female_obsidianAnim: {fileID: 0}
 --- !u!61 &183230931
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -964,6 +971,7 @@ MonoBehaviour:
   energyDecreaseRate: 1
   hungerDecreaseRate: 1
   swordEquipped: 0
+  sword: none
 --- !u!61 &183230935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5539,6 +5547,7 @@ MonoBehaviour:
   map: {fileID: 0}
   rockList: {fileID: 0}
   enemyLists: {fileID: 0}
+  nosword: {fileID: 2134513796018122633, guid: 3ba6b528ce5b18d41a6001193b30246b, type: 3}
 --- !u!1 &1142670465
 GameObject:
   m_ObjectHideFlags: 0

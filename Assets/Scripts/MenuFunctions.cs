@@ -23,4 +23,10 @@ public class MenuFunctions : MonoBehaviour
             Application.Quit();
         #endif
     }
+
+    public void LoadGame(){
+        MenuData data = SaveLoad.LoadMenuInfo();
+        character = data.character;
+        LoadScene(data.levelName);
+    }
 }

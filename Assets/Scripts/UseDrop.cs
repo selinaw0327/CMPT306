@@ -155,6 +155,7 @@ public class UseDrop : MonoBehaviour
         image.GetComponent<RectTransform>().rotation = new Quaternion(0, 0, 0, 0);
 
         player.GetComponent<PlayerStats>().swordEquipped = true;
+        player.GetComponent<PlayerStats>().sword = swordSprite.name;
 
         UpdateQuantity(-1);
 
