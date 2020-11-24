@@ -31,6 +31,7 @@ public class SaveLoadRunner : MonoBehaviour
     void Start() 
     {
         StartCoroutine(SetReferences());
+        
     }
 
     IEnumerator SetReferences() {

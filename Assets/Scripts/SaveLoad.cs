@@ -7,7 +7,30 @@ using System.Collections.Generic;
 
 public static class SaveLoad 
 {
+	public static void SaveMenuInfo(){
+		BinaryFormatter formatter = new BinaryFormatter();
+		string path = Application.persistentDataPath + "/menu.info";
+		FileStream stream  =  new FileStream(path, FileMode.Create);
+		MenuData data = new MenuData();
 
+	}
+
+	public static MenuData LoadMenuInfo(){
+		string path = Application.persistentDataPath + "/menu.info";
+		if(File.Exists(path))
+		{
+			BinaryFormatter formatter = new BinaryFormatter();
+			FileStream stream = new FileStream(path, FileMode.Open);
+			MenuData data =formatter.Deserialize(stream) as MenuData;
+			stream.Close();
+			return data;
+			
+		} else {
+			Debug.LogError("No item save file at "+ path );
+			return null;
+		}
+	}
+	
 	public static void SaveMapSeed(ProcGenDungeon map){
 		BinaryFormatter formatter = new BinaryFormatter();
 		string path = Application.persistentDataPath + "/seed.info";
