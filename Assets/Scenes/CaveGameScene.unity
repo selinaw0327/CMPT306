@@ -5544,6 +5544,8 @@ MonoBehaviour:
   vampire: {fileID: 0}
   skeleton: {fileID: 0}
   zombie: {fileID: 0}
+  objectsToMove: {fileID: 517855096}
+  objectsToMovePrefab: {fileID: 4655841135348461741, guid: d62b73a99597bb44680dc1f20797cef3, type: 3}
   map: {fileID: 0}
   rockList: {fileID: 0}
   enemyLists: {fileID: 0}

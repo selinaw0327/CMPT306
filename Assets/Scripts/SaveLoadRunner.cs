@@ -23,6 +23,8 @@ public class SaveLoadRunner : MonoBehaviour
     public GameObject vampire;
     public GameObject skeleton;
     public GameObject zombie;
+    public GameObject objectsToMove;
+    public  GameObject objectsToMovePrefab;
     public ProcGenDungeon map;
     public RockList rockList;
     public EnemyLists enemyLists;
@@ -31,16 +33,25 @@ public class SaveLoadRunner : MonoBehaviour
 
     public Sprite nosword;
 
+    public bool loadfrommenu;
+
     string currentScene;
     void Start() 
     {
+        loadfrommenu = false;
+        for(int i= 0; i < SceneManager.sceneCount; i++){
+            if(SceneManager.GetSceneAt(i).name == "MainMenu"){
+                loadfrommenu = true;
+                Debug.Log("Loaded from menu");
+            }
+        }
         StartCoroutine(SetReferences());
         
     }
 
     IEnumerator SetReferences() {
         yield return new WaitForSeconds(1.5f);
-
+    
         currentScene = SceneManager.GetActiveScene().name;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
@@ -52,8 +63,12 @@ public class SaveLoadRunner : MonoBehaviour
         rockList = GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>();
         enemyLists =  GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
         spriteAtlas = GameObject.Find("Sprite Atlas");
-
-        SaveAll();
+        if(loadfrommenu){
+            SceneManager.UnloadSceneAsync("MainMenu");
+            LoadAll();
+        } else {
+            SaveAll();
+        }
     }
 
     void Update() {

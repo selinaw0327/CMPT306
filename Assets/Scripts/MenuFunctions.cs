@@ -7,9 +7,14 @@ public class MenuFunctions : MonoBehaviour
 {
     // 
     public static int character = 1;
-
+    public GameObject objectsToMove;
+   
+    void Start(){
+        objectsToMove.SetActive(false);
+    }
     public void LoadScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
+        
     }
 
     public void SelectCharacter(int characterSelected) {
@@ -26,7 +31,11 @@ public class MenuFunctions : MonoBehaviour
 
     public void LoadGame(){
         MenuData data = SaveLoad.LoadMenuInfo();
+        objectsToMove.SetActive(true);
         character = data.character;
-        LoadScene(data.levelName);
+        
+        SceneManager.LoadSceneAsync(data.levelName);
+        SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(data.levelName));
+        
     }
 }
