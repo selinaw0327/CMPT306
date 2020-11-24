@@ -64,7 +64,7 @@ public class SaveLoadRunner : MonoBehaviour
         enemyLists =  GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
         spriteAtlas = GameObject.Find("Sprite Atlas");
         if(loadfrommenu){
-            SceneManager.UnloadSceneAsync("MainMenu");
+            // SceneManager.UnloadSceneAsync("MainMenu");
             LoadAll();
         } else {
             SaveAll();

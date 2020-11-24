@@ -8,6 +8,9 @@ public class MenuFunctions : MonoBehaviour
     // 
     public static int character = 1;
     public GameObject objectsToMove;
+
+    bool loaded = false;
+    bool unloaded = false;
    
     void Start(){
         objectsToMove.SetActive(false);
@@ -30,12 +33,29 @@ public class MenuFunctions : MonoBehaviour
     }
 
     public void LoadGame(){
-        MenuData data = SaveLoad.LoadMenuInfo();
-        objectsToMove.SetActive(true);
-        character = data.character;
+        if(!loaded) {
+            MenuData data = SaveLoad.LoadMenuInfo();
+            objectsToMove.SetActive(true);
+            character = data.character;
+            
+            SceneManager.LoadSceneAsync(data.levelName, LoadSceneMode.Additive);
+            SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(data.levelName));
         
-        SceneManager.LoadSceneAsync(data.levelName);
-        SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(data.levelName));
-        
+            if(!unloaded) {
+                        unloaded = true;
+                        UnloadScene("MainMenu");
+                    }
+                }
+        loaded = true;
+    }
+
+    public void UnloadScene(string scene) {
+        StartCoroutine(Unload(scene));
+    }
+
+    IEnumerator Unload(string scene) {
+        yield return new WaitForSeconds(1);
+
+        SceneManager.UnloadSceneAsync(scene);
     }
 }
