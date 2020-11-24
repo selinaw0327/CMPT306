@@ -1,7 +1,172 @@
 fileFormatVersion: 2
 guid: 9d0f8605d7dbc5b4b8a8226ee1d6462b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -9060467138343791860
+    second: character-female-iron_0
+  - first:
+      213: -8008423624977871215
+    second: character-female-iron_1
+  - first:
+      213: 5003536996621009866
+    second: character-female-iron_2
+  - first:
+      213: -755430657381444438
+    second: character-female-iron_3
+  - first:
+      213: -4340115019397821113
+    second: character-female-iron_4
+  - first:
+      213: 2597765465970362783
+    second: character-female-iron_5
+  - first:
+      213: -6573850283742798333
+    second: character-female-iron_6
+  - first:
+      213: 4080848903169086380
+    second: character-female-iron_7
+  - first:
+      213: -3376967733131204369
+    second: character-female-iron_8
+  - first:
+      213: -2993108847380380311
+    second: character-female-iron_9
+  - first:
+      213: -7048790660238638620
+    second: character-female-iron_10
+  - first:
+      213: -6708141319290086201
+    second: character-female-iron_11
+  - first:
+      213: -6406793586632113183
+    second: character-female-iron_12
+  - first:
+      213: -6997090361282308829
+    second: character-female-iron_13
+  - first:
+      213: 5412583309873784377
+    second: character-female-iron_14
+  - first:
+      213: -80164573392830025
+    second: character-female-iron_15
+  - first:
+      213: 9096567422781151854
+    second: character-female-iron_16
+  - first:
+      213: -8213874796006059175
+    second: character-female-iron_17
+  - first:
+      213: 644482761239859290
+    second: character-female-iron_18
+  - first:
+      213: 2370584263187794988
+    second: character-female-iron_19
+  - first:
+      213: -4485264346544128701
+    second: character-female-iron_20
+  - first:
+      213: 2514414554082127659
+    second: character-female-iron_21
+  - first:
+      213: -8332191605004680908
+    second: character-female-iron_22
+  - first:
+      213: -7499763758711654497
+    second: character-female-iron_23
+  - first:
+      213: 7222361509128813319
+    second: character-female-iron_24
+  - first:
+      213: 4074246518851276079
+    second: character-female-iron_25
+  - first:
+      213: 6346502522707940062
+    second: character-female-iron_26
+  - first:
+      213: 3063763760164331788
+    second: character-female-iron_27
+  - first:
+      213: -7469923300836938387
+    second: character-female-iron_28
+  - first:
+      213: 7287124248521742698
+    second: character-female-iron_29
+  - first:
+      213: 2737349747128541045
+    second: character-female-iron_30
+  - first:
+      213: -8606759790468697399
+    second: character-female-iron_31
+  - first:
+      213: 7981446332954753164
+    second: character-female-iron_32
+  - first:
+      213: 3522830394500774313
+    second: character-female-iron_33
+  - first:
+      213: -85066275360359405
+    second: character-female-iron_34
+  - first:
+      213: 3652556076110786418
+    second: character-female-iron_35
+  - first:
+      213: 4804105841539445684
+    second: character-female-iron_36
+  - first:
+      213: -5239868244224875775
+    second: character-female-iron_37
+  - first:
+      213: 2657423191192521000
+    second: character-female-iron_38
+  - first:
+      213: 2345830049629381970
+    second: character-female-iron_39
+  - first:
+      213: 8958707989923513744
+    second: character-female-iron_40
+  - first:
+      213: 4866385622976253612
+    second: character-female-iron_41
+  - first:
+      213: 1601041585833055321
+    second: character-female-iron_42
+  - first:
+      213: -4330978548957389835
+    second: character-female-iron_43
+  - first:
+      213: 2344256749522546323
+    second: character-female-iron_44
+  - first:
+      213: -9057199249992543891
+    second: character-female-iron_45
+  - first:
+      213: 4848495721769317666
+    second: character-female-iron_46
+  - first:
+      213: -6997113760676943307
+    second: character-female-iron_47
+  - first:
+      213: -6678811070293170777
+    second: character-female-iron_48
+  - first:
+      213: -5079071203669570611
+    second: character-female-iron_49
+  - first:
+      213: -3821756365222634199
+    second: character-female-iron_50
+  - first:
+      213: 3627247738241387148
+    second: character-female-iron_51
+  - first:
+      213: -5170282707938676021
+    second: character-female-iron_52
+  - first:
+      213: -5177402333474951459
+    second: character-female-iron_53
+  - first:
+      213: 5298705752780065483
+    second: character-female-iron_54
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +197,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,12 +206,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -66,7 +231,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -75,7 +252,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: character-female-iron_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97b4aec89c7be790800000000000000
+      internalID: -7499763758711654497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70bb31fd68bfa3460800000000000000
+      internalID: 7222361509128813319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d80836f91aa8830800000000000000
+      internalID: 4074246518851276079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed290205b6e431850800000000000000
+      internalID: 6346502522707940062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c27ff53295ae8880800000000000000
+      internalID: -8606759790468697399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88bc9df62bc3ce60800000000000000
+      internalID: 7981446332954753164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9fa2c349b93e030800000000000000
+      internalID: 3522830394500774313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31cb7ca5ca8c1def0800000000000000
+      internalID: -85066275360359405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255a89b50001e8020800000000000000
+      internalID: 2345830049629381970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09548d99379b35c70800000000000000
+      internalID: 8958707989923513744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae419dd0ffd88340800000000000000
+      internalID: 4866385622976253612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9541532f6da083610800000000000000
+      internalID: 1601041585833055321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a6ad16b1245ee90800000000000000
+      internalID: -6997113760676943307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_48
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5aa39a7b81053a0800000000000000
+      internalID: -6678811070293170777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb0c5c76a38389b0800000000000000
+      internalID: -5079071203669570611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-iron_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d11d895d466fac0800000000000000
+      internalID: -3821756365222634199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

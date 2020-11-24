@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: female-iron
+  m_Controller: {fileID: 9100000, guid: 17ca3796d5fff7c489583716a905b23e, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 512c70beec5d1e940b9c67f4403871cc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ca5374f59be30eb42b9b2aebcb1101ea, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b7acfa57fd2a50440a33fc28cc856754, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: efa1695d677fe6343bb175fd49720b04, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: af002ccd6f669ca489b303fc12ff097f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 38f4558e4206c65418b8a3d701aff6be, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2af33e4b9df0fcd4a8f6a304f89e3fd3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 655492be6da857842889419a5318d031, type: 2}
