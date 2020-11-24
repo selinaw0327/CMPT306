@@ -1,0 +1,607 @@
+fileFormatVersion: 2
+guid: eeba24c615b9fd14c884dacee4941036
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6519795163474804424
+    second: character-female-gold_0
+  - first:
+      213: 3772425658275909215
+    second: character-female-gold_1
+  - first:
+      213: -1897859735816012950
+    second: character-female-gold_2
+  - first:
+      213: -6282499312349438214
+    second: character-female-gold_3
+  - first:
+      213: -5938307196767448293
+    second: character-female-gold_4
+  - first:
+      213: 1125656158009134322
+    second: character-female-gold_5
+  - first:
+      213: -7272829227893149856
+    second: character-female-gold_6
+  - first:
+      213: -6500034620353096002
+    second: character-female-gold_7
+  - first:
+      213: -9017477095997810888
+    second: character-female-gold_8
+  - first:
+      213: 4667283671849060966
+    second: character-female-gold_9
+  - first:
+      213: 2699449384374418346
+    second: character-female-gold_10
+  - first:
+      213: 3293235512037142388
+    second: character-female-gold_11
+  - first:
+      213: 7067237818131380029
+    second: character-female-gold_12
+  - first:
+      213: 6273820839119331718
+    second: character-female-gold_13
+  - first:
+      213: -2326992694438574364
+    second: character-female-gold_14
+  - first:
+      213: -9143901878392474507
+    second: character-female-gold_15
+  - first:
+      213: 7688396697389746557
+    second: character-female-gold_16
+  - first:
+      213: 3829656760219856956
+    second: character-female-gold_17
+  - first:
+      213: 3264207885768681889
+    second: character-female-gold_18
+  - first:
+      213: 4636995851124902030
+    second: character-female-gold_19
+  - first:
+      213: 6900871161878844874
+    second: character-female-gold_20
+  - first:
+      213: 6502795428020161239
+    second: character-female-gold_21
+  - first:
+      213: -5302241688549046094
+    second: character-female-gold_22
+  - first:
+      213: -7241016745401572497
+    second: character-female-gold_23
+  - first:
+      213: -7175223155692112084
+    second: character-female-gold_24
+  - first:
+      213: -4269846990659155716
+    second: character-female-gold_25
+  - first:
+      213: 8672284583554766882
+    second: character-female-gold_26
+  - first:
+      213: -4827772778088773714
+    second: character-female-gold_27
+  - first:
+      213: 1529676572216183373
+    second: character-female-gold_28
+  - first:
+      213: 4582473349799913954
+    second: character-female-gold_29
+  - first:
+      213: -3520666228298626642
+    second: character-female-gold_30
+  - first:
+      213: -3923893936749881184
+    second: character-female-gold_31
+  - first:
+      213: -1602795435921693570
+    second: character-female-gold_32
+  - first:
+      213: 6639168193865863871
+    second: character-female-gold_33
+  - first:
+      213: -3344991360491115263
+    second: character-female-gold_34
+  - first:
+      213: -7630165219228468011
+    second: character-female-gold_35
+  - first:
+      213: -4534250822757492994
+    second: character-female-gold_36
+  - first:
+      213: -439606367140233663
+    second: character-female-gold_37
+  - first:
+      213: 6294463705193276049
+    second: character-female-gold_38
+  - first:
+      213: 7459144395402199812
+    second: character-female-gold_39
+  - first:
+      213: -9141380998415855009
+    second: character-female-gold_40
+  - first:
+      213: -3244702203600413799
+    second: character-female-gold_41
+  - first:
+      213: -2910406040963863582
+    second: character-female-gold_42
+  - first:
+      213: 2857280204414887762
+    second: character-female-gold_43
+  - first:
+      213: 8638504722447030651
+    second: character-female-gold_44
+  - first:
+      213: 6803341713008365034
+    second: character-female-gold_45
+  - first:
+      213: 4594692555513105190
+    second: character-female-gold_46
+  - first:
+      213: 5602290538435250816
+    second: character-female-gold_47
+  - first:
+      213: -2695216409060215642
+    second: character-female-gold_48
+  - first:
+      213: -2119061017788003913
+    second: character-female-gold_49
+  - first:
+      213: -7755357472330288820
+    second: character-female-gold_50
+  - first:
+      213: 2056652295750054397
+    second: character-female-gold_51
+  - first:
+      213: 8502333189054529027
+    second: character-female-gold_52
+  - first:
+      213: -3808808600897813165
+    second: character-female-gold_53
+  - first:
+      213: 744649802544976873
+    second: character-female-gold_54
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: character-female-gold_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f632fa572adb28b90800000000000000
+      internalID: -7241016745401572497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2770dc4e8c7c6c90800000000000000
+      internalID: -7175223155692112084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf88d7cd8c47eb4c0800000000000000
+      internalID: -4269846990659155716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 228d0e981e42a5870800000000000000
+      internalID: 8672284583554766882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8d6b311478b89c0800000000000000
+      internalID: -3923893936749881184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7425420b0ab1c9e0800000000000000
+      internalID: -1602795435921693570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb25277eb40132c50800000000000000
+      internalID: 6639168193865863871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d2d2584143491d0800000000000000
+      internalID: -3344991360491115263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4034b40be44348760800000000000000
+      internalID: 7459144395402199812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52dae04a6a432180800000000000000
+      internalID: -9141380998415855009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b5878798088f2d0800000000000000
+      internalID: -3244702203600413799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eba23030292c97d0800000000000000
+      internalID: -2910406040963863582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a07ffff855fbd40800000000000000
+      internalID: 5602290538435250816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_48
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a47921b4faa89ad0800000000000000
+      internalID: -2695216409060215642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b94e594b359792e0800000000000000
+      internalID: -2119061017788003913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-gold_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41f493f77f6f5490800000000000000
+      internalID: -7755357472330288820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

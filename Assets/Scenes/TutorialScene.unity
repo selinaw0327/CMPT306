@@ -25833,11 +25833,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f4c454bba83d246b4a951f22d859d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  copperAnim: {fileID: 22100000, guid: 3f9e0e0150122e843b71ada1b24854fa, type: 2}
-  silverAnim: {fileID: 22100000, guid: a38090df344abf1498f41140879f358b, type: 2}
-  ironAnim: {fileID: 22100000, guid: e3867b59bd4cce54c87dd41d20beb90f, type: 2}
-  goldAnim: {fileID: 22100000, guid: a88207d5420efd845baf0c6dd13bf876, type: 2}
-  obsidianAnim: {fileID: 22100000, guid: 4cab2efe175f6fc43a2f9335b9ed9f3b, type: 2}
+  maleAnim: {fileID: 22100000, guid: bce3b13a15a4924459423f417bfa51cd, type: 2}
+  femaleAnim: {fileID: 22100000, guid: 2b76619af59424846b3bc487effce504, type: 2}
+  male_copperAnim: {fileID: 22100000, guid: 3f9e0e0150122e843b71ada1b24854fa, type: 2}
+  male_silverAnim: {fileID: 22100000, guid: a38090df344abf1498f41140879f358b, type: 2}
+  male_ironAnim: {fileID: 22100000, guid: e3867b59bd4cce54c87dd41d20beb90f, type: 2}
+  male_goldAnim: {fileID: 22100000, guid: a88207d5420efd845baf0c6dd13bf876, type: 2}
+  male_obsidianAnim: {fileID: 22100000, guid: 4cab2efe175f6fc43a2f9335b9ed9f3b, type: 2}
+  female_copperAnim: {fileID: 22100000, guid: ff3ed00af4c13c444ad9a0fb5e9c2188, type: 2}
+  female_silverAnim: {fileID: 22100000, guid: 7e8aeb67408c545468ddc105bd7ce177, type: 2}
+  female_ironAnim: {fileID: 22100000, guid: fbc10cd1d624c9d4cb913a5a7b4760d2, type: 2}
+  female_goldAnim: {fileID: 22100000, guid: d7f4b0cbf7f2b714cbff5826de4fead3, type: 2}
+  female_obsidianAnim: {fileID: 22100000, guid: e15e7331807761144bb0680f7eb734dd, type: 2}
 --- !u!61 &1200133270
 BoxCollider2D:
   m_ObjectHideFlags: 0

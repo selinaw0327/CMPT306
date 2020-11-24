@@ -1,0 +1,607 @@
+fileFormatVersion: 2
+guid: 24d20a33aa07c7f49a8e1f081c7d1732
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9039505030074792136
+    second: character-female-obsidian_0
+  - first:
+      213: -613677594711361371
+    second: character-female-obsidian_1
+  - first:
+      213: -628585607823172665
+    second: character-female-obsidian_2
+  - first:
+      213: 3492545845626631112
+    second: character-female-obsidian_3
+  - first:
+      213: 5774392843323077532
+    second: character-female-obsidian_4
+  - first:
+      213: 4045274431124719052
+    second: character-female-obsidian_5
+  - first:
+      213: -6525803950682391447
+    second: character-female-obsidian_6
+  - first:
+      213: 8433609649073397175
+    second: character-female-obsidian_7
+  - first:
+      213: 311942408868372217
+    second: character-female-obsidian_8
+  - first:
+      213: 3011562995911103777
+    second: character-female-obsidian_9
+  - first:
+      213: -5312184869861966706
+    second: character-female-obsidian_10
+  - first:
+      213: -903760306830368876
+    second: character-female-obsidian_11
+  - first:
+      213: -5459686153906863664
+    second: character-female-obsidian_12
+  - first:
+      213: 4929576869395088336
+    second: character-female-obsidian_13
+  - first:
+      213: -2056133794621416413
+    second: character-female-obsidian_14
+  - first:
+      213: -3514233417831988404
+    second: character-female-obsidian_15
+  - first:
+      213: -3755743611606812486
+    second: character-female-obsidian_16
+  - first:
+      213: 3433889740510195704
+    second: character-female-obsidian_17
+  - first:
+      213: 3967595347453711733
+    second: character-female-obsidian_18
+  - first:
+      213: 5892876235687559626
+    second: character-female-obsidian_19
+  - first:
+      213: 7997655344560440867
+    second: character-female-obsidian_20
+  - first:
+      213: 1675326655724506349
+    second: character-female-obsidian_21
+  - first:
+      213: 8716396146166017440
+    second: character-female-obsidian_22
+  - first:
+      213: 2397365485281269816
+    second: character-female-obsidian_23
+  - first:
+      213: 8311066699681128722
+    second: character-female-obsidian_24
+  - first:
+      213: -5145942591293095248
+    second: character-female-obsidian_25
+  - first:
+      213: -7000027229997452462
+    second: character-female-obsidian_26
+  - first:
+      213: 7016684437756770558
+    second: character-female-obsidian_27
+  - first:
+      213: -4367253943220156421
+    second: character-female-obsidian_28
+  - first:
+      213: -8294104282010380841
+    second: character-female-obsidian_29
+  - first:
+      213: 5411401248274776889
+    second: character-female-obsidian_30
+  - first:
+      213: 4548642826539526793
+    second: character-female-obsidian_31
+  - first:
+      213: 1495992675945544932
+    second: character-female-obsidian_32
+  - first:
+      213: 1220064315263292264
+    second: character-female-obsidian_33
+  - first:
+      213: 8968422626318994518
+    second: character-female-obsidian_34
+  - first:
+      213: -4022411149110184352
+    second: character-female-obsidian_35
+  - first:
+      213: -734299108445465598
+    second: character-female-obsidian_36
+  - first:
+      213: -1965822771052124203
+    second: character-female-obsidian_37
+  - first:
+      213: 8421405566633649649
+    second: character-female-obsidian_38
+  - first:
+      213: 5476512909264837114
+    second: character-female-obsidian_39
+  - first:
+      213: -6069890460137960647
+    second: character-female-obsidian_40
+  - first:
+      213: 8405540749152969490
+    second: character-female-obsidian_41
+  - first:
+      213: -5684735840254947046
+    second: character-female-obsidian_42
+  - first:
+      213: 8895666137055238868
+    second: character-female-obsidian_43
+  - first:
+      213: -2176819638477636292
+    second: character-female-obsidian_44
+  - first:
+      213: -8804677260679651076
+    second: character-female-obsidian_45
+  - first:
+      213: 3614514333167316452
+    second: character-female-obsidian_46
+  - first:
+      213: -6889829593212309595
+    second: character-female-obsidian_47
+  - first:
+      213: -8003350149634994679
+    second: character-female-obsidian_48
+  - first:
+      213: 2406634125970535520
+    second: character-female-obsidian_49
+  - first:
+      213: -5555675808661824363
+    second: character-female-obsidian_50
+  - first:
+      213: 7827884596514019129
+    second: character-female-obsidian_51
+  - first:
+      213: 3592379520001362085
+    second: character-female-obsidian_52
+  - first:
+      213: 8036872534755442185
+    second: character-female-obsidian_53
+  - first:
+      213: 5642896407757624197
+    second: character-female-obsidian_54
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: character-female-obsidian_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838d8f20537254120800000000000000
+      internalID: 2397365485281269816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21162132127d65370800000000000000
+      internalID: 8311066699681128722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b20c634a70f598b0800000000000000
+      internalID: -5145942591293095248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253b0f17258eade90800000000000000
+      internalID: -7000027229997452462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a640e0d86002f30800000000000000
+      internalID: 4548642826539526793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ecf154a965d2c410800000000000000
+      internalID: 1495992675945544932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8631662d70a8ee010800000000000000
+      internalID: 1220064315263292264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65cc155acdc367c70800000000000000
+      internalID: 8968422626318994518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af95294a97b700c40800000000000000
+      internalID: 5476512909264837114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93bc1f149ca63cba0800000000000000
+      internalID: -6069890460137960647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2136552e6ca76a470800000000000000
+      internalID: 8405540749152969490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a111caf4fd2cb11b0800000000000000
+      internalID: -5684735840254947046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af2b952d786260a0800000000000000
+      internalID: -6889829593212309595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_48
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ecfe541736ee090800000000000000
+      internalID: -8003350149634994679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0647ec69cf4166120800000000000000
+      internalID: 2406634125970535520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character-female-obsidian_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c1b79894646e2b0800000000000000
+      internalID: -5555675808661824363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
