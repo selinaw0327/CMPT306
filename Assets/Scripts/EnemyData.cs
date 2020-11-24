@@ -10,6 +10,8 @@ public class EnemyData
     public int currentHealth;
 
     
+
+    
     public int damage;
 
     public float[] position;
@@ -20,6 +22,7 @@ public class EnemyData
         position[1] = enemyStats.transform.parent.gameObject.transform.position.y;
 
         maxHealth = enemyStats.maxHealth;
+        
         currentHealth = enemyStats.currentHealth;
         damage = enemyStats.damage;
         

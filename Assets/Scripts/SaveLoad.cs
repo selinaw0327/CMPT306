@@ -7,7 +7,32 @@ using System.Collections.Generic;
 
 public static class SaveLoad 
 {
+	public static void SaveMenuInfo(){
+		BinaryFormatter formatter = new BinaryFormatter();
+		string path = Application.persistentDataPath + "/menu.info";
+		FileStream stream  =  new FileStream(path, FileMode.Create);
+		MenuData data = new MenuData();
+		formatter.Serialize(stream, data);
+		stream.Close();
 
+	}
+
+	public static MenuData LoadMenuInfo(){
+		string path = Application.persistentDataPath + "/menu.info";
+		if(File.Exists(path))
+		{
+			BinaryFormatter formatter = new BinaryFormatter();
+			FileStream stream = new FileStream(path, FileMode.Open);
+			MenuData data =formatter.Deserialize(stream) as MenuData;
+			stream.Close();
+			return data;
+			
+		} else {
+			Debug.LogError("No item save file at "+ path );
+			return null;
+		}
+	}
+	
 	public static void SaveMapSeed(ProcGenDungeon map){
 		BinaryFormatter formatter = new BinaryFormatter();
 		string path = Application.persistentDataPath + "/seed.info";
@@ -84,6 +109,12 @@ public static class SaveLoad
 		BinaryFormatter formatter = new BinaryFormatter();
 		string path = Application.persistentDataPath + "/enemies.info";
 		FileStream stream  =  new FileStream(path, FileMode.Create);
+		enemyLists.batDataList.Clear();
+		enemyLists.wormDataList.Clear();
+		enemyLists.ratDataList.Clear();
+		enemyLists.skelDataList.Clear();
+		enemyLists.vampDataList.Clear();
+		enemyLists.zombDataList.Clear();
 		foreach(GameObject bat in enemyLists.batList){
 			if(bat != null){
 				EnemyData newData = new EnemyData(bat.GetComponentInChildren<EnemyStats>());
@@ -121,6 +152,8 @@ public static class SaveLoad
 			}
 		}
 		EnemyDataLists data = new EnemyDataLists(enemyLists);
+		
+	
 		formatter.Serialize(stream, data);
 		stream.Close();
 	}
@@ -148,6 +181,9 @@ public static class SaveLoad
 		BinaryFormatter formatter = new BinaryFormatter();
 		string path = Application.persistentDataPath + "/rocks.info";
 		FileStream stream  =  new FileStream(path, FileMode.Create);
+		rockList.rockDataList.Clear();
+		rockList.smallRockOneDataList.Clear();
+		rockList.smallRockTwoDataList.Clear();
 		foreach(GameObject rock in rockList.rockList){
 			if(rock != null){
 				RockData newData = new RockData(rock);
@@ -192,6 +228,7 @@ public static class SaveLoad
 		BinaryFormatter formatter = new BinaryFormatter();
 		string path = Application.persistentDataPath + "/itemsOnFloor.info";
 		FileStream stream  =  new FileStream(path, FileMode.Create);
+		itemsOnFloorList.itemDataList.Clear();
 		foreach(GameObject item in itemsOnFloorList.itemList){
 			if(item != null){
 				ItemData newData = new ItemData(item.GetComponent<Item>());
@@ -244,6 +281,11 @@ public static class SaveLoad
             player.currentEnergy = data.Energy;
             player.currentHunger = data.Hunger;
 			player.damage = data.Damage;
+			player.maxHealth = data.maxhealth;
+			player.maxHunger = data.maxhunger;
+			player.maxEnergy = data.maxenergy;
+			player.swordEquipped =  data.swordEquipped;
+			player.sword = data.sword;
 			
             
 			Vector2 position;

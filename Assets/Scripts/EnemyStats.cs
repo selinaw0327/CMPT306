@@ -11,7 +11,7 @@ public class EnemyStats : MonoBehaviour
      public bool isBoss;
 
     private EnemyLists enemyLists;
-    private string enemyName;
+    public string enemyName;
 
     public int damage;
 

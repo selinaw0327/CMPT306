@@ -30,6 +30,7 @@ public class PlayerStats : MonoBehaviour
     private float hungerNextTimeToDecrease = 0.0f;
 
     public bool swordEquipped;
+    public string sword = "none";
 
     // Start is called before the first frame update
     void Start() {

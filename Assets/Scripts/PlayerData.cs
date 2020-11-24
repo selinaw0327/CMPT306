@@ -11,6 +11,11 @@ public class PlayerData
     public int Energy;
     public int Damage;
 
+    public bool swordEquipped;
+    public int maxhealth;
+    public int maxhunger;
+    public int maxenergy;
+    public  string sword;
     public float[] position;
 
     
@@ -21,6 +26,11 @@ public class PlayerData
         Health = player.currentHealth;
         Energy = player.currentEnergy;
         Damage = player.damage;
+        maxhealth = player.maxHealth;
+        maxenergy = player.maxEnergy;
+        maxhunger = player.maxHunger;
+        swordEquipped = player.swordEquipped;
+        sword = player.sword;
         
         position = new float[2];
         position[0] = player.transform.position.x;

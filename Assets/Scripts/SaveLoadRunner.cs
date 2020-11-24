@@ -27,10 +27,15 @@ public class SaveLoadRunner : MonoBehaviour
     public RockList rockList;
     public EnemyLists enemyLists;
 
+    private GameObject spriteAtlas;
+
+    public Sprite nosword;
+
     string currentScene;
     void Start() 
     {
         StartCoroutine(SetReferences());
+        
     }
 
     IEnumerator SetReferences() {
@@ -46,6 +51,8 @@ public class SaveLoadRunner : MonoBehaviour
         }
         rockList = GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>();
         enemyLists =  GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
+        spriteAtlas = GameObject.Find("Sprite Atlas");
+
         SaveAll();
     }
 
@@ -54,6 +61,7 @@ public class SaveLoadRunner : MonoBehaviour
     }
     public void SaveAll() 
     {
+        SaveLoad.SaveMenuInfo();
         if(currentScene == "CaveGameScene"){
         SaveMapSeed();
         }
@@ -63,6 +71,7 @@ public class SaveLoadRunner : MonoBehaviour
         SaveEnemies();
         SaveInventory();
         SaveChallenges();
+        
 
   
 
@@ -92,6 +101,34 @@ public class SaveLoadRunner : MonoBehaviour
     {
         SaveLoad.LoadPlayer(player);
         player.healthBar.SetStat(player.currentHealth, player.maxHealth);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().swordEquipped = player.swordEquipped;
+        Sprite swordSprite;
+        switch(player.sword){
+            case "Swords_Copper":
+                swordSprite =  spriteAtlas.GetComponent<SpriteAtlas>().copperSword;
+                break;
+            case "Swords_Silver":
+                swordSprite =  spriteAtlas.GetComponent<SpriteAtlas>().silverSword;
+                break;
+            case "Swords_Iron":
+                swordSprite =  spriteAtlas.GetComponent<SpriteAtlas>().ironSword;
+                break;
+            case "Swords_Gold":
+                swordSprite =  spriteAtlas.GetComponent<SpriteAtlas>().goldSword;
+                break;
+            case "Swords_Obsidian":
+                swordSprite =  spriteAtlas.GetComponent<SpriteAtlas>().obsidianSword;
+                break;
+            default:
+                swordSprite = nosword;
+                Debug.Log("Set to not having a sword");
+                break;
+        } 
+        var image = GameObject.Find("Equipped Sword").transform.Find("Image");
+
+        image.GetComponent<Image>().sprite = swordSprite;
+        image.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+        image.GetComponent<RectTransform>().rotation = new Quaternion(0, 0, 0, 0);
     }
 
     public void SaveInventory()
@@ -152,7 +189,7 @@ public class SaveLoadRunner : MonoBehaviour
                 Texture2D spriteTexture = new Texture2D(itemData.spriteW, itemData.spriteH,TextureFormat.RGBA32, false );
                 spriteTexture.LoadRawTextureData(itemData.spriteTex);
                 spriteTexture.Apply();
-                Sprite loadedSprite = Sprite.Create(spriteTexture, new Rect(0.0f,0.0f , itemData.spriteW, itemData.spriteH), Vector2.one);
+                Sprite loadedSprite = Sprite.Create(spriteTexture, new Rect(0.0f,0.0f , itemData.spriteW, itemData.spriteH), new Vector2(0.5f, 0.5f));
                 newItem.GetComponent<Image>().sprite = loadedSprite;
             }
             i++;
@@ -266,6 +303,8 @@ public class SaveLoadRunner : MonoBehaviour
             newBat.transform.GetComponentInChildren<EnemyStats>().damage = batData.damage;
             newBat.transform.GetComponentInChildren<EnemyStats>().currentHealth = batData.currentHealth;
             newBat.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(batData.currentHealth, batData.maxHealth);
+            newBat.transform.GetComponentInChildren<EnemyStats>().isBoss = false;
+            newBat.transform.GetComponentInChildren<EnemyStats>().enemyName = "Bat";
             enemyLists.batList.Add(newBat);
         }
         foreach(EnemyData ratData in enemyLists.ratDataList){
@@ -280,6 +319,8 @@ public class SaveLoadRunner : MonoBehaviour
             newRat.transform.GetComponentInChildren<EnemyStats>().damage = ratData.damage;
             newRat.transform.GetComponentInChildren<EnemyStats>().currentHealth = ratData.currentHealth;
             newRat.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(ratData.currentHealth, ratData.maxHealth);
+            newRat.transform.GetComponentInChildren<EnemyStats>().isBoss = false;
+            newRat.transform.GetComponentInChildren<EnemyStats>().enemyName = "Rat";
             enemyLists.ratList.Add(newRat);
         }
         foreach(EnemyData wormData in enemyLists.wormDataList){
@@ -293,6 +334,8 @@ public class SaveLoadRunner : MonoBehaviour
             newWorm.transform.GetComponentInChildren<EnemyStats>().damage = wormData.damage;
             newWorm.transform.GetComponentInChildren<EnemyStats>().currentHealth = wormData.currentHealth;
             newWorm.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(wormData.currentHealth,wormData.maxHealth);
+            newWorm.transform.GetComponentInChildren<EnemyStats>().isBoss = false;
+            newWorm.transform.GetComponentInChildren<EnemyStats>().enemyName = "Worm";
             enemyLists.wormList.Add(newWorm);
         }
         foreach(EnemyData vampData in enemyLists.vampDataList){
@@ -307,6 +350,8 @@ public class SaveLoadRunner : MonoBehaviour
             newVamp.transform.GetComponentInChildren<EnemyStats>().damage = vampData.damage;
             newVamp.transform.GetComponentInChildren<EnemyStats>().currentHealth = vampData.currentHealth;
             newVamp.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(vampData.currentHealth, vampData.maxHealth);
+            newVamp.transform.GetComponentInChildren<EnemyStats>().isBoss = true;
+            newVamp.transform.GetComponentInChildren<EnemyStats>().enemyName = "Vampire";
             enemyLists.vampList.Add(newVamp);
         }
         foreach(EnemyData zombData in enemyLists.zombDataList){
@@ -321,6 +366,8 @@ public class SaveLoadRunner : MonoBehaviour
             newZomb.transform.GetComponentInChildren<EnemyStats>().damage = zombData.damage;
             newZomb.transform.GetComponentInChildren<EnemyStats>().currentHealth = zombData.currentHealth;
             newZomb.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(zombData.currentHealth, zombData.maxHealth);
+            newZomb.transform.GetComponentInChildren<EnemyStats>().isBoss = true;
+            newZomb.transform.GetComponentInChildren<EnemyStats>().enemyName = "zombie";
             enemyLists.zombList.Add(newZomb);
         }
         foreach(EnemyData skelData in enemyLists.skelDataList){
@@ -334,6 +381,8 @@ public class SaveLoadRunner : MonoBehaviour
             newSkel.transform.GetComponentInChildren<EnemyStats>().damage = skelData.damage;
             newSkel.transform.GetComponentInChildren<EnemyStats>().currentHealth = skelData.currentHealth;
             newSkel.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(skelData.currentHealth,skelData.maxHealth);
+            newSkel.transform.GetComponentInChildren<EnemyStats>().isBoss = true;
+            newSkel.transform.GetComponentInChildren<EnemyStats>().enemyName = "Skeleton";
             enemyLists.skelList.Add(newSkel);
         }
         enemyLists.batDataList = new List<EnemyData>();
@@ -373,7 +422,7 @@ public class SaveLoadRunner : MonoBehaviour
             Texture2D spriteTexture = new Texture2D(itemData.spriteW, itemData.spriteH,TextureFormat.RGBA32, false );
             spriteTexture.LoadRawTextureData(itemData.spriteTex);
             spriteTexture.Apply();
-            Sprite loadedSprite = Sprite.Create(spriteTexture, new Rect(0.0f,0.0f , itemData.spriteW, itemData.spriteH), Vector2.one);
+            Sprite loadedSprite = Sprite.Create(spriteTexture, new Rect(0.0f,0.0f , itemData.spriteW, itemData.spriteH), new Vector2(0.5f, 0.5f));
             newItem.GetComponent<SpriteRenderer>().sprite = loadedSprite;
             
             item.GetComponent<Item>().itemSprite = loadedSprite;

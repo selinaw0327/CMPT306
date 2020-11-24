@@ -4844,6 +4844,7 @@ MonoBehaviour:
   map: {fileID: 0}
   rockList: {fileID: 0}
   enemyLists: {fileID: 0}
+  nosword: {fileID: 2134513796018122633, guid: 3ba6b528ce5b18d41a6001193b30246b, type: 3}
 --- !u!4 &267550475
 Transform:
   m_ObjectHideFlags: 0
@@ -26009,6 +26010,7 @@ MonoBehaviour:
   energyDecreaseRate: 1
   hungerDecreaseRate: 1
   swordEquipped: 0
+  sword: none
 --- !u!61 &1200133274
 BoxCollider2D:
   m_ObjectHideFlags: 0
