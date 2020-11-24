@@ -75,7 +75,7 @@ public class EnemyStats : MonoBehaviour
                     }
                 }
                 else if(enemyName.Equals("Vampire")) {
-                    if(enemyLists.batDataList.Count == 0) {
+                    if(enemyLists.batList.Count == 0) {
                         SetDeathAnimation();
                         DestroyEnemy();
                     }
