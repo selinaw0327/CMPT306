@@ -41,14 +41,14 @@ public class LevelLoader : MonoBehaviour
         if (previousScene == 0)
         {
             //Debug.Log(SceneManager.GetActiveScene().name);
-            tutorialDialogue = GameObject.Find("Tutorial Dialogue");
+            tutorialDialogue = GameObject.Find("Ghost Dialogue");
             tutorialDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
 
         //First boss room dialogue trigger
         else if (nextScene == 4 && ProcGenDungeon.caveLevel == 0)
         {
-            bossRoomDialogue = GameObject.Find("Boss Room Dialogue");
+            bossRoomDialogue = GameObject.Find("Boss Room 1 Dialogue");
             bossRoomDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
 

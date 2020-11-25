@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
@@ -10,8 +11,18 @@ public class Exit : MonoBehaviour
 
     public bool prompt;
 
+    private ChallengeMenu challenges;
+
+    private string scene;
+
+    private int level;
+
     void Start() {
         StartCoroutine(Coroutine());
+        challenges = GameObject.Find("TaskMenuCanvas").GetComponent<ChallengeMenu>();
+
+        scene = SceneManager.GetActiveScene().name;
+        level = ProcGenDungeon.caveLevel;
     }
 
     IEnumerator Coroutine() {
@@ -19,17 +30,23 @@ public class Exit : MonoBehaviour
         LevelLoader = Object.FindObjectOfType<LevelLoader>();
     }
 
-     private void OnTriggerEnter2D(Collider2D entity)
+    private void OnTriggerEnter2D(Collider2D entity)
     {
-        if (entity.gameObject.CompareTag("Player")) {
+    if (entity.gameObject.CompareTag("Player")) {
 
-            if (!prompt)
-            {
-                GameObject p = Instantiate(promptPrefab, GameObject.Find("UILayer").transform);
-                p.name = "Prompt";
-                prompt = true;
-            }
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipped != "Swords_Copper")
+        {
+            GameObject.Find("Tutorial Exit Checkpoint").GetComponent<DialogueTrigger>().TriggerDialogue();
+            return;
         }
+
+        if (!prompt)
+        {
+            GameObject p = Instantiate(promptPrefab, GameObject.Find("UILayer").transform);
+            p.name = "Prompt";
+            prompt = true;
+        }
+    }
     }
 
     public void NextLevel()

@@ -160,6 +160,7 @@ public class UseDrop : MonoBehaviour
         UpdateQuantity(-1);
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().swordEquipped = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipped = swordSprite.name;
     }
 
     public void Drop()
