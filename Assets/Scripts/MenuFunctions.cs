@@ -39,18 +39,14 @@ public class MenuFunctions : MonoBehaviour
             character = data.character;
             
             SceneManager.LoadSceneAsync(data.levelName, LoadSceneMode.Additive);
-            if(data.levelName != "TutorialScene"){
             SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(data.levelName));
-            }
-            
-            if(!unloaded) {
-                unloaded = true;
-                SceneManager.UnloadSceneAsync("MainMenu");
-                
-            }
-        }
-        loaded = true;
         
+            if(!unloaded) {
+                        unloaded = true;
+                        UnloadScene("MainMenu");
+                    }
+                }
+        loaded = true;
     }
 
     public void UnloadScene(string scene) {
