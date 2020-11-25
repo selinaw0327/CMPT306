@@ -30,9 +30,28 @@ public class LevelLoader : MonoBehaviour
     bool loaded = false;
     bool unloaded = false;
 
+    private GameObject tutorialDialogue;
+    private GameObject bossRoomDialogue;
+
     void Start() {
         StartCoroutine(LateStart());
         cameraMovement = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
+
+        // Ghost Dialogue trigger for Tutorial Scene
+        if (previousScene == 0)
+        {
+            //Debug.Log(SceneManager.GetActiveScene().name);
+            tutorialDialogue = GameObject.Find("Tutorial Dialogue");
+            tutorialDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
+        }
+
+        //First boss room dialogue trigger
+        else if (nextScene == 4 && ProcGenDungeon.caveLevel == 0)
+        {
+            bossRoomDialogue = GameObject.Find("Boss Room Dialogue");
+            bossRoomDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
+        }
+
     }
 
     IEnumerator LateStart() {
