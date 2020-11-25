@@ -107,6 +107,11 @@ public class LevelLoader : MonoBehaviour
     }
 
     IEnumerator LoadLevel() {
+
+        // close dialogue
+        GameObject.Find("UILayer").transform.Find("DialogueBox").gameObject.SetActive(false);
+
+
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(1);
