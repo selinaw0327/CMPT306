@@ -38,7 +38,11 @@ public class SaveLoadRunner : MonoBehaviour
     string currentScene;
     void Start() 
     {
+        
         loadfrommenu = false;
+        
+        //SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
+        
         for(int i= 0; i < SceneManager.sceneCount; i++){
             if(SceneManager.GetSceneAt(i).name == "MainMenu"){
                 loadfrommenu = true;
@@ -51,7 +55,7 @@ public class SaveLoadRunner : MonoBehaviour
 
     IEnumerator SetReferences() {
         yield return new WaitForSeconds(1.5f);
-    
+        
         currentScene = SceneManager.GetActiveScene().name;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();

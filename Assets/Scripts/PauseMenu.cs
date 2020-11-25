@@ -7,6 +7,20 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+
+    public GameObject objectsToMove;
+
+    private bool loaded;
+    private bool unloaded;
+
+    void Start(){
+        StartCoroutine(SetReferences());
+    }
+
+    IEnumerator SetReferences(){
+        yield return new WaitForSeconds(0.5f);
+        objectsToMove = GameObject.Find("ObjectsToMove");
+    }
     // Update is called once per frame
     void Update()
     {
@@ -40,7 +54,20 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void ExitGame() {
+        if(!loaded) {
+            objectsToMove.SetActive(false);
+            
+            SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
+            SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName("MainMenu"));
+            
+            
+            if(!unloaded) {
+                unloaded = true;
+                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+                
+            }
+        }
+        loaded = true;
         
-        SceneManager.LoadScene("MainMenu");
     }
 }
