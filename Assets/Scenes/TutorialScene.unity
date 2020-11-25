@@ -27698,7 +27698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 390420470}
-  typingSpeed: 0.02
+  typingSpeed: 0.01
   continueButton: {fileID: 603188949}
   textDisplayAnim: {fileID: 390420473}
   textBox: {fileID: 1187795458}
@@ -29920,7 +29920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970939054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 1.37, z: 0}
+  m_LocalPosition: {x: -1.36, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
