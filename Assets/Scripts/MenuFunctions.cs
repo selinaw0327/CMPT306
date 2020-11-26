@@ -39,6 +39,7 @@ public class MenuFunctions : MonoBehaviour
             objectsToMove.SetActive(true);
             character = data.character;
             GameObject.FindGameObjectWithTag("Player").GetComponent<ChangeSkin>().updateSkin();
+            ProcGenDungeon.caveLevel = data.caveLevel;
             SceneManager.LoadSceneAsync(data.levelName, LoadSceneMode.Additive);
             if(data.levelName != "TutorialScene"){
                 SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(data.levelName));

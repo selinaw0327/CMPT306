@@ -41,7 +41,7 @@ public class LevelLoader : MonoBehaviour
         if (previousScene == 0)
         {
 
-            if(SceneManager.GetActiveScene().name != "MainMenu"){
+            if(SceneManager.GetActiveScene().name == "TurorialScene"){
                 tutorialDialogue = GameObject.Find("Ghost Dialogue");
                 tutorialDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
             }
