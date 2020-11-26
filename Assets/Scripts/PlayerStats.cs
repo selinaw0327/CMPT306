@@ -32,6 +32,8 @@ public class PlayerStats : MonoBehaviour
     public bool swordEquipped;
     public string sword = "none";
 
+    public GameObject deathScreenUI;
+
     // Start is called before the first frame update
     void Start() {
         swordEquipped = false;
@@ -93,7 +95,8 @@ public class PlayerStats : MonoBehaviour
         currentHealth -= damage;
         if(currentHealth <= 0) {
             currentHealth = 0;
-            SceneManager.LoadScene("MainMenu"); // Restart the game
+            deathScreenUI.SetActive(true);
+            Time.timeScale = 0;
         }
         healthBar.SetStat(currentHealth, maxHealth);
     }

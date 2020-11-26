@@ -16,9 +16,9 @@ public class MenuFunctions : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "MainMenu")
         objectsToMove.SetActive(false);
     }
+
     public void LoadScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
-        
     }
 
     public void SelectCharacter(int characterSelected) {
@@ -60,5 +60,10 @@ public class MenuFunctions : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         SceneManager.UnloadSceneAsync(scene);
+    }
+
+    public void DeathScreenButton() {
+        this.gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
