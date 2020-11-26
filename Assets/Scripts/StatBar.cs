@@ -32,8 +32,16 @@ public class StatBar : MonoBehaviour
     // Used at the start of the game to set maximum and current health / maximum and current values
     public void SetMaxStat(int maxStat) {
         // Check if segments has been initialized
-        if(segments == null) { 
+        if (segments == null)
+        {
             segments = new List<GameObject>();
+        }
+        else
+        {
+            foreach (GameObject g in segments)
+            {
+                Destroy(g);
+            }
         }
 
         segmentSpacing = segmentPanel.GetComponent<GridLayoutGroup>().spacing.x;

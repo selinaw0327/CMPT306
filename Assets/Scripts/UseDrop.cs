@@ -18,17 +18,20 @@ public class UseDrop : MonoBehaviour
 
     private ChangeSkin changeSkin;
 
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        inventory = player.GetComponent<Inventory>();
         slot = transform.parent.gameObject;
         sprite = gameObject.GetComponent<Image>().sprite;
         spriteAtlas = GameObject.Find("Sprite Atlas");
 
         itemIndex = inventory.IndexOf(name);
 
-        changeSkin = GameObject.FindGameObjectWithTag("Player").GetComponent<ChangeSkin>();
+        changeSkin = player.GetComponent<ChangeSkin>();
     }
 
     // Update is called once per frame
@@ -39,21 +42,26 @@ public class UseDrop : MonoBehaviour
 
     public void Use()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        //Debug.Log("Item Type: " + itemType.ToString());
-
+       
         switch (itemType)
         {
             case Item.ItemType.Fruit:
-                player.GetComponent<PlayerStats>().TakeHunger(-10);
                 player.GetComponent<PlayerStats>().Heal(10);
+                UpdateQuantity(-1);
+                break;
+            case Item.ItemType.Bread:
+                player.GetComponent<PlayerStats>().Heal(30);
+                UpdateQuantity(-1);
+                break;
+            case Item.ItemType.Steak:
+                player.GetComponent<PlayerStats>().Heal(50);
                 UpdateQuantity(-1);
                 break;
             // BARS
             case Item.ItemType.CopperBar:
                 if (inventory.quantity[itemIndex] < 10)
                 {
-                    Debug.Log("You need 10 copper bars to forge a copper sword");
+                    GameObject.Find("Insufficient Bars Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
                 }
                 else if (inventory.quantity[itemIndex] >= 10)
                 {
@@ -65,8 +73,9 @@ public class UseDrop : MonoBehaviour
             case Item.ItemType.SilverBar:
                 if (inventory.quantity[itemIndex] < 10)
                 {
-                    Debug.Log("You need 10 silver bars to forge a silver sword");
-                } else if (inventory.quantity[itemIndex] >= 10)
+                    GameObject.Find("Insufficient Bars Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
+                }
+                else if (inventory.quantity[itemIndex] >= 10)
                 {
                     UpdateQuantity(-10);
                     Sprite silverSword = spriteAtlas.GetComponent<SpriteAtlas>().silverSword;
@@ -76,7 +85,7 @@ public class UseDrop : MonoBehaviour
             case Item.ItemType.IronBar:
                 if (inventory.quantity[itemIndex] < 10)
                 {
-                    Debug.Log("You need 10 iron bars to forge a iron sword");
+                    GameObject.Find("Insufficient Bars Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
                 }
                 else if (inventory.quantity[itemIndex] >= 10)
                 {
@@ -88,7 +97,7 @@ public class UseDrop : MonoBehaviour
             case Item.ItemType.GoldBar:
                 if (inventory.quantity[itemIndex] < 10)
                 {
-                    Debug.Log("You need 10 gold bars to forge a gold sword");
+                    GameObject.Find("Insufficient Bars Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
                 }
                 else if (inventory.quantity[itemIndex] >= 10)
                 {
@@ -100,7 +109,7 @@ public class UseDrop : MonoBehaviour
             case Item.ItemType.ObsidianBar:
                 if (inventory.quantity[itemIndex] < 10)
                 {
-                    Debug.Log("You need 10 obsidian bars to forge a obsidian sword");
+                    GameObject.Find("Insufficient Bars Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
                 }
                 else if (inventory.quantity[itemIndex] >= 10)
                 {
@@ -114,6 +123,7 @@ public class UseDrop : MonoBehaviour
                 // Code for what happens when Copper sword is right-clicked in inventory
                 Equip(spriteAtlas.GetComponent<SpriteAtlas>().copperSword, player);
                 changeSkin.CopperSkin();
+                player.GetComponent<PlayerStats>().SetAdditionalHealth(50);
                 break;
             case Item.ItemType.SilverSword:
                 // Code for what happens when Silver sword is right-clicked in inventory
@@ -124,16 +134,22 @@ public class UseDrop : MonoBehaviour
                 // Code for what happens when Iron sword is right-clicked in 
                 Equip(spriteAtlas.GetComponent<SpriteAtlas>().ironSword, player);
                 changeSkin.IronSkin();
+                player.GetComponent<PlayerStats>().SetAdditionalHealth(50);
+                player.GetComponent<PlayerStats>().SetAdditionalDamage(25);
                 break;
             case Item.ItemType.GoldSword:
                 // Code for what happens when Gold sword is right-clicked in inventory
                 Equip(spriteAtlas.GetComponent<SpriteAtlas>().goldSword, player);
                 changeSkin.GoldSkin();
+                player.GetComponent<PlayerStats>().SetAdditionalHealth(100);
+                player.GetComponent<PlayerStats>().SetAdditionalDamage(50);
                 break;
             case Item.ItemType.ObsidianSword:
                 // Code for what happens when Obsidian sword is right-clicked in inventory
                 Equip(spriteAtlas.GetComponent<SpriteAtlas>().obsidianSword, player);
                 changeSkin.ObsidianSkin();
+                player.GetComponent<PlayerStats>().SetAdditionalHealth(200);
+                player.GetComponent<PlayerStats>().SetAdditionalDamage(100);
                 break;
             default:
                 break;
@@ -146,10 +162,10 @@ public class UseDrop : MonoBehaviour
         GetComponent<Spawn>().SpawnDroppedItem(name, itemType, forgedSprite);
 
         // trigger for how to equip sword tutorial
-        if (!GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipTutorial)
+        if (!player.GetComponent<Equipped>().equipTutorial)
         {
             GameObject.Find("Equip Copper Sword").GetComponent<DialogueTrigger>().TriggerDialogue();
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipTutorial = true;
+            player.GetComponent<Equipped>().equipTutorial = true;
         }
     }
 
@@ -166,14 +182,14 @@ public class UseDrop : MonoBehaviour
 
         UpdateQuantity(-1);
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().swordEquipped = true;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipped = swordSprite.name;
+        player.GetComponent<PlayerMovement>().swordEquipped = true;
+        player.GetComponent<Equipped>().equipped = swordSprite.name;
 
         // trigger for how to attack tutorial
-        if (!GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().attackTutorial)
+        if (!player.GetComponent<Equipped>().attackTutorial)
         {
             GameObject.Find("Attack Dialogue").GetComponent<DialogueTrigger>().TriggerDialogue();
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().attackTutorial = true;
+            player.GetComponent<Equipped>().attackTutorial = true;
         }
     }
 

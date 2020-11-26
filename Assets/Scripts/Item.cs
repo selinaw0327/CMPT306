@@ -10,6 +10,8 @@ public class Item : MonoBehaviour
     public enum ItemType
     {
         Fruit,
+        Bread,
+        Steak,
         CopperBar,
         CopperSword,
         SilverBar,
