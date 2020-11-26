@@ -958,8 +958,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 261914688}
-  maxHealth: 100
+  initialHealth: 0
   currentHealth: 0
+  additionalHealth: 0
+  overallHealth: 0
   energyBar: {fileID: 1329984744}
   maxEnergy: 150
   currentEnergy: 0
@@ -967,13 +969,14 @@ MonoBehaviour:
   maxHunger: 100
   currentHunger: 0
   currentLevel: 0
-  damage: 10
+  initialDamage: 0
+  additionalDamage: 0
+  overallDamage: 0
   energyDecreaseRate: 1
   hungerDecreaseRate: 1
   swordEquipped: 0
   sword: none
-  character: 1
-  femaleSprite: {fileID: 0}
+  deathScreenUI: {fileID: 0}
 --- !u!61 &183230935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5980,6 +5983,8 @@ MonoBehaviour:
   apple: {fileID: 0}
   banana: {fileID: 0}
   orange: {fileID: 0}
+  bread: {fileID: 0}
+  steak: {fileID: 0}
 --- !u!4 &1263968928
 Transform:
   m_ObjectHideFlags: 0
@@ -6599,7 +6604,7 @@ MonoBehaviour:
   player: {fileID: 0}
   deviationRate: 15
   roomRate: 10
-  maxRouteLength: 10
+  maxRouteLength: 200
   maxRoutes: 20
   exitPrefab: {fileID: 5250879337292495368, guid: 070c1158f71f4ae46ba1e47e42f16d3a, type: 3}
   rockPrefabs:
@@ -6624,6 +6629,7 @@ MonoBehaviour:
   spriteAtlas: {fileID: 1263968927}
   seed: 0
   onload: 0
+  exitPosition: []
 --- !u!156049354 &1425784081
 Grid:
   m_ObjectHideFlags: 0
