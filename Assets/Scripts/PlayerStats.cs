@@ -32,6 +32,8 @@ public class PlayerStats : MonoBehaviour
     public bool swordEquipped;
     public string sword = "none";
 
+    private AudioSource plyerDeath;
+
     // Start is called before the first frame update
     void Start() {
         swordEquipped = false;
@@ -62,6 +64,8 @@ public class PlayerStats : MonoBehaviour
             hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
             TakeHunger(1);
         }
+
+        plyerDeath = GetComponent<AudioSource>();
         if (Input.GetKeyDown(KeyCode.K))
         {
             KillPlayer();
@@ -91,7 +95,8 @@ public class PlayerStats : MonoBehaviour
         currentHealth -= damage;
         if(currentHealth <= 0) {
             currentHealth = 0;
-            SceneManager.LoadScene("MainMenu"); // Restart the game
+            plyerDeath.Play();
+            //SceneManager.LoadScene("MainMenu"); // Restart the game
         }
         healthBar.SetStat(currentHealth, maxHealth);
     }
