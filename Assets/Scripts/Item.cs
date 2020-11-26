@@ -52,9 +52,12 @@ public class Item : MonoBehaviour
                     if (inventory.occupied[i] == false)
                     {
                         // ITEM CAN BE ADDED TO THE INVENTORY
-                        
+
                         inventory.occupied[i] = true;
                         GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
+
+                        item.GetComponent<AudioSource>().Play();
+
                         item.transform.SetSiblingIndex(0);
                         item.name = transform.name;
                         inventory.items[i] = transform.name;
@@ -72,6 +75,8 @@ public class Item : MonoBehaviour
 
             if (!added)
             {
+                inventory.inventoryItems[inventory.IndexOf(name)].GetComponent<AudioSource>().Play();
+
                 inventory.quantity[inventory.IndexOf(name)] += 1;
                 added = true;
                 if(name  == "Copper Bar") {
@@ -80,8 +85,6 @@ public class Item : MonoBehaviour
                 challengeMenu.updateChallenge("pickup");
                 Destroy(gameObject);
             }
-
-            inventory.inventoryItems[inventory.IndexOf(name)].GetComponent<AudioSource>().Play();
 
         }
     }
