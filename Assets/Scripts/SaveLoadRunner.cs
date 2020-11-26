@@ -23,6 +23,8 @@ public class SaveLoadRunner : MonoBehaviour
     public GameObject vampire;
     public GameObject skeleton;
     public GameObject zombie;
+    public GameObject objectsToMove;
+    public  GameObject objectsToMovePrefab;
     public ProcGenDungeon map;
     public RockList rockList;
     public EnemyLists enemyLists;
@@ -30,17 +32,29 @@ public class SaveLoadRunner : MonoBehaviour
     private GameObject spriteAtlas;
 
     public Sprite nosword;
+    public Sprite femaleSprite;
+
+    public bool loadfrommenu;
+    public int character;
 
     string currentScene;
     void Start() 
     {
+        loadfrommenu = false;
+        for(int i= 0; i < SceneManager.sceneCount; i++){
+            if(SceneManager.GetSceneAt(i).name == "MainMenu"){
+                loadfrommenu = true;
+                
+                Debug.Log("Loaded from menu");
+            }
+        }
         StartCoroutine(SetReferences());
         
     }
 
     IEnumerator SetReferences() {
         yield return new WaitForSeconds(1.5f);
-
+    
         currentScene = SceneManager.GetActiveScene().name;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         itemsOnFloorList = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
@@ -52,8 +66,14 @@ public class SaveLoadRunner : MonoBehaviour
         rockList = GameObject.FindGameObjectWithTag("Environment").GetComponent<RockList>();
         enemyLists =  GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
         spriteAtlas = GameObject.Find("Sprite Atlas");
-
-        SaveAll();
+        if(loadfrommenu){
+            
+            // SceneManager.UnloadSceneAsync("MainMenu");
+            LoadAll();
+            
+        } else {
+            SaveAll();
+        }
     }
 
     void Update() {
@@ -100,30 +120,38 @@ public class SaveLoadRunner : MonoBehaviour
     public void LoadPlayer()
     {
         SaveLoad.LoadPlayer(player);
+        
         player.healthBar.SetStat(player.currentHealth, player.maxHealth);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<ChangeSkin>().updateSkin();
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().swordEquipped = player.swordEquipped;
         Sprite swordSprite;
         switch(player.sword){
             case "Swords_Copper":
                 swordSprite =  spriteAtlas.GetComponent<SpriteAtlas>().copperSword;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<ChangeSkin>().CopperSkin();
                 break;
             case "Swords_Silver":
                 swordSprite =  spriteAtlas.GetComponent<SpriteAtlas>().silverSword;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<ChangeSkin>().SilverSkin();
                 break;
             case "Swords_Iron":
                 swordSprite =  spriteAtlas.GetComponent<SpriteAtlas>().ironSword;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<ChangeSkin>().IronSkin();
                 break;
             case "Swords_Gold":
                 swordSprite =  spriteAtlas.GetComponent<SpriteAtlas>().goldSword;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<ChangeSkin>().GoldSkin();
                 break;
             case "Swords_Obsidian":
                 swordSprite =  spriteAtlas.GetComponent<SpriteAtlas>().obsidianSword;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<ChangeSkin>().ObsidianSkin();
                 break;
             default:
                 swordSprite = nosword;
                 Debug.Log("Set to not having a sword");
                 break;
         } 
+        
         var image = GameObject.Find("Equipped Sword").transform.Find("Image");
 
         image.GetComponent<Image>().sprite = swordSprite;
@@ -158,16 +186,17 @@ public class SaveLoadRunner : MonoBehaviour
                 map.wallMap.SetTile(pos, null);
             }
         }
-
+        Destroy(map.returnExit());
         SaveLoad.LoadMapSeed(map);
         
         map.createdObjects = new List<GameObject>();
-        
         map.GenerateAll(true);
+        map.respawnExit();
 
         foreach(GameObject createdObject in map.createdObjects){
             Destroy(createdObject);
         }
+        GameObject.Find("GridRescan").GetComponent<ScanGrid>().scan();
         
     }
     public void LoadInventory()

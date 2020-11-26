@@ -46,10 +46,12 @@ public class PlayerStats : MonoBehaviour
                 SetAllStats(50, 200, 50);
                 break;
         }
+
     }
     
     // Update is called once per frame
     void Update() {
+
         // Timed system to decrease energy
         if(Time.time >= energyNextTimeToDecrease) {
             energyNextTimeToDecrease = Time.time + 1.0f / energyDecreaseRate;
