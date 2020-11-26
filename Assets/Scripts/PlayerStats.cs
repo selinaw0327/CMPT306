@@ -60,6 +60,10 @@ public class PlayerStats : MonoBehaviour
             hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
             TakeHunger(1);
         }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            KillPlayer();
+        }
     }
 
     private void SetAllStats(int newMaxHealth, int newMaxEnergy, int newMaxHunger) {
@@ -116,5 +120,9 @@ public class PlayerStats : MonoBehaviour
             currentHunger = 0;
         }
         hungerBar.SetStat(currentHunger, maxHunger);
+    }
+    public void KillPlayer()
+    {
+        TakeDamage(currentHealth);
     }
 }
