@@ -48,7 +48,7 @@ public class ChallengeMenu : MonoBehaviour
     }
     void Update()
     {
-        
+        incomplete = GameObject.FindGameObjectWithTag("Incomplete");
         if(Input.GetKeyDown(KeyCode.LeftControl)){
             ShowHide();
         }
@@ -193,6 +193,19 @@ public class ChallengeMenu : MonoBehaviour
     private void OnComplete(string challengeName){
         if(challengeName == "10cop"){
             AddChallenge("Kill 5 bats", "5bat", 5);
+        }
+
+        // trigger dialogue
+        switch (challengeName)
+        {
+            case "pickup":
+                GameObject.Find("Pickup Dialogue").GetComponent<DialogueTrigger>().TriggerDialogue();
+                break;
+            case "10cop":
+                GameObject.Find("Forge Copper Sword").GetComponent<DialogueTrigger>().TriggerDialogue();
+                break;
+            default:
+                break;
         }
 
     }

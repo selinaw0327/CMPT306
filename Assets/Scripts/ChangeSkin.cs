@@ -39,6 +39,17 @@ public class ChangeSkin : MonoBehaviour
         
     }
 
+    public void updateSkin(){
+        switch (MenuFunctions.character) {
+            case 1:
+                GetComponent<Animator>().runtimeAnimatorController = maleAnim as RuntimeAnimatorController;
+                break;
+            case 2:
+                GetComponent<Animator>().runtimeAnimatorController = femaleAnim as RuntimeAnimatorController;
+                break;
+        }
+
+    }
     public void CopperSkin()
     {
         switch (MenuFunctions.character)
