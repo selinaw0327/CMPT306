@@ -5,11 +5,21 @@ using UnityEngine.EventSystems;
 
 public class OnClick : MonoBehaviour, IPointerClickHandler
 {
+    public bool quantityObject;
+    public int index;
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            GetComponent<UseDrop>().Drop();
+            if(quantityObject)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().inventoryItems[index].GetComponent<UseDrop>().Drop();
+            } else
+            {
+                GetComponent<UseDrop>().Drop();
+            }
+            
         }            
         //else if (eventData.button == PointerEventData.InputButton.Middle)
         //{
@@ -17,7 +27,14 @@ public class OnClick : MonoBehaviour, IPointerClickHandler
         //}            
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
-            GetComponent<UseDrop>().Use();
+            if (quantityObject)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().inventoryItems[index].GetComponent<UseDrop>().Use();
+            }
+            else
+            {
+                GetComponent<UseDrop>().Use();
+            }
         }
             
     }
