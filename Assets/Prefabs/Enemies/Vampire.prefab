@@ -16,6 +16,7 @@ MonoBehaviour:
   maxHealth: 400
   currentHealth: 0
   isBoss: 1
+  enemyName: 
   damage: 25
   damageText: {fileID: 3548901578697284184, guid: 41666949b967c41cb865556ed1bd15fd, type: 3}
   getHit: 0
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 400
-  nextWayPointDistance: 2
+  nextWayPointDistance: 1
   enemyGFX: {fileID: 389636989893442646}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
@@ -221,18 +222,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: 0}
+  m_Offset: {x: 0.04, y: -0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.7666667, y: 3.1666667}
+    oldSize: {x: 2.2133334, y: 2.5333333}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.93, y: 3.83}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
 --- !u!61 &208236855818676772
 BoxCollider2D:
@@ -247,18 +248,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: 0}
+  m_Offset: {x: 0.04, y: -0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.7666667, y: 3.1666667}
+    oldSize: {x: 2.2133334, y: 2.5333333}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.93, y: 3.83}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &1244584301643596789
 MonoBehaviour:

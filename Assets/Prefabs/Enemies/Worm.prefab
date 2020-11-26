@@ -15,8 +15,11 @@ MonoBehaviour:
   healthBar: {fileID: 1842917106486771212}
   maxHealth: 50
   currentHealth: 0
+  isBoss: 0
+  enemyName: 
   damage: 10
   damageText: {fileID: 3548901578697284184, guid: 41666949b967c41cb865556ed1bd15fd, type: 3}
+  getHit: 0
 --- !u!1 &593757828702648435
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +103,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!50 &8201056986579381657
 Rigidbody2D:
   serializedVersion: 4
@@ -135,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 400
-  nextWayPointDistance: 2
+  nextWayPointDistance: 1
   enemyGFX: {fileID: 389636989893442646}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
@@ -237,7 +240,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
 --- !u!114 &5692137885173016438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,6 +256,7 @@ MonoBehaviour:
   item: {fileID: 8572886800771799533, guid: fd99970d04ffabd498a41d3cd1ab1f94, type: 3}
   spriteAtlas: {fileID: 7075723357422317502, guid: 6902b61eb889886418175ff727129d86, type: 3}
   tutorial: 0
+  bossRoom: 0
 --- !u!1001 &2424111541198155363
 PrefabInstance:
   m_ObjectHideFlags: 0

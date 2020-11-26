@@ -68,6 +68,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     void OnPathComplete(Path p){
+        Debug.Log("path complete");
         if(!p.error){
             path = p;
             currentWaypoint = 0;
@@ -86,7 +87,7 @@ public class EnemyAI : MonoBehaviour
 
         setChase();
 
-        float minAttackDistance = 12.5f;
+        float minAttackDistance = 8f;
 
         float distance = Vector3.Distance(target.position, enemyGFX.position);
 
