@@ -40,12 +40,6 @@ public class Item : MonoBehaviour
         itemSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter2D(Collider2D collider)
     {
         ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
