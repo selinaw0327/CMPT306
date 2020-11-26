@@ -32,6 +32,8 @@ public class PlayerStats : MonoBehaviour
     public bool swordEquipped;
     public string sword = "none";
 
+    public GameObject plyerDeath;
+
     // Start is called before the first frame update
     void Start() {
         swordEquipped = false;
@@ -46,7 +48,6 @@ public class PlayerStats : MonoBehaviour
                 SetAllStats(50, 200, 50);
                 break;
         }
-
     }
     
     // Update is called once per frame
@@ -93,8 +94,16 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth <= 0) {
             currentHealth = 0;
             //SceneManager.LoadScene("MainMenu"); // Restart the game
+            StartCoroutine(PlaySoundCo());
         }
         healthBar.SetStat(currentHealth, maxHealth);
+    }
+
+    private IEnumerator PlaySoundCo()
+    {
+        plyerDeath.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("MainMenu"); // Restart the game
     }
 
     // Causes the player to heal
