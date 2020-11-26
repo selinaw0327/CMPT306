@@ -101,9 +101,14 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth <= 0) {
             currentHealth = 0;
             deathScreenUI.SetActive(true);
-            Time.timeScale = 0;
+            StartCoroutine(PauseGame());
         }
         healthBar.SetStat(currentHealth, overallHealth);
+    }
+
+    IEnumerator PauseGame() {
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0;
     }
 
     public void KillPlayer() {
