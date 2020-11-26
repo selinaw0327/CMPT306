@@ -7,9 +7,7 @@ public class SkipTutorialHandler : MonoBehaviour
     public void disableDialogue(){
 
         // disable DialogueSystem gameobject
-    
-        GameObject dialogue = GameObject.Find("DialogueBox");
 
-        dialogue.SetActive(false);
+        GameObject.Find("DialogueBox").SetActive(false);
     }
 }
