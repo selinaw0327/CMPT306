@@ -51,16 +51,22 @@ public class PlayerStats : MonoBehaviour
     
     // Update is called once per frame
     void Update() {
+        // // Timed system to decrease energy
+        // if(Time.time >= energyNextTimeToDecrease) {
+        //     energyNextTimeToDecrease = Time.time + 1.0f / energyDecreaseRate;
+        //     TakeEnergy(1);
+        // }
+        // // Timed system to decrease hunger
+        // if(Time.time >= hungerNextTimeToDecrease) {
+        //     hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
+        //     TakeHunger(1);
+        // }
 
-        // Timed system to decrease energy
-        if(Time.time >= energyNextTimeToDecrease) {
-            energyNextTimeToDecrease = Time.time + 1.0f / energyDecreaseRate;
-            TakeEnergy(1);
+        if(Input.GetKeyDown(KeyCode.H)) {
+            HealthUpgrade();
         }
-        // Timed system to decrease hunger
-        if(Time.time >= hungerNextTimeToDecrease) {
-            hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
-            TakeHunger(1);
+        if(Input.GetKeyDown(KeyCode.K)) {
+            KillPlayer();
         }
     }
 
@@ -102,21 +108,31 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetStat(currentHealth, maxHealth);
     }
 
-    // Causes the player to lose energy
-    public void TakeEnergy(int energyLoss) {
-        currentEnergy -= energyLoss;
-        if(currentEnergy <= 0) {
-            currentEnergy = 0;
-        }
-        energyBar.SetStat(currentEnergy, maxEnergy);
+    public void HealthUpgrade() {
+        maxHealth += 25;
+        currentHealth = maxHealth;
+        healthBar.SetMaxStat(maxHealth);
     }
 
-    // Causes the player to lose hunger
-    public void TakeHunger(int hungerLoss) {
-        currentHunger -= hungerLoss;
-        if(currentHunger <= 0) {
-            currentHunger = 0;
-        }
-        hungerBar.SetStat(currentHunger, maxHunger);
+    public void KillPlayer() {
+        TakeDamage(currentHealth);
     }
+
+    // // Causes the player to lose energy
+    // public void TakeEnergy(int energyLoss) {
+    //     currentEnergy -= energyLoss;
+    //     if(currentEnergy <= 0) {
+    //         currentEnergy = 0;
+    //     }
+    //     energyBar.SetStat(currentEnergy, maxEnergy);
+    // }
+
+    // // Causes the player to lose hunger
+    // public void TakeHunger(int hungerLoss) {
+    //     currentHunger -= hungerLoss;
+    //     if(currentHunger <= 0) {
+    //         currentHunger = 0;
+    //     }
+    //     hungerBar.SetStat(currentHunger, maxHunger);
+    // }
 }

@@ -35,6 +35,12 @@ public class StatBar : MonoBehaviour
         if(segments == null) { 
             segments = new List<GameObject>();
         }
+        else {
+            foreach(GameObject g in segments) {
+                Destroy(g);
+            }
+        }
+        segments = new List<GameObject>();
 
         segmentSpacing = segmentPanel.GetComponent<GridLayoutGroup>().spacing.x;
 
@@ -58,6 +64,7 @@ public class StatBar : MonoBehaviour
             GameObject newSegment = Instantiate(segmentPrefab);
             newSegment.transform.SetParent(segmentPanel.transform);
             newSegment.transform.localScale = new Vector3(1, 1, 1);
+            newSegment.name = "Segment";
             segments.Add(newSegment);
         }
     }

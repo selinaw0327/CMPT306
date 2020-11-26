@@ -45,7 +45,7 @@ public class UseDrop : MonoBehaviour
         switch (itemType)
         {
             case Item.ItemType.Fruit:
-                player.GetComponent<PlayerStats>().TakeHunger(-10);
+                // player.GetComponent<PlayerStats>().TakeHunger(-10);
                 player.GetComponent<PlayerStats>().Heal(10);
                 UpdateQuantity(-1);
                 break;
