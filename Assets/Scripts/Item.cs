@@ -86,8 +86,9 @@ public class Item : MonoBehaviour
                 challengeMenu.updateChallenge("pickup");
                 Destroy(gameObject);
             }
-            
-        
+
+            inventory.inventoryItems[inventory.IndexOf(name)].GetComponent<AudioSource>().Play();
+
         }
     }
 
