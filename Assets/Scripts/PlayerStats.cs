@@ -36,6 +36,8 @@ public class PlayerStats : MonoBehaviour
     public bool swordEquipped;
     public string sword = "none";
 
+    public GameObject deathScreenUI;
+
     // Start is called before the first frame update
     void Start() {
         swordEquipped = false;
@@ -66,6 +68,10 @@ public class PlayerStats : MonoBehaviour
             hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
             TakeHunger(1);
         }
+
+        if(Input.GetKeyDown(KeyCode.K)) {
+            KillPlayer();
+        }
     }
 
     private void SetAllStats(int newMaxHealth, int newMaxEnergy, int newMaxHunger) {
@@ -94,9 +100,14 @@ public class PlayerStats : MonoBehaviour
         currentHealth -= damage;
         if(currentHealth <= 0) {
             currentHealth = 0;
-            SceneManager.LoadScene("MainMenu"); // Restart the game
+            deathScreenUI.SetActive(true);
+            Time.timeScale = 0;
         }
         healthBar.SetStat(currentHealth, overallHealth);
+    }
+
+    public void KillPlayer() {
+        TakeDamage(currentHealth);
     }
 
     // Causes the player to heal
@@ -131,6 +142,7 @@ public class PlayerStats : MonoBehaviour
     {
         additionalHealth = i;
         SetOverallHealth();
+        currentHealth = overallHealth;
         healthBar.SetMaxStat(overallHealth);
     }
 
