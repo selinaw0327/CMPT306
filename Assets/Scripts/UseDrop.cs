@@ -45,15 +45,22 @@ public class UseDrop : MonoBehaviour
         switch (itemType)
         {
             case Item.ItemType.Fruit:
-                player.GetComponent<PlayerStats>().TakeHunger(-10);
                 player.GetComponent<PlayerStats>().Heal(10);
+                UpdateQuantity(-1);
+                break;
+            case Item.ItemType.Bread:
+                player.GetComponent<PlayerStats>().Heal(20);
+                UpdateQuantity(-1);
+                break;
+            case Item.ItemType.Steak:
+                player.GetComponent<PlayerStats>().Heal(30);
                 UpdateQuantity(-1);
                 break;
             // BARS
             case Item.ItemType.CopperBar:
                 if (inventory.quantity[itemIndex] < 10)
                 {
-                    Debug.Log("You need 10 copper bars to forge a copper sword");
+                    GameObject.Find("Insufficient Bars Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
                 }
                 else if (inventory.quantity[itemIndex] >= 10)
                 {
@@ -65,8 +72,9 @@ public class UseDrop : MonoBehaviour
             case Item.ItemType.SilverBar:
                 if (inventory.quantity[itemIndex] < 10)
                 {
-                    Debug.Log("You need 10 silver bars to forge a silver sword");
-                } else if (inventory.quantity[itemIndex] >= 10)
+                    GameObject.Find("Insufficient Bars Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
+                }
+                else if (inventory.quantity[itemIndex] >= 10)
                 {
                     UpdateQuantity(-10);
                     Sprite silverSword = spriteAtlas.GetComponent<SpriteAtlas>().silverSword;
@@ -76,7 +84,7 @@ public class UseDrop : MonoBehaviour
             case Item.ItemType.IronBar:
                 if (inventory.quantity[itemIndex] < 10)
                 {
-                    Debug.Log("You need 10 iron bars to forge a iron sword");
+                    GameObject.Find("Insufficient Bars Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
                 }
                 else if (inventory.quantity[itemIndex] >= 10)
                 {
@@ -88,7 +96,7 @@ public class UseDrop : MonoBehaviour
             case Item.ItemType.GoldBar:
                 if (inventory.quantity[itemIndex] < 10)
                 {
-                    Debug.Log("You need 10 gold bars to forge a gold sword");
+                    GameObject.Find("Insufficient Bars Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
                 }
                 else if (inventory.quantity[itemIndex] >= 10)
                 {
@@ -100,7 +108,7 @@ public class UseDrop : MonoBehaviour
             case Item.ItemType.ObsidianBar:
                 if (inventory.quantity[itemIndex] < 10)
                 {
-                    Debug.Log("You need 10 obsidian bars to forge a obsidian sword");
+                    GameObject.Find("Insufficient Bars Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
                 }
                 else if (inventory.quantity[itemIndex] >= 10)
                 {
