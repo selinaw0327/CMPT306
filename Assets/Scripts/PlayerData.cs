@@ -16,7 +16,8 @@ public class PlayerData
     public int maxhunger;
     public int maxenergy;
     public  string sword;
-    public float[] position;
+    public float[] position; 
+    
 
     
 
@@ -31,6 +32,7 @@ public class PlayerData
         maxhunger = player.maxHunger;
         swordEquipped = player.swordEquipped;
         sword = player.sword;
+        
         
         position = new float[2];
         position[0] = player.transform.position.x;

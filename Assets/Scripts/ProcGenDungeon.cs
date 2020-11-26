@@ -51,6 +51,10 @@ public class ProcGenDungeon : MonoBehaviour
     public int seed;
     public bool onload;
 
+    public float[] exitPosition;
+
+    private GameObject exit;
+
     public void Start()
     {
         // Set Size of cave depending on level
@@ -90,14 +94,14 @@ public class ProcGenDungeon : MonoBehaviour
         FillWalls();
 
         yield return new WaitForSeconds(1);
-
+        
         if(!onload){
             Debug.Log("not on load");
             SpawnExit();
             FillSpawnLocations();
         }
     }
-
+    
     private void FillWalls()
     {
         BoundsInt bounds = groundMap.cellBounds;
@@ -247,8 +251,22 @@ public class ProcGenDungeon : MonoBehaviour
             lastWallF.x += 0.5f;
         }
         lastWallF.y += 0.5f;
-        GameObject exit = Instantiate(exitPrefab, lastWallF, Quaternion.identity, GameObject.Find("Environment").transform);
+        exitPosition = new float[3];
+        exitPosition[0] = lastWallF.x;
+        exitPosition[1] = lastWallF.y;
+        exitPosition[2] = lastWallF.z;
+        exit = Instantiate(exitPrefab, lastWallF, Quaternion.identity, GameObject.Find("Environment").transform);
         exit.name = "Exit";
+    }
+
+    public void respawnExit(){
+        Vector3 position  = new Vector3(exitPosition[0], exitPosition[1], exitPosition[2]);
+        exit = Instantiate(exitPrefab,position, Quaternion.identity, GameObject.Find("Environment").transform);
+        exit.name = "Exit";
+    }
+
+    public GameObject returnExit(){
+        return(exit);
     }
 
     private void FillSpawnLocations() {

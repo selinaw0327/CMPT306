@@ -36,12 +36,13 @@ public class Exit : MonoBehaviour
     {
         if (entity.gameObject.CompareTag("Player")) {
 
-            if (GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipped != "Swords_Copper")
-            {
-                GameObject.Find("Tutorial Exit Checkpoint").GetComponent<DialogueTrigger>().TriggerDialogue();
-                return;
+            if(SceneManager.GetActiveScene().name == "TutorialScene"){
+                if (GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipped != "Swords_Copper")
+                {
+                    GameObject.Find("Tutorial Exit Checkpoint").GetComponent<DialogueTrigger>().TriggerDialogue();
+                    return;
+                }
             }
-
             if (!prompt)
             {
                 GameObject p = Instantiate(promptPrefab, GameObject.Find("UILayer").transform);
