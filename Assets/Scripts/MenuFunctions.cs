@@ -61,4 +61,9 @@ public class MenuFunctions : MonoBehaviour
 
         SceneManager.UnloadSceneAsync(scene);
     }
+
+    public void DeathScreenButton() {
+        Time.timeScale = 1f;
+        this.gameObject.SetActive(false);
+    }
 }

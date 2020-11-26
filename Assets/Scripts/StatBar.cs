@@ -20,6 +20,10 @@ public class StatBar : MonoBehaviour
 
     public Vector3 offset;
 
+    public Text displayText;
+    private string currentHealthText = "";
+    private string maxHealthText = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +47,11 @@ public class StatBar : MonoBehaviour
                 Destroy(g);
             }
         }
+
+        currentHealthText = GameObject.Find("Player").GetComponent<PlayerStats>().currentHealth.ToString();
+        maxHealthText = maxStat.ToString();
+        displayText.text = currentHealthText + " / " + maxHealthText;
+        
 
         segmentSpacing = segmentPanel.GetComponent<GridLayoutGroup>().spacing.x;
 
@@ -72,5 +81,8 @@ public class StatBar : MonoBehaviour
 
     public void SetStat(int currentStat, int maxStat) {
         slider.value = maxStat - currentStat;
+        currentHealthText = currentStat.ToString();
+        maxHealthText = maxStat.ToString();
+        displayText.text = currentHealthText + " / " + maxHealthText;
     }
 }
