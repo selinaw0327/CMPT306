@@ -195,5 +195,18 @@ public class ChallengeMenu : MonoBehaviour
             AddChallenge("Kill 5 bats", "5bat", 5);
         }
 
+        // trigger dialogue
+        switch (challengeName)
+        {
+            case "pickup":
+                GameObject.Find("Pickup Dialogue").GetComponent<DialogueTrigger>().TriggerDialogue();
+                break;
+            case "10cop":
+                GameObject.Find("Forge Copper Sword").GetComponent<DialogueTrigger>().TriggerDialogue();
+                break;
+            default:
+                break;
+        }
+
     }
 }
