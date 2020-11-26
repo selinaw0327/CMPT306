@@ -8,11 +8,13 @@ public class MenuData
 {
     public string levelName;
     public int character;
+    public int caveLevel;
 
 
     public MenuData(){
         levelName = SceneManager.GetActiveScene().name;
         character = MenuFunctions.character;
+        caveLevel = ProcGenDungeon.caveLevel;
     }
    
 }

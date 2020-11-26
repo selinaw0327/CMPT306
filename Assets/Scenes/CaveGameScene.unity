@@ -972,6 +972,8 @@ MonoBehaviour:
   hungerDecreaseRate: 1
   swordEquipped: 0
   sword: none
+  character: 1
+  femaleSprite: {fileID: 0}
 --- !u!61 &183230935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5544,10 +5546,15 @@ MonoBehaviour:
   vampire: {fileID: 0}
   skeleton: {fileID: 0}
   zombie: {fileID: 0}
+  objectsToMove: {fileID: 517855096}
+  objectsToMovePrefab: {fileID: 4655841135348461741, guid: d62b73a99597bb44680dc1f20797cef3, type: 3}
   map: {fileID: 0}
   rockList: {fileID: 0}
   enemyLists: {fileID: 0}
   nosword: {fileID: 2134513796018122633, guid: 3ba6b528ce5b18d41a6001193b30246b, type: 3}
+  femaleSprite: {fileID: -4386294870705664253, guid: 69bbac03001335848b89039896798931, type: 3}
+  loadfrommenu: 0
+  character: 0
 --- !u!1 &1142670465
 GameObject:
   m_ObjectHideFlags: 0
