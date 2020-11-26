@@ -22142,7 +22142,7 @@ MonoBehaviour:
   dialogue:
     sentences:
     - Now that you have a sword, you can start attacking enemies by getting close
-      to them and left-clicking.
+      to them and left-clicking. Try attacking the bat now.
 --- !u!1001 &495252263
 PrefabInstance:
   m_ObjectHideFlags: 0

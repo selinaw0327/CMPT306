@@ -121,7 +121,7 @@ public class SaveLoadRunner : MonoBehaviour
     {
         SaveLoad.LoadPlayer(player);
         
-        player.healthBar.SetStat(player.currentHealth, player.maxHealth);
+        player.healthBar.SetStat(player.currentHealth, player.overallHealth);
         GameObject.FindGameObjectWithTag("Player").GetComponent<ChangeSkin>().updateSkin();
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().swordEquipped = player.swordEquipped;
         Sprite swordSprite;

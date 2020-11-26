@@ -12,7 +12,7 @@ public class PlayerData
     public int Damage;
 
     public bool swordEquipped;
-    public int maxhealth;
+    public int overallHealth;
     public int maxhunger;
     public int maxenergy;
     public  string sword;
@@ -26,8 +26,8 @@ public class PlayerData
         Hunger = player.currentHunger;
         Health = player.currentHealth;
         Energy = player.currentEnergy;
-        Damage = player.damage;
-        maxhealth = player.maxHealth;
+        Damage = player.overallDamage;
+        overallHealth = player.overallHealth;
         maxenergy = player.maxEnergy;
         maxhunger = player.maxHunger;
         swordEquipped = player.swordEquipped;

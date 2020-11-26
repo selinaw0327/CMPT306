@@ -53,7 +53,7 @@ public class KnockBack : MonoBehaviour
                 enemy.AddForce(difference, ForceMode2D.Impulse);
 
                 EnemyStats enemyStats = other.gameObject.GetComponentInChildren<EnemyStats>();
-                int damage = GetComponent<PlayerStats>().damage;
+                int damage = GetComponent<PlayerStats>().overallDamage;
                 enemyStats.TakeDamage(damage);
             }
         }
