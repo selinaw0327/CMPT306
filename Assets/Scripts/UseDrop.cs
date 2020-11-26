@@ -144,6 +144,13 @@ public class UseDrop : MonoBehaviour
     public void Forge(string name, Item.ItemType itemType, Sprite forgedSprite)
     {
         GetComponent<Spawn>().SpawnDroppedItem(name, itemType, forgedSprite);
+
+        // trigger for how to equip sword tutorial
+        if (!GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipTutorial)
+        {
+            GameObject.Find("Equip Copper Sword").GetComponent<DialogueTrigger>().TriggerDialogue();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipTutorial = true;
+        }
     }
 
     public void Equip(Sprite swordSprite, GameObject player)
@@ -161,6 +168,13 @@ public class UseDrop : MonoBehaviour
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().swordEquipped = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipped = swordSprite.name;
+
+        // trigger for how to attack tutorial
+        if (!GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().attackTutorial)
+        {
+            GameObject.Find("Attack Dialogue").GetComponent<DialogueTrigger>().TriggerDialogue();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().attackTutorial = true;
+        }
     }
 
     public void Drop()

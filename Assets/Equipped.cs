@@ -5,4 +5,8 @@ using UnityEngine;
 public class Equipped : MonoBehaviour
 {
     public string equipped;
+
+    public bool equipTutorial;
+
+    public bool attackTutorial;
 }

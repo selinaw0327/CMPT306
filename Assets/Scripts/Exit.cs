@@ -23,6 +23,8 @@ public class Exit : MonoBehaviour
 
         scene = SceneManager.GetActiveScene().name;
         level = ProcGenDungeon.caveLevel;
+
+        TriggerDialogue(scene, level);
     }
 
     IEnumerator Coroutine() {
@@ -32,25 +34,40 @@ public class Exit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D entity)
     {
-    if (entity.gameObject.CompareTag("Player")) {
+        if (entity.gameObject.CompareTag("Player")) {
 
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipped != "Swords_Copper")
-        {
-            GameObject.Find("Tutorial Exit Checkpoint").GetComponent<DialogueTrigger>().TriggerDialogue();
-            return;
-        }
+            if (GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipped != "Swords_Copper")
+            {
+                GameObject.Find("Tutorial Exit Checkpoint").GetComponent<DialogueTrigger>().TriggerDialogue();
+                return;
+            }
 
-        if (!prompt)
-        {
-            GameObject p = Instantiate(promptPrefab, GameObject.Find("UILayer").transform);
-            p.name = "Prompt";
-            prompt = true;
+            if (!prompt)
+            {
+                GameObject p = Instantiate(promptPrefab, GameObject.Find("UILayer").transform);
+                p.name = "Prompt";
+                prompt = true;
+            }
         }
-    }
     }
 
     public void NextLevel()
     {
         LevelLoader.LoadNextLevel();
+    }
+
+    public void TriggerDialogue (string scene, int caveLevel)
+    {
+        string level = scene + ", " + caveLevel;
+
+        switch (level)
+        {
+            // first level
+            case "CaveGameScene, 0":
+                GameObject.Find("Level 1 Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
+                break;
+            default:
+                break;
+        }
     }
 }
