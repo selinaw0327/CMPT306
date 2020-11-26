@@ -21,14 +21,14 @@ public class LevelLoader : MonoBehaviour
                                         new Vector3(-3, 11, 0)};
 
     private string[] scenes = {"MainMenu", "Intro", "TutorialScene", "CaveGameScene", "ExitRoomScene", "Outro"};
-    private static int nextScene = 0;
-    private static int previousScene = 0;
+    public int nextScene = 0;
+    public  int previousScene = 0;
 
-    private string nextMap;
+    public string nextMap;
     private CameraMovement cameraMovement;
 
-    bool loaded = false;
-    bool unloaded = false;
+    public bool loaded = false;
+    public bool unloaded = false;
 
     private GameObject tutorialDialogue;
     private GameObject bossRoomDialogue;
@@ -40,9 +40,10 @@ public class LevelLoader : MonoBehaviour
         // Ghost Dialogue trigger for Tutorial Scene
         if (previousScene == 0)
         {
-            //Debug.Log(SceneManager.GetActiveScene().name);
-            tutorialDialogue = GameObject.Find("Tutorial Dialogue");
-            tutorialDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
+            if(SceneManager.GetActiveScene().name != "MainMenu"){
+                tutorialDialogue = GameObject.Find("Tutorial Dialogue");
+                tutorialDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
+            }
         }
 
         //First boss room dialogue trigger

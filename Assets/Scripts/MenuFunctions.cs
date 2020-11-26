@@ -13,6 +13,7 @@ public class MenuFunctions : MonoBehaviour
     bool unloaded = false;
    
     void Start(){
+        if(SceneManager.GetActiveScene().name == "MainMenu")
         objectsToMove.SetActive(false);
     }
     public void LoadScene(string sceneName) {
@@ -37,15 +38,16 @@ public class MenuFunctions : MonoBehaviour
             MenuData data = SaveLoad.LoadMenuInfo();
             objectsToMove.SetActive(true);
             character = data.character;
-            
+            GameObject.FindGameObjectWithTag("Player").GetComponent<ChangeSkin>().updateSkin();
             SceneManager.LoadSceneAsync(data.levelName, LoadSceneMode.Additive);
-            SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(data.levelName));
-        
+            if(data.levelName != "TutorialScene"){
+                SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(data.levelName));
+            }
             if(!unloaded) {
-                        unloaded = true;
-                        UnloadScene("MainMenu");
-                    }
+                    unloaded = true;
+                    UnloadScene("MainMenu");
                 }
+            }
         loaded = true;
     }
 

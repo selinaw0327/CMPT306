@@ -16,9 +16,12 @@ public class ScanGrid : MonoBehaviour
 
    void Start()
     {
-        StartCoroutine(ExampleCoroutine());
+        scan();
     }
 
+    public void scan(){
+        StartCoroutine(ExampleCoroutine());
+    }
     IEnumerator ExampleCoroutine()
     {
         //yield on a new YieldInstruction that waits for 0.1 seconds.

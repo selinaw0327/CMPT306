@@ -50,6 +50,7 @@ public static class SaveLoad
 			MapSeedData data =formatter.Deserialize(stream) as MapSeedData;
 			stream.Close();
 			map.seed = data.seed;
+			map.exitPosition = data.exitPosition;
 			
 		} else {
 			Debug.LogError("No item save file at "+ path );
@@ -286,6 +287,7 @@ public static class SaveLoad
 			player.maxEnergy = data.maxenergy;
 			player.swordEquipped =  data.swordEquipped;
 			player.sword = data.sword;
+			
 			
             
 			Vector2 position;
