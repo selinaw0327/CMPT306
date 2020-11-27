@@ -21,6 +21,8 @@ public class EnemyStats : MonoBehaviour
     private Animator animator;
     private bool deathAnimationFound;
 
+    private bool itemDropped;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -65,14 +67,20 @@ public class EnemyStats : MonoBehaviour
                 if(enemyName.Equals("zombie")) {
                     if(enemyLists.wormList.Count == 0) {
                         SetDeathAnimation();
-                        transform.parent.gameObject.GetComponent<EnemyDrop>().BossRewardDrop();
+                        if(!itemDropped) {
+                            transform.parent.gameObject.GetComponent<EnemyDrop>().BossRewardDrop();
+                            itemDropped = true;
+                        }
                         DestroyEnemy();
                     }
                 }
                 else if(enemyName.Equals("Skeleton")) {
                     if(enemyLists.ratList.Count == 0) {
                         SetDeathAnimation();
-                        transform.parent.gameObject.GetComponent<EnemyDrop>().BossRewardDrop();
+                        if(!itemDropped) {
+                            transform.parent.gameObject.GetComponent<EnemyDrop>().BossRewardDrop();
+                            itemDropped = true;
+                        }
                         DestroyEnemy();
                     }
                 }
@@ -92,7 +100,10 @@ public class EnemyStats : MonoBehaviour
                 // if the enemy is not in tutorial scene, run enemy item drop script
                 else if (!transform.parent.gameObject.GetComponent<EnemyDrop>().tutorial)
                 {
-                    transform.parent.gameObject.GetComponent<EnemyDrop>().Drop();
+                    if(!itemDropped) {
+                            transform.parent.gameObject.GetComponent<EnemyDrop>().Drop();
+                            itemDropped = true;
+                        }
                 }
 
                 if (this.transform.parent.gameObject.name == "Bat"){
@@ -118,6 +129,12 @@ public class EnemyStats : MonoBehaviour
                 objectList.Remove(this.transform.parent.gameObject);
 
                 DestroyEnemy();
+
+                for(int i = 0; i < objectList.Count; i++) {
+                    if(objectList[i] == null) {
+                        objectList.RemoveAt(i);
+                    }
+                }
             }
         }
         // Debug.Log("New Health: "+ currentHealth);

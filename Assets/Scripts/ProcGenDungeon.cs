@@ -292,8 +292,8 @@ public class ProcGenDungeon : MonoBehaviour
         int rand = Random.Range(0, rockPrefabs.Length);
 
         // Adds slightly more random location to spawn
-        if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
-        if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
+        // if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
+        // if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
         
         GameObject newObject = Instantiate(rockPrefabs[rand], location, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(newObject);

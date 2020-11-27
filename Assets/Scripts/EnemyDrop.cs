@@ -93,7 +93,7 @@ public class EnemyDrop : MonoBehaviour
                 NewItem("CopperArmour", spriteAtlas.GetComponent<SpriteAtlas>().copperArmour, Item.ItemType.CopperArmour);
                 break;
             case "Skeleton":
-                NewItem("ObsidianArmour", spriteAtlas.GetComponent<SpriteAtlas>().copperArmour, Item.ItemType.ObsidianArmour);
+                NewItem("ObsidianArmour", spriteAtlas.GetComponent<SpriteAtlas>().obsidianArmour, Item.ItemType.ObsidianArmour);
                 break;
             default:
                 break;
