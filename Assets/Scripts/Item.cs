@@ -62,6 +62,7 @@ public class Item : MonoBehaviour
 
                         item.transform.SetSiblingIndex(0);
                         item.name = transform.name;
+                        inventory.slots[i].GetComponent<Slot>().itemName = item.name;
                         inventory.items[i] = transform.name;
                         inventory.inventoryItems[i] = item;
                         item.GetComponent<Image>().sprite = itemSprite;
