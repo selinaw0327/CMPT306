@@ -126,7 +126,6 @@ public class UseDrop : MonoBehaviour
                 // Code for what happens when Copper sword is right-clicked in inventory
                 Equip(spriteAtlas.GetComponent<SpriteAtlas>().copperSword, player);
                 changeSkin.CopperSkin();
-                player.GetComponent<PlayerStats>().SetAdditionalHealth(50); // this is for testing only.
                 break;
             case Item.ItemType.SilverSword:
                 // Code for what happens when Silver sword is right-clicked in inventory
@@ -137,22 +136,27 @@ public class UseDrop : MonoBehaviour
                 // Code for what happens when Iron sword is right-clicked in 
                 Equip(spriteAtlas.GetComponent<SpriteAtlas>().ironSword, player);
                 changeSkin.IronSkin();
-                player.GetComponent<PlayerStats>().SetAdditionalHealth(50);
                 player.GetComponent<PlayerStats>().SetAdditionalDamage(25);
                 break;
             case Item.ItemType.GoldSword:
                 // Code for what happens when Gold sword is right-clicked in inventory
                 Equip(spriteAtlas.GetComponent<SpriteAtlas>().goldSword, player);
                 changeSkin.GoldSkin();
-                player.GetComponent<PlayerStats>().SetAdditionalHealth(100);
                 player.GetComponent<PlayerStats>().SetAdditionalDamage(50);
                 break;
             case Item.ItemType.ObsidianSword:
                 // Code for what happens when Obsidian sword is right-clicked in inventory
                 Equip(spriteAtlas.GetComponent<SpriteAtlas>().obsidianSword, player);
                 changeSkin.ObsidianSkin();
-                player.GetComponent<PlayerStats>().SetAdditionalHealth(200);
                 player.GetComponent<PlayerStats>().SetAdditionalDamage(100);
+                break;
+            case Item.ItemType.CopperArmour:
+                player.GetComponent<PlayerStats>().SetAdditionalHealth(100);
+                UpdateQuantity(-1);
+                break;
+            case Item.ItemType.ObsidianArmour:
+                player.GetComponent<PlayerStats>().SetAdditionalHealth(200);
+                UpdateQuantity(-1);
                 break;
             default:
                 break;
