@@ -732,11 +732,11 @@ PrefabInstance:
       objectReference: {fileID: 730708628}
     - target: {fileID: 8469897182572080164, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_name
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080164, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: MenuFunctions, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080164, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -840,43 +840,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -886.08
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 499.73
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 54.18763
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25.407425
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_LocalScale.x
@@ -888,7 +888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080166, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_Name
-      value: MenuButton
+      value: BackButton
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182745867861, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_Text

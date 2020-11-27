@@ -371,8 +371,8 @@ RectTransform:
   - {fileID: 1127727230}
   - {fileID: 1790113752}
   - {fileID: 550522720}
-  - {fileID: 774826778}
   - {fileID: 883956906}
+  - {fileID: 774826778}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2872,7 +2872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2892,7 +2892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -183
+      value: -190
       objectReference: {fileID: 0}
     - target: {fileID: 8469897182572080165, guid: 00a5b3f2eb0b9ad47b3b60c0844b990c, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3787,7 +3787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -241.49066, y: -256.58386}
+  m_AnchoredPosition: {x: 292.50757, y: 1264.076}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: -0.25}
 --- !u!114 &919432106
@@ -4992,6 +4992,7 @@ MonoBehaviour:
   hungerDecreaseRate: 1
   swordEquipped: 0
   sword: none
+  deathScreenUI: {fileID: 0}
   plyerDeath: {fileID: 0}
 --- !u!61 &1085460021
 BoxCollider2D:
