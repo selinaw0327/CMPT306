@@ -54,5 +54,5 @@ MonoBehaviour:
   obsidianBar: {fileID: -2176166862104932541, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
   obsidianSword: {fileID: 8289387723579576647, guid: f97463282a2c71f47b112406118e61e3, type: 3}
   apple: {fileID: 7293598183456022363, guid: 93e579bbf46edfb4782554ba80345e6e, type: 3}
-  banana: {fileID: -5728686177044832811, guid: 7d9c35dffee05914fb90c1d33a54492a, type: 3}
-  orange: {fileID: 4121880872312635667, guid: 2db1197fa10499f4681d537e3b018cf3, type: 3}
+  bread: {fileID: 21300000, guid: c728868677dfad541b6543a1f2aec055, type: 3}
+  steak: {fileID: 21300000, guid: 2d32f96b28dc0d9479129a87f6fcc318, type: 3}

@@ -5258,6 +5258,7 @@ MonoBehaviour:
       will then be added to your inventory.'
     - 'GHOST: Click on the icon with two swords over on the right-hand side to see
       your incomplete challenges.'
+    - The arrow on the bottom left-hand corner guides you towards the exit point.
     - 'GHOST: You need to fend for yourself, fight off foes, forge your way out of
       this cave and survive. I wish you luck.'
 --- !u!1 &369657802
@@ -25439,8 +25440,7 @@ MonoBehaviour:
     sentences:
     - Careful! The creatures down here are not friendly. If you get too close to
       them, they will start to attack you.
-    - Press M to get an overview of the whole map. The arrow on the bottom left-hand
-      corner guides you towards the exit point.
+    - Press M to get an overview of the whole map.
 --- !u!1 &1015051157
 GameObject:
   m_ObjectHideFlags: 0
