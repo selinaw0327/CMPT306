@@ -178,17 +178,18 @@ public class EnemyStats : MonoBehaviour
 
     public void CalcDamage(int damageToEnemy){
         float randValue = Random.value;
-        if (randValue < .20f) 
-            {
-                criticalHit = true;
-                currentHealth -= damageToEnemy;
-            }
-        else 
-            {   
-                criticalHit = false;
-                currentHealth -= damageToEnemy * 2;
-            }
+        if (randValue < .20f) {
+            criticalHit = true;
+            currentHealth -= damageToEnemy;
         }
+        else {   
+            criticalHit = false;
+            currentHealth -= damageToEnemy * 2;
+        }
+        if(currentHealth <= 0) {
+            currentHealth = 0;
+        }
+    }
 
     public bool HasParameter(string paramName, Animator animator)
     {
