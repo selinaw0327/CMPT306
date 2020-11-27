@@ -40,7 +40,6 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject plyerDeath;
 
-
     // Start is called before the first frame update
     void Start() {
         swordEquipped = false;
@@ -104,7 +103,7 @@ public class PlayerStats : MonoBehaviour
             currentHealth = 0;
             deathScreenUI.SetActive(true);
             StartCoroutine(PauseGame());
-            StartCoroutine(PlaySoundCo());
+            StartCoroutine(PlaySoundCo()); 
         }
         healthBar.SetStat(currentHealth, overallHealth);
     }
@@ -121,8 +120,8 @@ public class PlayerStats : MonoBehaviour
     private IEnumerator PlaySoundCo()
     {
         plyerDeath.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("MainMenu"); // Restart the game
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0;
     }
 
     // Causes the player to heal
