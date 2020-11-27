@@ -125,6 +125,7 @@ public class UseDrop : MonoBehaviour
             case Item.ItemType.CopperSword:
                 // Code for what happens when Copper sword is right-clicked in inventory
                 Equip(spriteAtlas.GetComponent<SpriteAtlas>().copperSword, player);
+                player.GetComponent<PlayerStats>().SetAdditionalDamage(10);
                 changeSkin.CopperSkin();
                 break;
             case Item.ItemType.SilverSword:
