@@ -53,6 +53,8 @@ MonoBehaviour:
   goldSword: {fileID: -9004990608046106943, guid: f97463282a2c71f47b112406118e61e3, type: 3}
   obsidianBar: {fileID: -2176166862104932541, guid: c4042fa5514572b49add4a5d2110e374, type: 3}
   obsidianSword: {fileID: 8289387723579576647, guid: f97463282a2c71f47b112406118e61e3, type: 3}
+  copperArmour: {fileID: 8924663538930460010, guid: 6652ce810fad99a4cb39339a1a181f71, type: 3}
+  obsidianArmour: {fileID: 3677743741387245605, guid: 6652ce810fad99a4cb39339a1a181f71, type: 3}
   apple: {fileID: 7293598183456022363, guid: 93e579bbf46edfb4782554ba80345e6e, type: 3}
   bread: {fileID: 21300000, guid: c728868677dfad541b6543a1f2aec055, type: 3}
   steak: {fileID: 21300000, guid: 2d32f96b28dc0d9479129a87f6fcc318, type: 3}

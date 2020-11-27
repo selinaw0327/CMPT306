@@ -87,6 +87,19 @@ public class EnemyDrop : MonoBehaviour
         }
     }
 
+    public void BossRewardDrop() {
+        switch(name) {
+            case "zombie":
+                NewItem("CopperArmour", spriteAtlas.GetComponent<SpriteAtlas>().copperArmour, Item.ItemType.CopperArmour);
+                break;
+            case "Skeleton":
+                NewItem("ObsidianArmour", spriteAtlas.GetComponent<SpriteAtlas>().copperArmour, Item.ItemType.ObsidianArmour);
+                break;
+            default:
+                break;
+        }
+    }
+
     private void NewItem(string itemName, Sprite itemSprite, Item.ItemType itemType)
         {
             // Random new item spawn spot

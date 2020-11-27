@@ -62,6 +62,7 @@ public class EnemyStats : MonoBehaviour
 
         if(currentHealth <= 0) {
             if(isBoss) {
+                transform.parent.gameObject.GetComponent<EnemyDrop>().BossRewardDrop();
                 if(enemyName.Equals("zombie")) {
                     if(enemyLists.wormList.Count == 0) {
                         SetDeathAnimation();
