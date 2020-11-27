@@ -21,7 +21,9 @@ public class Item : MonoBehaviour
         GoldBar,
         GoldSword,
         ObsidianBar,
-        ObsidianSword
+        ObsidianSword,
+        CopperArmour,
+        ObsidianArmour
     }
 
     public GameObject inventoryItem;
