@@ -15,8 +15,6 @@ public class SpriteAtlas : MonoBehaviour
     public Sprite obsidianBar;
     public Sprite obsidianSword;
     public Sprite apple;
-    public Sprite banana;
-    public Sprite orange;
     public Sprite bread;
     public Sprite steak;
 }
