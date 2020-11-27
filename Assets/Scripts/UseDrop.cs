@@ -47,14 +47,17 @@ public class UseDrop : MonoBehaviour
         {
             case Item.ItemType.Fruit:
                 player.GetComponent<PlayerStats>().Heal(10);
+                Debug.Log(player.GetComponent<PlayerStats>().currentHealth);
                 UpdateQuantity(-1);
                 break;
             case Item.ItemType.Bread:
                 player.GetComponent<PlayerStats>().Heal(30);
+                Debug.Log(player.GetComponent<PlayerStats>().currentHealth);
                 UpdateQuantity(-1);
                 break;
             case Item.ItemType.Steak:
                 player.GetComponent<PlayerStats>().Heal(50);
+                Debug.Log(player.GetComponent<PlayerStats>().currentHealth);
                 UpdateQuantity(-1);
                 break;
             // BARS
@@ -123,7 +126,7 @@ public class UseDrop : MonoBehaviour
                 // Code for what happens when Copper sword is right-clicked in inventory
                 Equip(spriteAtlas.GetComponent<SpriteAtlas>().copperSword, player);
                 changeSkin.CopperSkin();
-                player.GetComponent<PlayerStats>().SetAdditionalHealth(50);
+                player.GetComponent<PlayerStats>().SetAdditionalHealth(50); // this is for testing only.
                 break;
             case Item.ItemType.SilverSword:
                 // Code for what happens when Silver sword is right-clicked in inventory
