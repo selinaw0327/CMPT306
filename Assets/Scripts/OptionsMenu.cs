@@ -3,9 +3,6 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-    //public AudioMixer audioMixer;
-    //public AudioSource audioSource;
-
     private static readonly string FristPlay = "FirstPlay";
     private static readonly string BackgroundPref = "BackgroundPref";
     private static readonly string SoundEffectsPref = "SoundEffectsPref";
@@ -52,8 +49,7 @@ public class OptionsMenu : MonoBehaviour
     }
 
     public void UpdateSound()
-    {
-        
+    { 
         backgroundAudio.volume = backgroundSlider.value;
 
         for (int j = 0; j < soundEffectsAudio.Length; j++)
@@ -61,27 +57,4 @@ public class OptionsMenu : MonoBehaviour
             soundEffectsAudio[j].volume = soundEffectsSlider.value;
         }
     }
-
-
-    //private float BGMvolume = 1f;
-
-    //private void Start()
-    //{
-    //    audioSource.Play();
-    //}
-
-    //private void Update()
-    //{
-    //    audioSource.volume = BGMvolume;
-    //}
-
-    //public void UpdateVolume(float volume)
-    //{
-    //    BGMvolume = volume;
-    //}
-
-    //public void SetVolume (float volume)
-    //{
-    //    audioMixer.SetFloat("volume", volume);
-    //}
 }
