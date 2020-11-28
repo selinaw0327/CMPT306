@@ -12,7 +12,7 @@ public class OptionsMenu : MonoBehaviour
     private int firstPlayInt;
     public Slider backgroundSlider, soundEffectsSlider;
     private float backgroundFloat, soundEffectsFloat;
-    public AudioSource[] backgroundAudio;
+    public AudioSource backgroundAudio;
     public AudioSource[] soundEffectsAudio;
 
     void Start()
@@ -21,7 +21,7 @@ public class OptionsMenu : MonoBehaviour
 
         if (firstPlayInt == 0)
         {
-            backgroundFloat = 0.25f;
+            backgroundFloat = .25f;
             soundEffectsFloat = .75f;
             backgroundSlider.value = backgroundFloat;
             soundEffectsSlider.value = soundEffectsFloat;
@@ -30,9 +30,9 @@ public class OptionsMenu : MonoBehaviour
             PlayerPrefs.SetInt(FristPlay, -1);
         } else
         {
-            PlayerPrefs.GetFloat(BackgroundPref);
+            backgroundFloat = PlayerPrefs.GetFloat(BackgroundPref);
             backgroundSlider.value = backgroundFloat;
-            PlayerPrefs.GetFloat(SoundEffectsPref);
+            soundEffectsFloat = PlayerPrefs.GetFloat(SoundEffectsPref);
             soundEffectsSlider.value = soundEffectsFloat;
         }
     }
@@ -43,9 +43,9 @@ public class OptionsMenu : MonoBehaviour
         PlayerPrefs.SetFloat(SoundEffectsPref, soundEffectsSlider.value);
     }
 
-    private void OnApplicationFocus(bool focus)
+    void OnApplicationFocus(bool inFoucs)
     {
-        if (!focus)
+        if (!inFoucs)
         {
             SaveSoundSettings();
         }
@@ -53,10 +53,8 @@ public class OptionsMenu : MonoBehaviour
 
     public void UpdateSound()
     {
-        for (int i = 0; i < backgroundAudio.Length; i++)
-        {
-            backgroundAudio[i].volume = backgroundSlider.value;
-        }
+        
+        backgroundAudio.volume = backgroundSlider.value;
 
         for (int j = 0; j < soundEffectsAudio.Length; j++)
         {
