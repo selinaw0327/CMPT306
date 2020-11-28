@@ -479,18 +479,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2055258008}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1030539866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,6 +632,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097968244}
     m_Modifications:
+    - target: {fileID: 5224373817729928324, guid: 3e4cd145b8962480290e754da6669ccd, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224373817729928324, guid: 3e4cd145b8962480290e754da6669ccd, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5224373817729928325, guid: 3e4cd145b8962480290e754da6669ccd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
