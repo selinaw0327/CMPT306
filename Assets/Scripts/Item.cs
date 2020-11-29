@@ -10,6 +10,8 @@ public class Item : MonoBehaviour
     public enum ItemType
     {
         Fruit,
+        Bread,
+        Steak,
         CopperBar,
         CopperSword,
         SilverBar,
@@ -19,7 +21,9 @@ public class Item : MonoBehaviour
         GoldBar,
         GoldSword,
         ObsidianBar,
-        ObsidianSword
+        ObsidianSword,
+        CopperArmour,
+        ObsidianArmour
     }
 
     public GameObject inventoryItem;
@@ -52,11 +56,15 @@ public class Item : MonoBehaviour
                     if (inventory.occupied[i] == false)
                     {
                         // ITEM CAN BE ADDED TO THE INVENTORY
-                        
+
                         inventory.occupied[i] = true;
                         GameObject item = Instantiate(inventoryItem, inventory.slots[i].transform, false);
+
+                        item.GetComponent<AudioSource>().Play();
+
                         item.transform.SetSiblingIndex(0);
                         item.name = transform.name;
+                        inventory.slots[i].GetComponent<Slot>().itemName = item.name;
                         inventory.items[i] = transform.name;
                         inventory.inventoryItems[i] = item;
                         item.GetComponent<Image>().sprite = itemSprite;
@@ -72,6 +80,8 @@ public class Item : MonoBehaviour
 
             if (!added)
             {
+                inventory.inventoryItems[inventory.IndexOf(name)].GetComponent<AudioSource>().Play();
+
                 inventory.quantity[inventory.IndexOf(name)] += 1;
                 added = true;
                 if(name  == "Copper Bar") {
@@ -80,8 +90,7 @@ public class Item : MonoBehaviour
                 challengeMenu.updateChallenge("pickup");
                 Destroy(gameObject);
             }
-            
-        
+
         }
     }
 

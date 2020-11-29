@@ -3,7 +3,21 @@ guid: fdeaa4f7b5cea814896b22777a8ea8e7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - groundTile: {instanceID: 0}
+  - pitTile: {instanceID: 0}
+  - topWallTile: {instanceID: 0}
+  - botWallTile: {instanceID: 0}
+  - groundMap: {instanceID: 0}
+  - pitMap: {instanceID: 0}
+  - wallMap: {instanceID: 0}
+  - player: {instanceID: 0}
+  - exitPrefab: {instanceID: 0}
+  - itemPrefab: {instanceID: 0}
+  - apple: {fileID: 7293598183456022363, guid: 93e579bbf46edfb4782554ba80345e6e, type: 3}
+  - bread: {fileID: 21300000, guid: c728868677dfad541b6543a1f2aec055, type: 3}
+  - steak: {fileID: 21300000, guid: 2d32f96b28dc0d9479129a87f6fcc318, type: 3}
+  - spriteAtlas: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

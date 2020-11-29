@@ -45,7 +45,9 @@ public class ProcGenDungeon : MonoBehaviour
 
     private List<Vector3Int> spawnLocations = new List<Vector3Int>();
 
-    public Sprite[] fruitSprites;
+    public Sprite apple;
+    public Sprite bread;
+    public Sprite steak;
     public SpriteAtlas spriteAtlas;
 
     public int seed;
@@ -273,14 +275,14 @@ public class ProcGenDungeon : MonoBehaviour
         for(int i = 0; i < spawnLocations.Count; i++) {
             int rand = Random.Range(0, 100);
 
-            if(rand < 50) { // 50% chance to spawn rocks
+            if(rand < 30) { // 30% chance to spawn rocks
                 SpawnRocks(spawnLocations[i]);
             }
-            else if(rand < 85) { // 35% chance to spawn enemies
+            else if(rand < 60) { // 30% chance to spawn enemies
                 SpawnEnemies(spawnLocations[i]);
             }
-            else { // 15% chance to spawn fruit
-                SpawnFruit(spawnLocations[i]);
+            else { // 40% chance to spawn fruit
+                SpawnFood(spawnLocations[i]);
             }    
         }
     }
@@ -290,8 +292,8 @@ public class ProcGenDungeon : MonoBehaviour
         int rand = Random.Range(0, rockPrefabs.Length);
 
         // Adds slightly more random location to spawn
-        if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
-        if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
+        // if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
+        // if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
         
         GameObject newObject = Instantiate(rockPrefabs[rand], location, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(newObject);
@@ -345,50 +347,41 @@ public class ProcGenDungeon : MonoBehaviour
     }
 
     // Randomly select a fruit to spawn
-    private void SpawnFruit(Vector3 location) {
-        int rand = Random.Range(0, fruitSprites.Length);
+    private void SpawnFood(Vector3 location) {
+        int rand = Random.Range(0, 100);
 
         // Adds slightly more random location to spawn
         // if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
         // if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
 
-        GameObject newObject = Instantiate(itemPrefab, location, Quaternion.identity, GameObject.Find("Environment").transform);
-        createdObjects.Add(newObject);
+        GameObject food = Instantiate(itemPrefab, location, Quaternion.identity, GameObject.Find("Environment").transform);
+        createdObjects.Add(food);
 
-        switch (rand) {
-            case 0:
-                newObject.name = "Banana";
-                break;
-            case 1:
-                newObject.name = "Cherries";
-                break;
-            case 2:
-                newObject.name = "Kiwi";
-                break;
-            case 3:
-                newObject.name = "Melon";
-                break;
-            case 4:
-                newObject.name = "Orange";
-                break;
-            case 5:
-                newObject.name = "Pineapple";
-                break;
-            case 6:
-                newObject.name = "Strawberry";
-                break;
-            case 7: 
-                newObject.name = "Apple";
-                break;
-            default:
-                break;
-        }        
-        newObject.GetComponent<SpriteRenderer>().sprite = fruitSprites[rand];
-        newObject.GetComponent<Item>().itemSprite = fruitSprites[rand];
-        newObject.GetComponent<Item>().itemType = Item.ItemType.Fruit;
+
+        if (rand < 40)
+        { // 40% chance to spawn apples
+            food.name = "Apple";
+            food.GetComponent<SpriteRenderer>().sprite = apple;
+            food.GetComponent<Item>().itemSprite = apple;
+            food.GetComponent<Item>().itemType = Item.ItemType.Fruit;
+        }
+        else if (rand < 75)
+        { // 35% chance to spawn bread
+            food.name = "Bread";
+            food.GetComponent<SpriteRenderer>().sprite = bread;
+            food.GetComponent<Item>().itemSprite = bread;
+            food.GetComponent<Item>().itemType = Item.ItemType.Bread;
+        }
+        else
+        { // 25% chance to spawn steak
+            food.name = "Steak";
+            food.GetComponent<SpriteRenderer>().sprite = steak;
+            food.GetComponent<Item>().itemSprite = steak;
+            food.GetComponent<Item>().itemType = Item.ItemType.Steak;
+        }
 
         ItemsOnFloorList itemLists = GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>();
-        itemLists.itemList.Add(newObject);
+        itemLists.itemList.Add(food);
     }
 
     // private void SpawnBars(GameObject newObject) {

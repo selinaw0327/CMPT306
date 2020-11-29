@@ -29,10 +29,6 @@ public class EnemyDrop : MonoBehaviour
                 {
                     NewItem("Iron Bar", spriteAtlas.GetComponent<SpriteAtlas>().ironBar, Item.ItemType.IronBar);
                 }
-                if (chance < 10)
-                {
-                    NewItem("Silver Bar", spriteAtlas.GetComponent<SpriteAtlas>().silverBar, Item.ItemType.SilverBar);
-                }
                 if (chance < 5)
                 {
                     NewItem("Gold Bar", spriteAtlas.GetComponent<SpriteAtlas>().goldBar, Item.ItemType.GoldBar);
@@ -47,10 +43,6 @@ public class EnemyDrop : MonoBehaviour
                 {
                     NewItem("Iron Bar", spriteAtlas.GetComponent<SpriteAtlas>().ironBar, Item.ItemType.IronBar);
                 }
-                if (chance < 50)
-                {
-                    NewItem("Silver Bar", spriteAtlas.GetComponent<SpriteAtlas>().silverBar, Item.ItemType.SilverBar);
-                }
                 if (chance < 20)
                 {
                     NewItem("Gold Bar", spriteAtlas.GetComponent<SpriteAtlas>().goldBar, Item.ItemType.GoldBar);
@@ -64,10 +56,6 @@ public class EnemyDrop : MonoBehaviour
                 if (chance < 10)
                 {
                     NewItem("Iron Bar", spriteAtlas.GetComponent<SpriteAtlas>().ironBar, Item.ItemType.IronBar);
-                }
-                if (chance < 20)
-                {
-                    NewItem("Silver Bar", spriteAtlas.GetComponent<SpriteAtlas>().silverBar, Item.ItemType.SilverBar);
                 }
                 if (chance < 50)
                 {
@@ -89,10 +77,23 @@ public class EnemyDrop : MonoBehaviour
                 NewItem("Apple", spriteAtlas.GetComponent<SpriteAtlas>().apple, Item.ItemType.Fruit);
                 break;
             case "Rat":
-                NewItem("Banana", spriteAtlas.GetComponent<SpriteAtlas>().banana, Item.ItemType.Fruit);
+                NewItem("Bread", spriteAtlas.GetComponent<SpriteAtlas>().bread, Item.ItemType.Bread);
                 break;
             case "Bat":
-                NewItem("Orange", spriteAtlas.GetComponent<SpriteAtlas>().orange, Item.ItemType.Fruit);
+                NewItem("Steak", spriteAtlas.GetComponent<SpriteAtlas>().steak, Item.ItemType.Steak);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void BossRewardDrop() {
+        switch(name) {
+            case "zombie":
+                NewItem("CopperArmour", spriteAtlas.GetComponent<SpriteAtlas>().copperArmour, Item.ItemType.CopperArmour);
+                break;
+            case "Skeleton":
+                NewItem("ObsidianArmour", spriteAtlas.GetComponent<SpriteAtlas>().obsidianArmour, Item.ItemType.ObsidianArmour);
                 break;
             default:
                 break;

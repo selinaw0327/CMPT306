@@ -7,8 +7,10 @@ public class PlayerStats : MonoBehaviour
 {
     // Variables needed for healthbar
     public StatBar healthBar;
-    public int maxHealth;
+    public int initialHealth;
     public int currentHealth;
+    public int additionalHealth;
+    public int overallHealth;
 
     // Energy Bar
     public StatBar energyBar;
@@ -21,8 +23,10 @@ public class PlayerStats : MonoBehaviour
     public int currentHunger;
 
     public int currentLevel = 0;
-    public int damage;
-    
+    public int initialDamage;
+    public int additionalDamage;
+    public int overallDamage;
+
     public float energyDecreaseRate;
     private float energyNextTimeToDecrease = 0.0f;
 
@@ -31,6 +35,10 @@ public class PlayerStats : MonoBehaviour
 
     public bool swordEquipped;
     public string sword = "none";
+
+    public GameObject deathScreenUI;
+
+    public GameObject plyerDeath;
 
     // Start is called before the first frame update
     void Start() {
@@ -46,7 +54,6 @@ public class PlayerStats : MonoBehaviour
                 SetAllStats(50, 200, 50);
                 break;
         }
-
     }
     
     // Update is called once per frame
@@ -62,12 +69,19 @@ public class PlayerStats : MonoBehaviour
             hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
             TakeHunger(1);
         }
+
+        if(Input.GetKeyDown(KeyCode.K)) {
+            KillPlayer();
+        }
     }
 
     private void SetAllStats(int newMaxHealth, int newMaxEnergy, int newMaxHunger) {
-        maxHealth = newMaxHealth;
-        currentHealth = maxHealth;
-        healthBar.SetMaxStat(maxHealth);
+        initialHealth = newMaxHealth;
+
+        SetOverallHealth();
+
+        currentHealth = overallHealth;
+        healthBar.SetMaxStat(overallHealth);
         healthBar.transform.position = transform.position + healthBar.offset; // Places healthbar above players head based on its offset
 
         // Set current and max energy
@@ -87,19 +101,37 @@ public class PlayerStats : MonoBehaviour
         currentHealth -= damage;
         if(currentHealth <= 0) {
             currentHealth = 0;
-            SceneManager.LoadScene("MainMenu"); // Restart the game
+            deathScreenUI.SetActive(true);
+            StartCoroutine(PauseGame());
+            StartCoroutine(PlaySoundCo()); 
         }
-        healthBar.SetStat(currentHealth, maxHealth);
+        healthBar.SetStat(currentHealth, overallHealth);
+    }
+
+    IEnumerator PauseGame() {
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0;
+    }
+
+    public void KillPlayer() {
+        TakeDamage(currentHealth);
+    }
+
+    private IEnumerator PlaySoundCo()
+    {
+        plyerDeath.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0;
     }
 
     // Causes the player to heal
     public void Heal(int healingAmount) {
         // Set current health and check if the player is at max health
         currentHealth += healingAmount;
-        if(currentHealth >= maxHealth) {
-            currentHealth = maxHealth;
+        if(currentHealth >= overallHealth) {
+            currentHealth = overallHealth;
         }
-        healthBar.SetStat(currentHealth, maxHealth);
+        healthBar.SetStat(currentHealth, overallHealth);
     }
 
     // Causes the player to lose energy
@@ -118,5 +150,29 @@ public class PlayerStats : MonoBehaviour
             currentHunger = 0;
         }
         hungerBar.SetStat(currentHunger, maxHunger);
+    }
+
+    public void SetAdditionalHealth(int i)
+    {
+        additionalHealth = i;
+        SetOverallHealth();
+        currentHealth = overallHealth;
+        healthBar.SetMaxStat(overallHealth);
+    }
+
+    public void SetOverallHealth()
+    {
+        overallHealth = initialHealth + additionalHealth;
+    }
+
+    public void SetAdditionalDamage(int i)
+    {
+        additionalDamage = i;
+        SetOverallDamage();
+    }
+
+    public void SetOverallDamage()
+    {
+        overallDamage = initialDamage + additionalDamage;
     }
 }

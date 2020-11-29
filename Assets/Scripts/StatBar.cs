@@ -20,6 +20,10 @@ public class StatBar : MonoBehaviour
 
     public Vector3 offset;
 
+    public Text displayText;
+    private string currentHealthText = "";
+    private string maxHealthText = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +36,22 @@ public class StatBar : MonoBehaviour
     // Used at the start of the game to set maximum and current health / maximum and current values
     public void SetMaxStat(int maxStat) {
         // Check if segments has been initialized
-        if(segments == null) { 
+        if (segments == null)
+        {
             segments = new List<GameObject>();
         }
+        else
+        {
+            foreach (GameObject g in segments)
+            {
+                Destroy(g);
+            }
+        }
+
+        currentHealthText = GameObject.Find("Player").GetComponent<PlayerStats>().currentHealth.ToString();
+        maxHealthText = maxStat.ToString();
+        displayText.text = currentHealthText + " / " + maxHealthText;
+        
 
         segmentSpacing = segmentPanel.GetComponent<GridLayoutGroup>().spacing.x;
 
@@ -64,5 +81,8 @@ public class StatBar : MonoBehaviour
 
     public void SetStat(int currentStat, int maxStat) {
         slider.value = maxStat - currentStat;
+        currentHealthText = currentStat.ToString();
+        maxHealthText = maxStat.ToString();
+        displayText.text = currentHealthText + " / " + maxHealthText;
     }
 }

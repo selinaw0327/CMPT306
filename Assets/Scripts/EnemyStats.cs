@@ -21,6 +21,8 @@ public class EnemyStats : MonoBehaviour
     private Animator animator;
     private bool deathAnimationFound;
 
+    private bool itemDropped;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -46,18 +48,18 @@ public class EnemyStats : MonoBehaviour
     }
 
     // Causes the enemy to take damage
-    public void TakeDamage(int damage) {
+    public void TakeDamage(int damageToEnemy) {
 
         getHit = true;
-        Debug.Log("Current health:"+ currentHealth + "Damage: "+ damage);
+        Debug.Log("Current health:"+ currentHealth + "Damage: "+ damageToEnemy);
         // Set current health and check if the enemy has died
        
        // calculate damage 
-        CalcDamage();
+        CalcDamage(damageToEnemy);
 
         // Show the enemy's damage 
         if (damageText){
-            ShowDamageText();
+            ShowDamageText(damageToEnemy);
         }
 
         if(currentHealth <= 0) {
@@ -65,12 +67,20 @@ public class EnemyStats : MonoBehaviour
                 if(enemyName.Equals("zombie")) {
                     if(enemyLists.wormList.Count == 0) {
                         SetDeathAnimation();
+                        if(!itemDropped) {
+                            transform.parent.gameObject.GetComponent<EnemyDrop>().BossRewardDrop();
+                            itemDropped = true;
+                        }
                         DestroyEnemy();
                     }
                 }
                 else if(enemyName.Equals("Skeleton")) {
                     if(enemyLists.ratList.Count == 0) {
                         SetDeathAnimation();
+                        if(!itemDropped) {
+                            transform.parent.gameObject.GetComponent<EnemyDrop>().BossRewardDrop();
+                            itemDropped = true;
+                        }
                         DestroyEnemy();
                     }
                 }
@@ -90,7 +100,10 @@ public class EnemyStats : MonoBehaviour
                 // if the enemy is not in tutorial scene, run enemy item drop script
                 else if (!transform.parent.gameObject.GetComponent<EnemyDrop>().tutorial)
                 {
-                    transform.parent.gameObject.GetComponent<EnemyDrop>().Drop();
+                    if(!itemDropped) {
+                            transform.parent.gameObject.GetComponent<EnemyDrop>().Drop();
+                            itemDropped = true;
+                        }
                 }
 
                 if (this.transform.parent.gameObject.name == "Bat"){
@@ -116,19 +129,25 @@ public class EnemyStats : MonoBehaviour
                 objectList.Remove(this.transform.parent.gameObject);
 
                 DestroyEnemy();
+
+                for(int i = 0; i < objectList.Count; i++) {
+                    if(objectList[i] == null) {
+                        objectList.RemoveAt(i);
+                    }
+                }
             }
         }
         // Debug.Log("New Health: "+ currentHealth);
         healthBar.SetStat(currentHealth, maxHealth);
     }
 
-    public void ShowDamageText(){
+    public void ShowDamageText(int damageToEnemy){
 
         var damageTextObject = Instantiate(damageText, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
 
         // critical hit 
         if(criticalHit){
-            var damageAmount = damage * 2;
+            var damageAmount = damageToEnemy * 2;
             var TextMeshObject = damageTextObject.GetComponentInChildren<TextMesh>();
             TextMeshObject.text = "-" + damageAmount.ToString();
             TextMeshObject.color = Color.yellow;
@@ -137,7 +156,7 @@ public class EnemyStats : MonoBehaviour
         }
         // normal damage
         else{
-            damageTextObject.GetComponentInChildren<TextMesh>().text = "-" + damage.ToString();           
+            damageTextObject.GetComponentInChildren<TextMesh>().text = "-" + damageToEnemy.ToString();           
         }
 
 
@@ -157,19 +176,20 @@ public class EnemyStats : MonoBehaviour
 
     }
 
-    public void CalcDamage(){
+    public void CalcDamage(int damageToEnemy){
         float randValue = Random.value;
-        if (randValue < .20f) 
-            {
-                criticalHit = true;
-                currentHealth -= damage;
-            }
-        else 
-            {   
-                criticalHit = false;
-                currentHealth -= damage * 2;
-            }
+        if (randValue < .20f) {
+            criticalHit = true;
+            currentHealth -= damageToEnemy;
         }
+        else {   
+            criticalHit = false;
+            currentHealth -= damageToEnemy * 2;
+        }
+        if(currentHealth <= 0) {
+            currentHealth = 0;
+        }
+    }
 
     public bool HasParameter(string paramName, Animator animator)
     {
