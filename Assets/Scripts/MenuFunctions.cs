@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,11 +11,14 @@ public class MenuFunctions : MonoBehaviour
 
     bool loaded = false;
     bool unloaded = false;
+
+    [SerializeField] GameObject exitPanel;
    
     void Start(){
         if(SceneManager.GetActiveScene().name == "MainMenu")
         objectsToMove.SetActive(false);
     }
+
     public void LoadScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
         
@@ -25,11 +28,18 @@ public class MenuFunctions : MonoBehaviour
         character = characterSelected;
     }
 
-    public void QuitGame() {
+    public void QuitGame(int choice) {
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-        #else 
-            Application.Quit();
+        #else
+            if (exitPanel)
+            {
+            exitPanel.SetActive(true);
+            }
+            if (choice == 1)
+            {
+                Application.Quit();
+            }
         #endif
     }
 
