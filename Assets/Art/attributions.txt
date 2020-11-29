@@ -1,3 +1,55 @@
 UI - Buch @ https://opengameart.org/users/buch
 
 Roguelike/RPG Items: If possible, please link to my twitter (@JoeCreates) when giving credit. Thanks!
+
+
+art:Zelda-like tilesets and sprites
+author: ArMM1998
+https://opengameart.org/content/zelda-like-tilesets-and-sprites
+
+
+art: Stendhal Ghost
+author: Kimmo Rundelin
+https://opengameart.org/content/stendhal-ghost
+Copyright/Attribution Notice: 
+Copyright © 2017 Kimmo Rundelin
+
+
+art: simple map tiles
+author: MELLE
+https://opengameart.org/content/simple-map-tiles
+
+
+art: Zombie animations
+author: irmirx
+https://opengameart.org/content/zombie-animations
+Copyright/Attribution Notice: 
+Irina Mir (irmirx)
+
+art: Skeleton animations
+author: irmirx
+https://opengameart.org/content/skeleton-animations
+Copyright/Attribution Notice: 
+Irina Mir (irmirx)
+
+art: Vampire animations
+author: irmirx
+https://opengameart.org/content/vampire-animations
+Copyright/Attribution Notice: 
+Irina Mir (irmirx)
+
+art: Bat (Rework)
+Author: AntumDeluge
+https://opengameart.org/content/tiny-characters-set
+Copyright/Attribution Notice: 
+Created by bagzie.
+
+art: Rodents (Rat Rework)
+Author: AntumDeluge
+https://opengameart.org/content/rodents-rat-rework
+Copyright/Attribution Notice: 
+Created by Tuomo Untinen (Reemax) & Jordan Irwin (AntumDeluge)
+
+art: "Skyll" Floating Skull Worm
+Author: qubodup
+https://opengameart.org/content/skyll-floating-skull-worm
