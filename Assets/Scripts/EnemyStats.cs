@@ -180,11 +180,11 @@ public class EnemyStats : MonoBehaviour
         float randValue = Random.value;
         if (randValue < .20f) {
             criticalHit = true;
-            currentHealth -= damageToEnemy;
+            currentHealth -= damageToEnemy * 2;
         }
         else {   
             criticalHit = false;
-            currentHealth -= damageToEnemy * 2;
+            currentHealth -= damageToEnemy;
         }
         if(currentHealth <= 0) {
             currentHealth = 0;

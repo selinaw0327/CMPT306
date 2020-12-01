@@ -60,17 +60,17 @@ public class ProcGenDungeon : MonoBehaviour
     public void Start()
     {
         // Set Size of cave depending on level
-        // switch(caveLevel) {
-        //     case 0:
-        //         maxRouteLength = 100;
-        //         break;
-        //     case 1:
-        //         maxRouteLength = 150;
-        //         break;
-        //     case 2:
-        //         maxRouteLength = 200;
-        //         break;
-        // }
+        switch(caveLevel) {
+            case 0:
+                maxRouteLength = 150;
+                break;
+            case 1:
+                maxRouteLength = 200;
+                break;
+            case 2:
+                maxRouteLength = 250;
+                break;
+        }
 
         seed = Random.Range(1, 10000000);
         onload = false;
@@ -320,7 +320,7 @@ public class ProcGenDungeon : MonoBehaviour
     // Second Level: Worms and Rats
     // Third Level: Worms, Rats, and Bats
     private void SpawnEnemies(Vector3 location) {
-        int rand = Random.Range(0 , caveLevel + 1);
+        int rand = Random.Range(0, caveLevel + 1);
         GameObject newObject;
 
         // Adds slightly more random location to spawn
@@ -351,8 +351,8 @@ public class ProcGenDungeon : MonoBehaviour
         int rand = Random.Range(0, 100);
 
         // Adds slightly more random location to spawn
-        // if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
-        // if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
+        if(Random.Range(0, 2) == 1) location.x++; // 50% chance to move the object right one tile
+        if(Random.Range(0, 2) == 1) location.y++; // 50% chance to move the object up one tile
 
         GameObject food = Instantiate(itemPrefab, location, Quaternion.identity, GameObject.Find("Environment").transform);
         createdObjects.Add(food);

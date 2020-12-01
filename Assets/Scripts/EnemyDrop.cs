@@ -25,25 +25,25 @@ public class EnemyDrop : MonoBehaviour
         switch (name)
         {
             case "Worm":
-                if (chance < 84)
+                if (chance < 90)
                 {
                     NewItem("Iron Bar", spriteAtlas.GetComponent<SpriteAtlas>().ironBar, Item.ItemType.IronBar);
                 }
-                if (chance < 5)
+                if (chance < 20)
                 {
                     NewItem("Gold Bar", spriteAtlas.GetComponent<SpriteAtlas>().goldBar, Item.ItemType.GoldBar);
                 }
-                if (chance < 1)
+                if (chance < 10)
                 {
                     NewItem("Obsidian Bar", spriteAtlas.GetComponent<SpriteAtlas>().obsidianBar, Item.ItemType.ObsidianBar);
                 }
                 break;
             case "Rat":
-                if (chance < 30)
+                if (chance < 20)
                 {
                     NewItem("Iron Bar", spriteAtlas.GetComponent<SpriteAtlas>().ironBar, Item.ItemType.IronBar);
                 }
-                if (chance < 20)
+                if (chance < 70)
                 {
                     NewItem("Gold Bar", spriteAtlas.GetComponent<SpriteAtlas>().goldBar, Item.ItemType.GoldBar);
                 }
@@ -53,15 +53,11 @@ public class EnemyDrop : MonoBehaviour
                 }
                 break;
             case "Bat":
-                if (chance < 10)
-                {
-                    NewItem("Iron Bar", spriteAtlas.GetComponent<SpriteAtlas>().ironBar, Item.ItemType.IronBar);
-                }
-                if (chance < 50)
+                if (chance < 90)
                 {
                     NewItem("Gold Bar", spriteAtlas.GetComponent<SpriteAtlas>().goldBar, Item.ItemType.GoldBar);
                 }
-                if (chance < 20)
+                if (chance < 50)
                 {
                     NewItem("Obsidian Bar", spriteAtlas.GetComponent<SpriteAtlas>().obsidianBar, Item.ItemType.ObsidianBar);
                 }
