@@ -334,6 +334,7 @@ public class SaveLoadRunner : MonoBehaviour
             newBat.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(batData.currentHealth, batData.maxHealth);
             newBat.transform.GetComponentInChildren<EnemyStats>().isBoss = false;
             newBat.transform.GetComponentInChildren<EnemyStats>().enemyName = "Bat";
+            newBat.name = "Bat";
             enemyLists.batList.Add(newBat);
         }
         foreach(EnemyData ratData in enemyLists.ratDataList){
@@ -350,6 +351,7 @@ public class SaveLoadRunner : MonoBehaviour
             newRat.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(ratData.currentHealth, ratData.maxHealth);
             newRat.transform.GetComponentInChildren<EnemyStats>().isBoss = false;
             newRat.transform.GetComponentInChildren<EnemyStats>().enemyName = "Rat";
+            newRat.name = "Rat";
             enemyLists.ratList.Add(newRat);
         }
         foreach(EnemyData wormData in enemyLists.wormDataList){
@@ -365,6 +367,7 @@ public class SaveLoadRunner : MonoBehaviour
             newWorm.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(wormData.currentHealth,wormData.maxHealth);
             newWorm.transform.GetComponentInChildren<EnemyStats>().isBoss = false;
             newWorm.transform.GetComponentInChildren<EnemyStats>().enemyName = "Worm";
+            newWorm.name = "Worm";
             enemyLists.wormList.Add(newWorm);
         }
         foreach(EnemyData vampData in enemyLists.vampDataList){
@@ -381,6 +384,7 @@ public class SaveLoadRunner : MonoBehaviour
             newVamp.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(vampData.currentHealth, vampData.maxHealth);
             newVamp.transform.GetComponentInChildren<EnemyStats>().isBoss = true;
             newVamp.transform.GetComponentInChildren<EnemyStats>().enemyName = "Vampire";
+            newVamp.name = "Vampire";
             enemyLists.vampList.Add(newVamp);
         }
         foreach(EnemyData zombData in enemyLists.zombDataList){
@@ -397,6 +401,7 @@ public class SaveLoadRunner : MonoBehaviour
             newZomb.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(zombData.currentHealth, zombData.maxHealth);
             newZomb.transform.GetComponentInChildren<EnemyStats>().isBoss = true;
             newZomb.transform.GetComponentInChildren<EnemyStats>().enemyName = "zombie";
+            newZomb.name = "zombie";
             enemyLists.zombList.Add(newZomb);
         }
         foreach(EnemyData skelData in enemyLists.skelDataList){
@@ -412,6 +417,7 @@ public class SaveLoadRunner : MonoBehaviour
             newSkel.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(skelData.currentHealth,skelData.maxHealth);
             newSkel.transform.GetComponentInChildren<EnemyStats>().isBoss = true;
             newSkel.transform.GetComponentInChildren<EnemyStats>().enemyName = "Skeleton";
+            newSkel.name = "Skeleton";
             enemyLists.skelList.Add(newSkel);
         }
         enemyLists.batDataList = new List<EnemyData>();

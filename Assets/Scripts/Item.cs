@@ -44,6 +44,11 @@ public class Item : MonoBehaviour
         itemSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
     }
 
+    void Update()
+    {
+         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+    }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();

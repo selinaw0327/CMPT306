@@ -9,14 +9,19 @@ public class ChallengeMenu : MonoBehaviour
 {
     public Text challengeText;
     public Text completedText;
-    
+
+    public Text newText;
     private bool GameIsPaused = false;
 
     public GameObject challengeMenuUI;
     public GameObject challengeCompletedUI;
+    public GameObject newChallengeUI;
 
     private float  timeToCloseCompleted = 4.0f;
     private bool completedOpen = false;
+    
+    private bool newOpen = false;
+    private float  timeToCloseNew = 4.0f;
 
     public GameObject incomplete;
 
@@ -48,7 +53,7 @@ public class ChallengeMenu : MonoBehaviour
     }
     void Update()
     {
-        incomplete = GameObject.FindGameObjectWithTag("Incomplete");
+        
         if(Input.GetKeyDown(KeyCode.LeftControl)){
             ShowHide();
         }
@@ -64,12 +69,29 @@ public class ChallengeMenu : MonoBehaviour
                 challengeText.text += "\n\n";
             }
         }
-        if(completedOpen){
+        if(newOpen && completedOpen){
+            newChallengeUI.SetActive(false);
+            if(timeToCloseCompleted > 0){
+                timeToCloseCompleted -= Time.unscaledDeltaTime;
+            } else {
+                closeCompleted();
+                newChallengeUI.SetActive(true);
+                timeToCloseCompleted = 2.0f;
+            }
+
+        } else if(completedOpen){
             if(timeToCloseCompleted > 0){
                 timeToCloseCompleted -= Time.unscaledDeltaTime;
             } else {
                 closeCompleted();
                 timeToCloseCompleted = 2.0f;
+            }
+        } else if(newOpen){
+            if(timeToCloseNew> 0){
+                timeToCloseNew -= Time.unscaledDeltaTime;
+            } else {
+                closeNew();
+                timeToCloseNew = 2.0f;
             }
         }
 
@@ -104,6 +126,9 @@ public class ChallengeMenu : MonoBehaviour
         
         
         challengeList.Add(newChallenge);
+        newText.text = description;
+        
+        
     }   
 
     public void incrementChallenge(string name ){
@@ -162,6 +187,7 @@ public class ChallengeMenu : MonoBehaviour
         {
             Resume();
             closeCompleted();
+            closeNew();
         }
     }
 
@@ -180,20 +206,31 @@ public class ChallengeMenu : MonoBehaviour
     public void openCompleted() {
         completedOpen = true;
         challengeCompletedUI.SetActive(true);
-        GameIsPaused = true;
+        
 
     }
 
     public void closeCompleted() {
         completedOpen = false;
         challengeCompletedUI.SetActive(false);
-        GameIsPaused = false;
+        
+    }
+
+    public void openNew() {
+        newOpen = true;
+        newChallengeUI.SetActive(true);
+        
+
+    }
+
+    public void closeNew() {
+        newOpen = false;
+        newChallengeUI.SetActive(false);
+        
     }
 
     private void OnComplete(string challengeName){
-        if(challengeName == "10cop"){
-            AddChallenge("Kill 5 bats", "5bat", 5);
-        }
+        
 
         // trigger dialogue
         switch (challengeName)
@@ -203,6 +240,12 @@ public class ChallengeMenu : MonoBehaviour
                 break;
             case "10cop":
                 GameObject.Find("Forge Copper Sword").GetComponent<DialogueTrigger>().TriggerDialogue();
+                AddChallenge("Forge a copper Sword with your 10 copper", "copSword");
+                openNew();
+                break;
+            case "copSword":
+                AddChallenge("Defeat the bat", "batTutorial");
+                openNew();
                 break;
             default:
                 break;

@@ -108,7 +108,7 @@ public class EnemyStats : MonoBehaviour
 
                 if (this.transform.parent.gameObject.name == "Bat"){
                     ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
-                    challengeMenu.updateChallenge("5bat");
+                    challengeMenu.updateChallenge("batTutorial");
                 }
 
                 List<GameObject> objectList;
