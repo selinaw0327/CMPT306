@@ -127,6 +127,7 @@ public class ChallengeMenu : MonoBehaviour
         
         challengeList.Add(newChallenge);
         newText.text = description;
+        openNew();
         
         
     }   
@@ -241,11 +242,11 @@ public class ChallengeMenu : MonoBehaviour
             case "10cop":
                 GameObject.Find("Forge Copper Sword").GetComponent<DialogueTrigger>().TriggerDialogue();
                 AddChallenge("Forge a copper Sword with your 10 copper", "copSword");
-                openNew();
+                
                 break;
             case "copSword":
                 AddChallenge("Defeat the bat", "batTutorial");
-                openNew();
+                
                 break;
             default:
                 break;
