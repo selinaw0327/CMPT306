@@ -5182,7 +5182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 123.16785, y: 425.38544}
+  m_AnchoredPosition: {x: 501.91785, y: 1348.767}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: -0.25}
 --- !u!114 &293317640
@@ -27399,6 +27399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bat
       objectReference: {fileID: 0}
+    - target: {fileID: 4447748098873355763, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6740966554016197309, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
@@ -27505,7 +27509,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 5
-  invincibleTime: 0.5
 --- !u!114 &1200133272
 MonoBehaviour:
   m_ObjectHideFlags: 0
