@@ -15,7 +15,7 @@ public class LevelLoader : MonoBehaviour
     public GameObject[] bosses;
     public GameObject[] enemies;
     private Vector3[] enemyLocations = {new Vector3(0, 19, 0), 
-                                        new Vector3(4, 16, 9),
+                                        new Vector3(4, 16, 0),
                                         new Vector3(-4, 16, 0),
                                         new Vector3(3, 11, 0),
                                         new Vector3(-3, 11, 0)};
@@ -58,7 +58,7 @@ public class LevelLoader : MonoBehaviour
     }
 
     IEnumerator LateStart() {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
 
         objectsToMove = GameObject.Find("ObjectsToMove");
         
@@ -80,6 +80,7 @@ public class LevelLoader : MonoBehaviour
                 default:
                     break;
             }
+            newBoss.layer = 8;
             
 
             // Spawn enemies and add them to the correct list
@@ -101,6 +102,7 @@ public class LevelLoader : MonoBehaviour
                 }
                 newEnemy.name = enemies[ProcGenDungeon.caveLevel].name;
                 newEnemy.GetComponent<EnemyDrop>().bossRoom = true;
+                newEnemy.layer = 8;
             }
         }
     }
