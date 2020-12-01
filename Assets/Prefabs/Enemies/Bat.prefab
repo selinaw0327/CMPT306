@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1842917106486771212}
-  maxHealth: 100
+  maxHealth: 150
   currentHealth: 0
   isBoss: 0
   enemyName: 
-  damage: 10
+  damage: 25
   damageText: {fileID: 3548901578697284184, guid: 41666949b967c41cb865556ed1bd15fd, type: 3}
   getHit: 0
 --- !u!1 &593757828702648435

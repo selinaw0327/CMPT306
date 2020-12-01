@@ -53,3 +53,16 @@ Created by Tuomo Untinen (Reemax) & Jordan Irwin (AntumDeluge)
 art: "Skyll" Floating Skull Worm
 Author: qubodup
 https://opengameart.org/content/skyll-floating-skull-worm
+
+
+art: "Golden UI - Bigger Than Ever Edition"
+Author: Buch
+https://opengameart.org/users/buch
+
+art: "24 Armor Icons"
+Author: Curtis Merry
+https://opengameart.org/content/24-armor-icons
+
+art: "Health Bar"
+Author: Brackeys
+https://www.youtube.com/watch?v=BLfNP4Sc_iA
