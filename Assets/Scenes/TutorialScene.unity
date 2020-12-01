@@ -5182,7 +5182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -1411.5117, y: 1152.766}
+  m_AnchoredPosition: {x: -960, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: -0.25}
 --- !u!114 &293317640
@@ -27789,7 +27789,7 @@ Transform:
   - {fileID: 1557080428}
   - {fileID: 298504636}
   m_Father: {fileID: 1785169747}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1200133280
 AudioSource:
@@ -31229,7 +31229,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1349442595346049893, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1349442596836745965, guid: 5e6a3db391d4d234b80b33748abaf5d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31598,8 +31598,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1581913025}
-  - {fileID: 7075723358818538896}
   - {fileID: 1200133279}
+  - {fileID: 7075723358818538896}
   - {fileID: 845661565}
   - {fileID: 1313871669}
   - {fileID: 1508107732}
@@ -34574,7 +34574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7075723357422317500, guid: 6902b61eb889886418175ff727129d86, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7075723357422317500, guid: 6902b61eb889886418175ff727129d86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

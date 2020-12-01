@@ -157,6 +157,7 @@ public class LevelLoader : MonoBehaviour
                 SceneManager.LoadScene("TutorialScene");
             }
             else if(nextScene == 5) { // If end of game, load outro
+                ProcGenDungeon.caveLevel = 0;
                 SceneManager.LoadScene("Outro");
             }
             else if(nextScene == 0) { // If outro, load main menu
