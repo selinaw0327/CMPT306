@@ -72,7 +72,7 @@ public class PlayerStats : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.K)) {
             KillPlayer();
-        }
+        } 
     }
 
     private void SetAllStats(int newMaxHealth, int newMaxEnergy, int newMaxHunger) {
@@ -103,25 +103,18 @@ public class PlayerStats : MonoBehaviour
             currentHealth = 0;
             deathScreenUI.SetActive(true);
             StartCoroutine(PauseGame());
-            StartCoroutine(PlaySoundCo()); 
         }
         healthBar.SetStat(currentHealth, overallHealth);
     }
 
     IEnumerator PauseGame() {
+        plyerDeath.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1f);
         Time.timeScale = 0;
     }
 
     public void KillPlayer() {
         TakeDamage(currentHealth);
-    }
-
-    private IEnumerator PlaySoundCo()
-    {
-        plyerDeath.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(1f);
-        Time.timeScale = 0;
     }
 
     // Causes the player to heal
