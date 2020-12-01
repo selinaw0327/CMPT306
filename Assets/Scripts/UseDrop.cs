@@ -173,6 +173,8 @@ public class UseDrop : MonoBehaviour
         if (!player.GetComponent<Equipped>().equipTutorial)
         {
             GameObject.Find("Equip Copper Sword").GetComponent<DialogueTrigger>().TriggerDialogue();
+            ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+            challengeMenu.updateChallenge("copSword");
             player.GetComponent<Equipped>().equipTutorial = true;
         }
     }
