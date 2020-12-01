@@ -5,12 +5,12 @@ using UnityEngine;
 public class KnockBack : MonoBehaviour
 {
     public float thrust;
-
+    static private bool invincible;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        invincible = false;
     }
 
     // Update is called once per frame
@@ -36,9 +36,13 @@ public class KnockBack : MonoBehaviour
                 difference = difference.normalized * thrust;
                 enemy.AddForce(difference, ForceMode2D.Impulse);
 
-                PlayerStats playerStats = other.GetComponent<PlayerStats>();
-                int damage = gameObject.GetComponentInChildren<EnemyStats>().damage;
-                playerStats.TakeDamage(damage);
+                if (!invincible)
+                {
+                    PlayerStats playerStats = other.GetComponent<PlayerStats>();
+                    int damage = gameObject.GetComponentInChildren<EnemyStats>().damage;
+                    playerStats.TakeDamage(damage);
+                    StartCoroutine(InvinsibleCo());
+                }
             }
         }
         else if (other.gameObject.CompareTag("enemy") && gameObject.GetComponent<PlayerMovement>().currentState == PlayerState.attack)
@@ -57,5 +61,12 @@ public class KnockBack : MonoBehaviour
                 enemyStats.TakeDamage(damage);
             }
         }
+    }
+
+    IEnumerator InvinsibleCo()
+    {
+        invincible = true;
+        yield return new WaitForSeconds(0.75f); // amount of time it takes for another enenmy to be able to attack
+        invincible = false;
     }
 }
