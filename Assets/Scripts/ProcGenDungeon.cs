@@ -60,17 +60,17 @@ public class ProcGenDungeon : MonoBehaviour
     public void Start()
     {
         // Set Size of cave depending on level
-        // switch(caveLevel) {
-        //     case 0:
-        //         maxRouteLength = 100;
-        //         break;
-        //     case 1:
-        //         maxRouteLength = 150;
-        //         break;
-        //     case 2:
-        //         maxRouteLength = 200;
-        //         break;
-        // }
+        switch(caveLevel) {
+            case 0:
+                maxRouteLength = 150;
+                break;
+            case 1:
+                maxRouteLength = 200;
+                break;
+            case 2:
+                maxRouteLength = 250;
+                break;
+        }
 
         seed = Random.Range(1, 10000000);
         onload = false;
