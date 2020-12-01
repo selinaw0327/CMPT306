@@ -7,16 +7,12 @@ public class KnockBack : MonoBehaviour
     public float thrust;
     static private bool invincible;
 
+    public GameObject attack;
+
     // Start is called before the first frame update
     void Start()
     {
         invincible = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,7 +31,7 @@ public class KnockBack : MonoBehaviour
                 Vector2 difference = enemy.transform.position - other.gameObject.transform.position;
                 difference = difference.normalized * thrust;
                 enemy.AddForce(difference, ForceMode2D.Impulse);
-
+                attack.GetComponent<AudioSource>().Play();
                 if (!invincible)
                 {
                     PlayerStats playerStats = other.GetComponent<PlayerStats>();
