@@ -220,6 +220,7 @@ public class SaveLoadRunner : MonoBehaviour
                 spriteTexture.Apply();
                 Sprite loadedSprite = Sprite.Create(spriteTexture, new Rect(0.0f,0.0f , itemData.spriteW, itemData.spriteH), new Vector2(0.5f, 0.5f));
                 newItem.GetComponent<Image>().sprite = loadedSprite;
+                inventory.inventoryItems[i] = newItem;
             }
             i++;
         }
@@ -462,6 +463,7 @@ public class SaveLoadRunner : MonoBehaviour
             
             item.GetComponent<Item>().itemSprite = loadedSprite;
             item.GetComponent<Item>().itemType = itemData.itemType;
+            item.GetComponent<Item>().inventory = inventory;
             GameObject.FindGameObjectWithTag("ItemsOnFloor").GetComponent<ItemsOnFloorList>().itemList.Add(newItem);
         }
         itemsOnFloorList.itemDataList = new List<ItemData>();

@@ -27,7 +27,7 @@ public class Item : MonoBehaviour
     }
 
     public GameObject inventoryItem;
-    private Inventory inventory;
+    public Inventory inventory;
 
     public Sprite itemSprite;
     
@@ -44,10 +44,7 @@ public class Item : MonoBehaviour
         itemSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
     }
 
-    void Update()
-    {
-         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-    }
+ 
 
     void OnTriggerEnter2D(Collider2D collider)
     {
