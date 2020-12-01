@@ -5055,7 +5055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -1564, y: 1748}
+  m_AnchoredPosition: {x: 146, y: 582}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: -0.25}
 --- !u!114 &293317640
@@ -27275,6 +27275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bat
       objectReference: {fileID: 0}
+    - target: {fileID: 6375785585615990826, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 1705202446}
     - target: {fileID: 6740966554016197309, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
@@ -27381,6 +27385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 5
+  attack: {fileID: 0}
 --- !u!114 &1200133272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31286,6 +31291,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1705202446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5391323349417760027, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
+  m_PrefabInstance: {fileID: 1198045244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724589561
 GameObject:
   m_ObjectHideFlags: 0
