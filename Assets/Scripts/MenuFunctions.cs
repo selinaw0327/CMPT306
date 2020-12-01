@@ -11,8 +11,6 @@ public class MenuFunctions : MonoBehaviour
 
     bool loaded = false;
     bool unloaded = false;
-
-    [SerializeField] GameObject exitPanel;
    
     void Start(){
         if(SceneManager.GetActiveScene().name == "MainMenu")
@@ -28,18 +26,11 @@ public class MenuFunctions : MonoBehaviour
         character = characterSelected;
     }
 
-    public void QuitGame(int choice) {
+    public void QuitGame() {
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else
-            if (exitPanel)
-            {
-            exitPanel.SetActive(true);
-            }
-            if (choice == 1)
-            {
-                Application.Quit();
-            }
+            Application.Quit();
         #endif
     }
 
