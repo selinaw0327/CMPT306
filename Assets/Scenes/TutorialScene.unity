@@ -27505,6 +27505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 5
+  invincibleTime: 0.5
 --- !u!114 &1200133272
 MonoBehaviour:
   m_ObjectHideFlags: 0
