@@ -40,9 +40,12 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject plyerDeath;
 
+    public bool invincible;
+
     // Start is called before the first frame update
     void Start() {
         swordEquipped = false;
+        invincible = false;
         switch (MenuFunctions.character) {
             case 1:
                 SetAllStats(100, 150, 100);
@@ -167,5 +170,17 @@ public class PlayerStats : MonoBehaviour
     public void SetOverallDamage()
     {
         overallDamage = initialDamage + additionalDamage;
+    }
+
+    public void StartInvincibility()
+    {
+        StartCoroutine(InvinsibleCo());
+    }
+
+    IEnumerator InvinsibleCo()
+    {
+        invincible = true;
+        yield return new WaitForSeconds(0.75f); // amount of time it takes for another enenmy to be able to attack
+        invincible = false;
     }
 }

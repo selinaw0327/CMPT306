@@ -5055,7 +5055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -866, y: 1502}
+  m_AnchoredPosition: {x: -58.01593, y: 1208.8256}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: -0.25}
 --- !u!114 &293317640
@@ -27829,6 +27829,7 @@ MonoBehaviour:
   sword: none
   deathScreenUI: {fileID: 1464607308}
   plyerDeath: {fileID: 1667085940}
+  invincible: 0
 --- !u!61 &1200133274
 BoxCollider2D:
   m_ObjectHideFlags: 0
