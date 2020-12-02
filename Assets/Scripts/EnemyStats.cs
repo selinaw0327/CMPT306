@@ -8,7 +8,7 @@ public class EnemyStats : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
-     public bool isBoss;
+    public bool isBoss;
 
     private EnemyLists enemyLists;
     public string enemyName;
@@ -22,6 +22,8 @@ public class EnemyStats : MonoBehaviour
     private bool deathAnimationFound;
 
     private bool itemDropped;
+
+    public GameObject death;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +41,7 @@ public class EnemyStats : MonoBehaviour
         criticalHit = false;
         animator = transform.parent.gameObject.GetComponent<Animator>();
         deathAnimationFound = HasParameter("isDead", animator);
-        getHit = false;
+        getHit = false; 
     }
 
     void Update()
@@ -159,21 +161,20 @@ public class EnemyStats : MonoBehaviour
             damageTextObject.GetComponentInChildren<TextMesh>().text = "-" + damageToEnemy.ToString();           
         }
 
-
         Destroy(damageTextObject, 3f);
-
     }
 
     public void DestroyEnemy(){
 
         // play death aniamtion if there exits one
         if(deathAnimationFound){
+            death.GetComponent<AudioSource>().Play();
             Destroy(this.transform.parent.gameObject, 3f);
         }
         else{
-            Destroy(this.transform.parent.gameObject);
+            death.GetComponent<AudioSource>().Play();
+            Destroy(this.transform.parent.gameObject, .25f);
         }
-
     }
 
     public void CalcDamage(int damageToEnemy){
@@ -205,8 +206,7 @@ public class EnemyStats : MonoBehaviour
 
         if(deathAnimationFound){
             animator.SetBool("isDead", true);
+            death.GetComponent<AudioSource>().Play();
         }
-    }
-
-      
+    }  
 }
