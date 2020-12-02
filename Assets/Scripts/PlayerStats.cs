@@ -105,15 +105,9 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth <= 0) {
             currentHealth = 0;
             deathScreenUI.SetActive(true);
-            StartCoroutine(PauseGame());
+            plyerDeath.GetComponent<AudioSource>().Play();
         }
         healthBar.SetStat(currentHealth, overallHealth);
-    }
-
-    IEnumerator PauseGame() {
-        plyerDeath.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(1f);
-        Time.timeScale = 0;
     }
 
     public void KillPlayer() {
