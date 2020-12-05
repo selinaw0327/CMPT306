@@ -42,6 +42,15 @@ public class EnemyLists : MonoBehaviour
                 case "Bat":
                     batList.Add(enemy);
                     break;
+                case "zombie":
+                    zombList.Add(enemy);
+                    break;
+                case "Skeleton":
+                    skelList.Add(enemy);
+                    break;
+                case "Vampire":
+                    vampList.Add(enemy);
+                    break;
             }
         }
     }

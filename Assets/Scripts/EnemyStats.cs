@@ -23,6 +23,8 @@ public class EnemyStats : MonoBehaviour
 
     private bool itemDropped;
 
+    ChallengeMenu challengeMenu;
+
     public GameObject death;
 
     // Start is called before the first frame update
@@ -34,7 +36,7 @@ public class EnemyStats : MonoBehaviour
         healthBar.SetMaxStat(maxHealth);
         healthBar.transform.position = transform.position + healthBar.offset;
 
-
+        challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
         enemyLists = GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>();
         enemyName = this.transform.parent.name;
 
@@ -68,6 +70,7 @@ public class EnemyStats : MonoBehaviour
             if(isBoss) {
                 if(enemyName.Equals("zombie")) {
                     if(enemyLists.wormList.Count == 0) {
+                        challengeMenu.updateChallenge("zombie");
                         SetDeathAnimation();
                         if(!itemDropped) {
                             transform.parent.gameObject.GetComponent<EnemyDrop>().BossRewardDrop();
@@ -78,6 +81,7 @@ public class EnemyStats : MonoBehaviour
                 }
                 else if(enemyName.Equals("Skeleton")) {
                     if(enemyLists.ratList.Count == 0) {
+                        challengeMenu.updateChallenge("skel");
                         SetDeathAnimation();
                         if(!itemDropped) {
                             transform.parent.gameObject.GetComponent<EnemyDrop>().BossRewardDrop();
@@ -87,7 +91,9 @@ public class EnemyStats : MonoBehaviour
                     }
                 }
                 else if(enemyName.Equals("Vampire")) {
+
                     if(enemyLists.batList.Count == 0) {
+                        challengeMenu.updateChallenge("vamp");
                         SetDeathAnimation();
                         DestroyEnemy();
                     }
@@ -107,22 +113,26 @@ public class EnemyStats : MonoBehaviour
                             itemDropped = true;
                         }
                 }
-
-                if (this.transform.parent.gameObject.name == "Bat"){
-                    ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
-                    challengeMenu.updateChallenge("batTutorial");
-                }
-
+                
+            
                 List<GameObject> objectList;
 
                 // Find specific enemy list and remove the enemy from that list
                 if(enemyName.Equals("Worm")) {
+                    challengeMenu.updateChallenge("10worm");
+                    challengeMenu.updateChallenge("bossWorms");
                     objectList = enemyLists.wormList;
                 }
                 else if(enemyName.Equals("Rat")) {
+                    challengeMenu.updateChallenge("10rat");
+                    challengeMenu.updateChallenge("bossRats");
+
                     objectList = enemyLists.ratList;
                 }
                 else if(enemyName.Equals("Bat")) {
+                    challengeMenu.updateChallenge("batTutorial");
+                    challengeMenu.updateChallenge("10bat");
+                    challengeMenu.updateChallenge("bossBats");
                     objectList = enemyLists.batList;
                 } 
                 else {

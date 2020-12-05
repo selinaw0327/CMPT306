@@ -141,8 +141,6 @@ public class ChallengeMenu : MonoBehaviour
             }
             challengeList[challengeIndex] = challenge;
             
-        } else {
-            Debug.Log("Error tried to update challenge that does not exist");
         }
     
     }
@@ -172,9 +170,7 @@ public class ChallengeMenu : MonoBehaviour
             }
             challengeList[challengeIndex] = challenge;
             
-        } else {
-            Debug.Log("Error tried to update challenge that does not exist");
-        }
+        } 
         
     }
 
@@ -241,12 +237,28 @@ public class ChallengeMenu : MonoBehaviour
                 break;
             case "10cop":
                 GameObject.Find("Forge Copper Sword").GetComponent<DialogueTrigger>().TriggerDialogue();
-                AddChallenge("Forge a copper Sword with your 10 copper", "copSword");
-                
+                AddChallenge("Forge a copper Sword with your 10 copper", "copSword");     
                 break;
             case "copSword":
                 AddChallenge("Defeat the bat", "batTutorial");
-                
+                break;
+            case "10iron":
+                AddChallenge("Forge and Equip an Iron Sword", "ironSword");
+                break;
+            case "10gold":
+                AddChallenge("Forge and Equip a new beautiful Gold Sword", "goldSword");
+                break;
+            case "10obs":
+                AddChallenge("Use your obsidion to create your Final Sword", "obsSword");
+                break;
+            case "bossWorms":
+                AddChallenge("The zombies worm's are down now take him down", "zombie");
+                break;
+            case "bossRats":
+                AddChallenge("No rats are helping this skeleton defeat him", "skel");
+                break;
+            case "bossBats":
+                AddChallenge("The vampire's pets are gone destroy him  and escape the cave", "vamp");
                 break;
             default:
                 break;
