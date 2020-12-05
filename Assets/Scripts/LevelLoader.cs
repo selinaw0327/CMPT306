@@ -38,6 +38,8 @@ public class LevelLoader : MonoBehaviour
     void Start() {
         StartCoroutine(LateStart());
         cameraMovement = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
+       
+                challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
         // Ghost Dialogue trigger for Tutorial Scene
         if (previousScene == 0)
         {
@@ -62,7 +64,7 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         objectsToMove = GameObject.Find("ObjectsToMove");
-        challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+
 
         // Spawn boss and enemies
         if(SceneManager.GetActiveScene().name.Equals("ExitRoomScene")) {

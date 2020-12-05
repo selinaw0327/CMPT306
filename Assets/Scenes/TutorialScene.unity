@@ -4989,9 +4989,9 @@ MonoBehaviour:
   bat: {fileID: 593757828702648435, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
   worm: {fileID: 593757828702648435, guid: be02ab93cac3f480f88c14f1b4d535cf, type: 3}
   rat: {fileID: 1774442238285305079, guid: 9373bae9b184e4391a59bfc3176fd23a, type: 3}
-  vampire: {fileID: 0}
-  skeleton: {fileID: 0}
-  zombie: {fileID: 0}
+  vampire: {fileID: 593757828702648435, guid: d33c6f792cc1949b1ab4daddd1721772, type: 3}
+  skeleton: {fileID: 593757828702648435, guid: 8c191d732c99f49bda105791e1fd54ae, type: 3}
+  zombie: {fileID: 593757828702648435, guid: 1de91bdc34fa04908b13a0e10e136a56, type: 3}
   objectsToMove: {fileID: 0}
   objectsToMovePrefab: {fileID: 0}
   map: {fileID: 0}
@@ -5001,6 +5001,7 @@ MonoBehaviour:
   femaleSprite: {fileID: -4386294870705664253, guid: 69bbac03001335848b89039896798931, type: 3}
   loadfrommenu: 0
   character: 0
+  loadFromDeath: 0
 --- !u!4 &267550475
 Transform:
   m_ObjectHideFlags: 0
@@ -5055,7 +5056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 577.4083, y: 1349.7799}
+  m_AnchoredPosition: {x: 987.3987, y: 418.26587}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: -0.25}
 --- !u!114 &293317640
