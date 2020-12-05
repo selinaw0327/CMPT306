@@ -72,10 +72,6 @@ public class PlayerStats : MonoBehaviour
             hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
             TakeHunger(1);
         }
-
-        if(Input.GetKeyDown(KeyCode.K)) {
-            KillPlayer();
-        } 
     }
 
     private void SetAllStats(int newMaxHealth, int newMaxEnergy, int newMaxHunger) {
@@ -108,10 +104,6 @@ public class PlayerStats : MonoBehaviour
             plyerDeath.GetComponent<AudioSource>().Play();
         }
         healthBar.SetStat(currentHealth, overallHealth);
-    }
-
-    public void KillPlayer() {
-        TakeDamage(currentHealth);
     }
 
     // Causes the player to heal
