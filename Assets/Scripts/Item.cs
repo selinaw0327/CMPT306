@@ -86,8 +86,22 @@ public class Item : MonoBehaviour
 
                 inventory.quantity[inventory.IndexOf(name)] += 1;
                 added = true;
-                if(name  == "Copper Bar") {
-                    challengeMenu.updateChallenge("10cop");
+                switch(name) {
+                    case "Copper Bar":
+                        challengeMenu.updateChallenge("10cop");
+                        break;
+                    case "Iron Bar":
+                        challengeMenu.updateChallenge("10iron");
+                        break;
+                    case "Gold Bar":
+                        challengeMenu.updateChallenge("10gold");
+                        break;
+                    case "Obsidian Bar":
+                        challengeMenu.updateChallenge("10obs");
+                        break;
+                    default:
+                        break;
+
                 }
                 challengeMenu.updateChallenge("pickup");
                 Destroy(gameObject);

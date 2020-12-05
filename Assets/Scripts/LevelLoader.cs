@@ -33,10 +33,13 @@ public class LevelLoader : MonoBehaviour
     private GameObject tutorialDialogue;
     private GameObject bossRoomDialogue;
 
+    public ChallengeMenu challengeMenu;
+
     void Start() {
         StartCoroutine(LateStart());
         cameraMovement = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-
+       
+                challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
         // Ghost Dialogue trigger for Tutorial Scene
         if (previousScene == 0)
         {
@@ -61,20 +64,25 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         objectsToMove = GameObject.Find("ObjectsToMove");
-        
+
 
         // Spawn boss and enemies
         if(SceneManager.GetActiveScene().name.Equals("ExitRoomScene")) {
+            
             GameObject newBoss = Instantiate(bosses[ProcGenDungeon.caveLevel], new Vector3(0, 15, 0), Quaternion.identity, GameObject.Find("Environment").transform);
+            
             newBoss.name = bosses[ProcGenDungeon.caveLevel].name;
             switch(newBoss.name){
                 case "Skeleton":
+                    challengeMenu.AddChallenge("Defeat the Skeleton's rat followers", "bossRats", enemyLocations.Length);
                     GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().skelList.Add(newBoss);
                     break;
                 case "Vampire":
+                    challengeMenu.AddChallenge("Defeat the Vampire's pet bats", "bossBats", enemyLocations.Length);
                     GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().vampList.Add(newBoss);
                     break;
                 case "zombie":
+                    challengeMenu.AddChallenge("Defeat the Zombie's worm minions", "bossWorms", enemyLocations.Length);
                     GameObject.FindGameObjectWithTag("Environment").GetComponent<EnemyLists>().zombList.Add(newBoss);
                     break;
                 default:
@@ -103,6 +111,25 @@ public class LevelLoader : MonoBehaviour
                 newEnemy.name = enemies[ProcGenDungeon.caveLevel].name;
                 newEnemy.GetComponent<EnemyDrop>().bossRoom = true;
                 newEnemy.layer = 8;
+            }
+        }
+
+        if(SceneManager.GetActiveScene().name.Equals("CaveGameScene")){
+            switch(ProcGenDungeon.caveLevel){
+                case 0:
+                    challengeMenu.AddChallenge("Defeat atleast 10 worms", "10worm", 10);
+                    challengeMenu.AddChallenge("Collect 10 iron from the worms", "10iron", 10);
+                    break;
+                case 1:
+                    challengeMenu.AddChallenge("Squash atleast 10 rats", "10rat", 10);
+                    challengeMenu.AddChallenge("Collect 10 gold from the rats", "10gold", 10);
+                    break;
+                case 2:
+                    challengeMenu.AddChallenge("Vanquish 10  bats!", "10bat", 10);
+                    challengeMenu.AddChallenge("Collect 10 obsidian from the bats", "10obs", 10);
+                    break;
+                default:
+                    break;
             }
         }
     }
