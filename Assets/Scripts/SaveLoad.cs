@@ -279,12 +279,8 @@ public static class SaveLoad
 			
 			
             player.currentHealth = data.Health;
-            player.currentEnergy = data.Energy;
-            player.currentHunger = data.Hunger;
 			player.overallDamage = data.Damage;
 			player.overallHealth = data.overallHealth;
-			player.maxHunger = data.maxhunger;
-			player.maxEnergy = data.maxenergy;
 			player.swordEquipped =  data.swordEquipped;
 			player.sword = data.sword;
 			

@@ -40,7 +40,10 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void ExitGame() {
-        
-        SceneManager.LoadScene("MainMenu");
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 }

@@ -63,10 +63,12 @@ public class MenuFunctions : MonoBehaviour
     }
 
     public void DeathLoad() {
+        GameObject.Find("SaveLoadFunctions").GetComponent<SaveLoadRunner>().loadFromDeath = true;
         GameObject.Find("SaveLoadFunctions").GetComponent<SaveLoadRunner>().LoadAll();
     }
 
     public void DeathScreenButton() {
+        Time.timeScale = 1;
         this.gameObject.SetActive(false);
     }
 }

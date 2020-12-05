@@ -7,14 +7,10 @@ public class PlayerData
 {
 
     public int Health;
-    public int Hunger;
-    public int Energy;
     public int Damage;
 
     public bool swordEquipped;
     public int overallHealth;
-    public int maxhunger;
-    public int maxenergy;
     public  string sword;
     public float[] position; 
     
@@ -23,13 +19,9 @@ public class PlayerData
 
     public PlayerData(PlayerStats player){
 
-        Hunger = player.currentHunger;
         Health = player.currentHealth;
-        Energy = player.currentEnergy;
         Damage = player.overallDamage;
         overallHealth = player.overallHealth;
-        maxenergy = player.maxEnergy;
-        maxhunger = player.maxHunger;
         swordEquipped = player.swordEquipped;
         sword = player.sword;
         

@@ -236,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3692928395385306574, guid: 23a8b611f7a57f647ac9ff8f37260dff, type: 3}
       propertyPath: m_Text
-      value: "Energy:\t200"
+      value: "Damage:\t25"
       objectReference: {fileID: 0}
     - target: {fileID: 3692928395651064764, guid: 23a8b611f7a57f647ac9ff8f37260dff, type: 3}
       propertyPath: m_Sprite
@@ -725,9 +725,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterOne
       objectReference: {fileID: 0}
+    - target: {fileID: 3692928395018581061, guid: 23a8b611f7a57f647ac9ff8f37260dff, type: 3}
+      propertyPath: m_Text
+      value: "Health:\t150"
+      objectReference: {fileID: 0}
     - target: {fileID: 3692928395385306574, guid: 23a8b611f7a57f647ac9ff8f37260dff, type: 3}
       propertyPath: m_Text
-      value: "Energy:\t200"
+      value: "Damage:\t10"
       objectReference: {fileID: 0}
     - target: {fileID: 3692928395651064764, guid: 23a8b611f7a57f647ac9ff8f37260dff, type: 3}
       propertyPath: m_Sprite
