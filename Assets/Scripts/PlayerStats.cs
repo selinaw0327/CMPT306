@@ -12,16 +12,6 @@ public class PlayerStats : MonoBehaviour
     public int additionalHealth;
     public int overallHealth;
 
-    // Energy Bar
-    public StatBar energyBar;
-    public int maxEnergy;
-    public int currentEnergy;
-
-    // Hunger Bar
-    public StatBar hungerBar;
-    public int maxHunger;
-    public int currentHunger;
-
     public int currentLevel = 0;
     public int initialDamage;
     public int additionalDamage;
@@ -48,37 +38,21 @@ public class PlayerStats : MonoBehaviour
         invincible = false;
         switch (MenuFunctions.character) {
             case 1:
-                SetAllStats(100, 150, 100);
+                SetAllStats(150, 0);
                 break;
             case 2:
-                SetAllStats(150, 50, 150);
+                SetAllStats(100, 15);
                 break;
-            case 3:
-                SetAllStats(50, 200, 50);
+            default:
                 break;
         }
     }
     
     // Update is called once per frame
     void Update() {
-
-        // Timed system to decrease energy
-        if(Time.time >= energyNextTimeToDecrease) {
-            energyNextTimeToDecrease = Time.time + 1.0f / energyDecreaseRate;
-            TakeEnergy(1);
-        }
-        // Timed system to decrease hunger
-        if(Time.time >= hungerNextTimeToDecrease) {
-            hungerNextTimeToDecrease = Time.time + 1.0f / hungerDecreaseRate;
-            TakeHunger(1);
-        }
-
-        if(Input.GetKeyDown(KeyCode.K)) {
-            KillPlayer();
-        } 
     }
 
-    private void SetAllStats(int newMaxHealth, int newMaxEnergy, int newMaxHunger) {
+    private void SetAllStats(int newMaxHealth, int newMaxDamage) {
         initialHealth = newMaxHealth;
 
         SetOverallHealth();
@@ -87,15 +61,8 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetMaxStat(overallHealth);
         healthBar.transform.position = transform.position + healthBar.offset; // Places healthbar above players head based on its offset
 
-        // Set current and max energy
-        maxEnergy = newMaxEnergy;
-        currentEnergy = maxEnergy;
-        energyBar.SetMaxStat(maxEnergy);
-
-        // Set current and amx hunger
-        maxHunger = newMaxHunger;
-        currentHunger = maxHunger;
-        hungerBar.SetMaxStat(maxHunger);
+        initialDamage = newMaxDamage;
+        SetOverallDamage();
     }
 
     // Causes the player to take damage
@@ -110,10 +77,6 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetStat(currentHealth, overallHealth);
     }
 
-    public void KillPlayer() {
-        TakeDamage(currentHealth);
-    }
-
     // Causes the player to heal
     public void Heal(int healingAmount) {
         // Set current health and check if the player is at max health
@@ -122,24 +85,6 @@ public class PlayerStats : MonoBehaviour
             currentHealth = overallHealth;
         }
         healthBar.SetStat(currentHealth, overallHealth);
-    }
-
-    // Causes the player to lose energy
-    public void TakeEnergy(int energyLoss) {
-        currentEnergy -= energyLoss;
-        if(currentEnergy <= 0) {
-            currentEnergy = 0;
-        }
-        energyBar.SetStat(currentEnergy, maxEnergy);
-    }
-
-    // Causes the player to lose hunger
-    public void TakeHunger(int hungerLoss) {
-        currentHunger -= hungerLoss;
-        if(currentHunger <= 0) {
-            currentHunger = 0;
-        }
-        hungerBar.SetStat(currentHunger, maxHunger);
     }
 
     public void SetAdditionalHealth(int i)
