@@ -181,6 +181,20 @@ public class UseDrop : MonoBehaviour
 
     public void Equip(Sprite swordSprite, GameObject player)
     {
+        ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+        switch(itemType){
+            case Item.ItemType.IronSword:
+                challengeMenu.updateChallenge("ironSword");
+                break;
+            case Item.ItemType.GoldSword:
+                challengeMenu.updateChallenge("goldSword");
+                break;
+            case Item.ItemType.ObsidianSword:
+                challengeMenu.updateChallenge("obsSword");
+                break;
+            default:
+                 break;
+        }
         var image = GameObject.Find("Equipped Sword").transform.Find("Image");
 
         image.GetComponent<Image>().sprite = swordSprite;
@@ -206,9 +220,22 @@ public class UseDrop : MonoBehaviour
     public void Drop()
     {
         GetComponent<Spawn>().SpawnDroppedItem(name, itemType, sprite);
-        if(name == "Copper Bar"){
-            ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
-            challengeMenu.incrementChallenge("10cop");
+        ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+        switch(name){
+            case "Copper Bar":
+                challengeMenu.incrementChallenge("10cop");
+                break;
+            case "Iron Bar":
+                challengeMenu.incrementChallenge("10iron");
+                break;
+            case "Gold Bar":
+                challengeMenu.incrementChallenge("10gold");
+                break;
+            case "Obsidian Bar":
+                challengeMenu.incrementChallenge("10obs");
+                break;
+            default:
+                 break;
         }
         UpdateQuantity(-1);
     }

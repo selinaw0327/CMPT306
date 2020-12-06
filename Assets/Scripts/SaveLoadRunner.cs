@@ -291,6 +291,18 @@ public class SaveLoadRunner : MonoBehaviour
 
     public void LoadEnemies()
     {
+        bool tutorial;
+        bool bossRoom;
+        if(SceneManager.GetActiveScene().name == "ExitRoomScene"){
+            tutorial = false;
+            bossRoom = true;
+        } else if (SceneManager.GetActiveScene().name == "TutorialScene"){
+            tutorial = true;
+            bossRoom = false;
+        } else {
+            tutorial = false;
+            bossRoom = false;
+        }
         foreach(GameObject bat in enemyLists.batList){
             Destroy(bat);
         }
@@ -334,6 +346,8 @@ public class SaveLoadRunner : MonoBehaviour
             newBat.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(batData.currentHealth, batData.maxHealth);
             newBat.transform.GetComponentInChildren<EnemyStats>().isBoss = false;
             newBat.transform.GetComponentInChildren<EnemyStats>().enemyName = "Bat";
+            newBat.transform.GetComponentInChildren<EnemyDrop>().bossRoom = bossRoom;
+            newBat.transform.GetComponentInChildren<EnemyDrop>().tutorial = tutorial;
             newBat.name = "Bat";
             enemyLists.batList.Add(newBat);
         }
@@ -351,6 +365,8 @@ public class SaveLoadRunner : MonoBehaviour
             newRat.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(ratData.currentHealth, ratData.maxHealth);
             newRat.transform.GetComponentInChildren<EnemyStats>().isBoss = false;
             newRat.transform.GetComponentInChildren<EnemyStats>().enemyName = "Rat";
+            newRat.transform.GetComponentInChildren<EnemyDrop>().bossRoom = bossRoom;
+            newRat.transform.GetComponentInChildren<EnemyDrop>().tutorial = tutorial;
             newRat.name = "Rat";
             enemyLists.ratList.Add(newRat);
         }
@@ -367,6 +383,8 @@ public class SaveLoadRunner : MonoBehaviour
             newWorm.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(wormData.currentHealth,wormData.maxHealth);
             newWorm.transform.GetComponentInChildren<EnemyStats>().isBoss = false;
             newWorm.transform.GetComponentInChildren<EnemyStats>().enemyName = "Worm";
+            newWorm.transform.GetComponentInChildren<EnemyDrop>().bossRoom = bossRoom;
+            newWorm.transform.GetComponentInChildren<EnemyDrop>().tutorial = tutorial;
             newWorm.name = "Worm";
             enemyLists.wormList.Add(newWorm);
         }
@@ -384,6 +402,8 @@ public class SaveLoadRunner : MonoBehaviour
             newVamp.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(vampData.currentHealth, vampData.maxHealth);
             newVamp.transform.GetComponentInChildren<EnemyStats>().isBoss = true;
             newVamp.transform.GetComponentInChildren<EnemyStats>().enemyName = "Vampire";
+            newVamp.transform.GetComponentInChildren<EnemyDrop>().bossRoom = bossRoom;
+            newVamp.transform.GetComponentInChildren<EnemyDrop>().tutorial = tutorial;
             newVamp.name = "Vampire";
             enemyLists.vampList.Add(newVamp);
         }
@@ -401,6 +421,8 @@ public class SaveLoadRunner : MonoBehaviour
             newZomb.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(zombData.currentHealth, zombData.maxHealth);
             newZomb.transform.GetComponentInChildren<EnemyStats>().isBoss = true;
             newZomb.transform.GetComponentInChildren<EnemyStats>().enemyName = "zombie";
+            newZomb.transform.GetComponentInChildren<EnemyDrop>().bossRoom = bossRoom;
+            newZomb.transform.GetComponentInChildren<EnemyDrop>().tutorial = tutorial;
             newZomb.name = "zombie";
             enemyLists.zombList.Add(newZomb);
         }
@@ -417,6 +439,8 @@ public class SaveLoadRunner : MonoBehaviour
             newSkel.transform.GetComponentInChildren<EnemyStats>().healthBar.SetStat(skelData.currentHealth,skelData.maxHealth);
             newSkel.transform.GetComponentInChildren<EnemyStats>().isBoss = true;
             newSkel.transform.GetComponentInChildren<EnemyStats>().enemyName = "Skeleton";
+            newSkel.transform.GetComponentInChildren<EnemyDrop>().bossRoom = bossRoom;
+            newSkel.transform.GetComponentInChildren<EnemyDrop>().tutorial = tutorial;
             newSkel.name = "Skeleton";
             enemyLists.skelList.Add(newSkel);
         }
