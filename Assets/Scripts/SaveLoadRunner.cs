@@ -37,8 +37,6 @@ public class SaveLoadRunner : MonoBehaviour
     public bool loadfrommenu;
     public int character;
 
-    public bool loadFromDeath;
-
     string currentScene;
     void Start() 
     {
@@ -101,7 +99,6 @@ public class SaveLoadRunner : MonoBehaviour
 
     public void LoadAll()
     {
-
         if(currentScene == "CaveGameScene"){
         LoadMap();
         }
@@ -111,17 +108,9 @@ public class SaveLoadRunner : MonoBehaviour
         LoadItemsOnFloor();
         LoadInventory();
         LoadChallenges();
-        
-        if(loadFromDeath) {
-            Time.timeScale = 1f;
-            StartCoroutine(resetDeath());
-        }
     }
 
-    IEnumerator resetDeath() {
-        yield return new WaitForSeconds(1.5f);
-        loadFromDeath = false;
-    }
+    
 
     public void SavePlayer()
     {

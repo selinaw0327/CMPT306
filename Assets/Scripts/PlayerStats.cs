@@ -32,6 +32,8 @@ public class PlayerStats : MonoBehaviour
 
     public bool invincible;
 
+    public bool dead;
+
     // Start is called before the first frame update
     void Start() {
         swordEquipped = false;
@@ -50,6 +52,9 @@ public class PlayerStats : MonoBehaviour
     
     // Update is called once per frame
     void Update() {
+        if(!dead && !PauseMenu.GameIsPaused) {
+            Time.timeScale = 1f;
+        }
     }
 
     private void SetAllStats(int newMaxHealth, int newMaxDamage) {
@@ -72,6 +77,7 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth <= 0) {
             currentHealth = 0;
             deathScreenUI.SetActive(true);
+            dead = true;
             StartCoroutine(PauseGame());
         }
         healthBar.SetStat(currentHealth, overallHealth);
