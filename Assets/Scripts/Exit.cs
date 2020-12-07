@@ -54,6 +54,15 @@ public class Exit : MonoBehaviour
 
     public void NextLevel()
     {
+        if(SceneManager.GetActiveScene().name != "TutorialScene"){
+        EnemyLists enemylists = GameObject.Find("Environment").GetComponent<EnemyLists>();
+        enemylists.batList.Clear();
+        enemylists.ratList.Clear();
+        enemylists.wormList.Clear();
+        enemylists.zombList.Clear();
+        enemylists.vampList.Clear();
+        enemylists.skelList.Clear();
+        }
         LevelLoader.LoadNextLevel();
     }
 
