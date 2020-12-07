@@ -25,6 +25,9 @@ public class KnockBack : MonoBehaviour
         {
             // if the enemy collides with the player, the player takes damage and is knocked back
             Rigidbody2D enemy = GetComponent<Rigidbody2D>();
+            EnemyStats enemyStats = gameObject.GetComponentInChildren<EnemyStats>();
+            Debug.Log("current health is " + enemyStats.currentHealth
+            );
             if (enemy != null && !other.isTrigger)
             {
                 Vector2 difference = enemy.transform.position - other.gameObject.transform.position;
@@ -33,7 +36,9 @@ public class KnockBack : MonoBehaviour
                 attack.GetComponent<AudioSource>().Play();
 
                 PlayerStats playerStats = other.GetComponent<PlayerStats>();
-                if (!playerStats.invincible)
+                
+                
+                if (!playerStats.invincible && enemyStats.currentHealth >0)
                 {
                     int damage = gameObject.GetComponentInChildren<EnemyStats>().damage;
                     playerStats.TakeDamage(damage);
