@@ -11,6 +11,10 @@ public class ExitPointer : MonoBehaviour
         StartCoroutine(SetReferences());
     }
 
+    public void resetRef(){
+        StartCoroutine(SetReferences());
+    }
+
     IEnumerator SetReferences() {
         yield return new WaitForSeconds(1.5f);
         exitPosition = GameObject.Find("Exit").transform.position;

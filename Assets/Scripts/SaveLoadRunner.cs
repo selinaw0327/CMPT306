@@ -200,6 +200,7 @@ public class SaveLoadRunner : MonoBehaviour
             Destroy(createdObject);
         }
         GameObject.Find("GridRescan").GetComponent<ScanGrid>().scan();
+        GameObject.Find("ExitPointer").GetComponentInChildren<ExitPointer>().resetRef();
         
     }
     public void LoadInventory()
