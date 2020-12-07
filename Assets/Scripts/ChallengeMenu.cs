@@ -53,7 +53,9 @@ public class ChallengeMenu : MonoBehaviour
     }
     void Update()
     {
-        
+        if(incomplete == null){
+         incomplete = GameObject.FindGameObjectWithTag("Incomplete");
+        }
         if(Input.GetKeyDown(KeyCode.LeftControl)){
             ShowHide();
         }
