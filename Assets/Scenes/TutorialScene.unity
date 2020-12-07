@@ -5001,7 +5001,6 @@ MonoBehaviour:
   femaleSprite: {fileID: -4386294870705664253, guid: 69bbac03001335848b89039896798931, type: 3}
   loadfrommenu: 0
   character: 0
-  loadFromDeath: 0
 --- !u!4 &267550475
 Transform:
   m_ObjectHideFlags: 0
@@ -5056,7 +5055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 5332.8115, y: 1485.917}
+  m_AnchoredPosition: {x: -960, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: -0.25}
 --- !u!114 &293317640
@@ -22133,7 +22132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - You must have a Copper Sword equipped before moving on to the next level.
+    - You must complete all challenges before proceeding.
 --- !u!1001 &429310973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27900,6 +27899,7 @@ MonoBehaviour:
   deathScreenUI: {fileID: 1464607308}
   plyerDeath: {fileID: 1667085940}
   invincible: 0
+  dead: 0
 --- !u!61 &1200133274
 BoxCollider2D:
   m_ObjectHideFlags: 0

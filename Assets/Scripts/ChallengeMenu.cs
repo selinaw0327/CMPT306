@@ -25,7 +25,7 @@ public class ChallengeMenu : MonoBehaviour
 
     public GameObject incomplete;
 
-    private int incompleteChallenges;
+    public int incompleteChallenges;
 
     [System.Serializable]
     public struct Challenge
