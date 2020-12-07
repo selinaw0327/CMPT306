@@ -246,12 +246,8 @@ public class ProcGenDungeon : MonoBehaviour
 
         Vector3 lastWallF = lastWall;
 
-        if(wallTileRight == null) {
-            lastWallF.x -= 0.55f;
-        }
-        else {
-            lastWallF.x += 0.5f;
-        }
+        lastWallF.x += 0.5f;
+
         lastWallF.y += 0.5f;
         exitPosition = new float[3];
         exitPosition[0] = lastWallF.x;
