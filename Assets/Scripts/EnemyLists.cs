@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyLists : MonoBehaviour
 {
@@ -30,27 +31,28 @@ public class EnemyLists : MonoBehaviour
     void Start()
     {
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("enemy");
-
+        if(SceneManager.GetActiveScene().name == "ExitRoomScene"){
         foreach(GameObject enemy in enemyArray){
-            switch (enemy.name) {
-                case "Worm":
-                    wormList.Add(enemy);
-                    break;
-                case "Rat":
-                    ratList.Add(enemy);
-                    break;
-                case "Bat":
-                    batList.Add(enemy);
-                    break;
-                case "zombie":
-                    zombList.Add(enemy);
-                    break;
-                case "Skeleton":
-                    skelList.Add(enemy);
-                    break;
-                case "Vampire":
-                    vampList.Add(enemy);
-                    break;
+                switch (enemy.name) {
+                    case "Worm":
+                        wormList.Add(enemy);
+                        break;
+                    case "Rat":
+                        ratList.Add(enemy);
+                        break;
+                    case "Bat":
+                        batList.Add(enemy);
+                        break;
+                    case "zombie":
+                        zombList.Add(enemy);
+                        break;
+                    case "Skeleton":
+                        skelList.Add(enemy);
+                        break;
+                    case "Vampire":
+                        vampList.Add(enemy);
+                        break;
+                }
             }
         }
     }
