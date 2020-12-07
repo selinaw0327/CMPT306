@@ -41,13 +41,14 @@ public class LevelLoader : MonoBehaviour
         enemiesLoaded = false;
         StartCoroutine(LateStart());
         cameraMovement = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-       
-                challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+        
+        challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+        
         // Ghost Dialogue trigger for Tutorial Scene
         if (previousScene == 0)
         {
 
-            if(SceneManager.GetActiveScene().name == "TurorialScene"){
+            if(SceneManager.GetActiveScene().name == "TutorialScene"){
                 tutorialDialogue = GameObject.Find("Ghost Dialogue");
                 tutorialDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
             }
