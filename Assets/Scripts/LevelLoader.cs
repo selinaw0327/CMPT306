@@ -118,15 +118,15 @@ public class LevelLoader : MonoBehaviour
             switch(ProcGenDungeon.caveLevel){
                 case 0:
                     challengeMenu.AddChallenge("Defeat atleast 10 worms", "10worm", 10);
-                    challengeMenu.AddChallenge("Collect 10 iron from the worms", "10iron", 10);
+                    challengeMenu.AddChallenge("Forge and Equip an Iron Sword after collecting 10 iron", "ironSword");
                     break;
                 case 1:
                     challengeMenu.AddChallenge("Squash atleast 10 rats", "10rat", 10);
-                    challengeMenu.AddChallenge("Collect 10 gold from the rats", "10gold", 10);
+                    challengeMenu.AddChallenge("Equip a gold sword once you have 10 gold bars", "goldSword");
                     break;
                 case 2:
                     challengeMenu.AddChallenge("Vanquish 10  bats!", "10bat", 10);
-                    challengeMenu.AddChallenge("Collect 10 obsidian from the bats", "10obs", 10);
+                    challengeMenu.AddChallenge("Create your final obsidan sword with 10 obsidian", "obsSword");
                     break;
                 default:
                     break;

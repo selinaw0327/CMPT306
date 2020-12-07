@@ -242,15 +242,6 @@ public class ChallengeMenu : MonoBehaviour
             case "copSword":
                 AddChallenge("Defeat the bat", "batTutorial");
                 break;
-            case "10iron":
-                AddChallenge("Forge and Equip an Iron Sword", "ironSword");
-                break;
-            case "10gold":
-                AddChallenge("Forge and Equip a new beautiful Gold Sword", "goldSword");
-                break;
-            case "10obs":
-                AddChallenge("Use your obsidion to create your Final Sword", "obsSword");
-                break;
             case "bossWorms":
                 AddChallenge("The zombies worm's are down now take him down", "zombie");
                 break;
