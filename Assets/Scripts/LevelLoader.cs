@@ -30,12 +30,15 @@ public class LevelLoader : MonoBehaviour
     public bool loaded = false;
     public bool unloaded = false;
 
+    public bool enemiesLoaded = false;
+
     private GameObject tutorialDialogue;
     private GameObject bossRoomDialogue;
 
     public ChallengeMenu challengeMenu;
 
     void Start() {
+        enemiesLoaded = false;
         StartCoroutine(LateStart());
         cameraMovement = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
        
@@ -112,6 +115,7 @@ public class LevelLoader : MonoBehaviour
                 newEnemy.GetComponent<EnemyDrop>().bossRoom = true;
                 newEnemy.layer = 8;
             }
+            enemiesLoaded = true;
         }
 
         if(SceneManager.GetActiveScene().name.Equals("CaveGameScene")){

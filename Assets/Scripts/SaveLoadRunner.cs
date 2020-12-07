@@ -28,9 +28,8 @@ public class SaveLoadRunner : MonoBehaviour
     public ProcGenDungeon map;
     public RockList rockList;
     public EnemyLists enemyLists;
-
+    public bool enemiesLoaded;
     private GameObject spriteAtlas;
-
     public Sprite nosword;
     public Sprite femaleSprite;
 
@@ -102,10 +101,13 @@ public class SaveLoadRunner : MonoBehaviour
         if(currentScene == "CaveGameScene"){
         LoadMap();
         }
+        enemiesLoaded = GameObject.Find("LevelLoader").GetComponent<LevelLoader>().enemiesLoaded;
         LoadPlayer();
         LoadRocks();
         LoadEnemies();
-        LoadItemsOnFloor();
+        if(!enemiesLoaded){
+          LoadItemsOnFloor();
+        }
         LoadInventory();
         LoadChallenges();
     }
@@ -452,6 +454,7 @@ public class SaveLoadRunner : MonoBehaviour
         enemyLists.skelDataList = new List<EnemyData>();
         enemyLists.vampDataList = new List<EnemyData>();
         enemyLists.zombDataList = new List<EnemyData>();
+        enemiesLoaded = true;
 
     }
     public void SaveItemsOnFloor()
