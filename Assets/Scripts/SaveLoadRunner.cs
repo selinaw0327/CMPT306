@@ -105,9 +105,7 @@ public class SaveLoadRunner : MonoBehaviour
         LoadPlayer();
         LoadRocks();
         LoadEnemies();
-        if(!enemiesLoaded){
-          LoadItemsOnFloor();
-        }
+        LoadItemsOnFloor();
         LoadInventory();
         LoadChallenges();
     }
