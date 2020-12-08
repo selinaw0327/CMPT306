@@ -7277,6 +7277,7 @@ MonoBehaviour:
   deathScreenUI: {fileID: 1709910241}
   plyerDeath: {fileID: 1120259919}
   invincible: 0
+  dead: 0
 --- !u!61 &1194010734
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7902,6 +7903,7 @@ MonoBehaviour:
   challengeCompletedUI: {fileID: 1416502500}
   newChallengeUI: {fileID: 1179704008}
   incomplete: {fileID: 1488766573}
+  incompleteChallenges: 0
   challengeList: []
 --- !u!114 &1295367688
 MonoBehaviour:
@@ -11289,7 +11291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - You must have a Copper Sword equipped before moving on to the next level.
+    - You must complete all challenges before proceeding.
 --- !u!1 &2125541396
 GameObject:
   m_ObjectHideFlags: 0

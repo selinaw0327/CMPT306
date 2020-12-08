@@ -35,14 +35,13 @@ public class Exit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D entity)
     {
         if (entity.gameObject.CompareTag("Player")) {
-
-            if(SceneManager.GetActiveScene().name == "TutorialScene"){
-                if (GameObject.FindGameObjectWithTag("Player").GetComponent<Equipped>().equipped != "Swords_Copper")
-                {
-                    GameObject.Find("Tutorial Exit Checkpoint").GetComponent<DialogueTrigger>().TriggerDialogue();
-                    return;
-                }
+            ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
+            if(challengeMenu.incompleteChallenges != 0)
+            {
+                GameObject.Find("Tutorial Exit Checkpoint").GetComponent<DialogueTrigger>().TriggerDialogue();
+                return;
             }
+            
             if (!prompt)
             {
                 GameObject p = Instantiate(promptPrefab, GameObject.Find("UILayer").transform);
