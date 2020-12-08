@@ -124,32 +124,47 @@ public class UseDrop : MonoBehaviour
             // SWORDS
             case Item.ItemType.CopperSword:
                 // Code for what happens when Copper sword is right-clicked in inventory
-                Equip(spriteAtlas.GetComponent<SpriteAtlas>().copperSword, player);
-                player.GetComponent<PlayerStats>().SetAdditionalDamage(10);
-                changeSkin.CopperSkin();
+                if (player.GetComponent<PlayerStats>().swordLevel <= 1)
+                {
+                    Equip(spriteAtlas.GetComponent<SpriteAtlas>().copperSword, player, 1);
+                    player.GetComponent<PlayerStats>().SetAdditionalDamage(10);
+                    changeSkin.CopperSkin();
+                }
                 break;
             case Item.ItemType.SilverSword:
                 // Code for what happens when Silver sword is right-clicked in inventory
-                Equip(spriteAtlas.GetComponent<SpriteAtlas>().silverSword, player);
-                changeSkin.SilverSkin();
+                if (player.GetComponent<PlayerStats>().swordLevel <= 2)
+                {
+                    Equip(spriteAtlas.GetComponent<SpriteAtlas>().silverSword, player, 2);
+                    changeSkin.SilverSkin();
+                }
                 break;
             case Item.ItemType.IronSword:
                 // Code for what happens when Iron sword is right-clicked in 
-                Equip(spriteAtlas.GetComponent<SpriteAtlas>().ironSword, player);
-                changeSkin.IronSkin();
-                player.GetComponent<PlayerStats>().SetAdditionalDamage(25);
+                if (player.GetComponent<PlayerStats>().swordLevel <= 3)
+                {
+                    Equip(spriteAtlas.GetComponent<SpriteAtlas>().ironSword, player, 3);
+                    changeSkin.IronSkin();
+                    player.GetComponent<PlayerStats>().SetAdditionalDamage(25);
+                }
                 break;
             case Item.ItemType.GoldSword:
                 // Code for what happens when Gold sword is right-clicked in inventory
-                Equip(spriteAtlas.GetComponent<SpriteAtlas>().goldSword, player);
-                changeSkin.GoldSkin();
-                player.GetComponent<PlayerStats>().SetAdditionalDamage(50);
+                if (player.GetComponent<PlayerStats>().swordLevel <= 4)
+                {
+                    Equip(spriteAtlas.GetComponent<SpriteAtlas>().goldSword, player, 4);
+                    changeSkin.GoldSkin();
+                    player.GetComponent<PlayerStats>().SetAdditionalDamage(50);
+                }
                 break;
             case Item.ItemType.ObsidianSword:
                 // Code for what happens when Obsidian sword is right-clicked in inventory
-                Equip(spriteAtlas.GetComponent<SpriteAtlas>().obsidianSword, player);
-                changeSkin.ObsidianSkin();
-                player.GetComponent<PlayerStats>().SetAdditionalDamage(100);
+                if (player.GetComponent<PlayerStats>().swordLevel <= 5)
+                {
+                    Equip(spriteAtlas.GetComponent<SpriteAtlas>().obsidianSword, player, 5);
+                    changeSkin.ObsidianSkin();
+                    player.GetComponent<PlayerStats>().SetAdditionalDamage(100);
+                }
                 break;
             case Item.ItemType.CopperArmour:
                 player.GetComponent<PlayerStats>().SetAdditionalHealth(100);
@@ -179,7 +194,7 @@ public class UseDrop : MonoBehaviour
         }
     }
 
-    public void Equip(Sprite swordSprite, GameObject player)
+    public void Equip(Sprite swordSprite, GameObject player, int powerLevel)
     {
         ChallengeMenu challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
         switch(itemType){
@@ -203,6 +218,7 @@ public class UseDrop : MonoBehaviour
 
         player.GetComponent<PlayerStats>().swordEquipped = true;
         player.GetComponent<PlayerStats>().sword = swordSprite.name;
+        player.GetComponent<PlayerStats>().swordLevel = powerLevel;
 
         UpdateQuantity(-1);
 
