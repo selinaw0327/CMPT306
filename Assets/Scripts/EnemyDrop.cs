@@ -25,39 +25,40 @@ public class EnemyDrop : MonoBehaviour
         switch (name)
         {
             case "Worm":
-                if (chance < 90)
+                if (chance < 50)
                 {
                     NewItem("Iron Bar", spriteAtlas.GetComponent<SpriteAtlas>().ironBar, Item.ItemType.IronBar);
                 }
-                if (chance < 20)
+                else if (chance < 60)
                 {
                     NewItem("Gold Bar", spriteAtlas.GetComponent<SpriteAtlas>().goldBar, Item.ItemType.GoldBar);
                 }
-                if (chance < 10)
+                else if (chance < 65)
                 {
                     NewItem("Obsidian Bar", spriteAtlas.GetComponent<SpriteAtlas>().obsidianBar, Item.ItemType.ObsidianBar);
                 }
                 break;
             case "Rat":
-                if (chance < 20)
-                {
-                    NewItem("Iron Bar", spriteAtlas.GetComponent<SpriteAtlas>().ironBar, Item.ItemType.IronBar);
-                }
-                if (chance < 70)
+                if (chance < 50)
                 {
                     NewItem("Gold Bar", spriteAtlas.GetComponent<SpriteAtlas>().goldBar, Item.ItemType.GoldBar);
+                    
                 }
-                if (chance < 10)
+                else if (chance < 70)
                 {
                     NewItem("Obsidian Bar", spriteAtlas.GetComponent<SpriteAtlas>().obsidianBar, Item.ItemType.ObsidianBar);
                 }
+                else if (chance < 75)
+                {
+                    NewItem("Iron Bar", spriteAtlas.GetComponent<SpriteAtlas>().ironBar, Item.ItemType.IronBar);                  
+                }
                 break;
             case "Bat":
-                if (chance < 90)
+                if (chance < 50)
                 {
                     NewItem("Gold Bar", spriteAtlas.GetComponent<SpriteAtlas>().goldBar, Item.ItemType.GoldBar);
                 }
-                if (chance < 50)
+                else if (chance < 90)
                 {
                     NewItem("Obsidian Bar", spriteAtlas.GetComponent<SpriteAtlas>().obsidianBar, Item.ItemType.ObsidianBar);
                 }

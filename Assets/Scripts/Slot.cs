@@ -85,8 +85,11 @@ public class Slot : MonoBehaviour
             case "Gold Sword":
                 header = "Gold Sword";
                 break;
-            case "Obsidian Sword":
-                header = "Obsidian Sword";
+            case "Copper Armour":
+                header = "Copper Sword";
+                break;
+            case "Obsidian Armour":
+                header = "Obsidian Armour";
                 break;
             default:
                 header = "";
@@ -134,6 +137,12 @@ public class Slot : MonoBehaviour
                 break;
             case "Obsidian Sword":
                 content = "Increases damage dealt by 100.";
+                break;
+            case "Copper Armour":
+                content = "Increases base max health by 100";
+                break;
+            case "Obsidian Armour":
+                content = "Increases base max health by 200";
                 break;
             default:
                 content = "";

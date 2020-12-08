@@ -5056,7 +5056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 65, y: 1235}
+  m_AnchoredPosition: {x: -1520.8861, y: -20.506287}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: -0.25}
 --- !u!114 &293317640
@@ -27523,6 +27523,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 256696027514161921, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
+      propertyPath: tutorial
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 389636989893442646, guid: 3083a72b03b134212a3b3ad324b23d5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.88
@@ -27842,6 +27846,7 @@ MonoBehaviour:
   hungerDecreaseRate: 1
   swordEquipped: 0
   sword: none
+  swordLevel: 0
   deathScreenUI: {fileID: 1464607308}
   plyerDeath: {fileID: 1667085940}
   invincible: 0
