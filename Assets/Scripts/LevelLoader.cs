@@ -43,29 +43,22 @@ public class LevelLoader : MonoBehaviour
         cameraMovement = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
         
         challengeMenu = GameObject.FindGameObjectWithTag("Challenges").GetComponent<ChallengeMenu>();
-        
-        // Ghost Dialogue trigger for Tutorial Scene
-        if (previousScene == 0)
-        {
-
-            if(SceneManager.GetActiveScene().name == "TutorialScene"){
-                tutorialDialogue = GameObject.Find("Ghost Dialogue");
-                tutorialDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
-            }
-
-        }
-
-        //First boss room dialogue trigger
-        else if (nextScene == 4 && ProcGenDungeon.caveLevel == 0)
-        {
-            bossRoomDialogue = GameObject.Find("Boss Room 1 Dialogue");
-            bossRoomDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
-        }
 
     }
 
     IEnumerator LateStart() {
         yield return new WaitForSeconds(1.5f);
+
+        if (SceneManager.GetActiveScene().name == "CaveGameScene" && ProcGenDungeon.caveLevel == 0)
+        {
+            GameObject.Find("Level 1 Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
+            Debug.Log("Level 1 Alert");
+        }
+        else if (SceneManager.GetActiveScene().name == "ExitRoomScene" && ProcGenDungeon.caveLevel == 0)
+        {
+            GameObject.Find("Boss Room 1 Dialogue").GetComponent<DialogueTrigger>().TriggerDialogue();
+            Debug.Log("Boss Room 1 Dialogue");
+        }
 
         objectsToMove = GameObject.Find("ObjectsToMove");
 
@@ -153,7 +146,7 @@ public class LevelLoader : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        if(!loaded) {
+        if (!loaded) {
             switch (SceneManager.GetActiveScene().name) {
                 case "Intro":
                     previousScene = 1;
@@ -171,7 +164,7 @@ public class LevelLoader : MonoBehaviour
                     break;
                 case "ExitRoomScene":
                     ProcGenDungeon.caveLevel++;
-                    if(ProcGenDungeon.caveLevel > 2) {
+                    if (ProcGenDungeon.caveLevel > 2) {
                         nextScene = 5;
                     }
                     else {
@@ -187,32 +180,39 @@ public class LevelLoader : MonoBehaviour
                 default:
                     break;
             }
-            if(previousScene == 1) { // If intro, load tutorial
+            if (previousScene == 1) { // If intro, load tutorial
                 SceneManager.LoadScene("TutorialScene");
             }
-            else if(nextScene == 5) { // If end of game, load outro
+            else if (nextScene == 5) { // If end of game, load outro
                 ProcGenDungeon.caveLevel = 0;
                 SceneManager.LoadScene("Outro");
             }
-            else if(nextScene == 0) { // If outro, load main menu
+            else if (nextScene == 0) { // If outro, load main menu
                 SceneManager.LoadScene("MainMenu");
-            } 
+            }
             else { // Else load next level
                 SceneManager.LoadSceneAsync(scenes[nextScene], LoadSceneMode.Additive);
                 SceneManager.MoveGameObjectToScene(objectsToMove, SceneManager.GetSceneByName(scenes[nextScene]));
-            
-                if(scenes[nextScene].Equals("CaveGameScene")) {
-                    objectsToMove.transform.GetChild(1).transform.position = new Vector3(0,0,0);
+
+                if (scenes[nextScene].Equals("CaveGameScene")) {
+                    objectsToMove.transform.GetChild(1).transform.position = new Vector3(0, 0, 0);
                 }
                 else if (scenes[nextScene].Equals("ExitRoomScene")) {
-                    objectsToMove.transform.GetChild(1).transform.position = new Vector3(0,-6,0);
+                    objectsToMove.transform.GetChild(1).transform.position = new Vector3(0, -6, 0);
                 }
 
-                if(!unloaded) {
+                if (!unloaded) {
                     unloaded = true;
                     UnloadScene(scenes[previousScene]);
                 }
             }
+
+            //Debug.Log(SceneManager.GetActiveScene().name)
+
+
+            
+
+
             loaded = true;
             cameraMovement.UpdatePlayerReference(nextMap);
         }

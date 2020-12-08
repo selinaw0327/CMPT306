@@ -68,16 +68,6 @@ public class Exit : MonoBehaviour
 
     public void TriggerDialogue (string scene, int caveLevel)
     {
-        string level = scene + ", " + caveLevel;
-
-        switch (level)
-        {
-            // first level
-            case "CaveGameScene, 0":
-                GameObject.Find("Level 1 Alert").GetComponent<DialogueTrigger>().TriggerDialogue();
-                break;
-            default:
-                break;
-        }
+        
     }
 }
