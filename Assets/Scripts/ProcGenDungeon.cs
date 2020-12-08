@@ -340,6 +340,7 @@ public class ProcGenDungeon : MonoBehaviour
         }
 
         newObject.name = enemyPrefabs[rand].name;
+        newObject.GetComponent<EnemyDrop>().tutorial = false;
     }
 
     // Randomly select a fruit to spawn
