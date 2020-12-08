@@ -124,7 +124,7 @@ public class UseDrop : MonoBehaviour
             // SWORDS
             case Item.ItemType.CopperSword:
                 // Code for what happens when Copper sword is right-clicked in inventory
-                if (player.GetComponent<PlayerStats>().swordLevel <= 1)
+                if (player.GetComponent<PlayerStats>().swordLevel < 1)
                 {
                     Equip(spriteAtlas.GetComponent<SpriteAtlas>().copperSword, player, 1);
                     player.GetComponent<PlayerStats>().SetAdditionalDamage(10);
@@ -133,7 +133,7 @@ public class UseDrop : MonoBehaviour
                 break;
             case Item.ItemType.SilverSword:
                 // Code for what happens when Silver sword is right-clicked in inventory
-                if (player.GetComponent<PlayerStats>().swordLevel <= 2)
+                if (player.GetComponent<PlayerStats>().swordLevel < 2)
                 {
                     Equip(spriteAtlas.GetComponent<SpriteAtlas>().silverSword, player, 2);
                     changeSkin.SilverSkin();
@@ -141,7 +141,7 @@ public class UseDrop : MonoBehaviour
                 break;
             case Item.ItemType.IronSword:
                 // Code for what happens when Iron sword is right-clicked in 
-                if (player.GetComponent<PlayerStats>().swordLevel <= 3)
+                if (player.GetComponent<PlayerStats>().swordLevel < 3)
                 {
                     Equip(spriteAtlas.GetComponent<SpriteAtlas>().ironSword, player, 3);
                     changeSkin.IronSkin();
@@ -150,7 +150,7 @@ public class UseDrop : MonoBehaviour
                 break;
             case Item.ItemType.GoldSword:
                 // Code for what happens when Gold sword is right-clicked in inventory
-                if (player.GetComponent<PlayerStats>().swordLevel <= 4)
+                if (player.GetComponent<PlayerStats>().swordLevel < 4)
                 {
                     Equip(spriteAtlas.GetComponent<SpriteAtlas>().goldSword, player, 4);
                     changeSkin.GoldSkin();
