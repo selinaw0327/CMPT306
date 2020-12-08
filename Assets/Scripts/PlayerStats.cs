@@ -25,6 +25,7 @@ public class PlayerStats : MonoBehaviour
 
     public bool swordEquipped;
     public string sword = "none";
+    public int swordLevel;
 
     public GameObject deathScreenUI;
 
@@ -37,6 +38,7 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         swordEquipped = false;
+        swordLevel = 0;
         invincible = false;
         switch (MenuFunctions.character) {
             case 1:
