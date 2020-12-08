@@ -44,7 +44,7 @@ public class EnemyDrop : MonoBehaviour
                     NewItem("Gold Bar", spriteAtlas.GetComponent<SpriteAtlas>().goldBar, Item.ItemType.GoldBar);
                     
                 }
-                else if (chance < 70)
+                else if (chance < 60)
                 {
                     NewItem("Obsidian Bar", spriteAtlas.GetComponent<SpriteAtlas>().obsidianBar, Item.ItemType.ObsidianBar);
                 }
@@ -58,7 +58,7 @@ public class EnemyDrop : MonoBehaviour
                 {
                     NewItem("Gold Bar", spriteAtlas.GetComponent<SpriteAtlas>().goldBar, Item.ItemType.GoldBar);
                 }
-                else if (chance < 90)
+                else if (chance < 75)
                 {
                     NewItem("Obsidian Bar", spriteAtlas.GetComponent<SpriteAtlas>().obsidianBar, Item.ItemType.ObsidianBar);
                 }
